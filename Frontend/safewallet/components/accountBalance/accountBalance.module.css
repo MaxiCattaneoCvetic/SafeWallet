@@ -1,0 +1,28 @@
+.mainContainerBalance{
+	background-color: #ffffff49;
+	width: 40rem;
+	height: 15rem;
+	border-radius: 1rem;
+	padding-left: 1rem;
+	padding-top: 1rem;
+}
+
+.textBalance{
+	text-align: start;
+}
+.cashNumber{
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 2rem;
+	font-size: 3rem;
+}
+
+.btnContainer{
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: end;
+	margin-top: 1rem;
+	
+}

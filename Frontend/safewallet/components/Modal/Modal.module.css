@@ -1,0 +1,77 @@
+
+/* Modal.module.css */
+.backdrop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  z-index: 999;
+  overflow: visible;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.75);
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 2px solid var(--borderPrimaryBTN);
+}
+.backdrop *~{
+  filter: blur(10px);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  background-color: var(--backgroundColor);
+  border-radius: 10px;
+}
+
+.header {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn{
+  color: red;
+  cursor: pointer;
+}
+.content {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.actions {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+
+.btn {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--backgroundColor);
+
+}
+
+
+
+@media screen and (max-width: 767px){
+  .backdrop {
+    width: 98vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1020px){
+  .backdrop {
+    width: 80vw;
+  }
+}

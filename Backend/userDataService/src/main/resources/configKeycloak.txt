@@ -1,0 +1,23 @@
+#-----------------configuramos el framework---------------
+
+#----------URL DEL REINO------------
+spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/realms/safewallet
+
+#----------Establecemos la url de nuestro IAM------------
+#Esto nos provee el certificado para desencriptar el token que se genera
+#Es la firma pública que hace nuestro IAM
+#EJEMPLO >>> "jwks_uri": "http://localhost:8080/realms/SafeWallet-realm/protocol/openid-connect/certs"
+
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri=http://localhost:8080/realms/safewallet/protocol/openid-connect/certs
+
+#----------Nombre del cliente-----------
+jwt.auth.converter.resource-id=safe-wallet-api
+
+#----------ATRIBUTO DENTRO DEL TOKEN DESENCRIPTADO QUE ME DARA EL NOMBRE DEL USUARIO------------
+#----------EL NOMBRE POR DEFECTO ES PREFFERED_USERNAME------------
+jwt.auth.converter.principal-attribute=preferred_username
+
+
+#----------ESPECIFICACION DE COMO VAMOS A LOGEAR NUESTRO CODIGO, PUEDE SER DEBUG O INFO------------
+logging.level.org.springframework.security=DEBUG
+org.springframework.beans.factory.annotation.Autowired=true
