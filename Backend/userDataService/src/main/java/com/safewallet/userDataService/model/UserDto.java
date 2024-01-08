@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("userss")
+@Document("users")
 public class UserDto {
 
     @Transient
