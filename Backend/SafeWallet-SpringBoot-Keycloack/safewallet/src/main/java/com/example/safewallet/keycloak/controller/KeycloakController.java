@@ -11,7 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/userKeycloak")
 public class KeycloakController {
 
     @Autowired

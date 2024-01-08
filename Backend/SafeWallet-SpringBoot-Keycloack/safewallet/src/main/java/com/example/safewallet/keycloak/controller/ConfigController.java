@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.security.PermitAll;
+
 @RestController
 @RequestMapping("safewallet/config")
 @RefreshScope //Refresca los todos los datos ARROBADOS CON @VALUE cuando hagamos una peticion AL ACTUATOR REFRESH
@@ -16,6 +18,7 @@ public class ConfigController {
 
 
     @GetMapping("test-prop")
+    @PermitAll
     public String getTestProp() {
         return this.testProp;
     }
