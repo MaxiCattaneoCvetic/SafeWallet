@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SafeWallet-Server" />
+        <module name="Transfers" />
+        <module name="api-gateway" />
+        <module name="config-server" />
+        <module name="userDataService" />
+        <module name="safewallet" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="GateWay" target="17" />
+      <module name="service-configuration" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="GateWay" options="-parameters" />
+      <module name="SafeWallet-Server" options="-parameters" />
+      <module name="Transfers" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="safewallet" options="-parameters" />
+      <module name="userDataService" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -4,7 +4,8 @@ import style from "./register.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import swal from "sweetalert";
-import { REGISTER_USER } from "@/URLS/URL";
+import { REGISTER_USER_KEYCLOAK,REGISTER_USER_FULL } from "@/URLS/URL";
+
 
 
 export default function Register() {
@@ -46,9 +47,46 @@ export default function Register() {
     }));
   };
 
+  async function fetchKeyc (user) {
+    // try {
+      
+    // } catch (error) {
+    //   console.log(error);
+    //   console.error('Error al comunicarse con Keycloak:', error);
+    // }
+
+    // Realizar la solicitud de registro a Keycloak
+    const response = await fetch(REGISTER_USER_KEYCLOAK, {
+      method: 'POST',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    console.log(response);
+  }
+
+  
+  async function fetchuserFull (user) {
+    try{
+      const response = await fetch(REGISTER_USER_FULL,{
+        method: 'POST',
+        headers:{
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user)
+      })
+      
+    } catch(error){
+      console.log("error en userFull",error);
+    }
+  }
+
   async function handleRegister(e) {
     e.preventDefault();    
-    // Construir el objeto de usuario para el registro en Keycloak
+    // Contruimos objeto para keyc
     const user = {
       username: data.email, // Puedes utilizar el email como nombre de usuario
       firstName: data.name,
@@ -58,29 +96,20 @@ export default function Register() {
       role:["user"]
     };
 
-    try {
-      // Realizar la solicitud de registro a Keycloak
-      const response = await fetch(REGISTER_USER, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
+    // Contruimos objeto para userDataFull
+    const userv = {
+      name: data.name, // Puedes utilizar el email como nombre de usuario
+      lastName: data.lastname,
+      email: data.email,
+      phone: data.phone,
+      dni: data.dni
+    };
 
-      console.log(response);
-      
-      if (response.ok) {
-        console.log('Usuario registrado exitosamente en Keycloak');
-        successRegister();
-        // Realizar otras acciones según tus necesidades
-      } else {
-        console.error('Error al registrar el usuario en Keycloak:', response.statusText);
-      }
-    } catch (error) {
-      console.log(error);
-      console.error('Error al comunicarse con Keycloak:', error);
-    }
+    fetchuserFull(userv)
+    fetchKeyc(user)
+
+
+
   };
 
 

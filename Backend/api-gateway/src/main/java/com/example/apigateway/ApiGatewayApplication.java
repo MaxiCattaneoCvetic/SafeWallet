@@ -1,14 +1,13 @@
-package com.example.GateWay;
+package com.example.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GateWayApplication {
+public class ApiGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GateWayApplication.class, args);
-		System.out.println("GateWay safeWallet ON");
+		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
 }

@@ -12,7 +12,7 @@ public class CorsConfig  implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*","https://safe-wallet-umber.vercel.app/*","http://3.133.121.26:8080/","http://3.133.121.26:8080/*","https://safewallet.publicvm.com/","https://safewallet.publicvm.com/*")
+                .allowedOrigins("*","http://localhost:3000/*","https://safe-wallet-umber.vercel.app/*","http://3.133.121.26:8080/","http://3.133.121.26:8080/*","https://safewallet.publicvm.com/","https://safewallet.publicvm.com/*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("Origin", "X-Requested-With", "Content-Type", "Accept");
     }

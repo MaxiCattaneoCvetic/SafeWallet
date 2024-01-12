@@ -3,6 +3,7 @@ package com.example.safewallet.keycloak.controller;
 import com.example.safewallet.keycloak.DTO.UserDto;
 import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.net.URISyntaxException;
 
 @RestController
 @RequestMapping("/userKeycloak")
+@CrossOrigin()
 public class KeycloakController {
 
     @Autowired
@@ -34,7 +36,7 @@ public class KeycloakController {
     @PreAuthorize("permitAll()")
     public ResponseEntity<?> createUser(@RequestBody UserDto userDTO) throws URISyntaxException {
         String response = keycloakService.createUser(userDTO);
-        return ResponseEntity.created(new URI("/user/")).body(response);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 

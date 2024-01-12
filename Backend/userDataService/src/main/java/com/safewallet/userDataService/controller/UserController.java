@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.PermitAll;
 import java.util.List;
 
 @RestController
@@ -22,6 +23,7 @@ public class UserController {
     }
 
     @PostMapping()
+    @PermitAll
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
         // Crea el usuario
         try {
@@ -39,6 +41,11 @@ public class UserController {
     public ResponseEntity<?>  findAllUsers() {
         List<UserDto> listUser = userService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(listUser);
+
+    }
+    @GetMapping("/hola")
+    public ResponseEntity<?>  testGet() {
+        return ResponseEntity.ok("hola");
 
     }
 }
