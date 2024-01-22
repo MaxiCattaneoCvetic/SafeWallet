@@ -24,7 +24,7 @@ public class CorsGlobalFilterConfig {
             if (CorsUtils.isCorsRequest(request)) {
                 ServerHttpResponse response = exchange.getResponse();
                 HttpHeaders headers = response.getHeaders();
-//                headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:3000");
+                //headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:5176");
                 headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "*");
                 headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "OPTIONS, GET, PUT, POST, DELETE");
                 headers.set(HttpHeaders.ACCESS_CONTROL_MAX_AGE, "3600");

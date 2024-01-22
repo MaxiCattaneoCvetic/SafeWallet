@@ -11,7 +11,7 @@ import javax.annotation.security.PermitAll;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5176")
 @RequestMapping("/user")
 public class UserController {
 

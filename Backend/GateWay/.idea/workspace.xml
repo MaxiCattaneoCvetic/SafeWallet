@@ -5,112 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/SafewalletGatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/test/java/com/example/safewalletGateway/SafewalletGatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/SafewalletApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/SafewalletApplicationKeycloak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/DTO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/DTO/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/ConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/implementation/KeycloakRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/implementation/KeycloakRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/keycloak/implementation/service/IkeyCloakService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/implementation/service/IkeyCloakService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/security/JwtAuthConverterProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverterProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/java/com/example/safewallet/security/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/main/resources/bootstrap.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/src/test/java/com/example/safewallet/SafewalletApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/SafewalletApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/TransfersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/TransfersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/service/Itranfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/Itranfers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/java/com/example/Transfers/service/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Transfers/src/test/java/com/example/Transfers/TransfersApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/TransfersApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/example/apigateway/ApiGatewayApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/example/apigateway/CorsConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/example/apigateway/SecurityFilterConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/test/java/com/example/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/src/main/java/com/example/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/java/com/example/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server/config-server/src/test/java/com/example/configserver/ConfigServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/test/java/com/example/configserver/ConfigServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/UserDataServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/UserDataServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/cbuGenerator/Cbu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/cbuGenerator/Cbu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/exception/MessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/exception/MessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/service/mongoDB/DatabaseSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/mongoDB/DatabaseSequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/service/mongoDB/SequenceGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/mongoDB/SequenceGeneratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/main/resources/configKeycloak.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/configKeycloak.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../userDataService/src/test/java/com/safewallet/userDataService/UserDataServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/UserDataServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/URLS/URL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/app/account/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/app/account/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/next.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +78,7 @@
       <recent name="com.example.safewallet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SafeWalletGatewayApplication">
+  <component name="RunManager" selected="Application.UserDataServiceApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
@@ -251,9 +153,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SafewalletApplicationKeycloak" />
         <item itemvalue="Application.SafeWalletGatewayApplication" />
         <item itemvalue="Application.UserDataServiceApplication" />
+        <item itemvalue="Application.SafewalletApplicationKeycloak" />
         <item itemvalue="Application.ConfigServerApplication" />
         <item itemvalue="Application.SafeWalletServerApplication" />
       </list>

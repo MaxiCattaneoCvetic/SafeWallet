@@ -1,14 +1,12 @@
 "use client";
-import Modal from "@/components/Modal/Modal";
+import Modal from "../../components/modal/Modal.jsx";
 import style from "./register.module.css";
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import swal from "sweetalert";
-import { fetchuserFull, fetchKeyc } from "../api/RegisterFetch";
-import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "@/URLS/URL";
+import { fetchuserFull, fetchKeyc } from "../../api/registerFetch.js";
+import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "../../URLS/URL.js";
 
 export default function Register() {
-  const router = useRouter();
   const [contador, setContador] = useState(0);
   const [error, setError] = useState({
     errorEmail: false,
@@ -71,18 +69,19 @@ export default function Register() {
     try {
       const response = await fetchKeyc(user, REGISTER_USER_KEYCLOAK);
       console.log(response);
-      // let responseKeycloak = response.data;
-      // const response2 = await fetchuserFull(userv, REGISTER_USER_FULL);
-      // let responseFULL = response.data;
+      //let responseKeycloak = response.data;
+      const response2 = await fetchuserFull(userv, REGISTER_USER_FULL);
+      console.log(response2);
+      //let responseFULL = response.data;
 
-      if (
-        responseKeycloak === "User exist already!" 
-        //&& responseFULL === "El DNI o el correo ya fue registrado"
-      ) {
-        alert("El usuario ya existe");
-      } else {
-        successRegister();
-      }
+      // if (
+      //   responseKeycloak === "User exist already!" 
+      //   && responseFULL === "El DNI o el correo ya fue registrado"
+      // ) {
+      //   alert("El usuario ya existe");
+      // } else {
+      //   successRegister();
+      // }
 
       // Continuar con el manejo de la respuesta aquí
     } catch (error) {
@@ -97,7 +96,7 @@ export default function Register() {
       icon: "success",
       button: "Volver al inicio",
     }).then(() => {
-      router.push("/");
+      // pushear al user al home
     });
   }
   const validateAndNext = () => {
@@ -332,7 +331,7 @@ export default function Register() {
         title="Registro"
         children={modalChildrenRegister}
         onClick={() => {
-          router.push("/");
+          //
         }}
       ></Modal>
     </>

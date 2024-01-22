@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./login.module.css";
-import { URL_LOGIN, CLIENT_ID_KEYCLOAK } from "@/URLS/URL";
-import { useRouter } from "next/navigation";
+import { URL_LOGIN, CLIENT_ID_KEYCLOAK } from "../../URLS/URL.js";
+
 
 
 export default function Login() {
@@ -9,7 +9,6 @@ export default function Login() {
   const [emailRecover, setEmailRecover] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const router = useRouter();
   const [loginForm, setLoginForm] = useState(true);
 
   const handleLoginSubmit = async (e) => {

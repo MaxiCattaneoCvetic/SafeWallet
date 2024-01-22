@@ -1,0 +1,223 @@
+.homeMainContainer {
+	display: flex;
+	color: white;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+
+}
+
+.cardImage {
+	height: 27rem;
+	padding-right: 7rem;
+}
+
+.textContainerHome {
+	padding-left: 2rem;
+}
+
+.titleServices {
+	display: flex;
+	justify-content: center;
+
+}
+
+.titleServices h2 {
+	padding-top: 10rem;
+}
+
+.servicesContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	margin-bottom: 10rem;
+}
+
+.serviceChild {
+	display: flex;
+	gap: 1.3rem;
+	width: 30%;
+}
+
+.serviceChild h3 {
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+
+.serviceChild p {
+	font-weight: 400;
+}
+
+.secondCardContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.cardActionContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+}
+
+.cardActionContainer a button{
+	padding: 1rem;
+	font-size: 1rem;
+	font-weight: bolder;
+}
+
+.cardActionContainer p {
+	font-weight: 500;
+}
+
+
+/* START MOBILE CSS */
+@media (min-width: 0px) and (max-width: 593px) {
+
+.homeMainContainer{
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2rem;
+}
+.cardImage {
+	height: 10rem;
+	margin-left: 3rem;
+}
+.titleServices{
+	padding-top: 3rem;
+}
+.titleServices h2{
+	padding-top: 0rem;
+}
+
+.servicesContainer {
+	flex-direction: column;
+	margin-bottom: 5rem;
+	justify-content: center;
+	align-items: center;
+
+}
+
+	.serviceChild{
+		width: 100%;
+		margin-top: 1rem;
+		align-items: center
+	}
+	.secondCardContainer{
+		flex-direction: column-reverse;
+	}
+	.card2{
+		width: 16rem;
+		margin-right: 4rem;
+	}
+	.btnMobileee{
+		display: none;
+	}
+	.secondCardContainer{
+		text-align: center;
+		padding-bottom: 1rem;
+	}
+}
+
+@media (min-width: 593px) and (max-width: 811px) {
+
+	.homeMainContainer{
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2rem;
+	}
+	.cardImage {
+		height: 10rem;
+		margin-left: 3rem;
+	}
+	.titleServices{
+		padding-top: 3rem;
+	}
+	.titleServices h2{
+		padding-top: 0rem;
+	}
+	
+	.servicesContainer {
+		flex-direction: column;
+		margin-bottom: 5rem;
+		padding-left: 5rem;
+		justify-content: center;
+		align-items: center;
+	
+	}
+	
+		.serviceChild{
+			width: 100%;
+			margin-top: 1rem;
+			align-items: center
+		}
+		.secondCardContainer{
+			flex-direction: column-reverse;
+		}
+		.card2{
+			width: 16rem;
+			margin-right: 4rem;
+		}
+		.btnMobileee{
+			display: none;
+		}
+		.secondCardContainer{
+			text-align: center;
+			padding-bottom: 1rem;
+		}
+
+}
+
+@media (min-width: 812px) and (max-width: 1300px) {
+
+	.homeMainContainer{
+		justify-content: center;
+		align-items: center;
+		margin-top: 2rem;
+	}
+	.cardImage {
+		height: 10rem;
+		margin-left: 3rem;
+	}
+	.titleServices{
+		padding-top: 3rem;
+	}
+	.titleServices h2{
+		padding-top: 0rem;
+	}
+	
+	.servicesContainer {
+		flex-direction: column;
+		margin-bottom: 5rem;
+		padding-left: 8rem;
+		justify-content: center;
+		align-items: center;
+	
+	}
+
+		.serviceChild{
+			width: 100%;
+			margin-top: 1rem;
+			align-items: center
+		}
+		.secondCardContainer{
+			padding-right: 2rem;
+			padding-bottom: 1rem;
+			padding-left: 2rem;
+			
+		}
+		.card2{
+			width: 16rem;
+			margin-right: 4rem;
+		}
+		.btnMobileee{
+			display: none;
+		}
+
+
+}
