@@ -10,7 +10,14 @@
         <option value="$PROJECT_DIR$/../service-configuration/pom.xml" />
         <option value="$PROJECT_DIR$/../config-server/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/../Transfers/pom.xml" />
-        <option value="$PROJECT_DIR$/../api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../safewalletGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../config-server/SafeWallet-ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Gateway/pom.xml" />
       </list>
     </option>
   </component>

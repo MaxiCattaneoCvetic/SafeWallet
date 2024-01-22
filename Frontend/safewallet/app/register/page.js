@@ -4,9 +4,8 @@ import style from "./register.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import swal from "sweetalert";
-import { REGISTER_USER_KEYCLOAK,REGISTER_USER_FULL } from "@/URLS/URL";
-
-
+import { fetchuserFull, fetchKeyc } from "../api/RegisterFetch";
+import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "@/URLS/URL";
 
 export default function Register() {
   const router = useRouter();
@@ -47,45 +46,8 @@ export default function Register() {
     }));
   };
 
-  async function fetchKeyc (user) {
-    // try {
-      
-    // } catch (error) {
-    //   console.log(error);
-    //   console.error('Error al comunicarse con Keycloak:', error);
-    // }
-
-    // Realizar la solicitud de registro a Keycloak
-    const response = await fetch(REGISTER_USER_KEYCLOAK, {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    });
-    console.log(response);
-  }
-
-  
-  async function fetchuserFull (user) {
-    try{
-      const response = await fetch(REGISTER_USER_FULL,{
-        method: 'POST',
-        headers:{
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user)
-      })
-      
-    } catch(error){
-      console.log("error en userFull",error);
-    }
-  }
-
   async function handleRegister(e) {
-    e.preventDefault();    
+    e.preventDefault();
     // Contruimos objeto para keyc
     const user = {
       username: data.email, // Puedes utilizar el email como nombre de usuario
@@ -93,7 +55,7 @@ export default function Register() {
       lastName: data.lastname,
       password: data.password,
       email: data.email,
-      role:["user"]
+      role: ["user"],
     };
 
     // Contruimos objeto para userDataFull
@@ -102,16 +64,31 @@ export default function Register() {
       lastName: data.lastname,
       email: data.email,
       phone: data.phone,
-      dni: data.dni
+      dni: data.dni,
     };
 
-    fetchuserFull(userv)
-    fetchKeyc(user)
+    //fetchuserFull(userv,REGISTER_USER_FULL)
+    try {
+      const response = await fetchKeyc(user, REGISTER_USER_KEYCLOAK);
+      console.log(response);
+      // let responseKeycloak = response.data;
+      // const response2 = await fetchuserFull(userv, REGISTER_USER_FULL);
+      // let responseFULL = response.data;
 
+      if (
+        responseKeycloak === "User exist already!" 
+        //&& responseFULL === "El DNI o el correo ya fue registrado"
+      ) {
+        alert("El usuario ya existe");
+      } else {
+        successRegister();
+      }
 
-
-  };
-
+      // Continuar con el manejo de la respuesta aquí
+    } catch (error) {
+      // Manejar errores aquí
+    }
+  }
 
   function successRegister() {
     swal({
@@ -360,5 +337,4 @@ export default function Register() {
       ></Modal>
     </>
   );
-
 }
