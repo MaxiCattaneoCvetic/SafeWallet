@@ -101,11 +101,11 @@ public class KeycloakRepository implements IkeyCloakService {
 
             }
             realmResource.users().get(userId).roles().realmLevel().add(rolesRepresentation); // aca le asignamos los roles al user
-            return "User created successfully!!";
+            return "usuario creado";
 
         } else if (status == 409) {
-            log.error("User exist already!");
-            return "User exist already!";
+            log.error("El DNI o el correo ya fue registrado");
+            return "El DNI o el correo ya fue registrado";
         } else {
             log.error("Error creating user, please contact with the administrator.");
             return "Error creating user, please contact with the administrator.";

@@ -32,7 +32,7 @@ public class KeycloakController {
 
 
     @PostMapping("/create")
-    @PermitAll
+    @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDTO) throws URISyntaxException {
         try {
             String response = keycloakService.createUser(userDTO);

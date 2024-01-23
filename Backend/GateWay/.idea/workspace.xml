@@ -8,11 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/implementation/KeycloakRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/implementation/KeycloakRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/ConfigController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/app/account/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/app/account/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +80,8 @@
       <recent name="com.example.safewallet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserDataServiceApplication">
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Compound.allProject">
+    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
       <extension name="coverage">
@@ -92,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SafeWalletGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SafeWalletGatewayApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.SafeWalletGateway.SafeWalletGatewayApplication" />
       <module name="SafeWallet-Gateway" />
       <extension name="coverage">
@@ -105,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SafeWalletServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SafeWalletServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.SafeWalletServer.SafeWalletServerApplication" />
       <module name="SafeWallet-Server" />
       <extension name="coverage">
@@ -118,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SafewalletApplicationKeycloak" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SafewalletApplicationKeycloak" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.safewallet.SafewalletApplicationKeycloak" />
       <module name="SafeWallet-keycloak" />
       <extension name="coverage">
@@ -131,7 +133,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDataServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.SafeWalletServer.SafeWalletServerApplication" />
+      <module name="SafeWallet-Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDataServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.UserDataServiceApplication" />
       <module name="SafeWallet-UserDataFull" />
       <extension name="coverage">
@@ -144,22 +153,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="allProject" type="CompoundRunConfigurationType">
+      <toRun name="ConfigServerApplication" type="Application" />
+      <toRun name="SafeWalletGatewayApplication" type="Application" />
+      <toRun name="SafeWalletServerApplication" type="Application" />
+      <toRun name="SafewalletApplicationKeycloak" type="Application" />
+      <toRun name="UserDataServiceApplication" type="Application" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Application.SafewalletApplicationKeycloak" />
-      <item itemvalue="Application.SafeWalletGatewayApplication" />
+      <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.SafeWalletServerApplication" />
       <item itemvalue="Application.ConfigServerApplication" />
+      <item itemvalue="Application.SafewalletApplicationKeycloak" />
+      <item itemvalue="Application.SafeWalletGatewayApplication" />
       <item itemvalue="Application.UserDataServiceApplication" />
+      <item itemvalue="Compound.allProject" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SafeWalletGatewayApplication" />
-        <item itemvalue="Application.UserDataServiceApplication" />
-        <item itemvalue="Application.SafewalletApplicationKeycloak" />
-        <item itemvalue="Application.ConfigServerApplication" />
-        <item itemvalue="Application.SafeWalletServerApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

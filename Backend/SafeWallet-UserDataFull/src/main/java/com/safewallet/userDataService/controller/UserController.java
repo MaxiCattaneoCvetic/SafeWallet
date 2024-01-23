@@ -11,7 +11,6 @@ import javax.annotation.security.PermitAll;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5176")
 @RequestMapping("/user")
 public class UserController {
 
@@ -23,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping()
-    @PermitAll
+    @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
         // Crea el usuario
         try {
