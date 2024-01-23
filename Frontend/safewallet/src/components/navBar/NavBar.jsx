@@ -6,12 +6,16 @@ import { IoMdClose } from "react-icons/io";
 import Modal from "../modal/Modal.jsx";
 import Login from "../login/Login.jsx";
 import style from "./navbar.module.css";
+import { useNavigate } from "react-router-dom";
+import { URL_LOGIN } from "../../URLS/URL.js";
 
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
+  const navigate = useNavigate();
+  
+  
 
   const toggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
@@ -40,22 +44,22 @@ export default function NavBar() {
         {isOpenMenu && (
           <>
             <div className={style.dropdownMenu}>
-              <a href="">Inicio</a>
+              <a href="/">Inicio</a>
               <a href="">Nosotros</a>
               <a href="">Precio</a>
               <button
                 className="primarybtnMOBILE"
                 onClick={(e) => {
-                  setIsOpenMenu(false); 
-                  setIsOpen(true);
+                  e.preventDefault()
+                  navigate(URL_LOGIN)
                 }}
               >
-                Iniciar
+                Ingresar
               </button>
               <button
                 className="primarybtnMOBILE"
                 onClick={() => {
-                  //
+                  navigate("/register")
                 }}
               >
                 Registrarse
@@ -99,7 +103,8 @@ export default function NavBar() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setIsOpen(true);
+                    window.open(URL_LOGIN,'_blank')
+                    
                   }}
                   className="primarybtn btnefect"
                 >
@@ -108,7 +113,7 @@ export default function NavBar() {
                 <button
                   className="primarybtn btnefect"
                   onClick={() => {
-                    //
+                    navigate("/register")
                   }}
                 >
                   Registrarse
