@@ -25,12 +25,6 @@ public class KeycloakController {
     }
 
 
-    @GetMapping("/{username}")
-    public ResponseEntity<?> searchUserByUsername(@PathVariable String username){
-        return ResponseEntity.ok(keycloakService.searchUserByUserName(username));
-    }
-
-
     @PostMapping("/create")
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDTO) throws URISyntaxException {
@@ -45,18 +39,7 @@ public class KeycloakController {
     }
 
 
-    @PutMapping("/{userId}")
-    public ResponseEntity<?> updateUser(@PathVariable String userId, @RequestBody UserDto userDTO){
-        keycloakService.updateUser(userId, userDTO);
-        return ResponseEntity.ok("User updated successfully");
-    }
 
-
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<?> deleteUser(@PathVariable String userId){
-        keycloakService.deleteUser(userId);
-        return ResponseEntity.noContent().build();
-    }
 
 
 }

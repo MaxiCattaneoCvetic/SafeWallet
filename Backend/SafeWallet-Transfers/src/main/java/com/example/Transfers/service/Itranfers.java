@@ -9,9 +9,9 @@ public interface Itranfers {
     // definir metodos de transferencias
     Double getSaldo(Long id);
     void updateSaldo(Double monto,Long id);
-    void sendMoney(Double monto, String cbuFrom, String cbuTo);
+//    void sendMoney(Double monto, String cbuFrom, String cbuTo);
     Optional<UserDto> findUserById(Long id);
-    UserDto findByCbu(String cbu);
+//    UserDto findByCbu(String cbu);
 
     void createBalanceAccount(UserDto userDto);
 

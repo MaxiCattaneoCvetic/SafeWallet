@@ -1,5 +1,6 @@
 package com.safewallet.userDataService.controller;
 
+import com.safewallet.userDataService.feign.feignService.AccountServiceFeign;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    public UserController(UserService userService) {
+    @Autowired
+    private AccountServiceFeign accountServiceFeign;
+
+    public UserController(UserService userService, AccountServiceFeign accountServiceFeign) {
         this.userService = userService;
+        this.accountServiceFeign = accountServiceFeign;
     }
 
     @PostMapping()
@@ -27,6 +32,7 @@ public class UserController {
         // Crea el usuario
         try {
             userService.createUser(userDto);
+            accountServiceFeign.createUser(userDto);
             return ResponseEntity.status(HttpStatus.OK).body("usuario creado");
 
         }catch (Exception e ){

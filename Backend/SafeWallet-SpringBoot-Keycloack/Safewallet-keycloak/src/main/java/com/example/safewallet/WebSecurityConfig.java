@@ -34,14 +34,12 @@ public class WebSecurityConfig {
                         .requestMatchers(new AntPathRequestMatcher("/userKeycloak/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/userKeycloak/create")).permitAll()
                         .anyRequest().permitAll()
-
-
                 )
                 .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf().disable()  // Desactivar CSRF
-                .build();
+                .csrf().disable().csrf().disable().build(); // Desactivar CSRF
+
     }
 
 

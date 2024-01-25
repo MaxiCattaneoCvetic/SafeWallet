@@ -27,42 +27,41 @@ public class TransferController {
         try {
             transferService.createBalanceAccount(userDto);
             return ResponseEntity.status(HttpStatus.OK).body("Cuenta de usuario creada");
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo crear la cuenta del usuario: " + e.getMessage());
         }
-
 
 
     }
 
 
     @GetMapping("/balance")
-    public Double getBalance(@RequestParam Long id){
+    public Double getBalance(@RequestParam Long id) {
         Double balance = transferService.getSaldo(id);
-        if(balance > 0){
+        if (balance > 0) {
             return balance;
-        }else{
+        } else {
             return 0.0;
         }
     }
 
-    @PutMapping
-    public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
-        try {
-            String from = transferInformation.getCbuFrom();
-            String to = transferInformation.getCbuTo();
-            Double monto = transferInformation.getMonto();
-
-
-            transferService.sendMoney(monto, from, to);
-
-
-            return ResponseEntity.status(HttpStatus.OK).body("Transferencia realizada con exito");
-        } catch (Exception e) {
-            // Si hay un error, responde con un código de error apropiado y un mensaje opcional
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en la transferencia: " + e.getMessage());
-        }
-    }
+//    @PutMapping
+//    public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
+//        try {
+//            String from = transferInformation.getCbuFrom();
+//            String to = transferInformation.getCbuTo();
+//            Double monto = transferInformation.getMonto();
+//
+//
+//            transferService.sendMoney(monto, from, to);
+//
+//
+//            return ResponseEntity.status(HttpStatus.OK).body("Transferencia realizada con exito");
+//        } catch (Exception e) {
+//            // Si hay un error, responde con un código de error apropiado y un mensaje opcional
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en la transferencia: " + e.getMessage());
+//        }
+//    }
 }
 
 

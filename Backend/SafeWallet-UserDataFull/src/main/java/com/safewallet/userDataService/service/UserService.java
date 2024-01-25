@@ -7,6 +7,8 @@ import com.safewallet.userDataService.service.mongoDB.SequenceGeneratorService;
 import com.safewallet.userDataService.service.serviceInterface.IUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
@@ -65,6 +67,18 @@ public class UserService implements IUserService {
         userRepository.save(userDto);
 
 
+    }
+
+    @Override
+    public ResponseEntity<?> findByUsername(String username) {
+        List<UserDto> allUsers = userRepository.findAll();
+
+        for (UserDto userDto: allUsers) {
+            if(userDto.getEmail().equals(username)){
+                return  ResponseEntity.status(HttpStatus.OK).body(userDto);
+            }
+        }
+        return ResponseEntity.notFound().build();
     }
 
 
