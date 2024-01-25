@@ -10,15 +10,13 @@ public class UserDto {
     @Id
     private long id;
     private String email;
-    private String DNI;
-    @Field("CBU")
-    private String CBU;
+
+    private String cbu;
     private Double balance;
 
-    public UserDto(String email, String DNI, String CBU, Double balance) {
+    public UserDto(String email, String cbu, Double balance) {
         this.email = email;
-        this.DNI = DNI;
-        this.CBU = CBU;
+        this.cbu = cbu;
         this.balance = balance;
     }
 
@@ -41,20 +39,12 @@ public class UserDto {
         this.email = email;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getCbu() {
+        return cbu;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
-    }
-
-    public String getCBU() {
-        return CBU;
-    }
-
-    public void setCBU(String CBU) {
-        this.CBU = CBU;
+    public void setCbu(String cbu) {
+        this.cbu = cbu;
     }
 
     public Double getBalance() {
@@ -63,5 +53,15 @@ public class UserDto {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", cbu='" + cbu + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }
