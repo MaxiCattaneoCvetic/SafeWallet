@@ -9,13 +9,10 @@ import style from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
 import { URL_LOGIN } from "../../URLS/URL.js";
 
-
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const navigate = useNavigate();
-  
-  
 
   const toggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
@@ -26,8 +23,9 @@ export default function NavBar() {
       {/* MENU HAMBURGUESA */}
       <header className={style.menuBurger}>
         <div className={style.logoContainerMobile}>
-          <GrGoogleWallet />
-          <p>SafeWallet</p>
+          <a href="/" className="styleOff">
+            <GrGoogleWallet /> SafeWallet
+          </a>
           {!isOpenMenu ? (
             <div className={style.menuIcon} onClick={toggleMenu}>
               <IoMenuSharp />
@@ -50,8 +48,8 @@ export default function NavBar() {
               <button
                 className="primarybtnMOBILE"
                 onClick={(e) => {
-                  e.preventDefault()
-                  navigate(URL_LOGIN)
+                  e.preventDefault();
+                  navigate(URL_LOGIN);
                 }}
               >
                 Ingresar
@@ -59,7 +57,7 @@ export default function NavBar() {
               <button
                 className="primarybtnMOBILE"
                 onClick={() => {
-                  navigate("/register")
+                  navigate("/register");
                 }}
               >
                 Registrarse
@@ -83,45 +81,45 @@ export default function NavBar() {
       ) : (
         ""
       )}
-      
-        <div>
-          {navMenuMobile}
-          <header className={style.headDesktop}>
-            <nav className={style.navbar}>
-              <div className={style.logoContainer}>
-                <GrGoogleWallet />
-                <p>SafeWallet</p>
-              </div>
 
-              <div className={style.navLinks}>
-                <a href="">Inicio</a>
-                <a href="">Nosotros</a>
-                <a href="">Precio</a>
-              </div>
+      <div>
+        {navMenuMobile}
+        <header className={style.headDesktop}>
+          <nav className={style.navbar}>
+            <div className={style.logoContainer}>
+              <a href="/" className="styleOff">
+                <GrGoogleWallet /> SafeWallet
+              </a>
+            </div>
 
-              <div className={style.userPanelNav}>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(URL_LOGIN,'_blank')
-                    
-                  }}
-                  className="primarybtn btnefect"
-                >
-                  Ingresar
-                </button>
-                <button
-                  className="primarybtn btnefect"
-                  onClick={() => {
-                    navigate("/register")
-                  }}
-                >
-                  Registrarse
-                </button>
-              </div>
-            </nav>
-          </header>
-        </div>
+            <div className={style.navLinks}>
+              <a href="/">Inicio</a>
+              <a href="/">Nosotros</a>
+              <a href="/">Precio</a>
+            </div>
+
+            <div className={style.userPanelNav}>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(URL_LOGIN, "_blank");
+                }}
+                className="primarybtn btnefect"
+              >
+                Ingresar
+              </button>
+              <button
+                className="primarybtn btnefect"
+                onClick={() => {
+                  navigate("/register");
+                }}
+              >
+                Registrarse
+              </button>
+            </div>
+          </nav>
+        </header>
+      </div>
     </>
   );
 }

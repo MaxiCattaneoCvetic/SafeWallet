@@ -1,3 +1,10 @@
+.mainPage{
+		background-image: url(/backgroundImage.png);
+		background-color: var(--backgroundColor);
+		background-repeat: no-repeat;
+		background-size: cover;
+}
+
 .homeMainContainer {
 	display: flex;
 	color: white;

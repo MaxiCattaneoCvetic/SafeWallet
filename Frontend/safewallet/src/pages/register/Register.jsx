@@ -327,6 +327,7 @@ export default function Register() {
 
   return (
     <>
+    <div className={style.mainPage}>
       <Modal
         title="Registro"
         children={modalChildrenRegister}
@@ -334,6 +335,7 @@ export default function Register() {
           navigate("/");
         }}
       ></Modal>
+      </div>
     </>
   );
 }

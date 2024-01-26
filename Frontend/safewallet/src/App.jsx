@@ -1,4 +1,5 @@
 import RootLayout from "./RootLayout.jsx"
+import Account from "./pages/account/Account.jsx";
 import Home from "./pages/home/Home.jsx"
 import Register from "./pages/register/Register.jsx"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -15,9 +16,8 @@ const router = createBrowserRouter([
         element: <Home/>,
       },
       {
-        // path: 'productDetails/:productId',
-        // element: <ProductDetails />,
-        // loader: productLoader,
+        path: 'account',
+        element: <Account />,
       },
     ],
   },
@@ -29,6 +29,8 @@ const router = createBrowserRouter([
   path: 'register',
   element: <Register />,
 },
+
+
 ]);
 
 function App() {
@@ -37,5 +39,6 @@ function App() {
     <RouterProvider router={router}/>
   )
 }
+
 
 export default App

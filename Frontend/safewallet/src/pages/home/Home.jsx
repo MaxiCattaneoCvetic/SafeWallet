@@ -5,6 +5,7 @@ import "../../globals.css"
 export default function HomePage() {
   return (
     <>
+    <div className={style.mainPage}>
     <NavBar></NavBar>
       <div className={style.homeMainContainer}>
         <div className={style.textContainerHome}>
@@ -76,6 +77,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }

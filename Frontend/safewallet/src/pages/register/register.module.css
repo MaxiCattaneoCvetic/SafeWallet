@@ -1,10 +1,16 @@
+html{
+	background-image: url(/backgroundImage.png);
+	background-color: var(--backgroundColor);
+	background-repeat: no-repeat;
+	background-size: cover;
+} 
+
+
 .containerForm {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-
-
 }
 
 .form {
