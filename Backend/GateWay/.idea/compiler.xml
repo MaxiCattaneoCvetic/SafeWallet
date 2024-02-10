@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SafeWallet-Server" />
+        <module name="SafeWallet-Gateway" />
+        <module name="SafeWallet-keycloak" />
         <module name="SafeWallet-ConfigServer" />
         <module name="SafeWallet-Transfers" />
-        <module name="SafeWallet-Gateway" />
         <module name="SafeWallet-UserDataFull" />
-        <module name="SafeWallet-keycloak" />
+        <module name="SafeWallet-Login-Redirect" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +29,7 @@
       <module name="GateWay" options="-parameters" />
       <module name="SafeWallet-ConfigServer" options="-parameters" />
       <module name="SafeWallet-Gateway" options="-parameters" />
+      <module name="SafeWallet-Login-Redirect" options="-parameters" />
       <module name="SafeWallet-Server" options="-parameters" />
       <module name="SafeWallet-Transfers" options="-parameters" />
       <module name="SafeWallet-UserDataFull" options="-parameters" />

@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" />
         <option value="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/pom.xml" />
         <option value="$PROJECT_DIR$/../SafeWallet-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" />
       </list>
     </option>
   </component>
