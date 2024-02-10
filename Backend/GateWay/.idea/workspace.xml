@@ -5,29 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/SafeWalletLoginRedirectApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/test/java/com/example/SafeWalletLoginRedirect/SafeWalletLoginRedirectApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverterProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

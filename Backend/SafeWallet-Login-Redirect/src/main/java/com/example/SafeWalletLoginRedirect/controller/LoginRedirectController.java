@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/myAccount/login")
 public class LoginRedirectController {
 
 
@@ -21,14 +21,7 @@ public class LoginRedirectController {
 
     @GetMapping
     public void getMyAccount(HttpServletResponse response) throws IOException {
-        try {
-            response.sendRedirect("http://google.com");
-        }catch (IOException e){
-            e.printStackTrace();
-            response.sendError(505,"Page not found");
-        }
-
-
+        response.sendRedirect("http://localhost:5173/account");
     }
 
 }

@@ -7,7 +7,7 @@ import Modal from "../modal/Modal.jsx";
 import Login from "../login/Login.jsx";
 import style from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
-import { URL_LOGIN } from "../../URLS/URL.js";
+import { APPLICATION_LOGIN } from "../../URLS/URL.js";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function NavBar() {
                 className="primarybtnMOBILE"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(URL_LOGIN);
+                  navigate(APPLICATION_LOGIN, { replace: true });
                 }}
               >
                 Ingresar
@@ -102,7 +102,7 @@ export default function NavBar() {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  window.open(URL_LOGIN, "_blank");
+                  location.replace(APPLICATION_LOGIN)
                 }}
                 className="primarybtn btnefect"
               >
