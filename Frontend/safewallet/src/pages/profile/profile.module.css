@@ -1,0 +1,64 @@
+.titleAvatar {
+	font-size: 3rem;
+	text-decoration: underline;
+	justify-content: center;
+}
+
+.avatarConteiner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.avatarConteiner img {
+	width: 20rem;
+	border: 2px solid black;
+	border-radius: 3rem;
+	background-color: black;
+}
+
+
+label {
+	display: flex;
+	flex-direction: column;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.containerInfo {
+	margin: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.containerInfoV {
+	display: flex;
+	gap: 2rem;
+}
+
+.inputInformation {
+	width:15rem;
+	height: 5rem;
+	background: none;
+	border: 1px solid var(--borderPrimaryBTN);
+	border-radius: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+.avatarImg {
+	padding: 5px;
+	background: none;
+	border: 2px solid var(--borderPrimaryBTN);
+	color: var(--borderPrimaryBTN);
+	cursor: pointer;
+	border-radius: 0.5rem;
+}

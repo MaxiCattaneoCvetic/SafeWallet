@@ -1,6 +1,7 @@
 import RootLayout from "./RootLayout.jsx"
 import Account from "./pages/account/Account.jsx";
 import Home from "./pages/home/Home.jsx"
+import Profile from "./pages/profile/profile.jsx";
 import Register from "./pages/register/Register.jsx"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -29,7 +30,10 @@ const router = createBrowserRouter([
   path: 'register',
   element: <Register />,
 },
-
+{
+  path: 'profile',
+  element: <Profile />,
+},
 
 ]);
 
