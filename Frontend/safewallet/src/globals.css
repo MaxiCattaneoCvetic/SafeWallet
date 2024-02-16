@@ -136,9 +136,11 @@ body {
 }
 
 .main {
-
   padding: 0rem 10rem 0rem 10rem;
+}
 
+.greenHoover:hover{
+  text-decoration: underline var(--borderPrimaryBTN);
 }
 
 @media (max-width: 593px) {

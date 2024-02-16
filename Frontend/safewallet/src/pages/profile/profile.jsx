@@ -16,7 +16,7 @@ function Profile() {
 					<button className={style.avatarImg} onClick={(e)=>{
 						console.log(contador);
 						e.preventDefault()
-						if(contador >= 5){
+						if(contador >= 6){
 							setContador(1)
 						}else{
 							setContador(contador + 1)

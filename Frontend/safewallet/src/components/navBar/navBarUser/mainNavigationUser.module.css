@@ -1,0 +1,36 @@
+.containerSession{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.linkDropMenu a {
+	color: var(--footer-background);
+	font-weight: 500;
+	text-decoration: none;
+}
+
+
+.avatarBackground{
+	background-color: var(--borderPrimaryBTN);
+	padding: 0.3rem;
+	border: none;
+	border-radius: 10%;
+	cursor: pointer;
+}
+
+.linkDropMenu {
+	display: flex;
+	position: absolute;
+	top: 100%;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	background-color: #333;  /* Cambia el color de fondo */
+	border-radius: 5px;
+	width: 250px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra para el efecto de menú */
+	padding: 1rem; /* Añade espacio interno */
+	z-index: 2; /* Asegura que el menú esté por encima de otros elementos */
+  }

@@ -38,6 +38,7 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
     //Toma la informacion del JWT emitido por el IAM y saca del JWT cierta info que nos sirve como spring dentro de nuestra app
     // en el contexto la info necesaria para tener acceso dentro de la app
     public AbstractAuthenticationToken convert(Jwt jwt) {
+        System.out.println("JWT: " + jwt.getTokenValue());
         Collection<GrantedAuthority> authorities = Stream.concat(
                 jwtGrantedAuthoritiesConverter.convert(jwt).stream(),
                 extractResourceRoles(jwt).stream()).collect(Collectors.toSet());

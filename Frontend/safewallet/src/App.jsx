@@ -1,48 +1,47 @@
-import RootLayout from "./RootLayout.jsx"
+import RootLayout from "./RootLayout.jsx";
 import Account from "./pages/account/Account.jsx";
-import Home from "./pages/home/Home.jsx"
+import Home from "./pages/home/Home.jsx";
 import Profile from "./pages/profile/profile.jsx";
-import Register from "./pages/register/Register.jsx"
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Register from "./pages/register/Register.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LoginKeyloack from "./security/LoginKeyloack.jsx";
 
 const router = createBrowserRouter([
-  
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     //errorElement: <Error />,
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <Home />,
       },
       {
-        path: 'account',
-        element: <Account />,
+        path: "account",
+        element: <Account></Account>,
       },
     ],
   },
-  // {
-  //   path: 'login',
-  //   element: <Login />,
-  // },
-{
-  path: 'register',
-  element: <Register />,
-},
-{
-  path: 'profile',
-  element: <Profile />,
-},
-
+  {
+    path: "login",
+    element: <LoginKeyloack />,
+  },
+  {
+    path: "register",
+    element: <Register />,
+  },
+  {
+    path: "profile",
+    element: <Profile />,
+  },
 ]);
 
 function App() {
-
   return (
-    <RouterProvider router={router}/>
-  )
+    <>
+      <RouterProvider router={router} />;
+    </>
+  );
 }
 
-
-export default App
+export default App;

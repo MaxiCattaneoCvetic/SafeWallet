@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="" />
+    <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverterProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/functions/getToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/functions/getToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/config/keycloak-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/context/KeycloakContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/utils/KeyloackLogin.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,21 +67,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-18",
-    "last_opened_file_path": "C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Login-Redirect/pom.xml",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/POSIBLE CORS/authorization-server/backend-resources/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway\jwt" />
@@ -184,6 +210,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Safewallet-run" type="CompoundRunConfigurationType">
+      <toRun name="ConfigServerApplication" type="Application" />
+      <toRun name="SafeWalletGatewayApplication" type="Application" />
+      <toRun name="SafeWalletLoginRedirectApplication" type="Application" />
+      <toRun name="SafeWalletServerApplication" type="Application" />
+      <toRun name="SafewalletApplicationKeycloak" type="Application" />
+      <toRun name="TransfersApplication" type="Application" />
+      <toRun name="UserDataServiceApplication" type="Application" />
+      <method v="2" />
+    </configuration>
     <configuration name="allProject" type="CompoundRunConfigurationType">
       <toRun name="ConfigServerApplication" type="Application" />
       <toRun name="SafeWalletGatewayApplication" type="Application" />
@@ -204,6 +240,7 @@
       <item itemvalue="Application.TransfersApplication" />
       <item itemvalue="Application.SafeWalletLoginRedirectApplication" />
       <item itemvalue="Application.TGest" />
+      <item itemvalue="Compound.Safewallet-run" />
       <item itemvalue="Compound.allProject" />
     </list>
     <recent_temporary>

@@ -23,6 +23,10 @@ public class KeycloakController {
     public ResponseEntity<?> findAllUsers(){
         return ResponseEntity.ok(keycloakService.findAllUsers());
     }
+    @GetMapping("/test")
+    public ResponseEntity<?> testKeyloack(){
+        return ResponseEntity.ok().body("Hello Keycloak");
+    }
 
 
     @PostMapping("/create")
@@ -34,8 +38,6 @@ public class KeycloakController {
         }catch (Error e){
             return ResponseEntity.badRequest().body("Usuario existente");
         }
-
-
     }
 
 
