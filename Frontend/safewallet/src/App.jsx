@@ -1,10 +1,10 @@
 import RootLayout from "./RootLayout.jsx";
-import Account from "./pages/account/Account.jsx";
+import LoginAccount from "./pages/account/LoginAccount.jsx";
 import Home from "./pages/home/Home.jsx";
 import Profile from "./pages/profile/profile.jsx";
 import Register from "./pages/register/Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginKeyloack from "./security/LoginKeyloack.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -18,13 +18,9 @@ const router = createBrowserRouter([
       },
       {
         path: "account",
-        element: <Account></Account>,
+        element: <LoginAccount></LoginAccount>,
       },
     ],
-  },
-  {
-    path: "login",
-    element: <LoginKeyloack />,
   },
   {
     path: "register",

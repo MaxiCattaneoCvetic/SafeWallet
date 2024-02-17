@@ -5,31 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java/com/example/SafeWalletLoginRedirect/controller/LoginRedirectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/security/JwtAuthConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/jwt/JwtAuthConverterProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/functions/getToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/functions/getToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/config/keycloak-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/context/KeycloakContext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/keycloak/utils/KeyloackLogin.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/context/AuthProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/context/AuthProvider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/LoginKeyloack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/LoginKeyloack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/keyloack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/keyloack.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +82,7 @@
       <recent name="com.example.safewallet" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.allProject">
+  <component name="RunManager" selected="Application.SafeWalletGatewayApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
