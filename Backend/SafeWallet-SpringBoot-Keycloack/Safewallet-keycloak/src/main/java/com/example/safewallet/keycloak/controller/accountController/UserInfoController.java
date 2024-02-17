@@ -16,6 +16,11 @@ public class UserInfoController {
     public ResponseEntity<?> searchUserByUsername(@PathVariable String username){
         return ResponseEntity.ok(keycloakService.searchUserByUserName(username));
     }
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllUsers(){
+        return ResponseEntity.ok(keycloakService.findAllUsers());
+    }
+
 
     @PutMapping("/{userId}")
     public ResponseEntity<?> updateUser(@PathVariable String userId, @RequestBody UserDto userDTO){

@@ -11,7 +11,7 @@ public interface IUserService {
     List<UserDto> findAll();
     void createUser(UserDto userDto) throws Exception;
 
-    ResponseEntity<?> findByUsername(String username);
+    UserDto findByUsername(String username);
 
 }
 

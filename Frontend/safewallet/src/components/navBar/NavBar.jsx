@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { GrGoogleWallet } from "react-icons/gr";
 import { IoMenuSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
@@ -8,11 +8,23 @@ import { useNavigate } from "react-router-dom";
 // import { APPLICATION_LOGIN } from "../../URLS/URL.js";
 import NoAuth from "./Noauth.jsx";
 import DropdownMenu from "../navBar/navBarUser/DropdownMenu.jsx";
+// import useAuth from "../../security/UseAuth.jsx";
 
-export default function NavBar() {
+
+
+export default function NavBar(props) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(false);
+  const [user,setUser] = useState(null) 
+  const value = true
+
+
+  useEffect(()=>{
+    
+    console.log(props.user);
+  },[])
+
+
 
 
   const toggleMenu = () => {
@@ -71,15 +83,13 @@ export default function NavBar() {
               <a href="/">Inicio</a>
               <a href="/">Nosotros</a>
               <a href="/">Precio</a>
-
             </div>
 
-            <div className={style.userPanelNav}>
-              {/* Si Auth es true quiere decir que  hay un user en sesion, por lo tanto mostramos el dropdown
-              de lo contrario mostramos el login o register */}
 
-              {isAuth ? (
-                <DropdownMenu />
+
+            <div className={style.userPanelNav}>
+              {value ? (
+                <DropdownMenu  />
               ) : (
                 <>
                   {" "}

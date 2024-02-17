@@ -48,11 +48,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(listUser);
 
     }
-    @GetMapping("/hola")
-    public ResponseEntity<?>  testGet() {
-        return ResponseEntity.ok("hola");
 
-    }
 }
 
 

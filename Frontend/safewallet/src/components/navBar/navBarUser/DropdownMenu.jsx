@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./mainNavigationUser.module.css";
 
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+
+
   return (
     <>
       <div className={style.containerSession}>

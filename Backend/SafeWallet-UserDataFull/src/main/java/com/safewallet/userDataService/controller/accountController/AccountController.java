@@ -20,11 +20,10 @@ public class AccountController {
     public ResponseEntity<?> getUser(@PathVariable String username) {
 
         try {
-            return userService.findByUsername(username);
+            System.out.println("entre al try");
+            return ResponseEntity.status(HttpStatus.OK).body(userService.findByUsername(username));
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error interno del servidor.");
         }
     }
 }

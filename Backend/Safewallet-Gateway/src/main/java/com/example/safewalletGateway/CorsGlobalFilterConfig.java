@@ -9,6 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.reactive.CorsUtils;
@@ -27,7 +28,8 @@ public class CorsGlobalFilterConfig {
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
-    public WebFilter corsFilter() {
+    public WebFilter corsFilter(ServerHttpSecurity http) {
+
         return (ServerWebExchange exchange, WebFilterChain chain) -> {
             ServerHttpRequest request = exchange.getRequest();
             ServerHttpResponse response = exchange.getResponse();
@@ -37,23 +39,22 @@ public class CorsGlobalFilterConfig {
                 HttpHeaders requestHeaders = request.getHeaders();
                 String origin = request.getHeaders().getOrigin();
 
-
-
-              try{
-                    List<String> token = headers.get(HttpHeaders.AUTHORIZATION);
-                    for (String mytoken: token) {
-                        headers.set(HttpHeaders.AUTHORIZATION,mytoken);
-                        System.out.println("TOKEN RECIBIDO " + token);
-                    }
-                }catch (Exception e){
+                // Verifica si hay un encabezado de autorización en la solicitud
+                List<String> authorizationHeaders = request.getHeaders().get(HttpHeaders.AUTHORIZATION);
+                if (authorizationHeaders != null && !authorizationHeaders.isEmpty()) {
+                    // Obtén el token de autorización
+                    String token = authorizationHeaders.get(0);
+                    // Imprime el token
+                    System.out.println("TOKEN RECIBIDO: " + token);
+                    headers.set(HttpHeaders.AUTHORIZATION, token);
+                    // Puedes hacer lo que necesites con el token aquí
+                } else {
+                    // Si no hay un encabezado de autorización en la solicitud
                     System.out.println("No hay token en la solicitud");
                 }
 
                 // Elimina cualquier valor existente
                 headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
-
-
-
                 // Establece el nuevo valor
                 do {
                     System.out.println("seteando el header");
@@ -72,7 +73,6 @@ public class CorsGlobalFilterConfig {
                     return Mono.empty();
                 }
             }
-
             return chain.filter(exchange);
         };
     }
@@ -83,18 +83,10 @@ public class CorsGlobalFilterConfig {
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/userKeycloak/**", "/userKeycloak/create").permitAll()
                         .pathMatchers("/user/**").permitAll()
-                        .anyExchange().authenticated()
-                        .and()
-                        .oauth2Login()// Requiere autenticación para todas las demás rutas
+                        .anyExchange().permitAll()
                 );
 
         return http.build();
     }
 
 }
-
-
-
-
-
-

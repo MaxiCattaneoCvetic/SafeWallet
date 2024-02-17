@@ -24,7 +24,6 @@ import static com.safewallet.userDataService.cbuGenerator.Cbu.generateCbu;
 public class UserService implements IUserService {
 
     @Autowired
-
     private  IUserRepository userRepository;
 
     Logger logger = Logger.getLogger(UserService.class);
@@ -70,15 +69,16 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public ResponseEntity<?> findByUsername(String username) {
+    public UserDto findByUsername(String username) {
         List<UserDto> allUsers = userRepository.findAll();
+        UserDto userFound = null;
 
         for (UserDto userDto: allUsers) {
             if(userDto.getEmail().equals(username)){
-                return  ResponseEntity.status(HttpStatus.OK).body(userDto);
+                return  userDto;
             }
         }
-        return ResponseEntity.notFound().build();
+        return userFound;
     }
 
 

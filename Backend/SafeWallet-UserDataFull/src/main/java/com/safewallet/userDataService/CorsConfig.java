@@ -1,5 +1,6 @@
 package com.safewallet.userDataService;
 
+import com.safewallet.userDataService.tokenSecurity.JwtAuthConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -17,7 +18,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableMethodSecurity(securedEnabled = true, prePostEnabled = true)
 @EnableWebSecurity
 public class CorsConfig implements WebMvcConfigurer {
+    private final JwtAuthConverter jwtAuthConverter;
 
+    public CorsConfig(JwtAuthConverter jwtAuthConverter) {
+        this.jwtAuthConverter = jwtAuthConverter;
+    }
 
 
     @Bean
@@ -25,11 +30,11 @@ public class CorsConfig implements WebMvcConfigurer {
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers(new AntPathRequestMatcher("/user/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/accountFull/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/test/**")).permitAll()
+                        .anyRequest().authenticated()
                 )
+                .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf().disable()  // Desactivar CSRF
                 .build();
     }

@@ -36,7 +36,9 @@ public class AccountServiceFeign implements IUserService {
     }
 
     @Override
-    public ResponseEntity<?> findByUsername(String username) {
+    public UserDto findByUsername(String username) {
         return null;
     }
+
+
 }
