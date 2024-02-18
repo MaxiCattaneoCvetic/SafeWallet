@@ -1,47 +1,16 @@
-// import React, { createContext, useState, useContext, useEffect } from 'react';
-// import keylockInit from  "../security/keyloack.js"
+// UserContext.js
+import React, { createContext, useState } from 'react';
 
-// // Creamos un contexto para el estado de autenticación
-// const AuthContext = createContext();
+const UserContext = createContext();
 
-// // Hook personalizado para acceder al contexto de autenticación
-// export function useAuth() {
-//   return useContext(AuthContext);
-// }
-
-// // Proveedor de contexto para envolver toda la aplicación
-// export function AuthProvider({ children }) {
-//   const [user, setUser] = useState("");
-//   const [authenticated, setAuthenticated] = useState(false);
-//   const [username, setUsername] = useState('');
-
-
-//   async function  login()  {
-//     keylockInit();
-//   }
-
-//   const logout = () => {
-//     // Aquí puedes realizar la lógica de cierre de sesión y eliminar el usuario
-//     setUser(null);
-//   };
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({ name: 'John', email: 'john@example.com' });
   
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
-
-  
-
-
-//   return (
-//     <AuthContext.Provider value={{ user, login, logout }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-
-
-
-
-
-
-
-
-
-// }
+export default UserContext;

@@ -24,6 +24,8 @@ const useAuth = () => {
       .then((res) => {
         setLogin(res);
         setToken(client.token);
+        sessionStorage.setItem("token", client.token);
+        sessionStorage.setItem("isLogin", res);
       });
   }, []);
 

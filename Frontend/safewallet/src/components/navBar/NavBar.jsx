@@ -12,16 +12,20 @@ import DropdownMenu from "../navBar/navBarUser/DropdownMenu.jsx";
 
 
 
-export default function NavBar(props) {
+export default function NavBar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const navigate = useNavigate();
-  const [user,setUser] = useState(null) 
-  const value = true
+  const [isLogin,setIsLogin] = useState(false)
 
 
   useEffect(()=>{
-    
-    console.log(props.user);
+
+    if(sessionStorage.getItem("isLogin") == "true" && sessionStorage.getItem("token") != null && sessionStorage.getItem("user") != null){
+      setIsLogin(true)
+    }else{
+      setIsLogin(false)
+      
+    }
   },[])
 
 
@@ -58,7 +62,7 @@ export default function NavBar(props) {
               <a href="/">Inicio</a>
               <a href="">Nosotros</a>
               <a href="">Precio</a>
-              {user ? <DropdownMenu /> : <NoAuth />}
+              {isLogin ? <DropdownMenu iniciales={initials}  /> : <NoAuth />}
             </div>
           </>
         )}
@@ -88,7 +92,7 @@ export default function NavBar(props) {
 
 
             <div className={style.userPanelNav}>
-              {value ? (
+              {isLogin ? (
                 <DropdownMenu  />
               ) : (
                 <>

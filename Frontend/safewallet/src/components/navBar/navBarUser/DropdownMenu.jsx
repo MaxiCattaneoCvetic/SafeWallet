@@ -5,7 +5,20 @@ import style from "./mainNavigationUser.module.css";
 
 const DropdownMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [initials,setInitials] = useState("")
 
+
+  function getInitials(name,lastname) {
+    let firstLetter = name.charAt(0).toUpperCase();
+    let secondLetter = lastname.charAt(0).toUpperCase();
+    let total = firstLetter+secondLetter
+    setInitials(total)
+  }
+
+  useEffect(()=>{
+    const data = JSON.parse(sessionStorage.getItem("user"))
+    getInitials(data.name,data.lastName)
+  },[])
 
   return (
     <>
@@ -17,7 +30,7 @@ const DropdownMenu = (props) => {
           }}
         >
           <p className={style.avatarBackground}>
-            MC
+            {initials}
           </p>
         </div>
         {isOpen && (

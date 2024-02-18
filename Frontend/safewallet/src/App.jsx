@@ -1,10 +1,10 @@
 import RootLayout from "./RootLayout.jsx";
+import { UserProvider } from "./context/AuthProvider.jsx";
 import LoginAccount from "./pages/account/LoginAccount.jsx";
 import Home from "./pages/home/Home.jsx";
 import Profile from "./pages/profile/profile.jsx";
 import Register from "./pages/register/Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />;
+      <UserProvider>
+        <RouterProvider router={router} />;
+      </UserProvider>
     </>
   );
 }

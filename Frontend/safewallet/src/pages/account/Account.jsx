@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import AccountBalance from "../../components/accountBalance/AccountBalance.jsx";
 import CardAccount from "../../components/cardAccount/CardAccount.jsx";
 import style from "./account.module.css";
@@ -6,10 +6,14 @@ import NavBar from "../../components/navBar/NavBar.jsx";
 import decoderToken from "../../functions/decodedToken.js";
 import {URL_GET_USER_ACCOUNT} from "../../URLS/URL.js"
 import axios from "axios";
-const Account = ({ token }) => {
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
+
+const Account = () => {
   const isRun = useRef(false);
   const [data, setData] = useState(null);
-
+  const token = sessionStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isRun.current) return;
@@ -24,12 +28,15 @@ const Account = ({ token }) => {
         },
       };
       axios
-        .get(`${URL_GET_USER_ACCOUNT}/${data.email}`,config)
+        .get(`${URL_GET_USER_ACCOUNT}${data.email}`,config)
         .then((res) => {
           console.log(res);
           setData(res.data)
+          sessionStorage.setItem("user", JSON.stringify(res.data));
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          swal("¡Ops, algo anda mal!", `${err}`, "error").then(()=>navigate("/"))
+        });
     }
   }, []);
 
@@ -38,9 +45,9 @@ const Account = ({ token }) => {
 
   return (
     <>
-      {token ? (
+      {token && data !== null ? (
         <>
-          <NavBar user={data}/>
+          <NavBar />
           <div className={style.backgroundAccount}>
             <div className={style.containerHello}>
               <h1 className={style.helloUser}>Hola {data === null ? "" : data.name}!!</h1>
