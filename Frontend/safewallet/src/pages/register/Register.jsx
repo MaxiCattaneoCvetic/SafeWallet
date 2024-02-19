@@ -10,10 +10,11 @@ import { useNavigate } from "react-router-dom";
 export default function Register() {
   const navigate = useNavigate();
   const [contador, setContador] = useState(0);
-  const [error, setError] = useState({
+  const [error2, setError2] = useState({
     errorEmail: false,
     errorPassword: false,
-  });
+  })
+  const [error,setError] = useState("");
   const [errorUserExist, setErrorUserExist] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -66,7 +67,6 @@ export default function Register() {
       username: data.email,
       password: data.password,
       role: ["user"],
-
       name: data.name,
       lastName: data.lastname,
       email: data.email,
@@ -94,11 +94,14 @@ export default function Register() {
 
 try{
   const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-  setErrorUserExist(false);
+  console.log(response);
+
+    
   if (response.data === "usuario creado") {
     successRegister();
-  } else if (response.data === "El DNI o el correo ya fue registrado") {
+  } else{
     setErrorUserExist(true);
+    setError(response.response.data);
   }
   }catch (error) {
     console.log("Entre al catch");
@@ -121,14 +124,14 @@ try{
     const currentStepData = data[Object.keys(data)[contador]];
 
     if (contador === 3 && !data.email.includes("@")) {
-      setError((prevError) => ({
+      setError2((prevError) => ({
         ...prevError,
         errorEmail: true,
         errorPassword: false,
       }));
       return;
     } else {
-      setError((prevError) => ({
+      setError2((prevError) => ({
         ...prevError,
         errorEmail: false,
         errorPassword: false,
@@ -137,14 +140,14 @@ try{
 
     if (contador === 5) {
       if (data.password != password2) {
-        setError((prevError) => ({
+        setError2((prevError) => ({
           ...prevError,
           errorEmail: false,
           errorPassword: true,
         }));
         return;
       } else if (data.password === password2) {
-        setError((prevError) => ({
+        setError2((prevError) => ({
           ...prevError,
           errorEmail: false,
           errorPassword: false,
@@ -228,9 +231,9 @@ try{
               value={data.email}
               ref={inputRef}
             />
-            {error.errorEmail ? (
+            {error2.errorEmail ? (
               <p className="textError" id="errorRegister">
-                Por favor ingrese un email valido
+                El email no es valido
               </p>
             ) : (
               ""
@@ -287,7 +290,7 @@ try{
                 value={password2}
               />
             </div>
-            {error.errorPassword ? (
+            {error2.errorPassword ? (
               <p className="textError" id="errorRegister">
                 Las contraseñas no coinciden
               </p>
@@ -316,7 +319,7 @@ try{
               </button>
               {errorUserExist ? (
                 <p className="textError">
-                  El DNI o el correo ya fue registrado
+                  {error}
                 </p>
               ) : (
                 ""

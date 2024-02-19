@@ -25,7 +25,7 @@ async function fetchuserFull(datos, url) {
     const response =  await axios.post(url,datos);
     return response;
   }catch(error){
-    console.log(error);
+    return error
   }
 
 }

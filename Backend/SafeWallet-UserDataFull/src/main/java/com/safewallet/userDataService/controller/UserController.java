@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.PermitAll;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -31,6 +32,11 @@ public class UserController {
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
 
+        String email = userDto.getEmail();
+        UserDto user = userService.findByUsername(email);
+        if(user != null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El DNI o el correo ya fue registrado");
+        }
 
         try {
             userService.createUser(userDto);
@@ -38,7 +44,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body("usuario creado");
 
         }catch (Exception e ){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El DNI o el correo ya fue registrado");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
 
 

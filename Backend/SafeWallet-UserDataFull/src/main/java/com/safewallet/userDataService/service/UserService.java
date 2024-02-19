@@ -44,7 +44,7 @@ public class UserService implements IUserService {
         logger.info("creando usuario");
         String errorMessage = "El DNI o el correo ya fue registrado";
         String errorMessage2 = "Error al crear el usuario, por favor contacte con un administrador.";
-        // UserDto newUser = new UserDto(userDto.getName(),userDto.getLastName(),userDto.getEmail(),userDto.getPhone(),userDto.getDni());
+        UserDto newUser = new UserDto(userDto.getName(),userDto.getLastName(),userDto.getEmail(),userDto.getPhone(),userDto.getDni());
 
         //seteamos un id incremental
         userDto.setId(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME));
@@ -67,7 +67,7 @@ public class UserService implements IUserService {
         try{
             userRepository.save(userDto);
         }catch (Exception e){
-            throw new MessageException(errorMessage2);
+            throw new MessageException(errorMessage);
         }
 
 
