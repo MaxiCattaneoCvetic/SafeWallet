@@ -1,6 +1,6 @@
 package com.safewallet.userDataService.controller;
 
-import com.safewallet.userDataService.feign.feignService.AccountServiceFeign;
+import com.safewallet.userDataService.feign.feignService.FeignService;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.PermitAll;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/user")
@@ -19,20 +20,21 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    private AccountServiceFeign accountServiceFeign;
+    private FeignService feignService;
 
-    public UserController(UserService userService, AccountServiceFeign accountServiceFeign) {
+    public UserController(UserService userService, FeignService feignService) {
         this.userService = userService;
-        this.accountServiceFeign = accountServiceFeign;
+        this.feignService = feignService;
     }
 
     @PostMapping()
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
-        // Crea el usuario
+
+
         try {
             userService.createUser(userDto);
-            accountServiceFeign.createUser(userDto);
+            feignService.createUser(userDto);
             return ResponseEntity.status(HttpStatus.OK).body("usuario creado");
 
         }catch (Exception e ){

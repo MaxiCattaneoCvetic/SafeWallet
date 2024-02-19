@@ -43,7 +43,8 @@ public class UserService implements IUserService {
     public void createUser(UserDto userDto) throws MessageException {
         logger.info("creando usuario");
         String errorMessage = "El DNI o el correo ya fue registrado";
-        UserDto newUser = new UserDto(userDto.getName(),userDto.getLastName(),userDto.getEmail(),userDto.getPhone(),userDto.getDni());
+        String errorMessage2 = "Error al crear el usuario, por favor contacte con un administrador.";
+        // UserDto newUser = new UserDto(userDto.getName(),userDto.getLastName(),userDto.getEmail(),userDto.getPhone(),userDto.getDni());
 
         //seteamos un id incremental
         userDto.setId(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME));
@@ -63,7 +64,11 @@ public class UserService implements IUserService {
         String newCbu = checkUniqueCbu();
         userDto.setCbu(newCbu);
 
-        userRepository.save(userDto);
+        try{
+            userRepository.save(userDto);
+        }catch (Exception e){
+            throw new MessageException(errorMessage2);
+        }
 
 
     }

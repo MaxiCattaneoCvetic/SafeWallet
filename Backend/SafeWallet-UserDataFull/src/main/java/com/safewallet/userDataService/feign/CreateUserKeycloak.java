@@ -4,10 +4,13 @@ import com.safewallet.userDataService.model.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "account-balance") // url = "localhost:8086")
-public interface CreateAccountFeignClient {
+@FeignClient(name="register-keycloak") // url = "localhost:8086")
+public interface CreateUserKeycloak  {
 
-    @PostMapping("/transfer")
-    void createAccountBalance(UserDto userDto);
+
+    @PostMapping("/userKeycloak/create")
+    void createUserKeycloak(UserDto userDto);
+
+
 
 }

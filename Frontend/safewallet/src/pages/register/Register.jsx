@@ -8,13 +8,13 @@ import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "../../URLS/URL.js";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [contador, setContador] = useState(0);
   const [error, setError] = useState({
     errorEmail: false,
     errorPassword: false,
   });
-  const [errorUserExist,setErrorUserExist] = useState(false) 
+  const [errorUserExist, setErrorUserExist] = useState(false);
   const [data, setData] = useState({
     name: "",
     lastname: "",
@@ -49,43 +49,63 @@ export default function Register() {
 
   async function handleRegister(e) {
     e.preventDefault();
-    // Contruimos objeto para keyc
-    const user = {
+    // Contruimos objeto para keyc, no le envio el first ni el last ya que de eso se encarga userFull
+    /*
+      const user = {
       username: data.email, 
-      firstName: data.name,
-      lastName: data.lastname,
+      // firstName: data.name,
+      // lastName: data.lastname,
       password: data.password,
       email: data.email,
       role: ["user"],
     };
+    */
 
     // Contruimos objeto para userDataFull
     const userv = {
-      name: data.name, 
+      username: data.email,
+      password: data.password,
+      role: ["user"],
+
+      name: data.name,
       lastName: data.lastname,
       email: data.email,
       phone: data.phone,
       dni: data.dni,
     };
-
-    
+  /*
     try {
       const response = await fetchKeyc(user, REGISTER_USER_KEYCLOAK);
-      
-      
-      if(response.data === "usuario creado"){
-        const response = await fetchuserFull(userv,REGISTER_USER_FULL)
-        setErrorUserExist(false)
-        if(response.data === "usuario creado"){
-          successRegister()
+
+      if (response.data === "usuario creado") {
+        const response = await fetchuserFull(userv, REGISTER_USER_FULL);
+        setErrorUserExist(false);
+        if (response.data === "usuario creado") {
+          successRegister();
         }
-      }else if(response.data === "El DNI o el correo ya fue registrado"){
+      } else if (response.data === "El DNI o el correo ya fue registrado") {
         setErrorUserExist(true);
       }
     } catch (error) {
       console.log("Entre al catch");
     }
   }
+*/
+
+try{
+  const response = await fetchuserFull(userv, REGISTER_USER_FULL);
+  setErrorUserExist(false);
+  if (response.data === "usuario creado") {
+    successRegister();
+  } else if (response.data === "El DNI o el correo ya fue registrado") {
+    setErrorUserExist(true);
+  }
+  }catch (error) {
+    console.log("Entre al catch");
+  }
+
+}
+
 
   function successRegister() {
     swal({
@@ -289,12 +309,18 @@ export default function Register() {
                 onClick={(e) => {
                   e.preventDefault();
                   setContador(contador - 1);
-                  setErrorUserExist(false)
+                  setErrorUserExist(false);
                 }}
               >
                 Volver
               </button>
-              {errorUserExist ? <p className="textError">El DNI o el correo ya fue registrado</p>: ""}
+              {errorUserExist ? (
+                <p className="textError">
+                  El DNI o el correo ya fue registrado
+                </p>
+              ) : (
+                ""
+              )}
             </div>
           </>
         )}
@@ -327,14 +353,14 @@ export default function Register() {
 
   return (
     <>
-    <div className={style.mainPage}>
-      <Modal
-        title="Registro"
-        children={modalChildrenRegister}
-        onClick={() => {
-          navigate("/");
-        }}
-      ></Modal>
+      <div className={style.mainPage}>
+        <Modal
+          title="Registro"
+          children={modalChildrenRegister}
+          onClick={() => {
+            navigate("/");
+          }}
+        ></Modal>
       </div>
     </>
   );

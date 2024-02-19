@@ -7,9 +7,8 @@ const RootLayout = () => {
     <>
       <Outlet />
       <Footer/>
-
     </>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout

@@ -12,6 +12,7 @@ public class UserInfoController {
     private IkeyCloakService keycloakService;
 
 
+/*
     @GetMapping("/{username}")
     public ResponseEntity<?> searchUserByUsername(@PathVariable String username){
         return ResponseEntity.ok(keycloakService.searchUserByUserName(username));
@@ -20,6 +21,7 @@ public class UserInfoController {
     public ResponseEntity<?> getAllUsers(){
         return ResponseEntity.ok(keycloakService.findAllUsers());
     }
+*/
 
 
     @PutMapping("/{userId}")

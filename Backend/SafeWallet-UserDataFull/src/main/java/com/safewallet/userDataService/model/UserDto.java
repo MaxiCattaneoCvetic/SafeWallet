@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Set;
+
 @Document("users")
 public class UserDto {
 
@@ -12,16 +14,48 @@ public class UserDto {
     public static final String SEQUENCE_NAME = "users_sequence";
     @Id
     private long id;
+    private String username;
+    private String password;
     private String name;
     private String lastName;
     private String email;
+    private Set<String> roles;
     private String phone;
     private String dni;
-
-
     private String cbu;
     private String alias;
 
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
+
+    public UserDto(String username, String password, String email, Set<String> roles) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.roles = roles;
+    }
 
     public UserDto(long id, String name, String lastName, String email, String phone, String cbu, String alias, String dni) {
         this.id = id;
@@ -109,5 +143,22 @@ public class UserDto {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", roles=" + roles +
+                ", phone='" + phone + '\'' +
+                ", dni='" + dni + '\'' +
+                ", cbu='" + cbu + '\'' +
+                ", alias='" + alias + '\'' +
+                '}';
     }
 }
