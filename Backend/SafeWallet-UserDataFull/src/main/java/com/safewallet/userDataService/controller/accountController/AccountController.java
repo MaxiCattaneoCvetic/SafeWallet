@@ -20,7 +20,6 @@ public class AccountController {
     public ResponseEntity<?> getUser(@PathVariable String username) {
 
         try {
-            System.out.println("entre al try");
             return ResponseEntity.status(HttpStatus.OK).body(userService.findByUsername(username));
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");

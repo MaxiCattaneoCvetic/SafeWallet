@@ -1,6 +1,9 @@
 package com.example.safewallet.keycloak.implementation.service;
 import com.example.safewallet.keycloak.DTO.UserDto;
+import org.apache.coyote.Response;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +16,8 @@ public interface IkeyCloakService {
     String createUser(UserDto userDto);
     void deleteUser(String userId);
     void updateUser(String userId, UserDto userDto);
+
+    ResponseEntity<?> logOut(String username);
 
 
 

@@ -30,10 +30,13 @@ public class UserInfoController {
         return ResponseEntity.ok("User updated successfully");
     }
 
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<?> deleteUser(@PathVariable String userId){
-        keycloakService.deleteUser(userId);
-        return ResponseEntity.noContent().build();
+    @GetMapping("/test")
+    public ResponseEntity<?> test(){
+        return ResponseEntity.ok("test ok ");
     }
+
+
+
+
 
 }

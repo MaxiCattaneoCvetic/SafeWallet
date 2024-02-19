@@ -8,6 +8,8 @@ public interface ITransferRepository extends MongoRepository<UserDto, Long> {
 
     UserDto findUserByEmail(String email);
 
+    void deleteByEmail(String email);
+
 
 
 

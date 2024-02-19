@@ -15,6 +15,7 @@ public class FeignService implements IUserService {
     @Autowired
     private CreateAccountFeignClient createAccountFeignClient;
 
+    @Autowired
     private CreateUserKeycloak createuserkeycloak;
 
     @Autowired
@@ -40,9 +41,8 @@ public class FeignService implements IUserService {
         try{
             createuserkeycloak.createUserKeycloak(userDto);
             createAccountFeignClient.createAccountBalance(userDto);
-            System.out.println("Cuenta balance creada");
-
         }catch (Exception e){
+            createAccountFeignClient.deleteAccountBalance(userDto.getEmail());
             throw new Exception("Error al crear el usuario");
         }
 
@@ -54,6 +54,11 @@ public class FeignService implements IUserService {
     @Override
     public UserDto findByUsername(String username) {
         return null;
+    }
+
+    @Override
+    public void deleteUser(String email) {
+
     }
 
 

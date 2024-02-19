@@ -20,6 +20,7 @@ public class KeycloakProvider {
     private static final String REALM_CLI = "admin-cli"; // DEL MASTER!!
     private static final String USER_CONSOLE = "admin";
     private static final String USER_PASSWORD = "admin";
+    private static final String CLIENT_ID = "frontend_client";
 
     //CREAMOS NUESTRO KEYCL
     public static RealmResource getRealmResource () {
@@ -37,6 +38,20 @@ public class KeycloakProvider {
         return keycloak.realm(REALM_NAME);
     }
 
+    public static Keycloak getKeycloak(){
+         Keycloak keycloak= KeycloakBuilder.builder()
+                .serverUrl(SERVER_URL)
+                .realm(REALM_MASTER)
+                .clientId(REALM_CLI)
+                .username(USER_CONSOLE)
+                .password(USER_PASSWORD)
+                .resteasyClient(new ResteasyClientBuilderImpl()
+                        .connectionPoolSize(10) // permitimos un max de 10 conexiones a la vez
+                        .build())
+                .build();
+    return keycloak;
+
+    }
 
 
     // Creamos el recurso para manejar los usuarios
@@ -44,6 +59,13 @@ public class KeycloakProvider {
         RealmResource  resource = getRealmResource();
         return resource.users();
     }
+
+    public static RealmResource getResource(){
+        Keycloak keycloak = Keycloak.getInstance(SERVER_URL, REALM_NAME, CLIENT_ID,null);
+        RealmResource realmResource = keycloak.realm(REALM_NAME);
+        return  realmResource;
+    }
+
 
 
 

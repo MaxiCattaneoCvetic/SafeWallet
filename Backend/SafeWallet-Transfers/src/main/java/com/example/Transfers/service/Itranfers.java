@@ -22,4 +22,7 @@ public interface Itranfers {
 
 
     List<UserDto> findAllUser();
+
+    void deleteByEmail(String email);
+
 }

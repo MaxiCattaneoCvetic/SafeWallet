@@ -87,6 +87,17 @@ public class TransferController {
         return ResponseEntity.status(HttpStatus.OK).body(allUser);
     }
 
+
+    @DeleteMapping("/{email}")
+    public ResponseEntity<?> deleteUser(@PathVariable String email) {
+        try {
+            transferService.deleteByEmail(email);
+            return ResponseEntity.status(HttpStatus.OK).body("Usuario eliminado");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo eliminar el usuario: " + e.getMessage());
+        }
+    }
+
 }
 
 

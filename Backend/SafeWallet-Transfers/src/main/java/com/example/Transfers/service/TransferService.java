@@ -4,6 +4,7 @@ import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.repository.ITransferRepository;
 import jakarta.ws.rs.NotFoundException;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,15 @@ public class TransferService implements Itranfers {
     public List<UserDto> findAllUser() {
         List<UserDto> allUser = iTransferRepository.findAll();
         return allUser;
+    }
+
+    @Override
+    public void deleteByEmail(String email) {
+
+        UserDto userDto = findUserByEmail(email);
+        if (userDto != null){iTransferRepository.deleteByEmail(email);}
+
+
     }
 
 
@@ -112,7 +122,6 @@ public class TransferService implements Itranfers {
         iTransferRepository.save(userDto);
 
     }
-
 
 
 

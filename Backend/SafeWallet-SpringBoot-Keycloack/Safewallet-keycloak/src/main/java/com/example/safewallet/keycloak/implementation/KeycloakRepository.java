@@ -7,13 +7,17 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.OAuth2Constants;
+import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 
 import java.util.*;
 
@@ -23,6 +27,8 @@ public class KeycloakRepository implements IkeyCloakService {
 
 
 
+    private KeycloakProvider keycloakProvider;
+
     @Override
     public List<UserRepresentation> findAllUsers() {
         return KeycloakProvider.getRealmResource().users().list();
@@ -30,7 +36,7 @@ public class KeycloakRepository implements IkeyCloakService {
 
     @Override
     public List<UserRepresentation> searchUserByUserName(String username) {
-        return KeycloakProvider.getRealmResource().users().searchByUsername(username, true); // el true significa que le vamos a enviar el nombre EXACTO del user y no un aprox
+                return KeycloakProvider.getRealmResource().users().searchByUsername(username, true); // el true significa que le vamos a enviar el nombre EXACTO del user y no un aprox
 
     }
 
@@ -38,8 +44,6 @@ public class KeycloakRepository implements IkeyCloakService {
     private UserDto fromRepresentation(UserRepresentation userRepresentation){
         /*return new UserDto(userRepresentation.getId(),userRepresentation.getUsername(),userRepresentation.getFirstName(),userRepresentation.getLastName(),userRepresentation.getEmail());*/
         return new UserDto(userRepresentation.getId(),userRepresentation.getUsername(),userRepresentation.getEmail());
-
-
     }
 
     @Override
@@ -116,7 +120,6 @@ public class KeycloakRepository implements IkeyCloakService {
     public void deleteUser(String userId) {
         KeycloakProvider.getUserResource().get(userId).remove();
 
-
     }
 
     @Override
@@ -125,7 +128,6 @@ public class KeycloakRepository implements IkeyCloakService {
         credentialRepresentation.setTemporary(false);
         credentialRepresentation.setType(OAuth2Constants.PASSWORD);
         credentialRepresentation.setValue(userDto.getPassword());
-
         //construimos el objeto
         UserRepresentation userRepresentation = new UserRepresentation(); // recordemos que los usuarios se representan de esta manera
 /*        userRepresentation.setFirstName(userDto.getFirstName());
@@ -141,4 +143,24 @@ public class KeycloakRepository implements IkeyCloakService {
 
 
     }
+
+
+    @Override
+    public ResponseEntity<?> logOut(String email){
+        //buscamos el user, agarramos el id, cerramos la sesion
+
+        UserRepresentation userRepresentation = searchUserByUserName(email).get(0);
+        Keycloak keycloak = getKeycloakClient();
+        RealmResource realmResource = keycloak.realm("safewallet");
+        UserResource userResource = realmResource.users().get(userRepresentation.getId());
+        userResource.logout();
+        return ResponseEntity.ok().build();
+
+    }
+
+    private Keycloak getKeycloakClient() {
+        return KeycloakProvider.getKeycloak();
+    }
+
+
 }

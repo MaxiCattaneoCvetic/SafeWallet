@@ -73,24 +73,6 @@ export default function Register() {
       phone: data.phone,
       dni: data.dni,
     };
-  /*
-    try {
-      const response = await fetchKeyc(user, REGISTER_USER_KEYCLOAK);
-
-      if (response.data === "usuario creado") {
-        const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-        setErrorUserExist(false);
-        if (response.data === "usuario creado") {
-          successRegister();
-        }
-      } else if (response.data === "El DNI o el correo ya fue registrado") {
-        setErrorUserExist(true);
-      }
-    } catch (error) {
-      console.log("Entre al catch");
-    }
-  }
-*/
 
 try{
   const response = await fetchuserFull(userv, REGISTER_USER_FULL);

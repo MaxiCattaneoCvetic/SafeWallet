@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.PermitAll;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
 
 @RestController
 @RequestMapping("/user")
@@ -32,11 +31,22 @@ public class UserController {
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
 
+        // Primero vamos a ver si existe un user- Check del DNI o el email
         String email = userDto.getEmail();
+        String dni = userDto.getDni();
         UserDto user = userService.findByUsername(email);
         if(user != null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El DNI o el correo ya fue registrado");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
         }
+
+        List<UserDto> all = userService.findAll();
+        for (UserDto u : all) {
+            if(u.getDni().equals(dni)){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El DNI ya fue registrado en nuestra base de datos.");
+            }
+
+        }
+
 
         try {
             userService.createUser(userDto);
@@ -44,7 +54,8 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body("usuario creado");
 
         }catch (Exception e ){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
+            userService.deleteUser(email);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
 
 
