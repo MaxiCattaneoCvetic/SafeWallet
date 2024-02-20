@@ -31,7 +31,7 @@ const useAuth = () => {
         sessionStorage.setItem("isLogin", res);
       })
       .catch((error) => {
-        swal("¡Ops, algo anda mal!", "El servidor agoto el tiempo de espera, por favor contacta con un administrador.", "error").then(()=>location.replace(URL_APP))
+        swal("¡Ops, algo anda mal!", "El servidor agoto el tiempo de espera, por favor contacta con un administrador. \n" + error, "error").then(()=>location.replace(URL_APP))
       });
   }, []);
 

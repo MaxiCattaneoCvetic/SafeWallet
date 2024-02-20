@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transfer")
-@CrossOrigin
 public class TransferController {
 
     @Autowired
@@ -38,7 +37,8 @@ public class TransferController {
     public UserDto getUserAccount(@PathVariable String email) {
         UserDto user = null;
         try {
-            return user = transferService.findUserByEmail(email);
+            user = transferService.findUserByEmail(email);
+            return user;
         } catch (NullPointerException e) {
             e.getMessage();
             return null;

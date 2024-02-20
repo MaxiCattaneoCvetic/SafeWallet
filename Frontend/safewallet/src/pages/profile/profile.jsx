@@ -13,7 +13,6 @@ function Profile() {
 	const [contador,setContador] = useState(1)
   return (
     <>
-    
       <section>
 				<NavBar></NavBar>
         <div className={style.avatarConteiner}>
