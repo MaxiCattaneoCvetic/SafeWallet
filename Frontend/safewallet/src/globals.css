@@ -8,6 +8,20 @@
   --footerBackground: #1a1e1ce8;
 }
 
+
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(18, 19, 18, 0.589);
+}
+.spinner * {
+  color: var(--borderPrimaryBTN);
+}
+
+
 .flex-column{
   display: flex;
   justify-content: center;

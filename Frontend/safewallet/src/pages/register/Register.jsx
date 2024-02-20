@@ -86,9 +86,8 @@ try{
     setError(response.response.data);
   }
   }catch (error) {
-    console.log("Entre al catch");
+    swal("¡Ops, algo anda mal!", "Tu cuenta no pudo ser registrada por un problema en el servidor. \n Por favor contacta con un administrador.", "error").then(()=>navigate("/"))
   }
-
 }
 
 

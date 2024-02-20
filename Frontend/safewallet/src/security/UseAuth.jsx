@@ -1,5 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import Keycloak from "keycloak-js";
+import swal from "sweetalert";
+import {URL_APP} from "../URLS/URL.js";
+
 
 
 const client = new Keycloak({
@@ -26,6 +29,9 @@ const useAuth = () => {
         setToken(client.token);
         sessionStorage.setItem("token", client.token);
         sessionStorage.setItem("isLogin", res);
+      })
+      .catch((error) => {
+        swal("¡Ops, algo anda mal!", "El servidor agoto el tiempo de espera, por favor contacta con un administrador.", "error").then(()=>location.replace(URL_APP))
       });
   }, []);
 

@@ -4,10 +4,16 @@ import NavBar from ".././../components/navBar/NavBar.jsx"
 
 
 
+// import { SpinnerDotted } from 'spinners-react';
+// <div className="spinner">
+// <SpinnerDotted size={74} thickness={180} speed={159} color="#2BB32A" />
+// </div>
+
 function Profile() {
 	const [contador,setContador] = useState(1)
   return (
     <>
+    
       <section>
 				<NavBar></NavBar>
         <div className={style.avatarConteiner}>

@@ -2,7 +2,7 @@ import RootLayout from "./RootLayout.jsx";
 import { UserProvider } from "./context/AuthProvider.jsx";
 import LoginAccount from "./pages/account/LoginAccount.jsx";
 import Home from "./pages/home/Home.jsx";
-import Profile from "./pages/profile/profile.jsx";
+import ProfilePage from "./pages/profile/profilePage.jsx";
 import Register from "./pages/register/Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "profile",
-    element: <Profile />,
+    element: <ProfilePage />,
   },
 ]);
 

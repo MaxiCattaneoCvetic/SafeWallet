@@ -9,7 +9,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "../../functions/logOut.jsx";
-
+import { SpinnerDotted } from 'spinners-react';
 const Account = () => {
   const isRun = useRef(false);
   const [data, setData] = useState(null);
@@ -18,7 +18,6 @@ const Account = () => {
 
   useEffect(() => {
     if (isRun.current) return;
-
     isRun.current = true;
 
     if(token){
@@ -64,8 +63,11 @@ const Account = () => {
           </div>
         </>
       ) : (
-        ""
+        <div className="spinner">
+        <SpinnerDotted size={74} thickness={180} speed={159} color="#2BB32A" />
+        </div>
       )}
+      
     </>
   );
 };
