@@ -4,10 +4,11 @@ import CardAccount from "../../components/cardAccount/CardAccount.jsx";
 import style from "./account.module.css";
 import NavBar from "../../components/navBar/NavBar.jsx";
 import decoderToken from "../../functions/decodedToken.js";
-import {URL_GET_USER_ACCOUNT} from "../../URLS/URL.js"
+import {URL_GET_USER_ACCOUNT_LOGIN} from "../../URLS/URL.js"
 import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import { logOut } from "../../functions/logOut.jsx";
 
 const Account = () => {
   const isRun = useRef(false);
@@ -28,13 +29,14 @@ const Account = () => {
         },
       };
       axios
-        .get(`${URL_GET_USER_ACCOUNT}${data.email}`,config)
+        .get(`${URL_GET_USER_ACCOUNT_LOGIN}${data.email}`,config)
         .then((res) => {
           console.log(res);
           setData(res.data)
           sessionStorage.setItem("user", JSON.stringify(res.data));
         })
         .catch((err) => {
+          logOut()
           swal("¡Ops, algo anda mal!", `${err}`, "error").then(()=>navigate("/"))
         });
     }

@@ -39,14 +39,10 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
         }
 
-        List<UserDto> all = userService.findAll();
-        for (UserDto u : all) {
-            if(u.getDni().equals(dni)){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El DNI ya fue registrado en nuestra base de datos.");
-            }
-
+        user = userService.findByDni(dni);
+        if(user != null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
         }
-
 
         try {
             userService.createUser(userDto);
@@ -61,12 +57,7 @@ public class UserController {
 
     }
 
-    @GetMapping
-    public ResponseEntity<?>  findAllUsers() {
-        List<UserDto> listUser = userService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(listUser);
 
-    }
 
 }
 

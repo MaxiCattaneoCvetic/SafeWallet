@@ -21,7 +21,7 @@ import static com.safewallet.userDataService.cbuGenerator.Cbu.generateCbu;
 //Contiene la lógica de negocio de la aplicación.
 //Actúa como intermediario entre el controlador y el repositorio.
 @Service
-public class UserService implements IUserService {
+public class  UserService implements IUserService {
 
     @Autowired
     private  IUserRepository userRepository;
@@ -42,31 +42,12 @@ public class UserService implements IUserService {
     @Override
     public void createUser(UserDto userDto) throws MessageException {
         logger.info("creando usuario");
-//        String errorMessage = "El DNI o el correo ya fue registrado";
-//        String errorMessage2 = "Error al crear el usuario, por favor contacte con un administrador.";
-//        UserDto newUser = new UserDto(userDto.getName(),userDto.getLastName(),userDto.getEmail(),userDto.getPhone(),userDto.getDni());
-
         //seteamos un id incremental
         userDto.setId(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME));
 
         //seteamos un CBU
         String newCbu = checkUniqueCbu();
         userDto.setCbu(newCbu);
-
-
-
-//        String correo = userDto.getEmail();
-//        List<UserDto> userDtoList = userRepository.findAll();
-
-//        for(UserDto user : userDtoList ){
-//            if(user.getEmail().equals(correo) || user.getDni().equals(userDto.getDni())){
-//                System.out.println(errorMessage);
-//                 throw  new MessageException(errorMessage);
-//            }
-//
-//        }
-
-
         try{
             userRepository.save(userDto);
         }catch (Exception e){
@@ -74,21 +55,27 @@ public class UserService implements IUserService {
 
         }
 
-
     }
 
     @Override
     public UserDto findByUsername(String username) {
-        List<UserDto> allUsers = userRepository.findAll();
-        UserDto userFound = null;
-
-        for (UserDto userDto: allUsers) {
-            if(userDto.getEmail().equals(username)){
-                return  userDto;
-            }
+        UserDto userFound = userRepository.findByUsername(username);
+        if(userFound != null){
+            userFound.setPassword(null);
+            return userFound;
         }
-        return userFound;
+        return null;
     }
+
+    public UserDto findByDni(String dni) {
+        try{
+            return userRepository.findByDni(dni);
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
 
     @Override
     public void deleteUser(String email) {

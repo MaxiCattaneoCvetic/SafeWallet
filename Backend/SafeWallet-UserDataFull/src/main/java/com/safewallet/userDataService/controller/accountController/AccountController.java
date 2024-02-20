@@ -9,8 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/accountFull")
+@RequestMapping("/useraccount")
 public class AccountController {
 
     @Autowired
@@ -18,11 +20,19 @@ public class AccountController {
 
     @GetMapping("/{username}")
     public ResponseEntity<?> getUser(@PathVariable String username) {
-
         try {
             return ResponseEntity.status(HttpStatus.OK).body(userService.findByUsername(username));
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
         }
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<?>  findAllUsers() {
+        List<UserDto> listUser = userService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(listUser);
+
+    }
+
+
 }
