@@ -62,7 +62,7 @@ export default function NavBar() {
               <a href="/">Inicio</a>
               <a href="">Nosotros</a>
               <a href="">Precio</a>
-              {isLogin ? <DropdownMenu iniciales={initials}  /> : <NoAuth />}
+              {isLogin ? <DropdownMenu   /> : <NoAuth />}
             </div>
           </>
         )}
@@ -86,7 +86,7 @@ export default function NavBar() {
             <div className={style.navLinks}>
               <a href="/">Inicio</a>
               <a href="/">Nosotros</a>
-              <a href="/">Precio</a>
+              <a href="/">Precios</a>
             </div>
 
 

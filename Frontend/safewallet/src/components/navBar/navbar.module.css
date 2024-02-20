@@ -41,6 +41,8 @@
 	.menuBurger{
 		display: flex;
 		padding: 1.5rem;
+		cursor: pointer;
+		
 	}
 	.headDesktop{
 		display: none;

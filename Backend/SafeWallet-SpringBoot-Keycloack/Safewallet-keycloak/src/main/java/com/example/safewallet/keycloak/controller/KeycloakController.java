@@ -73,7 +73,6 @@ public class KeycloakController {
     @GetMapping("/{email}")
     @PermitAll()
     public List<UserRepresentation> search(@PathVariable String email) throws URISyntaxException {
-        System.out.println("me llamaron");
         try {
             return keycloakService.searchUserByUserName(email);
         }catch (Error e){

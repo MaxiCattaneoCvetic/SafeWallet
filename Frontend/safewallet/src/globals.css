@@ -140,6 +140,7 @@ body {
 }
 
 .greenHoover:hover{
+  cursor: pointer;
   text-decoration: underline var(--borderPrimaryBTN);
 }
 

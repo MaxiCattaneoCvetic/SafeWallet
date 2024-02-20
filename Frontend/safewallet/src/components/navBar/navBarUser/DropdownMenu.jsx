@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./mainNavigationUser.module.css";
-
+import { logOut } from "../../../functions/logOut";
 
 const DropdownMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [initials,setInitials] = useState("")
+
 
 
   function getInitials(name,lastname) {
@@ -13,6 +14,10 @@ const DropdownMenu = (props) => {
     let secondLetter = lastname.charAt(0).toUpperCase();
     let total = firstLetter+secondLetter
     setInitials(total)
+  }
+
+  function handleLogOut() {
+    logOut();
   }
 
   useEffect(()=>{
@@ -36,8 +41,9 @@ const DropdownMenu = (props) => {
         {isOpen && (
           <div className={style.linkDropMenu}>
             <Link to={""} className="styleOff"><p className="greenHoover">Mi perfil</p></Link>
-            <Link to={""} className="styleOff"><p className="greenHoover">Mis transferencias</p></Link>
-            <Link to={""} className="styleOff"><p className="greenHoover">Cerrar sesión</p></Link>
+            <Link to={"/account"} className="styleOff"><p className="greenHoover">Consultar balance</p></Link>
+            <p className="greenHoover" onClick={handleLogOut}>Cerrar Sesión</p>
+            
           </div>
         )}
       </div>
