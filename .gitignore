@@ -1,4 +1,3 @@
-*.json
 /serviceConfiguration
 /vault
 *.exe
