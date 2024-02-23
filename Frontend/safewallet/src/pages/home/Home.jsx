@@ -1,22 +1,12 @@
 import style from "./homepage.module.css";
 import NavBar from "../../components/navBar/NavBar.jsx";
 import "../../globals.css";
-import UserContext from "../../context/AuthProvider.jsx";
-import { useEffect,useContext } from "react";
+
 
 
 
 export default function HomePage() {
-  // const user = useContext(UserContext);
-  // const token = useContext(UserContext);
-  // const isLogin = useContext(UserContext);
 
-  
-  // useEffect(()=>{
-  //   console.log(user);
-  //   console.log(token);
-  //   console.log(isLogin);
-  // },[])
   return (
     <>
       <div className={style.mainPage}>

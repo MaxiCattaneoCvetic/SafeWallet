@@ -40,7 +40,7 @@ const DropdownMenu = (props) => {
         </div>
         {isOpen && (
           <div className={style.linkDropMenu}>
-            <Link to={""} className="styleOff"><p className="greenHoover">Mi perfil</p></Link>
+            <Link to={"/profile"} className="styleOff"><p className="greenHoover">Mi perfil</p></Link>
             <Link to={"/account"} className="styleOff"><p className="greenHoover">Consultar balance</p></Link>
             <p className="greenHoover" onClick={handleLogOut}>Cerrar Sesión</p>
             

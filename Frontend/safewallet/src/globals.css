@@ -21,7 +21,9 @@
   color: var(--borderPrimaryBTN);
 }
 
-
+.backgroundBlack{
+  background: black;
+}
 .flex-column{
   display: flex;
   justify-content: center;

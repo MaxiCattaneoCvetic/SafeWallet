@@ -1,14 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import Footer from "../src/components/footer/Footer.jsx"
+// import { Outlet } from 'react-router-dom';
+// import Footer from "../src/components/footer/Footer.jsx"
 
 
-const RootLayout = () => {
-  return (
-    <>
-      <Outlet />
-      <Footer/>
-    </>
-  )
-}
+// const RootLayout = () => {
+//   return (
+//     <>
+//       <Outlet />
+//       <Footer/>
+//     </>
+//   )
+// }
 
-export default RootLayout
+// export default RootLayout
