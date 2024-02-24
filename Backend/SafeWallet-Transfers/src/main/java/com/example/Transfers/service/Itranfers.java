@@ -17,6 +17,8 @@ public interface Itranfers {
 
     UserDto findUserByEmail(String email);
 
+    UserDto findUserByCbu(String cbu);
+
 
     void createBalanceAccount(UserDto userDto);
 
@@ -24,5 +26,7 @@ public interface Itranfers {
     List<UserDto> findAllUser();
 
     void deleteByEmail(String email);
+
+    int getGifts(String cbu);
 
 }

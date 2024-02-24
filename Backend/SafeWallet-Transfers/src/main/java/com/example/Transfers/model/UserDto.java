@@ -13,12 +13,16 @@ public class UserDto {
 
     private String cbu;
     private Double balance;
+    private Boolean welcomeGift;
 
-    public UserDto(String email, String cbu, Double balance) {
+
+    public UserDto(String email, String cbu, Double balance, Boolean welcomeGift) {
         this.email = email;
         this.cbu = cbu;
         this.balance = balance;
+        this.welcomeGift = welcomeGift;
     }
+
 
     public UserDto() {
     }
@@ -55,13 +59,12 @@ public class UserDto {
         this.balance = balance;
     }
 
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", cbu='" + cbu + '\'' +
-                ", balance=" + balance +
-                '}';
+    public Boolean getWelcomeGift() {
+        return welcomeGift;
     }
+
+    public void setWelcomeGift(Boolean welcomeGift) {
+        this.welcomeGift = welcomeGift;
+    }
+
 }

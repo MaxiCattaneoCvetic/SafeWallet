@@ -3,26 +3,30 @@ import AccountBalance from "../../components/accountBalance/AccountBalance.jsx";
 import CardAccount from "../../components/cardAccount/CardAccount.jsx";
 import style from "./account.module.css";
 import NavBar from "../../components/navBar/NavBar.jsx";
+import upperCase from "../../functions/upperCase.js"
 
 import { SpinnerDotted } from "spinners-react";
 const Account = () => {
   const isRun = useRef(false);
   const [vToken, setVToken] = useState();
   const [vUser, setVUser] = useState();
+  const [countReload,setCountReload] = useState(0);
 
   useEffect(() => {
     setVToken(sessionStorage.getItem("token"));
     setVUser(JSON.parse(sessionStorage.getItem("user")));
   }, []);
   setTimeout(() => {
+    if(countReload > 3)return
     if (!vUser && vToken) {
       location.reload();
+      setCountReload(countReload + 1);
+    }else if(vUser && vToken){
+      setCountReload(0)
     }
   }, 1000);
 
-  function upperCase(name) {
-    return name.substring(0, 1).toUpperCase() + name.substring(1);
-  }
+
 
   return (
     <>

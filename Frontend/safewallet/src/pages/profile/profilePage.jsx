@@ -4,31 +4,42 @@ import Profile from "./profile.jsx";
 import { logOut } from "../../functions/logOut.jsx";
 import swal from "sweetalert";
 
+
 export default function ProfilePage() {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({});
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const checkLoginStatus = () => {
-      const loggedIn = sessionStorage.getItem("isLogin") === "true";
-      setIsLogin(loggedIn);
-      if (!loggedIn) {
+      const isLogin = sessionStorage.getItem("isLogin");
+      const token = sessionStorage.getItem("token");
+      const user = sessionStorage.getItem("user");
+      if (isLogin != "true" || !token || !user) {
         swal({
           title: "¡Ops, algo anda mal!",
-          text:
-            "Parece que no hay ninguna sesión iniciada, por favor inicia sesión",
+          text: "Parece que no hay ninguna sesión iniciada, por favor inicia sesión para continuar",
           icon: "error",
-          button: "Aceptar"
-        }).then(() => navigate("/account"));
+          button: "Aceptar",
+        }).then(() => {
+          try {
+            logOut();
+          } catch (e) {
+            sessionStorage.clear();
+            navigate("/account");
+          }
+        });
+      } else {
+        setIsLogin(true);
+        setUser(JSON.parse(user));
+        setToken(token);
+
       }
     };
 
     checkLoginStatus();
   }, [navigate]);
 
-
-
-
-
-  return isLogin ? <Profile /> : "";
+  return isLogin && user && token ? <Profile user={user}  /> : "";
 }

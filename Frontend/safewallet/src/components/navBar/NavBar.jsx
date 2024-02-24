@@ -12,7 +12,7 @@ import DropdownMenu from "../navBar/navBarUser/DropdownMenu.jsx";
 
 
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const navigate = useNavigate();
   const [isLogin,setIsLogin] = useState(false)
@@ -77,7 +77,7 @@ export default function NavBar() {
         {/* Si la resolucion es par mobile se oculta desktop y se muestra mobile */}
         {navMenuMobile}
         <header className={style.headDesktop}>
-          <nav className={style.navbar}>
+          <nav className={props.value ? style.navbar2 : style.navbar}>
             <div className={style.logoContainer}>
               <a href="/" className="styleOff">
                 <GrGoogleWallet /> SafeWallet
@@ -88,9 +88,6 @@ export default function NavBar() {
               <a href="/">Nosotros</a>
               <a href="/">Precios</a>
             </div>
-
-
-
             <div className={style.userPanelNav}>
               {isLogin ? (
                 <DropdownMenu  />

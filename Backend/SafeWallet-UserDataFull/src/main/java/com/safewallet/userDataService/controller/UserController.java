@@ -29,7 +29,9 @@ public class UserController {
 
     @PostMapping()
     @PermitAll()
-    public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<?> createUser(@RequestBody UserDto userDto) throws Exception {
+
+        System.out.println(userDto.toString());
 
         // Primero vamos a ver si existe un user- Check del DNI o el email
         String email = userDto.getEmail();
@@ -51,6 +53,7 @@ public class UserController {
 
         }catch (Exception e ){
             userService.deleteUser(email);
+            //feignService.deleteUser(email);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
 

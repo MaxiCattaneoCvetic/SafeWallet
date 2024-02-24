@@ -4,17 +4,24 @@ public class TransferInformation {
 
     private String cbuFrom;
     private String cbuTo;
-    private Double monto;
+    private Double amount;
 
     public TransferInformation() {
     }
 
-    public TransferInformation(String cbuFrom, String cbuTo, Double monto) {
+    public TransferInformation(String cbuFrom, String cbuTo, Double amount) {
         this.cbuFrom = cbuFrom;
         this.cbuTo = cbuTo;
-        this.monto = monto;
+        this.amount = amount;
     }
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 
     public String getCbuFrom() {
         return cbuFrom;
@@ -33,10 +40,19 @@ public class TransferInformation {
     }
 
     public Double getMonto() {
-        return monto;
+        return amount;
     }
 
     public void setMonto(Double monto) {
-        this.monto = monto;
+        this.amount = monto;
+    }
+
+    @Override
+    public String toString() {
+        return "TransferInformation{" +
+                "cbuFrom='" + cbuFrom + '\'' +
+                ", cbuTo='" + cbuTo + '\'' +
+                ", monto=" + amount +
+                '}';
     }
 }

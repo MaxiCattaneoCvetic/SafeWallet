@@ -19,10 +19,15 @@ public class KeycloakController {
     @Autowired
     private IkeyCloakService keycloakService;
 
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<?> deleteUser(@PathVariable String userId){
+    @DeleteMapping("/{email}")
+    public ResponseEntity<?> deleteUser(@PathVariable String email){
+        UserRepresentation userRepresentation = (UserRepresentation) keycloakService.searchUserByUserName(email);
+        if(keycloakService.searchUserByUserName(email) == null){
+            return ResponseEntity.badRequest().body("Usuario no encontrado");
+        }
+        String userId = userRepresentation.getId();
         keycloakService.deleteUser(userId);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Usuario eliminado");
     }
 
 /*

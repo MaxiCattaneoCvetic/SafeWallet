@@ -1,23 +1,21 @@
 import { useState } from "react";
 import style from "./profile.module.css";
 import NavBar from ".././../components/navBar/NavBar.jsx"
+import upperCase from "../../functions/upperCase.js"
 
 
 
-// import { SpinnerDotted } from 'spinners-react';
-// <div className="spinner">
-// <SpinnerDotted size={74} thickness={180} speed={159} color="#2BB32A" />
-// </div>
 
-function Profile() {
+function Profile(props) {
 	const [contador,setContador] = useState(1)
+  
   return (
     <>
       <section>
-				<NavBar></NavBar>
+				<NavBar value={true}></NavBar>
         <div className={style.avatarConteiner}>
 				<h2 className={style.titleAvatar}>Mi perfil</h2>
-          <img src={`../../../public/avatar${contador}.png`} alt="avatar-profile" />
+          <img src={`/avatar${contador}.png`}  alt="avatar-profile" />
 					<button className={style.avatarImg} onClick={(e)=>{
 						console.log(contador);
 						e.preventDefault()
@@ -35,30 +33,29 @@ function Profile() {
               Nombre
               <input
                 className={style.inputInformation}
-                value={"Maximiliano"}
+                value={upperCase(props.user.name)}
 								id="name"
               ></input>
             </label>
             <label htmlFor="">Apellido
               <input
                 className={style.inputInformation}
-                value={"Cattaneo"}
+                value={upperCase(props.user.lastName)}
               ></input>
             </label>
             <label htmlFor="">Telefono
               <input
                 className={style.inputInformation}
-                value={"1521551561"}
+                value={props.user.phone}
               ></input>
             </label>
           </div>
-
           <div className={style.containerInfoV}>
             <label htmlFor="">DNI
-            <input className={style.inputInformation} value={"38489151"}></input>
+            <input className={style.inputInformation} value={props.user.dni}></input>
 						</label>
             <label htmlFor="">CBU
-            <input className={style.inputInformation} value={"2151516515165556"}></input>
+            <input className={style.inputInformation} value={props.user.cbu}></input>
 						</label>
             <label htmlFor="">ALIAS
             <input className={style.inputInformation} value={"BUERT.PUERTA.HOMBRO"}></input>

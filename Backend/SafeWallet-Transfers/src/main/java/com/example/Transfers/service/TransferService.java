@@ -44,6 +44,8 @@ public class TransferService implements Itranfers {
     }
 
 
+
+
     @Override
     public Double getSaldo(Long id) {
         Optional<UserDto> user = iTransferRepository.findById(id);
@@ -80,37 +82,25 @@ public class TransferService implements Itranfers {
 
     @Override
     public void sendMoney(Double monto, String cbuFrom, String cbuTo) throws MessageException {
-        List<UserDto> allUsers = this.findAllUser();
-        UserDto userFrom = null;
-        UserDto userTo = null;
-        Double userFromBalance = 0.0;
-
-        for(int i = 0; i < allUsers.size(); i++){
-            if(cbuFrom.equals(allUsers.get(i).getCbu())){
-                userFrom = allUsers.get(i);
-            }else if(cbuTo.equals(allUsers.get(i).getCbu())){
-                userTo = allUsers.get(i);
-            }
+        UserDto userFrom = iTransferRepository.findUserByCbu(cbuFrom);
+        UserDto userTo = iTransferRepository.findUserByCbu(cbuTo);
+        Double userFromBalance = userFrom.getBalance();
+        if(userTo == null){
+            throw new MessageException("¡Ups! Parece que el usuario al que quieres transferir no existe, por favor revisa los datos. ");
         }
-
-        if (userFrom != null && userTo != null) {
-            userFromBalance = userFrom.getBalance();
             if (monto > userFromBalance) {
                 throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
             } else {
                 this.updateSaldo(monto * -1 , userFrom.getId());
                 this.updateSaldo(monto, userTo.getId());
             }
-        } else {
-            throw new MessageException("¡Ups! Parece que el usuario al que quieres transferir no existe, por favor revisa los datos. ");
         }
-    }
+
 
 
     @Override
     public UserDto findUserByEmail(String email) {
-        UserDto user = iTransferRepository.findUserByEmail(email);
-        return user;
+        return iTransferRepository.findUserByEmail(email);
 
     }
 
@@ -119,9 +109,30 @@ public class TransferService implements Itranfers {
     public void createBalanceAccount(UserDto userDto) {
         System.out.println("Seteando balance 0, nuevo usuario");
         userDto.setBalance(0.0);
+        userDto.setWelcomeGift(false);
         iTransferRepository.save(userDto);
 
     }
+
+    public UserDto findUserByCbu(String cbu) {
+        return iTransferRepository.findUserByCbu(cbu);
+    }
+
+    @Override
+    public int getGifts(String cbu) {
+        // Si se completa con exito devuelve 1, sino devuelve 0. En el caso de 0 el user ya reclamo el premio.
+        UserDto userDto = iTransferRepository.findUserByCbu(cbu);
+        if(userDto.getWelcomeGift() == false){
+            userDto.setWelcomeGift(true);
+            Double balance = userDto.getBalance();
+            balance += 10000;
+            userDto.setBalance(balance);
+            iTransferRepository.save(userDto);
+            return  1;
+        }
+        return 0;
+    }
+
 
 
 

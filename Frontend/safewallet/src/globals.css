@@ -21,6 +21,19 @@
   color: var(--borderPrimaryBTN);
 }
 
+.progress-bar * {
+  width: 100%;
+  height: 20px; /* Altura de la barra de progreso */
+  background-color: #007bff; /* Color de la barra de progreso */
+  border-radius: 8px;
+}
+.progress-bar{
+  width: 100%;
+  height: 20px; /* Altura de la barra de progreso */
+  background-color: #007bff; /* Color de la barra de progreso */
+  border-radius: 8px;
+}
+
 .backgroundBlack{
   background: black;
 }

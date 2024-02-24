@@ -9,14 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/transfer")
 public class TransferController {
 
     @Autowired
     private TransferService transferService;
+    private String transferencia_realizada_con_extito;
+    private StringBuilder stringBuilder;
 
     @Autowired
     public TransferController(TransferService transferService) {
@@ -59,33 +59,38 @@ public class TransferController {
 
     @PutMapping("/send")
     public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
-        if(transferInformation.getMonto() < 0 ){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto no puede ser negativo..");
+
+
+        if (transferInformation.getMonto() <= 0) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto debe ser mayor a 0");
         }
-        String messageTransaction = new StringBuilder()
-                .append("Transferencia realizada con extito")
-                .append("Transferiste: $")
-                .append(transferInformation.getMonto()).toString();
+
         try {
             String from = transferInformation.getCbuFrom();
             String to = transferInformation.getCbuTo();
-            Double monto = transferInformation.getMonto();
-            transferService.sendMoney(monto, from, to);
+            Double amount = transferInformation.getMonto();
+            transferService.sendMoney(amount, from, to);
+            transferencia_realizada_con_extito = new StringBuilder()
+                    .append("Transferencia realizada con extito")
+                    .append("Transferiste: $")
+                    .append(transferInformation.getMonto()).toString();
+            String messageTransaction = transferencia_realizada_con_extito;
             return ResponseEntity.status(HttpStatus.OK).body(messageTransaction);
         } catch (Exception e) {
+            System.out.println("Entre al catch");
             // Si hay un error, responde con un código de error apropiado y un mensaje opcional
-            String  message = new StringBuilder()
+            String message = stringBuilder
                     .append("Error en la transferencia: ")
                     .append(e.getMessage()).toString();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
         }
     }
 
-    @GetMapping("/all")
+/*    @GetMapping("/all")
     public ResponseEntity<?> getAllUser() {
         List<UserDto> allUser = transferService.findAllUser();
         return ResponseEntity.status(HttpStatus.OK).body(allUser);
-    }
+    }*/
 
 
     @DeleteMapping("/{email}")
@@ -98,9 +103,32 @@ public class TransferController {
         }
     }
 
+    @PostMapping("/claimgift/{cbu}")
+    public ResponseEntity<?> getWelcomeGift(@PathVariable String cbu) throws MessageException {
+        UserDto userDto = transferService.findUserByCbu(cbu);
+        if(userDto !=null){
+            int response = transferService.getGifts(userDto.getCbu());
+            if(response == 1){
+                return ResponseEntity.status(HttpStatus.OK).body("Reclamaste con éxito tu premio en Safe Wallet!! Que lo disfrutes :)");
+            }else{
+                return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("Usuario ya reclamo el premio");
+            }
+
+        }
+        else{
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario no encontrado");
+        }
+    }
+
+    @GetMapping("/getcbu/{cbu}")
+    public ResponseEntity<?> getUserCbu(@PathVariable String cbu) throws MessageException {
+        UserDto userDto = transferService.findUserByCbu(cbu);
+        System.out.println(userDto.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(userDto);
+    }
+
+
 }
-
-
 
 
 

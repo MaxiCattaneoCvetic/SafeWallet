@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import SendMoney from "../sendMoney/SendMoney.jsx";
 import { useClickOutside } from "primereact/hooks";
 import { getBalance } from "../../api/getBalance.js";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
+import getGift from "../../api/getGift.js";
+
 
 export default function AccountBalance() {
   const [isModal, setIsModal] = useState(false);
@@ -11,6 +15,7 @@ export default function AccountBalance() {
   const cbuRef = useRef(null);
   const aliasRef = useRef(null);
   const [userBalance, setUserBalance] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let userName = JSON.parse(sessionStorage.getItem("user"));
@@ -19,7 +24,14 @@ export default function AccountBalance() {
         setUserBalance(balance);
       })
       .catch((error) => {
-        console.error("Error al obtener el balance:", error);
+        if (error.response.status === 401) {
+          swal(
+            "No hay una sesión activa o no tienes permisos para realizar esta accion"
+          ).then(() => {
+            sessionStorage.clear();
+            navigate("/");
+          });
+        }
       });
   }, []);
 
@@ -30,6 +42,10 @@ export default function AccountBalance() {
   useClickOutside(aliasRef, () => {
     setVisible(false);
   });
+
+  function handleGift() {
+    getGift(userBalance.cbu);
+  }
 
   return (
     <div>
@@ -47,6 +63,7 @@ export default function AccountBalance() {
             >
               Enviar dinero
             </button>
+
             {isModal ? (
               <Modal
                 onClick={(e) => {
@@ -55,7 +72,7 @@ export default function AccountBalance() {
                 }}
                 title="Enviar dinero"
                 // eslint-disable-next-line react/no-children-prop
-                children={<SendMoney />}
+                children={<SendMoney cbuFrom={userBalance.cbu} />}
               />
             ) : (
               ""
@@ -86,7 +103,9 @@ export default function AccountBalance() {
                 <button className="scondbtn">Copiar</button>
               </div>
             ) : null}
-            <button className="scondbtn">Pagar servicios</button>
+            <button className="scondbtn" onClick={handleGift}>
+              Reclamar premio Safe Wallet
+            </button>
           </div>
         </div>
       ) : (

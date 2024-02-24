@@ -7,6 +7,7 @@ public interface ITransferRepository extends MongoRepository<UserDto, Long> {
 //    UserDto findByCbu(String cbu);
 
     UserDto findUserByEmail(String email);
+    UserDto findUserByCbu(String cbu);
 
     void deleteByEmail(String email);
 

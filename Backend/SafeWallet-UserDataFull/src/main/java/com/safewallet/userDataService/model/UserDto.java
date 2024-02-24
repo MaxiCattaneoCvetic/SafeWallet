@@ -26,6 +26,23 @@ public class UserDto {
     private String alias;
 
 
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", roles=" + roles +
+                ", phone='" + phone + '\'' +
+                ", dni='" + dni + '\'' +
+                ", cbu='" + cbu + '\'' +
+                ", alias='" + alias + '\'' +
+                '}';
+    }
+
     public String getUsername() {
         return username;
     }
@@ -145,20 +162,4 @@ public class UserDto {
         this.alias = alias;
     }
 
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", roles=" + roles +
-                ", phone='" + phone + '\'' +
-                ", dni='" + dni + '\'' +
-                ", cbu='" + cbu + '\'' +
-                ", alias='" + alias + '\'' +
-                '}';
-    }
 }

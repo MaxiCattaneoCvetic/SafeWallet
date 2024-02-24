@@ -37,7 +37,6 @@ public class FeignService implements IUserService {
 
     @Override
     public void createUser(UserDto userDto) throws Exception {
-
         try{
             createuserkeycloak.createUserKeycloak(userDto);
             createAccountFeignClient.createAccountBalance(userDto);
@@ -57,7 +56,12 @@ public class FeignService implements IUserService {
     }
 
     @Override
-    public void deleteUser(String email) {
+    public void deleteUser(String email) throws Exception {
+        try {
+            createuserkeycloak.deleteUserKeycloak(email);
+        }catch (Exception e){
+            throw new Exception("Error al eliminar el usuario");
+        }
 
     }
 
