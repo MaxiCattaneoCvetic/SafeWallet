@@ -9,8 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/transfer")
+@RequestMapping("/accounts")
 public class TransferController {
 
     @Autowired
@@ -43,27 +45,27 @@ public class TransferController {
             e.getMessage();
             return null;
         }
-
-
     }
 
-    @GetMapping("/balance/{id}")
-    public Double getBalance(@PathVariable Long id) {
-        Double balance = transferService.getSaldo(id);
-        if (balance > 0) {
-            return balance;
-        } else {
-            return 0.0;
-        }
+    @GetMapping("/{id}/transactions")
+    public List<?> getTransactions(@PathVariable Long id) {
+        return null;
     }
 
     @PutMapping("/send")
     public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
+        UserDto userDto = transferService.findUserByCbu(transferInformation.getCbuFrom());
+        Double balance = userDto.getBalance();
 
+        if(balance < transferInformation.getMonto()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Saldo insuficiente");
+        }
 
         if (transferInformation.getMonto() <= 0) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto debe ser mayor a 0");
         }
+
+
 
         try {
             String from = transferInformation.getCbuFrom();
@@ -126,6 +128,8 @@ public class TransferController {
         System.out.println(userDto.toString());
         return ResponseEntity.status(HttpStatus.OK).body(userDto);
     }
+
+
 
 
 }

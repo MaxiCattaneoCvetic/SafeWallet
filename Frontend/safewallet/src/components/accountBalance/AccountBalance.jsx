@@ -8,7 +8,6 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import getGift from "../../api/getGift.js";
 
-
 export default function AccountBalance() {
   const [isModal, setIsModal] = useState(false);
   const [visible, setVisible] = useState(false);

@@ -10,10 +10,11 @@ const REGISTER_USER_FULL = `${URL_GATEWAY}/user`;
 
 // URLS INFO USERS
 const URL_GET_USER_ACCOUNT_LOGIN = `${URL_GATEWAY}/useraccount/`; // Se utiliza para el login
-const URL_GET_USER_BALANCE = `${URL_GATEWAY}/transfer/`;
+const URL_GET_USER_BALANCE = `${URL_GATEWAY}/accounts/`;
+const URL_GET_USER_CBU = `${URL_GATEWAY}/accounts/getcbu/`;
 
 // URLS WELCOME-SAFEWALLET-GIFT
-const URL_WELCOME_GIFT = `${URL_GATEWAY}/transfer/claimgift/`;
+const URL_WELCOME_GIFT = `${URL_GATEWAY}/accounts/claimgift/`;
 
 // URLS LOGOUT
 const URL_LOGOUT = `${URL_GATEWAY}/userKeycloak/logout`;
@@ -29,4 +30,5 @@ export {
   URL_LOGOUT,
   URL_GET_USER_BALANCE,
   URL_WELCOME_GIFT,
+  URL_GET_USER_CBU
 };

@@ -6,31 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/Itranfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/Itranfers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/CreateUserKeycloak.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/CreateUserKeycloak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getGift.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getGift.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/sendMoneyApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/sendMoneyApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/accountBalance/AccountBalance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/accountBalance/AccountBalance.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/navBar/navbar.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/sendMoney/SendMoney.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/sendMoney/SendMoney.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profilePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="2" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -221,7 +210,6 @@
     <configuration name="allProject" type="CompoundRunConfigurationType">
       <toRun name="ConfigServerApplication" type="Application" />
       <toRun name="SafeWalletGatewayApplication" type="Application" />
-      <toRun name="SafeWalletLoginRedirectApplication" type="Application" />
       <toRun name="SafeWalletServerApplication" type="Application" />
       <toRun name="SafewalletApplicationKeycloak" type="Application" />
       <toRun name="TransfersApplication" type="Application" />
@@ -296,25 +284,25 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GateWay$UserDataServiceApplication.ic" NAME="UserDataServiceApplication Coverage Results" MODIFIED="1708465566618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$UserDataServiceApplication.ic" NAME="UserDataServiceApplication Coverage Results" MODIFIED="1708803527520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.safewallet.userDataService.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$TransfersApplication.ic" NAME="TransfersApplication Coverage Results" MODIFIED="1708465539354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.example.Transfers.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$SafeWalletServerApplication.ic" NAME="SafeWalletServerApplication Coverage Results" MODIFIED="1708465551379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$SafeWalletServerApplication.ic" NAME="SafeWalletServerApplication Coverage Results" MODIFIED="1708803516498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.SafeWalletServer.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$SafeWalletLoginRedirectApplication.ic" NAME="SafeWalletLoginRedirectApplication Coverage Results" MODIFIED="1708465548278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$TransfersApplication.ic" NAME="TransfersApplication Coverage Results" MODIFIED="1708803524606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Transfers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/GateWay$SafeWalletLoginRedirectApplication.ic" NAME="SafeWalletLoginRedirectApplication Coverage Results" MODIFIED="1708803511446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.SafeWalletLoginRedirect.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$ConfigServerApplication.ic" NAME="ConfigServerApplication Coverage Results" MODIFIED="1708465542094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$ConfigServerApplication.ic" NAME="ConfigServerApplication Coverage Results" MODIFIED="1708803505243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.configserver.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$SafeWalletGatewayApplication.ic" NAME="SafeWalletGatewayApplication Coverage Results" MODIFIED="1708465544521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$SafeWalletGatewayApplication.ic" NAME="SafeWalletGatewayApplication Coverage Results" MODIFIED="1708803507425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.SafeWalletGateway.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GateWay$SafewalletApplicationKeycloak.ic" NAME="SafewalletApplicationKeycloak Coverage Results" MODIFIED="1708465556178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GateWay$SafewalletApplicationKeycloak.ic" NAME="SafewalletApplicationKeycloak Coverage Results" MODIFIED="1708803520844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.safewallet.*</FILTER>
     </SUITE>
   </component>
