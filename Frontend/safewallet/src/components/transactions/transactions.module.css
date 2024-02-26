@@ -5,8 +5,9 @@
 	height: auto;
 	margin-left: 3rem;
 	display: flex;
-	transform: translateX(90%);
+	transform: translateX(103%);
 	border-radius: 1rem;
+	margin: 0.3rem;
 
 }
 
@@ -23,6 +24,7 @@
 	padding: 1rem;
 	width: 100%; 
   box-sizing: border-box;
+
 
 }
 

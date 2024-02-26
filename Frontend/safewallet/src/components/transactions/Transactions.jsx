@@ -70,7 +70,8 @@ function Transactions(props) {
 
   useEffect(() => {
     getTransactions(props.userId).then((response) => {
-      setData(response.data);
+			let orden = response.data.sort((a, b) =>  new Date(b.date) -  new Date(a.date)  );
+      setData(orden);
     });
     console.log(data);
   }, []);
@@ -110,7 +111,7 @@ function Transactions(props) {
                 </div>
                 <div className={style.columnW}>
                   <h5>Fecha</h5>
-                  <p>{transaction.date}</p>
+                  <p>{transaction.date = new Date(transaction.date).toLocaleDateString('en-US') }</p>
                 </div>
               </div>
             </div>

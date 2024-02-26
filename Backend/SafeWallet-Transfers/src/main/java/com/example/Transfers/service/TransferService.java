@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -84,6 +85,13 @@ public class TransferService implements ITransfers {
             if (monto > userFromBalance) {
                 throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
             } else {
+                UserTransactionsDto transactionFrom = settingNewTransaction(cbuTo, monto * - 1 ,cbuFrom);
+                userFrom.getTransactions().add(transactionFrom);
+                transactionFrom = settingNewTransaction(cbuFrom, monto, cbuTo);
+                userTo.getTransactions().add(transactionFrom);
+                iTransferRepository.save(userFrom);
+                iTransferRepository.save(userTo);
+
                 this.updateSaldo(monto * -1 , userFrom.getId());
                 this.updateSaldo(monto, userTo.getId());
             }
@@ -140,7 +148,7 @@ public class TransferService implements ITransfers {
     }
 
     public UserTransactionsDto settingNewTransaction(String from, Double amount,String to) {
-        LocalDate date = LocalDate.now();
+        LocalDateTime date = LocalDateTime.now();
         UserTransactionsDto userTransactionsDto = null;
         if(from.equalsIgnoreCase("SafeWallet")) {
             userTransactionsDto = new UserTransactionsDto("SafeWallet",to,amount,date);

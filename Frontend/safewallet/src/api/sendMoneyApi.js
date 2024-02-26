@@ -1,4 +1,5 @@
 import axios from "axios";
+import { URL_SEND_MONEY } from "../URLS/URL";
 
 async function sendMoneyApi(amount, cbuFrom, cbuTo) {
   const config = {
@@ -14,7 +15,7 @@ async function sendMoneyApi(amount, cbuFrom, cbuTo) {
 
   try {
     const res = await axios.put(
-      "http://localhost:9090/transfer/send",
+      URL_SEND_MONEY,
       toSend,
       config
     );

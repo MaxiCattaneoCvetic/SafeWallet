@@ -23,7 +23,7 @@ export default function SendMoney(props) {
         if (res.status === 200) {
           swal("Dinero enviado", {
             icon: "success",
-          });
+          }).then(() => window.location.reload());
         }else{
           swal("No se envio el dinero \n Error: ", res.response.data, );
           return

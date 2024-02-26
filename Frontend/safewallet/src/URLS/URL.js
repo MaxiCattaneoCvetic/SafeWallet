@@ -20,6 +20,9 @@ const URL_WELCOME_GIFT = `${URL_GATEWAY}/accounts/claimgift/`;
 // URLS LOGOUT
 const URL_LOGOUT = `${URL_GATEWAY}/userKeycloak/logout`;
 
+// URLS SEND MONEY
+const URL_SEND_MONEY = `${URL_GATEWAY}/accounts/send`;
+
 // const APPLICATION_LOGIN = `${URL_GATEWAY}/myAccount/login`;
 
 export {
@@ -32,4 +35,5 @@ export {
   URL_GET_USER_BALANCE,
   URL_WELCOME_GIFT,
   URL_GET_USER_CBU,
+  URL_SEND_MONEY
 };

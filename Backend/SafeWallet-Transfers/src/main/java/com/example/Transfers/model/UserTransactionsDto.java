@@ -1,7 +1,7 @@
 package com.example.Transfers.model;
 
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 
 
 public class UserTransactionsDto {
@@ -10,12 +10,12 @@ public class UserTransactionsDto {
     private String from;
     private String to;
     private Double amount;
-    private LocalDate date;
+    private LocalDateTime date;
 
     private UserTransactionsDto() {
     }
 
-    public UserTransactionsDto(String from, String to, Double amount, LocalDate date) {
+    public UserTransactionsDto(String from, String to, Double amount, LocalDateTime date) {
         this.from = from;
         this.to = to;
         this.amount = amount;
@@ -46,11 +46,11 @@ public class UserTransactionsDto {
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

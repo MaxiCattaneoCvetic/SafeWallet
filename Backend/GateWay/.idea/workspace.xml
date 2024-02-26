@@ -6,16 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/Itranfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/ITransfers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/TransfersApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/ITransfersApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/CardAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/CardAccount.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/cardAccount.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/cardAccount.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/account/Account.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/transactions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/transactions.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
