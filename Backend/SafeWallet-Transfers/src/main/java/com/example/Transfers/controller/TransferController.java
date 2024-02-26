@@ -49,7 +49,13 @@ public class TransferController {
 
     @GetMapping("/{id}/transactions")
     public List<?> getTransactions(@PathVariable Long id) {
-        return null;
+        UserDto userDto = transferService.findUserById(id);
+        if(userDto == null){
+            return null;
+        }
+
+       return userDto.getTransactions();
+
     }
 
     @PutMapping("/send")

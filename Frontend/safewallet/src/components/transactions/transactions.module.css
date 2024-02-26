@@ -1,0 +1,38 @@
+
+.transactionsBackground{
+	background-color: #9a91911a;
+	width: 39rem;
+	height: auto;
+	margin-left: 3rem;
+	display: flex;
+	transform: translateX(90%);
+	border-radius: 1rem;
+
+}
+
+.safewalletTransaction{
+	width: 3rem;
+	border-radius: 0.5rem;
+	margin-left: 1rem;
+}
+
+.transactionContainer{
+	display: flex;
+	align-items: center;
+	gap: 3rem; 
+	padding: 1rem;
+	width: 100%; 
+  box-sizing: border-box;
+
+}
+
+
+.columnW {
+  width: 33.33%;
+  box-sizing: border-box;
+}
+
+.noTransactions{
+	text-align: center;
+	padding: 2rem;
+}

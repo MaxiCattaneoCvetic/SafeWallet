@@ -6,6 +6,7 @@ import NavBar from "../../components/navBar/NavBar.jsx";
 import upperCase from "../../functions/upperCase.js"
 
 import { SpinnerDotted } from "spinners-react";
+import Transactions from "../../components/transactions/Transactions.jsx";
 const Account = () => {
   const isRun = useRef(false);
   const [vToken, setVToken] = useState();
@@ -42,6 +43,9 @@ const Account = () => {
             </div>
             <section className={style.balanceContainer}>
               <AccountBalance />
+            </section>
+            <section>
+              <Transactions userId={vUser.id}/>
             </section>
             <section>
               <CardAccount />

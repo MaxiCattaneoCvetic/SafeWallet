@@ -13,6 +13,7 @@ const URL_GET_USER_ACCOUNT_LOGIN = `${URL_GATEWAY}/useraccount/`; // Se utiliza 
 const URL_GET_USER_BALANCE = `${URL_GATEWAY}/accounts/`;
 const URL_GET_USER_CBU = `${URL_GATEWAY}/accounts/getcbu/`;
 
+
 // URLS WELCOME-SAFEWALLET-GIFT
 const URL_WELCOME_GIFT = `${URL_GATEWAY}/accounts/claimgift/`;
 
@@ -30,5 +31,5 @@ export {
   URL_LOGOUT,
   URL_GET_USER_BALANCE,
   URL_WELCOME_GIFT,
-  URL_GET_USER_CBU
+  URL_GET_USER_CBU,
 };

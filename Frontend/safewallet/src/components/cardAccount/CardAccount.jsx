@@ -3,7 +3,7 @@ import style from "./cardAccount.module.css";
 export default  function CardAccount () {
 	return(
 		<>
-		<h2 className={style.cardTitle}>Mis tarjetas:</h2>
+		<h2 className="titles">Mis tarjetas:</h2>
 		<div className={style.mainTargetContainer}>
 		<div className={style.targetConteiner}>
 			<div>

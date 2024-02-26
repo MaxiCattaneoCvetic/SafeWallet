@@ -7,7 +7,7 @@ import com.example.Transfers.model.UserDto;
 import java.util.List;
 
 
-public interface Itranfers {
+public interface ITransfers {
 
     Double getSaldo(Long id);
 
@@ -29,4 +29,5 @@ public interface Itranfers {
 
     int getGifts(String cbu);
 
+    UserDto findUserById(Long id);
 }

@@ -4,8 +4,6 @@ import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.repository.ITransferRepository;
-import jakarta.ws.rs.NotFoundException;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TransferService implements Itranfers {
+public class TransferService implements ITransfers {
 
 
     @Autowired
@@ -133,6 +131,14 @@ public class TransferService implements Itranfers {
         return 0;
     }
 
+    @Override
+    public UserDto findUserById(Long id) {
+        if(iTransferRepository.findUserById(id) != null){
+            return iTransferRepository.findUserById(id);
+        }
+        return null;
+    }
+
     public UserTransactionsDto settingNewTransaction(String from, Double amount,String to) {
         LocalDate date = LocalDate.now();
         UserTransactionsDto userTransactionsDto = null;
@@ -147,7 +153,6 @@ public class TransferService implements Itranfers {
 
         return userTransactionsDto;
     }
-
 
 
 

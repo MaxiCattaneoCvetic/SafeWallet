@@ -11,6 +11,9 @@ public interface ITransferRepository extends MongoRepository<UserDto, Long> {
 
     void deleteByEmail(String email);
 
+    UserDto findUserById(Long id);
+
+
 
 
 
