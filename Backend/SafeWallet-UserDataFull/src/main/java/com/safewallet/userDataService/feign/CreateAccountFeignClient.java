@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient(name = "account-balance") // url = "localhost:8086")
 public interface CreateAccountFeignClient {
 
-    @PostMapping("/transfer")
+    @PostMapping("/accounts")
     void createAccountBalance(UserDto userDto);
 
-    @DeleteMapping("/transfer")
+    @DeleteMapping("/accounts")
     void deleteAccountBalance(String email);
 }

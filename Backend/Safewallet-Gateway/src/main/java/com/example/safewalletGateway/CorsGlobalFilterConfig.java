@@ -83,7 +83,7 @@ public class CorsGlobalFilterConfig {
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/userKeycloak/**", "/userKeycloak/create").permitAll()
                         .pathMatchers("/user/**").permitAll()
-                        .pathMatchers("/transfer/**").permitAll()
+                        .pathMatchers("/accounts/**").permitAll()
                         .anyExchange().permitAll()
                 );
 

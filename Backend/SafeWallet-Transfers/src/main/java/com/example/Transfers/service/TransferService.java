@@ -2,12 +2,15 @@ package com.example.Transfers.service;
 
 import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.UserDto;
+import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.repository.ITransferRepository;
 import jakarta.ws.rs.NotFoundException;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,15 +39,9 @@ public class TransferService implements Itranfers {
 
     @Override
     public void deleteByEmail(String email) {
-
         UserDto userDto = findUserByEmail(email);
         if (userDto != null){iTransferRepository.deleteByEmail(email);}
-
-
     }
-
-
-
 
     @Override
     public Double getSaldo(Long id) {
@@ -63,8 +60,6 @@ public class TransferService implements Itranfers {
         Double initialBalance;
         Double newAmount;
         Optional<UserDto> user = iTransferRepository.findById(id);
-
-
         if (user.isPresent()) {
             UserDto userDto = user.get();
             initialBalance = userDto.getBalance();
@@ -110,6 +105,8 @@ public class TransferService implements Itranfers {
         System.out.println("Seteando balance 0, nuevo usuario");
         userDto.setBalance(0.0);
         userDto.setWelcomeGift(false);
+        List<UserTransactionsDto> transactions = new ArrayList<>();
+        userDto.setTransactions(transactions);
         iTransferRepository.save(userDto);
 
     }
@@ -127,10 +124,28 @@ public class TransferService implements Itranfers {
             Double balance = userDto.getBalance();
             balance += 10000;
             userDto.setBalance(balance);
+            UserTransactionsDto transaction = settingNewTransaction("SafeWallet", 10000.0, userDto.getName());
+            List<UserTransactionsDto> transactions = userDto.getTransactions();
+            transactions.add(transaction);
             iTransferRepository.save(userDto);
             return  1;
         }
         return 0;
+    }
+
+    public UserTransactionsDto settingNewTransaction(String from, Double amount,String to) {
+        LocalDate date = LocalDate.now();
+        UserTransactionsDto userTransactionsDto = null;
+        if(from.equalsIgnoreCase("SafeWallet")) {
+            userTransactionsDto = new UserTransactionsDto("SafeWallet",to,amount,date);
+            return userTransactionsDto;
+        }
+        String userFrom = iTransferRepository.findUserByCbu(from).getName();
+        String userTo = iTransferRepository.findUserByCbu(to).getName();
+
+        userTransactionsDto = new UserTransactionsDto(userFrom,userTo,amount,date);
+
+        return userTransactionsDto;
     }
 
 

@@ -4,25 +4,56 @@ import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Document("users_account")
 public class UserDto {
 
     @Id
     private long id;
+    private String name;
+    private String lastName;
     private String email;
-
     private String cbu;
     private Double balance;
     private Boolean welcomeGift;
+    private List<UserTransactionsDto> transactions;
 
 
-    public UserDto(String email, String cbu, Double balance, Boolean welcomeGift) {
+
+    //full constructor
+    public UserDto(String name,String email,String lastName , String cbu, Double balance, Boolean welcomeGift) {
+        this.name = name;
+        this.lastName = lastName;
         this.email = email;
         this.cbu = cbu;
         this.balance = balance;
-        this.welcomeGift = welcomeGift;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<UserTransactionsDto> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<UserTransactionsDto> transactions) {
+        this.transactions = transactions;
+    }
 
     public UserDto() {
     }
@@ -66,5 +97,8 @@ public class UserDto {
     public void setWelcomeGift(Boolean welcomeGift) {
         this.welcomeGift = welcomeGift;
     }
+
+
+
 
 }

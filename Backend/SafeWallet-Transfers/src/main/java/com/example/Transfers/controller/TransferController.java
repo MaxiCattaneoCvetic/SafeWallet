@@ -56,17 +56,12 @@ public class TransferController {
     public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
         UserDto userDto = transferService.findUserByCbu(transferInformation.getCbuFrom());
         Double balance = userDto.getBalance();
-
         if(balance < transferInformation.getMonto()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Saldo insuficiente");
         }
-
         if (transferInformation.getMonto() <= 0) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto debe ser mayor a 0");
         }
-
-
-
         try {
             String from = transferInformation.getCbuFrom();
             String to = transferInformation.getCbuTo();
@@ -111,7 +106,7 @@ public class TransferController {
         if(userDto !=null){
             int response = transferService.getGifts(userDto.getCbu());
             if(response == 1){
-                return ResponseEntity.status(HttpStatus.OK).body("Reclamaste con éxito tu premio en Safe Wallet!! Que lo disfrutes :)");
+                return ResponseEntity.status(HttpStatus.OK).body("Reclamaste con éxito tu premio en Safe Wallet!! Que lo disfrutes 😎😎");
             }else{
                 return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("Usuario ya reclamo el premio");
             }
@@ -125,9 +120,10 @@ public class TransferController {
     @GetMapping("/getcbu/{cbu}")
     public ResponseEntity<?> getUserCbu(@PathVariable String cbu) throws MessageException {
         UserDto userDto = transferService.findUserByCbu(cbu);
-        System.out.println(userDto.toString());
         return ResponseEntity.status(HttpStatus.OK).body(userDto);
     }
+
+
 
 
 

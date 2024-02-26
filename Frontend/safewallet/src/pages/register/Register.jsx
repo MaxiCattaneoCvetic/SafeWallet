@@ -50,23 +50,11 @@ export default function Register() {
 
   async function handleRegister(e) {
     e.preventDefault();
-    // Contruimos objeto para keyc, no le envio el first ni el last ya que de eso se encarga userFull
-    /*
-      const user = {
-      username: data.email, 
-      // firstName: data.name,
-      // lastName: data.lastname,
-      password: data.password,
-      email: data.email,
-      role: ["user"],
-    };
-    */
-
     // Contruimos objeto para userDataFull
     const userv = {
       username: data.email,
       password: data.password,
-      role: ["user"],
+      roles: ["user"],
       name: data.name,
       lastName: data.lastname,
       email: data.email,
@@ -76,8 +64,6 @@ export default function Register() {
 
 try{
   const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-  console.log(response);
-
     
   if (response.data === "usuario creado") {
     successRegister();

@@ -39,6 +39,7 @@ public class FeignService implements IUserService {
     public void createUser(UserDto userDto) throws Exception {
         try{
             createuserkeycloak.createUserKeycloak(userDto);
+            System.out.println("estoy en fgeign" + userDto.toString());
             createAccountFeignClient.createAccountBalance(userDto);
         }catch (Exception e){
             createAccountFeignClient.deleteAccountBalance(userDto.getEmail());
