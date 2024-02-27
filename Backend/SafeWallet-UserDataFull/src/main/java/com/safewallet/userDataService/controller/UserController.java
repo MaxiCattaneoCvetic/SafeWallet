@@ -32,28 +32,30 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) throws Exception {
 
         System.out.println(userDto.toString());
-
-        // Primero vamos a ver si existe un user- Check del DNI o el email
         String email = userDto.getEmail();
         String dni = userDto.getDni();
-        UserDto user = userService.findByUsername(email);
-        if(user != null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
-        }
+        // Primero vamos a ver si existe un user- Check del DNI o el email
 
-        user = userService.findByDni(dni);
-        if(user != null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
-        }
+            UserDto user = userService.findByUsername(email);
+            if(user != null){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
+            }
+
+            user = userService.findByDni(dni);
+            if(user != null){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
+            }
+
+
 
         try {
             userService.createUser(userDto);
             feignService.createUser(userDto);
-            return ResponseEntity.status(HttpStatus.OK).body("usuario creado");
+            return ResponseEntity.status(HttpStatus.CREATED).body(userDto.toString());
 
         }catch (Exception e ){
             userService.deleteUser(email);
-            //feignService.deleteUser(email);
+            feignService.deleteUser(email);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
 

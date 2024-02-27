@@ -1,5 +1,6 @@
 package com.safewallet.userDataService;
 
+import com.safewallet.userDataService.aliasCbu_generator.Cbu;
 import com.safewallet.userDataService.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

@@ -64,15 +64,15 @@ export default function Register() {
 
 try{
   const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-    
-  if (response.data === "usuario creado") {
+  if (response.status === 201) {
     successRegister();
   } else{
     setErrorUserExist(true);
     setError(response.response.data);
   }
   }catch (error) {
-    swal("¡Ops, algo anda mal!", "Tu cuenta no pudo ser registrada por un problema en el servidor. \n Por favor contacta con un administrador.", "error").then(()=>navigate("/"))
+    console.log(error);
+    //swal("¡Ops, algo anda mal!", "Tu cuenta no pudo ser registrada por un problema en el servidor. \n Por favor contacta con un administrador.", "error").then(()=>navigate("/"))
   }
 }
 

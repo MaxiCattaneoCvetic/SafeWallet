@@ -1,4 +1,5 @@
-package com.safewallet.userDataService.cbuGenerator;
+package com.safewallet.userDataService.aliasCbu_generator;
+
 
 import org.springframework.stereotype.Component;
 
@@ -6,6 +7,8 @@ import java.util.Random;
 
 @Component
 public class Cbu {
+
+
 
     public static String generateCbu() {
         String CBU = "";

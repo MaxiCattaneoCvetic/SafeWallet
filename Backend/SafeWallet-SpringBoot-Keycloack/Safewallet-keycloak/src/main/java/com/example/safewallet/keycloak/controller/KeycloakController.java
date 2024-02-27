@@ -4,6 +4,7 @@ import com.example.safewallet.keycloak.DTO.UserDto;
 import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -70,7 +71,7 @@ public class KeycloakController {
         try {
             return keycloakService.logOut(email);
         }catch (Error e){
-            return ResponseEntity.badRequest().body("ERROR EN LOGOUT");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
     }
 

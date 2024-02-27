@@ -154,7 +154,7 @@ public class KeycloakRepository implements IkeyCloakService {
         RealmResource realmResource = keycloak.realm("safewallet");
         UserResource userResource = realmResource.users().get(userRepresentation.getId());
         userResource.logout();
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(200).build();
 
     }
 
