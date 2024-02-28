@@ -27,6 +27,13 @@ public class UserController {
         this.feignService = feignService;
     }
 
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    public UserController() {
+    }
+
     @PostMapping()
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) throws Exception {
@@ -35,7 +42,9 @@ public class UserController {
         String email = userDto.getEmail();
         String dni = userDto.getDni();
         // Primero vamos a ver si existe un user- Check del DNI o el email
-
+            if(email == null || email.isEmpty()){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email es obligatorio.");
+            }
             UserDto user = userService.findByUsername(email);
             if(user != null){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
@@ -45,9 +54,6 @@ public class UserController {
             if(user != null){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
             }
-
-
-
         try {
             userService.createUser(userDto);
             feignService.createUser(userDto);

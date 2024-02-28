@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SequenceGeneratorService {
+
+    @Autowired
     private MongoOperations mongoOperations;
 
     @Autowired

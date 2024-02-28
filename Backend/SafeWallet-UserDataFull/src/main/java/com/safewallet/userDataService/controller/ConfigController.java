@@ -1,3 +1,4 @@
+/*
 package com.safewallet.userDataService.controller;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -26,3 +27,4 @@ public class ConfigController {
         this.testProp = testProp;
     }
 }
+*/

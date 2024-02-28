@@ -31,6 +31,17 @@ public class  UserService implements IUserService {
     @Autowired
     private SequenceGeneratorService sequenceGeneratorService;
 
+    public UserService() {
+    }
+
+    public UserService(IUserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public UserService(IUserRepository userRepository, SequenceGeneratorService sequenceGeneratorService) {
+        this.userRepository = userRepository;
+        this.sequenceGeneratorService = sequenceGeneratorService;
+    }
 
     @Override
     public List<UserDto> findAll() {
@@ -41,6 +52,7 @@ public class  UserService implements IUserService {
     @Override
     public void createUser(UserDto userDto) throws MessageException {
         logger.info("creando usuario");
+
 
         try{
             //seteamos un id incremental
