@@ -28,6 +28,7 @@ public class TransferController {
     @PostMapping
     public ResponseEntity<?> createNewBalanceAccount(@RequestBody UserDto userDto) {
         try {
+            System.out.println("soy transfer y recibo este user " + userDto.toString());
             transferService.createBalanceAccount(userDto);
             return ResponseEntity.status(HttpStatus.OK).body("Cuenta de usuario creada");
         } catch (Exception e) {
@@ -35,17 +36,18 @@ public class TransferController {
         }
     }
 
-    @GetMapping("/{email}")
-    public UserDto getUserAccount(@PathVariable String email) {
+    @GetMapping("/{id}")
+    public UserDto getUserAccount(@PathVariable Long id) {
         UserDto user = null;
         try {
-            user = transferService.findUserByEmail(email);
+            user = transferService.findUserById(id);
             return user;
         } catch (NullPointerException e) {
             e.getMessage();
             return null;
         }
     }
+    //https://www.youtube.com/watch?v=3TjS1uYxGV8&ab_channel=ProgramandoenJAVA pagination
 
     @GetMapping("/{id}/transactions")
     public List<?> getTransactions(@PathVariable Long id) {

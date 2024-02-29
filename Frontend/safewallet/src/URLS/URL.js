@@ -9,9 +9,13 @@ const REGISTER_USER_KEYCLOAK = `${URL_GATEWAY}/userKeycloak/create`;
 const REGISTER_USER_FULL = `${URL_GATEWAY}/user`;
 
 // URLS INFO USERS
-const URL_GET_USER_ACCOUNT_LOGIN = `${URL_GATEWAY}/useraccount/`; // Se utiliza para el login
+const URL_GET_USER_ACCOUNT_LOGIN = `${URL_GATEWAY}/users/`; // Se utiliza para el login
 const URL_GET_USER_BALANCE = `${URL_GATEWAY}/accounts/`;
 const URL_GET_USER_CBU = `${URL_GATEWAY}/accounts/getcbu/`;
+
+
+// URLS PATCH USERS INFO
+
 
 
 // URLS WELCOME-SAFEWALLET-GIFT

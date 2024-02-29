@@ -4,15 +4,17 @@ import com.netflix.discovery.converters.Auto;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.PATCH;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/useraccount")
+@RequestMapping("/users")
 public class AccountController {
 
     @Autowired
@@ -28,10 +30,66 @@ public class AccountController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?>  findAllUsers() {
+    public ResponseEntity<?> findAllUsers() {
         List<UserDto> listUser = userService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(listUser);
 
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> updateUserData(@PathVariable Long id, @RequestBody Map<String, String> updates) {
+
+        try {
+            UserDto userDto = userService.findById(id);
+            if (userDto == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
+            }
+
+            for (Map.Entry<String, String> update : updates.entrySet()) {
+
+                switch (update.getKey()) {
+                    case "name":
+                        userDto.setName(update.getValue());
+                        break;
+                    case "lastName":
+                        userDto.setLastName(update.getValue());
+                        break;
+                    case "phone":
+                        userDto.setPhone(update.getValue());
+                        break;
+                    case "dni":
+                        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puede modificar el DNI.");
+                    case "cbu":
+                        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puede modificar el CBU.");
+                    case "alias":
+                        if (userService.userExists(update.getValue(), update.getKey())) {
+                            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El Alias ya existe.");
+                        }
+                        userDto.setAlias(update.getValue());
+                        break;
+                    case "email":
+                        if (!update.getValue().contains("@")) {
+                            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email no es valido.");
+                        }
+
+                        if (userService.userExists(update.getValue(), update.getKey())) {
+                            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email ya existe.");
+                        }
+                        userDto.setUsername(update.getValue());
+                        userDto.setEmail(update.getValue());
+                        break;
+                    default:
+                        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Campo no válido: " + update.getKey());
+                }
+            }
+            userService.updateUser(userDto);
+            return ResponseEntity.status(HttpStatus.OK).body("Modificaste tus datos con éxito.");
+        } catch (NotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
+        } catch (Exception e) {
+            // Manejar otros posibles errores
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error interno del servidor.");
+        }
     }
 
 

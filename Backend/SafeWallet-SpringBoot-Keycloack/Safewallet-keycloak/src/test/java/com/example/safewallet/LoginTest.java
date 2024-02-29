@@ -89,12 +89,5 @@ public class LoginTest {
                 .when()
                 .post(urlKeycloak)
                 .then().assertThat().statusCode(401);
-
-
     }
-
-
-
-
-
 }

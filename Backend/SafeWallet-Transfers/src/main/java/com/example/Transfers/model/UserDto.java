@@ -16,6 +16,7 @@ public class UserDto {
     private String lastName;
     private String email;
     private String cbu;
+    private String alias;
     private Double balance;
     private Boolean welcomeGift;
     private List<UserTransactionsDto> transactions;
@@ -23,12 +24,22 @@ public class UserDto {
 
 
     //full constructor
-    public UserDto(String name,String email,String lastName , String cbu, Double balance, Boolean welcomeGift) {
+    public UserDto(String name,String email,String lastName , String cbu, String alias, Double balance, Boolean welcomeGift) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.cbu = cbu;
+        this.alias = alias;
         this.balance = balance;
+    }
+
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     public String getName() {

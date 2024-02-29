@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/reports/ExtentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../~WRL1638.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/Cbu_Alias_test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/accountController/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/accountController/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/RegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Test Exploratorio sprint 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Test Exploratorio sprint 1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~$st Exploratorio sprint 1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~WRL1638.tmp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +99,7 @@
       <recent name="com.example.apigateway" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest">
+  <component name="RunManager" selected="Compound.allProject">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
@@ -206,6 +217,37 @@
       <toRun name="UserDataServiceApplication" type="Application" />
       <method v="2" />
     </configuration>
+    <configuration name="Cbu_Alias_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafeWallet-UserDataFull" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.safewallet.userDataService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.safewallet.userDataService" />
+      <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.Cbu_Alias_test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cbu_Alias_test.generateCbuSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafeWallet-UserDataFull" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.safewallet.userDataService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.safewallet.userDataService" />
+      <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.Cbu_Alias_test" />
+      <option name="METHOD_NAME" value="generateCbuSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafeWallet-keycloak" />
       <extension name="coverage">
@@ -252,38 +294,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTest.testCreateUser_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-UserDataFull" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.safewallet.userDataService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.safewallet.userDataService" />
-      <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.RegisterTest" />
-      <option name="METHOD_NAME" value="testCreateUser_Success" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTest.testCreateUser_alreadyRegister_emailNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-UserDataFull" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.safewallet.userDataService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.safewallet.userDataService" />
-      <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.RegisterTest" />
-      <option name="METHOD_NAME" value="testCreateUser_alreadyRegister_emailNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.SafeWalletServerApplication" />
@@ -295,19 +305,19 @@
       <item itemvalue="Application.SafeWalletLoginRedirectApplication" />
       <item itemvalue="Compound.Safewallet-run" />
       <item itemvalue="Compound.allProject" />
+      <item itemvalue="JUnit.Cbu_Alias_test" />
+      <item itemvalue="JUnit.Cbu_Alias_test.generateCbuSuccess" />
       <item itemvalue="JUnit.LoginTest" />
       <item itemvalue="JUnit.LoginTest.login_succesfull" />
-      <item itemvalue="JUnit.RegisterTest.testCreateUser_Success" />
-      <item itemvalue="JUnit.RegisterTest.testCreateUser_alreadyRegister_emailNull" />
       <item itemvalue="JUnit.RegisterTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Cbu_Alias_test" />
+        <item itemvalue="JUnit.Cbu_Alias_test.generateCbuSuccess" />
         <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.LoginTest.login_succesfull" />
         <item itemvalue="JUnit.RegisterTest" />
-        <item itemvalue="JUnit.RegisterTest.testCreateUser_Success" />
-        <item itemvalue="JUnit.RegisterTest.testCreateUser_alreadyRegister_emailNull" />
       </list>
     </recent_temporary>
   </component>

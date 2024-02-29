@@ -44,8 +44,6 @@ public class FeignService implements IUserService {
             createAccountFeignClient.deleteAccountBalance(userDto.getEmail());
             throw new Exception("Error al crear el usuario");
         }
-
-
     }
 
 
@@ -63,6 +61,26 @@ public class FeignService implements IUserService {
             throw new Exception("Error al eliminar el usuario");
         }
 
+    }
+
+    @Override
+    public UserDto findById(Long id) {
+        return null;
+    }
+
+    @Override
+    public void updateUser(UserDto userDto) {
+
+    }
+
+    @Override
+    public UserDto findByCbu(String cbu) {
+        return null;
+    }
+
+    @Override
+    public UserDto findByAlias(String alias) {
+        return null;
     }
 
 

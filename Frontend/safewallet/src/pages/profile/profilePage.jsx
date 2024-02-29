@@ -20,7 +20,7 @@ export default function ProfilePage() {
         swal({
           title: "¡Ops, algo anda mal!",
           text: "Parece que no hay ninguna sesión iniciada, por favor inicia sesión para continuar",
-          icon: "error",
+          icon: "warning",
           button: "Aceptar",
         }).then(() => {
           try {
@@ -34,7 +34,6 @@ export default function ProfilePage() {
         setIsLogin(true);
         setUser(JSON.parse(user));
         setToken(token);
-
       }
     };
 

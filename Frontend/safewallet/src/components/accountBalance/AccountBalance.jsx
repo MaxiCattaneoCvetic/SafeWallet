@@ -18,7 +18,7 @@ export default function AccountBalance() {
 
   useEffect(() => {
     let userName = JSON.parse(sessionStorage.getItem("user"));
-    getBalance(userName.username)
+    getBalance(userName.id)
       .then((balance) => {
         setUserBalance(balance);
       })
@@ -98,7 +98,7 @@ export default function AccountBalance() {
             </button>
             {visible === 1 ? (
               <div ref={aliasRef} className={style.showText}>
-                <p>ALIAS: BLANCO.PEPE.BARCO</p>
+                <p>ALIAS: {userBalance.alias}</p>
                 <button className="scondbtn">Copiar</button>
               </div>
             ) : null}

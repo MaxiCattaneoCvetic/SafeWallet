@@ -15,5 +15,15 @@ public interface IUserService {
 
     void deleteUser(String email) throws Exception;
 
+    UserDto findById(Long id);
+
+    void updateUser(UserDto userDto);
+    UserDto findByCbu(String cbu);
+    UserDto findByAlias(String alias);
+
+
+
+
+
 }
 

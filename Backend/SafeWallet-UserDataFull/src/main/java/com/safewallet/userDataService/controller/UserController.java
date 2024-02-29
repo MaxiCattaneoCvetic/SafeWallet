@@ -19,13 +19,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private FeignService feignService;
-
-    public UserController(UserService userService, FeignService feignService) {
-        this.userService = userService;
-        this.feignService = feignService;
-    }
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -42,32 +35,28 @@ public class UserController {
         String email = userDto.getEmail();
         String dni = userDto.getDni();
         // Primero vamos a ver si existe un user- Check del DNI o el email
-            if(email == null || email.isEmpty()){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email es obligatorio.");
-            }
-            UserDto user = userService.findByUsername(email);
-            if(user != null){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
-            }
+        if (email == null || email.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email es obligatorio.");
+        }
+        UserDto user = userService.findByUsername(email);
+        if (user != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese email.");
+        }
 
-            user = userService.findByDni(dni);
-            if(user != null){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
-            }
+        user = userService.findByDni(dni);
+        if (user != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ya existe un usuario con ese DNI.");
+        }
         try {
             userService.createUser(userDto);
-            feignService.createUser(userDto);
             return ResponseEntity.status(HttpStatus.CREATED).body(userDto.toString());
-
-        }catch (Exception e ){
+        } catch (Exception e) {
             userService.deleteUser(email);
-            feignService.deleteUser(email);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }
 
 
     }
-
 
 
 }

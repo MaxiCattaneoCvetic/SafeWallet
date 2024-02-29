@@ -62,7 +62,7 @@ class RegisterTest {
 	@BeforeEach
 	void setUp() {
 		MockitoAnnotations.initMocks(this);
-		userController = new UserController(userService, feignService);
+		userController = new UserController(userService);
 	}
 
 	@Test
