@@ -3,6 +3,7 @@ package com.safewallet.userDataService.service;
 
 import com.safewallet.userDataService.exception.MessageException;
 import com.safewallet.userDataService.feign.feignService.FeignService;
+import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.repository.IUserRepository;
 import com.safewallet.userDataService.service.mongoDB.SequenceGeneratorService;
@@ -137,9 +138,10 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto) {
+    public void updateUser(UserDto userDto, UpdatesModel updatesModel) {
         try {
             userRepository.save(userDto);
+            feignService.updateUser(userDto, updatesModel);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -155,19 +157,6 @@ public class UserService implements IUserService {
         return null;
 
     }
-
-    @Override
-    public UserDto findByAlias(String alias) {
-        try {
-            return userRepository.findByAlias(alias);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-
-    }
-
-
     public List<String> checkUniqueCbu_Alias() {
         List<UserDto> allUsers = userRepository.findAll();
         List<String> lista = new ArrayList<>();
@@ -199,6 +188,20 @@ public class UserService implements IUserService {
 
         return lista;
     }
+
+    @Override
+    public UserDto findByAlias(String alias) {
+        try {
+            return userRepository.findByAlias(alias);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+
+
 
 
 }

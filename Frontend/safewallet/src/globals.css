@@ -121,6 +121,31 @@ body {
   border-radius: 2rem;
 }
 
+.editButton {
+  padding: 0.3rem;
+  background: none;
+  border: 2px solid var(--borderPrimaryBTN);
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.editButtonDisabled{
+  padding: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+}
+.editButtonDisabled:hover{
+  cursor: not-allowed;
+}
+
+.editButton:hover{
+  background-color: #2BB32A;
+  color: white;
+}
+
 .primarybtnMOBILE{
   padding: 2px;
   background: none;

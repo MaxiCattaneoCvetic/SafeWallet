@@ -1,6 +1,5 @@
 package com.safewallet.userDataService.controller;
 
-import com.safewallet.userDataService.feign.feignService.FeignService;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,22 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.PermitAll;
-import java.util.List;
 
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class CreateUserController {
 
     @Autowired
     private UserService userService;
 
 
-    public UserController(UserService userService) {
+    public CreateUserController(UserService userService) {
         this.userService = userService;
     }
 
-    public UserController() {
+    public CreateUserController() {
     }
 
     @PostMapping()

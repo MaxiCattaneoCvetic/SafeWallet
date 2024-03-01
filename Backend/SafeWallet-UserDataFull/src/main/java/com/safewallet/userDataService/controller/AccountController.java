@@ -1,10 +1,9 @@
-package com.safewallet.userDataService.controller.accountController;
+package com.safewallet.userDataService.controller;
 
-import com.netflix.discovery.converters.Auto;
+import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import jakarta.ws.rs.NotFoundException;
-import jakarta.ws.rs.PATCH;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,7 +43,9 @@ public class AccountController {
             if (userDto == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
             }
-
+            UpdatesModel updatesModel = new UpdatesModel();
+            updatesModel.setId(id);
+            updatesModel.setType(updates);
             for (Map.Entry<String, String> update : updates.entrySet()) {
 
                 switch (update.getKey()) {
@@ -82,7 +83,7 @@ public class AccountController {
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Campo no válido: " + update.getKey());
                 }
             }
-            userService.updateUser(userDto);
+            userService.updateUser(userDto,updatesModel);
             return ResponseEntity.status(HttpStatus.OK).body("Modificaste tus datos con éxito.");
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");

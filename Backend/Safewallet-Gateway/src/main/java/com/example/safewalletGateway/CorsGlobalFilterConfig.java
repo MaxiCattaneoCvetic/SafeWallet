@@ -63,7 +63,7 @@ public class CorsGlobalFilterConfig {
                 } while (headers.get(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN) == null);
 
 
-                headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "OPTIONS, GET, PUT, POST, DELETE");
+                headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "OPTIONS, GET, PUT, POST, DELETE,PATCH");
                 headers.set(HttpHeaders.ACCESS_CONTROL_MAX_AGE, "3600");
 
                 System.out.println("my headeres: " + headers.get(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN));

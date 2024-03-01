@@ -3,7 +3,7 @@ package com.safewallet.userDataService;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.safewallet.userDataService.controller.UserController;
+import com.safewallet.userDataService.controller.CreateUserController;
 import com.safewallet.userDataService.feign.feignService.FeignService;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.reports.ExtentFactory;
@@ -40,7 +40,7 @@ class RegisterTest {
 	private UserService userService;
 
 	@InjectMocks
-	private UserController userController;
+	private CreateUserController createUserController;
 
 	static ExtentSparkReporter info = new ExtentSparkReporter("target/register_test.html");
 	static ExtentReports extent;
@@ -62,7 +62,7 @@ class RegisterTest {
 	@BeforeEach
 	void setUp() {
 		MockitoAnnotations.initMocks(this);
-		userController = new UserController(userService);
+		createUserController = new CreateUserController(userService);
 	}
 
 	@Test
@@ -78,7 +78,7 @@ class RegisterTest {
 		when(userRepository.findByDni(userDto.getDni())).thenReturn(null);
 
 		// Act
-		ResponseEntity<?> response = userController.createUser(userDto);
+		ResponseEntity<?> response = createUserController.createUser(userDto);
 
 		// Assert
 		assertEquals(HttpStatus.CREATED, response.getStatusCode());
@@ -97,7 +97,7 @@ class RegisterTest {
 		when(userRepository.findByDni(userDto.getDni())).thenReturn(userDto);
 
 		// Act
-		ResponseEntity<?> response = userController.createUser(userDto);
+		ResponseEntity<?> response = createUserController.createUser(userDto);
 
 		// Assert
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
@@ -117,7 +117,7 @@ class RegisterTest {
 		when(userRepository.findByDni(userDto.getDni())).thenReturn(null);
 
 		// Act
-		ResponseEntity<?> response = userController.createUser(userDto);
+		ResponseEntity<?> response = createUserController.createUser(userDto);
 
 		// Assert
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
@@ -137,7 +137,7 @@ class RegisterTest {
 		when(userRepository.findByDni(userDto.getDni())).thenReturn(null);
 
 		// Act
-		ResponseEntity<?> response = userController.createUser(userDto);
+		ResponseEntity<?> response = createUserController.createUser(userDto);
 
 		// Assert
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());

@@ -1,7 +1,8 @@
 package com.safewallet.userDataService.feign.feignService;
 
-import com.safewallet.userDataService.feign.CreateAccountFeignClient;
-import com.safewallet.userDataService.feign.CreateUserKeycloak;
+import com.safewallet.userDataService.feign.AccountFeignClient;
+import com.safewallet.userDataService.feign.UserKeycloakFeign;
+import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.serviceInterface.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +14,15 @@ import java.util.List;
 public class FeignService implements IUserService {
 
     @Autowired
-    private CreateAccountFeignClient createAccountFeignClient;
+    private AccountFeignClient accountFeignClient;
 
     @Autowired
-    private CreateUserKeycloak createuserkeycloak;
+    private UserKeycloakFeign createuserkeycloak;
 
     @Autowired
-    public FeignService(CreateAccountFeignClient createAccountFeignClient, CreateUserKeycloak createUserKeycloak) {
-        this.createAccountFeignClient = createAccountFeignClient;
-        this.createuserkeycloak = createUserKeycloak;
+    public FeignService(AccountFeignClient accountFeignClient, UserKeycloakFeign userKeycloakFeign) {
+        this.accountFeignClient = accountFeignClient;
+        this.createuserkeycloak = userKeycloakFeign;
     }
 
     public FeignService() {
@@ -39,9 +40,9 @@ public class FeignService implements IUserService {
     public void createUser(UserDto userDto) throws Exception {
         try{
             createuserkeycloak.createUserKeycloak(userDto);
-            createAccountFeignClient.createAccountBalance(userDto);
+            accountFeignClient.createAccountBalance(userDto);
         }catch (Exception e){
-            createAccountFeignClient.deleteAccountBalance(userDto.getEmail());
+            accountFeignClient.deleteAccountBalance(userDto.getEmail());
             throw new Exception("Error al crear el usuario");
         }
     }
@@ -69,8 +70,8 @@ public class FeignService implements IUserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto) {
-
+    public void updateUser(UserDto userDto, UpdatesModel updatesModel) {
+        accountFeignClient.updateAccountBalance(userDto.getId(), updatesModel);
     }
 
     @Override

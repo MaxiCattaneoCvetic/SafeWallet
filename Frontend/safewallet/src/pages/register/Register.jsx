@@ -6,6 +6,7 @@ import swal from "sweetalert";
 import { fetchuserFull, fetchKeyc } from "../../api/registerFetch.js";
 import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "../../URLS/URL.js";
 import { useNavigate } from "react-router-dom";
+import { SpinnerCircular } from "spinners-react";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -13,8 +14,8 @@ export default function Register() {
   const [error2, setError2] = useState({
     errorEmail: false,
     errorPassword: false,
-  })
-  const [error,setError] = useState("");
+  });
+  const [error, setError] = useState("");
   const [errorUserExist, setErrorUserExist] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -26,6 +27,7 @@ export default function Register() {
   });
   const [password2, setPassword2] = useState("");
   const inputRef = useRef(null);
+  const [loading, setLoading] = useState(null);
 
   useEffect(() => {
     try {
@@ -62,20 +64,20 @@ export default function Register() {
       dni: data.dni,
     };
 
-try{
-  const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-  if (response.status === 201) {
-    successRegister();
-  } else{
-    setErrorUserExist(true);
-    setError(response.response.data);
+    try {
+      const response = await fetchuserFull(userv, REGISTER_USER_FULL);
+      setLoading(true);
+      if (response.status === 201) {
+        successRegister();
+        setLoading(false)
+      } else {
+        setErrorUserExist(true);
+        setError(response.response.data);
+      }
+    } catch (error) {
+      swal("¡Ops, algo anda mal!", "Tu cuenta no pudo ser registrada por un problema en el servidor. \n Por favor contacta con un administrador.", "error").then(()=>navigate("/"))
+    }
   }
-  }catch (error) {
-    console.log(error);
-    //swal("¡Ops, algo anda mal!", "Tu cuenta no pudo ser registrada por un problema en el servidor. \n Por favor contacta con un administrador.", "error").then(()=>navigate("/"))
-  }
-}
-
 
   function successRegister() {
     swal({
@@ -84,6 +86,7 @@ try{
       icon: "success",
       button: "Volver al inicio",
     }).then(() => {
+      setLoading(false);
       navigate("/");
     });
   }
@@ -284,13 +287,7 @@ try{
               >
                 Volver
               </button>
-              {errorUserExist ? (
-                <p className="textError">
-                  {error}
-                </p>
-              ) : (
-                ""
-              )}
+              {errorUserExist ? <p className="textError">{error}</p> : ""}
             </div>
           </>
         )}
@@ -323,15 +320,22 @@ try{
 
   return (
     <>
-      <div className={style.mainPage}>
-        <Modal
-          title="Registro"
-          children={modalChildrenRegister}
-          onClick={() => {
-            navigate("/");
-          }}
-        ></Modal>
-      </div>
+      {loading == true ? (
+        <div className="spinner">
+          {" "}
+          <SpinnerCircular />
+        </div>
+      ) : (
+        <div className={style.mainPage}>
+          <Modal
+            title="Registro"
+            children={modalChildrenRegister}
+            onClick={() => {
+              navigate("/");
+            }}
+          ></Modal>
+        </div>
+      )}
     </>
   );
 }

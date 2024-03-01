@@ -1,8 +1,7 @@
 package com.safewallet.userDataService.service.serviceInterface;
 
+import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
-import org.apache.coyote.Response;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -17,7 +16,9 @@ public interface IUserService {
 
     UserDto findById(Long id);
 
-    void updateUser(UserDto userDto);
+    void updateUser(UserDto userDto, UpdatesModel updatesModel);
+
+
     UserDto findByCbu(String cbu);
     UserDto findByAlias(String alias);
 

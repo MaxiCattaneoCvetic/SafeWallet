@@ -1,9 +1,11 @@
 package com.example.Transfers.service;
 
 import com.example.Transfers.exception.MessageException;
+import com.example.Transfers.model.UpdatesModel;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.repository.ITransferRepository;
+import com.mongodb.client.model.Updates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +41,9 @@ public class TransferService implements ITransfers {
     @Override
     public void deleteByEmail(String email) {
         UserDto userDto = findUserByEmail(email);
-        if (userDto != null){iTransferRepository.deleteByEmail(email);}
+        if (userDto != null) {
+            iTransferRepository.deleteByEmail(email);
+        }
     }
 
     @Override
@@ -79,24 +83,23 @@ public class TransferService implements ITransfers {
         UserDto userFrom = iTransferRepository.findUserByCbu(cbuFrom);
         UserDto userTo = iTransferRepository.findUserByCbu(cbuTo);
         Double userFromBalance = userFrom.getBalance();
-        if(userTo == null){
+        if (userTo == null) {
             throw new MessageException("¡Ups! Parece que el usuario al que quieres transferir no existe, por favor revisa los datos. ");
         }
-            if (monto > userFromBalance) {
-                throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
-            } else {
-                UserTransactionsDto transactionFrom = settingNewTransaction(cbuTo, monto * - 1 ,cbuFrom);
-                userFrom.getTransactions().add(transactionFrom);
-                transactionFrom = settingNewTransaction(cbuFrom, monto, cbuTo);
-                userTo.getTransactions().add(transactionFrom);
-                iTransferRepository.save(userFrom);
-                iTransferRepository.save(userTo);
+        if (monto > userFromBalance) {
+            throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
+        } else {
+            UserTransactionsDto transactionFrom = settingNewTransaction(cbuTo, monto * -1, cbuFrom);
+            userFrom.getTransactions().add(transactionFrom);
+            transactionFrom = settingNewTransaction(cbuFrom, monto, cbuTo);
+            userTo.getTransactions().add(transactionFrom);
+            iTransferRepository.save(userFrom);
+            iTransferRepository.save(userTo);
 
-                this.updateSaldo(monto * -1 , userFrom.getId());
-                this.updateSaldo(monto, userTo.getId());
-            }
+            this.updateSaldo(monto * -1, userFrom.getId());
+            this.updateSaldo(monto, userTo.getId());
         }
-
+    }
 
 
     @Override
@@ -125,7 +128,7 @@ public class TransferService implements ITransfers {
     public int getGifts(String cbu) {
         // Si se completa con exito devuelve 1, sino devuelve 0. En el caso de 0 el user ya reclamo el premio.
         UserDto userDto = iTransferRepository.findUserByCbu(cbu);
-        if(userDto.getWelcomeGift() == false){
+        if (userDto.getWelcomeGift() == false) {
             userDto.setWelcomeGift(true);
             Double balance = userDto.getBalance();
             balance += 10000;
@@ -134,34 +137,42 @@ public class TransferService implements ITransfers {
             List<UserTransactionsDto> transactions = userDto.getTransactions();
             transactions.add(transaction);
             iTransferRepository.save(userDto);
-            return  1;
+            return 1;
         }
         return 0;
     }
 
     @Override
     public UserDto findUserById(Long id) {
-        if(iTransferRepository.findUserById(id) != null){
+        if (iTransferRepository.findUserById(id) != null) {
             return iTransferRepository.findUserById(id);
         }
         return null;
     }
 
-    public UserTransactionsDto settingNewTransaction(String from, Double amount,String to) {
+    @Override
+    public void updateUser(UserDto userDto) {
+        try {
+            iTransferRepository.save(userDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public UserTransactionsDto settingNewTransaction(String from, Double amount, String to) {
         LocalDateTime date = LocalDateTime.now();
         UserTransactionsDto userTransactionsDto = null;
-        if(from.equalsIgnoreCase("SafeWallet")) {
-            userTransactionsDto = new UserTransactionsDto("SafeWallet",to,amount,date);
+        if (from.equalsIgnoreCase("SafeWallet")) {
+            userTransactionsDto = new UserTransactionsDto("SafeWallet", to, amount, date);
             return userTransactionsDto;
         }
         String userFrom = iTransferRepository.findUserByCbu(from).getName();
         String userTo = iTransferRepository.findUserByCbu(to).getName();
 
-        userTransactionsDto = new UserTransactionsDto(userFrom,userTo,amount,date);
+        userTransactionsDto = new UserTransactionsDto(userFrom, userTo, amount, date);
 
         return userTransactionsDto;
     }
-
 
 
 }

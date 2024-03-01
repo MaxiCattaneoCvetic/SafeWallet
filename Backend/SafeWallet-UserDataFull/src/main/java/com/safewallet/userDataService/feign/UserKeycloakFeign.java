@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @FeignClient(name="register-keycloak") // url = "localhost:8086")
-public interface CreateUserKeycloak  {
+public interface UserKeycloakFeign {
 
 
     @PostMapping("/userKeycloak/create")

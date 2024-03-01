@@ -1,7 +1,18 @@
+.mainContainerProfile{
+	display: flex;
+	justify-content: center;
+	gap: 10%;
+	align-items: center;
+	margin-top: 5rem;
+}
 .titleAvatar {
 	font-size: 3rem;
 	text-decoration: underline;
-	justify-content: center;
+	text-align: center;
+}
+
+.titleAvatarh3{
+	text-align: center;
 }
 
 .avatarConteiner {
@@ -10,6 +21,13 @@
 	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
+}
+.inputBox{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	justify-self: center;
 }
 
 .avatarConteiner img {

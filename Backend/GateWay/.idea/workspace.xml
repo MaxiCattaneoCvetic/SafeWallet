@@ -5,23 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/Cbu_Alias_test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UpdatesModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UpdatesModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/accountController/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/accountController/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/ITransfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/ITransfers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/TransferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/accountController/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/CreateAccountFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/AccountFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/CreateUserKeycloak.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/UserKeycloakFeign.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/feign/feignService/FeignService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/repository/IUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/service/serviceInterface/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/test/java/com/safewallet/userDataService/RegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Test Exploratorio sprint 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Test Exploratorio sprint 1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$st Exploratorio sprint 1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~WRL1638.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/register/Register.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +91,11 @@
       <recent name="com.safewallet.userDataService" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.Transfers.model" />
       <recent name="com.example.safewallet.reports" />
       <recent name="com.safewallet.userDataService.repository" />
       <recent name="com.example.Transfers" />
       <recent name="com.example.Transfers.exception" />
-      <recent name="com.example.apigateway" />
     </key>
   </component>
   <component name="RunManager" selected="Compound.allProject">

@@ -1,16 +1,20 @@
 package com.safewallet.userDataService.feign;
 
+import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "account-balance") // url = "localhost:8086")
-public interface CreateAccountFeignClient {
+public interface AccountFeignClient {
 
     @PostMapping("/accounts")
     void createAccountBalance(UserDto userDto);
 
     @DeleteMapping("/accounts")
     void deleteAccountBalance(String email);
+
+    @PutMapping("/accounts/update/{id}") // El metodo path no anda con feign, resolvemos enviando un model custom
+    void updateAccountBalance(@PathVariable("id") Long id, @RequestBody UpdatesModel updatesModel);
+
 }
