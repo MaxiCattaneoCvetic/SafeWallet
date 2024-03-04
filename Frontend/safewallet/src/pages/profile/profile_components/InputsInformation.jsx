@@ -30,6 +30,10 @@ function InputsInformation(props) {
           const response = await patchUserEdit(props.user.id, dataToUpdate);
           switch (response.status) {
             case 200:
+              if(field === "email"){
+                getUserData(dataToUpdate.email);
+                return
+              }
               getUserData(props.user.email);
               break;
             case 406:
