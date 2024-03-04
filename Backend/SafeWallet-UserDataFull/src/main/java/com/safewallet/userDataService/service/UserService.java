@@ -9,12 +9,15 @@ import com.safewallet.userDataService.repository.IUserRepository;
 import com.safewallet.userDataService.service.mongoDB.SequenceGeneratorService;
 import com.safewallet.userDataService.service.serviceInterface.IUserService;
 
+import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -55,12 +58,12 @@ public class UserService implements IUserService {
 
         switch (type) {
             case "alias":
-                user = userRepository.findByAlias(value);
+                user = userRepository.findByAlias(value.toLowerCase());
                 if (user != null) {
                     return true;
                 }
             case "email":
-                user = userRepository.findByUsername(value);
+                user = userRepository.findByUsername(value.toLowerCase());
                 if (user != null) {
                     return true;
                 }
@@ -88,7 +91,7 @@ public class UserService implements IUserService {
             try {
                 userRepository.save(userDto);
                 feignService.createUser(userDto);
-            }catch (Exception e){
+            } catch (Exception e) {
                 feignService.deleteUser(userDto.getEmail());
                 throw new MessageException("Hubo un problema, no se creo el usuario");
             }
@@ -102,14 +105,33 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserDto findByUsername(String username) {
+    public UserDto findByUsername(String username) throws MessageException {
         UserDto userFound = userRepository.findByUsername(username);
-        if (userFound != null) {
-            userFound.setPassword(null);
-            return userFound;
+        List<UserRepresentation> list = feignService.findUser(username);
+        if (userFound == null) {
+            if (list.size() > 0) {
+/*                 Si la lista nos devuelve algo quiere decir que hay un user en keycloak, el user se registro desde Google.
+                 creamos un usuario en nuestro contexto UserData, para poder manejar la informacion desde alli
+                 Encontramos un user en keycloack, vamos a armarlo para poder devolverlo*/
+
+                userFound = new UserDto();
+                Set<String> role = new HashSet<>();
+                role.add("user");
+                userFound.setUsername(list.get(0).getUsername());
+                userFound.setName(list.get(0).getFirstName());
+                userFound.setLastName(list.get(0).getLastName());
+                userFound.setEmail(list.get(0).getEmail());
+                userFound.setRoles(role);
+                userFound.setDni(null);
+                System.out.println("se creo el usuario" + userFound);
+                this.createUser(userFound);
+                return userFound;
+            }
         }
-        return null;
+        userFound.setPassword(null);
+        return userFound;
     }
+
 
     public UserDto findByDni(String dni) {
         try {
@@ -121,7 +143,7 @@ public class UserService implements IUserService {
 
 
     @Override
-    public void deleteUser(String email) {
+    public void deleteUser(String email) throws MessageException {
         UserDto userDto = findByUsername(email);
         userRepository.delete(userDto);
 
@@ -157,6 +179,7 @@ public class UserService implements IUserService {
         return null;
 
     }
+
     public List<String> checkUniqueCbu_Alias() {
         List<UserDto> allUsers = userRepository.findAll();
         List<String> lista = new ArrayList<>();
@@ -200,8 +223,10 @@ public class UserService implements IUserService {
 
     }
 
-
-
+    @Override
+    public List<?> findUser(String username) {
+        return null;
+    }
 
 
 }

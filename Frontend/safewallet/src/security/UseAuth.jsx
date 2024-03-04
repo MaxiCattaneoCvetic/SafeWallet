@@ -34,6 +34,7 @@ const useAuth = () => {
         sessionStorage.setItem("token", client.token);
         sessionStorage.setItem("isLogin", res);
         const data = decoderToken(client.token);
+        console.log(data.email);
         getUserData(data.email)
       })
       .catch((error) => {

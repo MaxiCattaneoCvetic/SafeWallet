@@ -5,6 +5,7 @@ import com.safewallet.userDataService.feign.UserKeycloakFeign;
 import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.serviceInterface.IUserService;
+import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,6 @@ public class FeignService implements IUserService {
     }
 
 
-
     @Override
     public List<UserDto> findAll() {
         return null;
@@ -38,15 +38,14 @@ public class FeignService implements IUserService {
 
     @Override
     public void createUser(UserDto userDto) throws Exception {
-        try{
+        try {
             createuserkeycloak.createUserKeycloak(userDto);
             accountFeignClient.createAccountBalance(userDto);
-        }catch (Exception e){
+        } catch (Exception e) {
             accountFeignClient.deleteAccountBalance(userDto.getEmail());
             throw new Exception("Error al crear el usuario");
         }
     }
-
 
 
     @Override
@@ -58,7 +57,7 @@ public class FeignService implements IUserService {
     public void deleteUser(String email) throws Exception {
         try {
             createuserkeycloak.deleteUserKeycloak(email);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new Exception("Error al eliminar el usuario");
         }
 
@@ -82,6 +81,16 @@ public class FeignService implements IUserService {
     @Override
     public UserDto findByAlias(String alias) {
         return null;
+    }
+
+    @Override
+    public List<UserRepresentation> findUser(String username) {
+        try {
+            return createuserkeycloak.getUserKeycloak(username);
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
 

@@ -15,7 +15,9 @@ function getUserData(email) {
       .get(`${URL_GET_USER_ACCOUNT_LOGIN}${email}`, config)
       .then((res) => {
         sessionStorage.setItem("user", JSON.stringify(res.data));
-        resolve(res.data); // Resolve con los datos del usuario
+        resolve(res.data);
+        console.log(res);
+        return res
       })
       .catch((err) => {
         swal("¡Ops, algo anda mal!", `${err}`, "error").then(() => {

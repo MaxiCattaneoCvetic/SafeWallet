@@ -32,7 +32,7 @@ public class Alias {
                 String[] split = aliasWordList.get(0).split("\\.");
 
                 for (String s : split) {
-                    aliasWordList.add(s);
+                    aliasWordList.add(s.toLowerCase());
                 }
                 aliasWordList.remove(0);
             }
@@ -55,7 +55,7 @@ public class Alias {
         int i = alias.lastIndexOf(".");
         alias = alias.substring(0, i);
 
-        return alias;
+        return alias.toLowerCase();
     }
 
 

@@ -2,68 +2,6 @@ import { useEffect, useState } from "react";
 import style from "./transactions.module.css";
 import { getTransactions } from "../../api/getTransactions";
 
-const transactions = [
-  {
-    id: 1,
-    name: "Maxi",
-    amount: 10000,
-    date: "10/10/2024",
-  },
-  {
-    id: 2,
-    name: "Laura",
-    amount: 7500,
-    date: "11/10/2024",
-  },
-  {
-    id: 3,
-    name: "Juan",
-    amount: 6000,
-    date: "12/10/2024",
-  },
-  {
-    id: 4,
-    name: "Ana",
-    amount: 12000,
-    date: "13/10/2024",
-  },
-  {
-    id: 5,
-    name: "Carlos",
-    amount: 8500,
-    date: "14/10/2024",
-  },
-  {
-    id: 6,
-    name: "María",
-    amount: 9500,
-    date: "15/10/2024",
-  },
-  {
-    id: 7,
-    name: "Pedro",
-    amount: 11000,
-    date: "16/10/2024",
-  },
-  {
-    id: 8,
-    name: "Sofía",
-    amount: 8000,
-    date: "17/10/2024",
-  },
-  {
-    id: 9,
-    name: "Luis",
-    amount: 7000,
-    date: "18/10/2024",
-  },
-  {
-    id: 10,
-    name: "Elena",
-    amount: 10500,
-    date: "19/10/2024",
-  },
-];
 
 function Transactions(props) {
   const [data, setData] = useState([]);
@@ -73,7 +11,6 @@ function Transactions(props) {
 			let orden = response.data.sort((a, b) =>  new Date(b.date) -  new Date(a.date)  );
       setData(orden);
     });
-    console.log(data);
   }, []);
 
   return (

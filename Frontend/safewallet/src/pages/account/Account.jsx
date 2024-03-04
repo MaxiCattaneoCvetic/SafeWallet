@@ -4,7 +4,6 @@ import CardAccount from "../../components/cardAccount/CardAccount.jsx";
 import style from "./account.module.css";
 import NavBar from "../../components/navBar/NavBar.jsx";
 import upperCase from "../../functions/upperCase.js"
-
 import { SpinnerDotted } from "spinners-react";
 import Transactions from "../../components/transactions/Transactions.jsx";
 const Account = () => {

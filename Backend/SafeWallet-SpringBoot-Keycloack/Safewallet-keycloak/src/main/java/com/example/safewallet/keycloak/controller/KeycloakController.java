@@ -31,14 +31,6 @@ public class KeycloakController {
         return ResponseEntity.ok("Usuario eliminado");
     }
 
-/*
-    @GetMapping("/logout")
-    public String logout() {
-        // Invalidar la sesión actual del usuario
-        SecurityContextHolder.getContext().setAuthentication(null);
-        // Redirigir al endpoint de logout de Keycloak
-        return "redirect:/realms/safewallet/protocol/openid-connect/logout";
-    }*/
 
 
 
@@ -53,16 +45,7 @@ public class KeycloakController {
         }
     }
 
-//    @PostMapping("/create/user/feign")
-//    @PermitAll()
-//    public ResponseEntity<?> createFeign(@RequestBody UserDto userDTO) throws URISyntaxException {
-//        try {
-//            String response = keycloakService.createUser(userDTO);
-//            return ResponseEntity.ok(response);
-//        }catch (Error e){
-//            return ResponseEntity.badRequest().body("Usuario existente");
-//        }
-//    }
+
 
     @PostMapping("/logout/{email}")
     @PermitAll()

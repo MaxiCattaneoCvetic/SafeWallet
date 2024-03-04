@@ -65,6 +65,11 @@
   background-color: var(--backgroundColor);
   
 }
+.swal-title{
+  color: white;
+  
+}
+
 .swal-icon::before{
   display: none;
 }
@@ -74,19 +79,50 @@
 .swal-icon--success__hide-corners{
   display: none;
 }
-
-.swal-title{
-  color: white;
-  
-}
 .swal-text{
   color: white;
 }
 .swal-footer{
   text-align: center;
 }
+
+
 .backgroundRegister{
   background-color: #1A1E1C;
+}
+
+
+/* Swal 2 css  */
+
+.swal2-confirm{
+  background: none !important;
+  border: 2px solid var(--borderPrimaryBTN) !important;
+  border-radius: 1rem !important;
+}
+
+.swal2-confirm:hover{
+  background-color: var(--borderPrimaryBTN) !important;
+  color: white !important;
+}
+
+.swal2-cancel{
+  border-radius: 1rem !important;
+}
+.swal2-cancel:hover{
+  background-color: red;
+}
+
+.swal2-modal{
+  background-color: var(--backgroundColor);
+  border: 2px solid var(--borderPrimaryBTN);
+  border-radius: 2rem;
+}
+.swal2-title{
+  color: white;
+}
+
+.swal2-input{
+  color: white;
 }
 
 * {

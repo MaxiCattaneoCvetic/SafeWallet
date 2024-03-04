@@ -1,5 +1,6 @@
 package com.safewallet.userDataService.controller;
 
+import com.safewallet.userDataService.exception.MessageException;
 import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
@@ -21,10 +22,17 @@ public class AccountController {
 
     @GetMapping("/{username}")
     public ResponseEntity<?> getUser(@PathVariable String username) {
+        UserDto userDto = null;
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(userService.findByUsername(username));
+            userDto = userService.findByUsername(username);
+            if(userDto == null){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
+            }
+            return  ResponseEntity.status(HttpStatus.OK).body(userDto);
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");
+        } catch (MessageException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -59,6 +67,10 @@ public class AccountController {
                         userDto.setPhone(update.getValue());
                         break;
                     case "dni":
+                        if(userDto.getDni() == null || userDto.getDni().length() == 0){
+                            userDto.setDni(update.getValue());
+                            break;
+                        }
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puede modificar el DNI.");
                     case "cbu":
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puede modificar el CBU.");
@@ -83,7 +95,7 @@ public class AccountController {
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Campo no válido: " + update.getKey());
                 }
             }
-            userService.updateUser(userDto,updatesModel);
+            userService.updateUser(userDto, updatesModel);
             return ResponseEntity.status(HttpStatus.OK).body("Modificaste tus datos con éxito.");
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");

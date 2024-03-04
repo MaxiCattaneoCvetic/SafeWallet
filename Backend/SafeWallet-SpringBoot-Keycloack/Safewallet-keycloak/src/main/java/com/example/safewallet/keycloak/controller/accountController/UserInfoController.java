@@ -2,41 +2,54 @@ package com.example.safewallet.keycloak.controller.accountController;
 
 import com.example.safewallet.keycloak.DTO.UserDto;
 import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
+import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/account")
 public class UserInfoController {
 
+    @Autowired
     private IkeyCloakService keycloakService;
 
 
-/*
-    @GetMapping("/{username}")
-    public ResponseEntity<?> searchUserByUsername(@PathVariable String username){
-        return ResponseEntity.ok(keycloakService.searchUserByUserName(username));
-    }
-    @GetMapping("/all")
-    public ResponseEntity<?> getAllUsers(){
-        return ResponseEntity.ok(keycloakService.findAllUsers());
-    }
-*/
-
-
-    @PutMapping("/{userId}")
-    public ResponseEntity<?> updateUser(@PathVariable String userId, @RequestBody UserDto userDTO){
-        keycloakService.updateUser(userId, userDTO);
-        return ResponseEntity.ok("User updated successfully");
-    }
-
-    @GetMapping("/test")
-    public ResponseEntity<?> test(){
-        return ResponseEntity.ok("test ok ");
+    @GetMapping("/user/{username}")
+    public ResponseEntity<?> searchUserByUsername(@PathVariable String username) {
+        System.out.println("me consultaron");
+        List<UserRepresentation> user = null;
+        try {
+            user = keycloakService.searchUserByUserName(username);
+            System.out.println(user);
+            if (user.isEmpty() || user.size() == 0 || user == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
+        }
+        return ResponseEntity.ok(user);
     }
 
 
+    @PutMapping("/update/{email}")
+    public ResponseEntity<?> updateUser(@PathVariable String email, @RequestBody UserDto userDto) {
+        try {
+            List<UserRepresentation> userRepresentations = keycloakService.searchUserByUserName(email);
+            if (userRepresentations.isEmpty() || userRepresentations.size() == 0 || userRepresentations == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
+            }
+            String id = userRepresentations.get(0).getId();
+            keycloakService.updateUser(id, userDto);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
+        }
 
+        return null;
+    }
 
 
 }

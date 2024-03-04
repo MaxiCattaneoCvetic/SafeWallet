@@ -50,7 +50,7 @@ public class UserDto {
 
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username.toLowerCase();
     }
 
     public String getPassword() {
@@ -80,10 +80,10 @@ public class UserDto {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        this.email = email;
+        this.email = email.toLowerCase();
         this.phone = phone;
         this.cbu = cbu;
-        this.alias = alias;
+        this.alias = alias.toLowerCase();
         this.dni = dni;
     }
 
@@ -101,7 +101,7 @@ public class UserDto {
     public UserDto(String name, String lastName, String email, String phone,String dni) {
         this.name = name;
         this.lastName = lastName;
-        this.email = email;
+        this.email = email.toLowerCase();
         this.phone = phone;
         this.dni = dni;
     }
@@ -137,7 +137,7 @@ public class UserDto {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email.toLowerCase();
     }
 
     public String getPhone() {
@@ -161,7 +161,7 @@ public class UserDto {
     }
 
     public void setAlias(String alias) {
-        this.alias = alias;
+        this.alias = alias.toLowerCase();
     }
 
 }
