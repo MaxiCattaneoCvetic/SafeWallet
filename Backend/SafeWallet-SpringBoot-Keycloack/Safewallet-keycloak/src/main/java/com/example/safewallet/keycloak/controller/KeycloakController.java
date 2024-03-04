@@ -31,9 +31,6 @@ public class KeycloakController {
         return ResponseEntity.ok("Usuario eliminado");
     }
 
-
-
-
     @PostMapping("/create")
     @PermitAll()
     public ResponseEntity<?> createUser(@RequestBody UserDto userDTO) throws URISyntaxException {

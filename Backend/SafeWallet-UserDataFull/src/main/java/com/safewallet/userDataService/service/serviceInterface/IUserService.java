@@ -17,8 +17,7 @@ public interface IUserService {
 
     UserDto findById(Long id);
 
-    void updateUser(UserDto userDto, UpdatesModel updatesModel);
-
+    void updateUser(UserDto userDto, UpdatesModel updatesModel, String oldEmail);
 
     UserDto findByCbu(String cbu);
     UserDto findByAlias(String alias);

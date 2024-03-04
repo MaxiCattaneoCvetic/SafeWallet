@@ -18,12 +18,12 @@ public class FeignService implements IUserService {
     private AccountFeignClient accountFeignClient;
 
     @Autowired
-    private UserKeycloakFeign createuserkeycloak;
+    private UserKeycloakFeign userKeycloakFeign;
 
     @Autowired
     public FeignService(AccountFeignClient accountFeignClient, UserKeycloakFeign userKeycloakFeign) {
         this.accountFeignClient = accountFeignClient;
-        this.createuserkeycloak = userKeycloakFeign;
+        this.userKeycloakFeign = userKeycloakFeign;
     }
 
     public FeignService() {
@@ -39,7 +39,7 @@ public class FeignService implements IUserService {
     @Override
     public void createUser(UserDto userDto) throws Exception {
         try {
-            createuserkeycloak.createUserKeycloak(userDto);
+            userKeycloakFeign.createUserKeycloak(userDto);
             accountFeignClient.createAccountBalance(userDto);
         } catch (Exception e) {
             accountFeignClient.deleteAccountBalance(userDto.getEmail());
@@ -56,7 +56,7 @@ public class FeignService implements IUserService {
     @Override
     public void deleteUser(String email) throws Exception {
         try {
-            createuserkeycloak.deleteUserKeycloak(email);
+            userKeycloakFeign.deleteUserKeycloak(email);
         } catch (Exception e) {
             throw new Exception("Error al eliminar el usuario");
         }
@@ -69,8 +69,9 @@ public class FeignService implements IUserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto, UpdatesModel updatesModel) {
+    public void updateUser(UserDto userDto, UpdatesModel updatesModel, String oldEmail) {
         accountFeignClient.updateAccountBalance(userDto.getId(), updatesModel);
+        userKeycloakFeign.updateUserKeycloack(oldEmail,updatesModel);
     }
 
     @Override
@@ -86,7 +87,7 @@ public class FeignService implements IUserService {
     @Override
     public List<UserRepresentation> findUser(String username) {
         try {
-            return createuserkeycloak.getUserKeycloak(username);
+            return userKeycloakFeign.getUserKeycloak(username);
         } catch (Exception e) {
             return null;
         }

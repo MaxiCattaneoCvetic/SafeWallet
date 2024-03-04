@@ -1,5 +1,6 @@
 package com.example.safewallet.keycloak.controller.accountController;
 
+import com.example.safewallet.keycloak.DTO.UpdateModelDto;
 import com.example.safewallet.keycloak.DTO.UserDto;
 import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
 import org.keycloak.representations.idm.UserRepresentation;
@@ -36,16 +37,20 @@ public class UserInfoController {
 
 
     @PutMapping("/update/{email}")
-    public ResponseEntity<?> updateUser(@PathVariable String email, @RequestBody UserDto userDto) {
+    public ResponseEntity<?> updateUser(@PathVariable String email, @RequestBody UpdateModelDto updateModelDto) {
+        System.out.println("recibi el update" + email);
+        System.out.println("recibi el update" + updateModelDto);
+
+
         try {
             List<UserRepresentation> userRepresentations = keycloakService.searchUserByUserName(email);
-            if (userRepresentations.isEmpty() || userRepresentations.size() == 0 || userRepresentations == null) {
+            if(userRepresentations.size() == 0){
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
             }
             String id = userRepresentations.get(0).getId();
-            keycloakService.updateUser(id, userDto);
+            keycloakService.updateUser(userRepresentations, updateModelDto);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no se encuentra. (catch)");
         }
 
         return null;

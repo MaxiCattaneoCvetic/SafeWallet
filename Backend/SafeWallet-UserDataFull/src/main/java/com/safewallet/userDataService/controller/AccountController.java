@@ -54,6 +54,7 @@ public class AccountController {
             UpdatesModel updatesModel = new UpdatesModel();
             updatesModel.setId(id);
             updatesModel.setType(updates);
+            String oldEmail = userDto.getEmail();
             for (Map.Entry<String, String> update : updates.entrySet()) {
 
                 switch (update.getKey()) {
@@ -95,7 +96,7 @@ public class AccountController {
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Campo no válido: " + update.getKey());
                 }
             }
-            userService.updateUser(userDto, updatesModel);
+            userService.updateUser(userDto, updatesModel, oldEmail);
             return ResponseEntity.status(HttpStatus.OK).body("Modificaste tus datos con éxito.");
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no fue encontrado.");

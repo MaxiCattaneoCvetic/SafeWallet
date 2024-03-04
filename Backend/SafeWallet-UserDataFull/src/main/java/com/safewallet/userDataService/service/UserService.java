@@ -108,11 +108,15 @@ public class UserService implements IUserService {
     public UserDto findByUsername(String username) throws MessageException {
         UserDto userFound = userRepository.findByUsername(username);
         List<UserRepresentation> list = feignService.findUser(username);
-        if (userFound == null) {
-            if (list.size() > 0) {
-/*                 Si la lista nos devuelve algo quiere decir que hay un user en keycloak, el user se registro desde Google.
+        if(userFound!=null){
+            return userFound;
+        }
+        return userFound;
+ /*       if (userFound == null) {
+            if (list != null) {
+*//*                 Si la lista nos devuelve algo quiere decir que hay un user en keycloak, el user se registro desde Google.
                  creamos un usuario en nuestro contexto UserData, para poder manejar la informacion desde alli
-                 Encontramos un user en keycloack, vamos a armarlo para poder devolverlo*/
+                 Encontramos un user en keycloack, vamos a armarlo para poder devolverlo*//*
 
                 userFound = new UserDto();
                 Set<String> role = new HashSet<>();
@@ -127,9 +131,11 @@ public class UserService implements IUserService {
                 this.createUser(userFound);
                 return userFound;
             }
+        }else {
+            userFound.setPassword(null);
+            return userFound;
         }
-        userFound.setPassword(null);
-        return userFound;
+        return null;*/
     }
 
 
@@ -160,10 +166,10 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto, UpdatesModel updatesModel) {
+    public void updateUser(UserDto userDto, UpdatesModel updatesModel, String oldEmail) {
         try {
             userRepository.save(userDto);
-            feignService.updateUser(userDto, updatesModel);
+            feignService.updateUser(userDto, updatesModel, oldEmail);
         } catch (Exception e) {
             e.printStackTrace();
         }

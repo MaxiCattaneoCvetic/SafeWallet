@@ -1,11 +1,13 @@
 package com.example.safewallet.keycloak.implementation;
 
+import com.example.safewallet.keycloak.DTO.UpdateModelDto;
 import com.example.safewallet.keycloak.DTO.UserDto;
 import com.example.safewallet.keycloak.KeycloakProvider;
 import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
@@ -132,25 +134,38 @@ public class KeycloakRepository implements IkeyCloakService {
     }
 
     @Override
-    public void updateUser(String userId, @NotNull UserDto userDto) {
+    public void updateUser(List<UserRepresentation> userRepresentations, UpdateModelDto updateModelDto) {
         System.out.println("Estoy en update");
-        CredentialRepresentation credentialRepresentation = new CredentialRepresentation();
+        /*        CredentialRepresentation credentialRepresentation = new CredentialRepresentation();
         credentialRepresentation.setTemporary(false);
         credentialRepresentation.setType(OAuth2Constants.PASSWORD);
         credentialRepresentation.setValue(userDto.getPassword());
         //construimos el objeto
         UserRepresentation userRepresentation = new UserRepresentation(); // recordemos que los usuarios se representan de esta manera
-/*        userRepresentation.setFirstName(userDto.getFirstName());
-        userRepresentation.setLastName(userDto.getLastName());*/
+        userRepresentation.setFirstName(userDto.getFirstName());
+        userRepresentation.setLastName(userDto.getLastName());
         userRepresentation.setEmail(userDto.getEmail());
-        /*        userRepresentation.setUsername(userDto.getUsername());*/
+        userRepresentation.setUsername(userDto.getUsername());
         userRepresentation.setEmailVerified(true);
         userRepresentation.setEnabled(true);
         userRepresentation.setCredentials(Collections.singletonList(credentialRepresentation));
-
         UserResource userResource = KeycloakProvider.getUserResource().get(userId);
-        userResource.update(userRepresentation);
+        userResource.update(userRepresentation);*/
+        try {
+            for (Map.Entry<String, String> update : updateModelDto.getType().entrySet()) {
+                String email = update.getValue();
+                userRepresentations.get(0).setUsername(email);
+                userRepresentations.get(0).setEmail(email);
+            }
 
+            userRepresentations.get(0).setEmailVerified(true);
+            UserResource userResource = KeycloakProvider.getUserResource().get(userRepresentations.get(0).getId());
+            userResource.update(userRepresentations.get(0));
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            System.out.println("No se puede actualizar");
+        }
 
     }
 
