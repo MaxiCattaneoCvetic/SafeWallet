@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Profile from "./profile.jsx";
-import { logOut } from "../../functions/logOut.jsx";
+import { logOut } from "../../functions/logOut.js";
 import swal from "sweetalert";
 import useAuth from "../../security/UseAuth";
 import { SpinnerDotted } from "spinners-react";

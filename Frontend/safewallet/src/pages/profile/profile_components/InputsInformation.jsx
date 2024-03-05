@@ -1,11 +1,10 @@
 import style from "../profile.module.css";
 import upperCase from "../../../functions/upperCase.js";
-import useAuth from "../../../security/UseAuth";
 import Swal from "sweetalert2";
 import getUserData from "../../../api/getUserData.js";
 import patchUserEdit from "../../../api/patchUserEdit.js";
-import { logOut } from "../../../functions/logOut.jsx";
 import { useNavigate } from "react-router-dom";
+import { updateEmail } from "../../../functions/updateEmail.js";
 
 function InputsInformation(props) {
   const navigate = useNavigate();
@@ -31,7 +30,9 @@ function InputsInformation(props) {
           switch (response.status) {
             case 200:
               if(field === "email"){
-                getUserData(dataToUpdate.email);
+                getUserData(dataToUpdate.email).then(()=>{
+                  updateEmail()
+                })
                 return
               }
               getUserData(props.user.email);
@@ -160,7 +161,7 @@ function InputsInformation(props) {
               className={style.inputInformation}
               value={props.user.cbu}
             ></input>
-            <button onClick={editAtribute} className="editButtonDisabled">
+            <button  className="editButtonDisabled">
               No puedes editar tu cbu.
             </button>
           </label>

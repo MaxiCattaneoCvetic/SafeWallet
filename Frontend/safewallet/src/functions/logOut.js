@@ -15,6 +15,7 @@ export const logOut = () => {
     
     email = data.email;
 
+
   const config = {
     headers: {
       authorization: `Bearer ${token}`,

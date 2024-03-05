@@ -1,4 +1,4 @@
-import { logOut } from "../functions/logOut.jsx";
+import { logOut } from "../functions/logOut.js";
 import axios from "axios";
 import { URL_GET_USER_ACCOUNT_LOGIN } from "../URLS/URL.js";
 import swal from "sweetalert";
