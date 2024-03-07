@@ -11,6 +11,7 @@ import InputsInformation from "./profile_components/InputsInformation.jsx";
 
 function Profile(props) {
 
+
   return (
     <>
       {props.user ? (

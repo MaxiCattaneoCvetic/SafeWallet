@@ -12,7 +12,16 @@
   --borderPrimaryBTN: #2BB32A;
   --footerBackground: #1a1e1ce8;
 }
-
+.sinflechas{
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+.sinflechas::-webkit-outer-spin-button,
+.sinflechas::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .spinner{
   display: flex;

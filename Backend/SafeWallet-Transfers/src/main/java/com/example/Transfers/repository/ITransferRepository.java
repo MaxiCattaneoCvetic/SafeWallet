@@ -1,10 +1,10 @@
 package com.example.Transfers.repository;
 
+
 import com.example.Transfers.model.UserDto;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ITransferRepository extends MongoRepository<UserDto, Long> {
-//    UserDto findByCbu(String cbu);
 
     UserDto findUserByEmail(String email);
     UserDto findUserByCbu(String cbu);
@@ -12,6 +12,9 @@ public interface ITransferRepository extends MongoRepository<UserDto, Long> {
     void deleteByEmail(String email);
 
     UserDto findUserById(Long id);
+
+
+
 
 
 

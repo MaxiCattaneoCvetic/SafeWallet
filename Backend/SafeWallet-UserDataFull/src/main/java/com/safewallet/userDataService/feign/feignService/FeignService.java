@@ -71,7 +71,10 @@ public class FeignService implements IUserService {
     @Override
     public void updateUser(UserDto userDto, UpdatesModel updatesModel, String oldEmail) {
         accountFeignClient.updateAccountBalance(userDto.getId(), updatesModel);
-        userKeycloakFeign.updateUserKeycloack(oldEmail,updatesModel);
+        if(updatesModel.getType().containsKey("email")){
+            userKeycloakFeign.updateUserKeycloack(oldEmail,updatesModel);
+        }
+
     }
 
     @Override

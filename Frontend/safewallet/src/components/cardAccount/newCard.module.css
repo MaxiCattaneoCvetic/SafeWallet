@@ -1,0 +1,25 @@
+.btnsContainer{
+	display: flex;
+	justify-content: center;
+	gap: 0.3rem;
+	padding: 1rem;
+}
+
+.inputCard{
+	padding: 0.3rem;
+	border: 2px solid var(--borderPrimaryBTN);
+	border-radius: 1rem;
+	background: none;
+	width: auto;
+	color: white;
+
+
+}
+
+.inputCard option {
+	background-color: black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	filter: invert(1); /* Cambia el color del calendario */
+}

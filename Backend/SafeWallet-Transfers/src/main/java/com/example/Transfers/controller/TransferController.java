@@ -4,8 +4,9 @@ import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.TransferInformation;
 import com.example.Transfers.model.UpdatesModel;
 import com.example.Transfers.model.UserDto;
-import com.example.Transfers.service.TransferService;
+import com.example.Transfers.service.transfer.TransferService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -69,13 +70,23 @@ public class TransferController {
     //https://www.youtube.com/watch?v=3TjS1uYxGV8&ab_channel=ProgramandoenJAVA pagination
 
     @GetMapping("/{id}/transactions")
-    public List<?> getTransactions(@PathVariable Long id) {
+    public ResponseEntity<?> getTransactions(@PathVariable Long id, HttpServletRequest request) {
+
+        if(request.getHeader("Authorization") == null){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("No autorizado");
+        }
         UserDto userDto = transferService.findUserById(id);
         if (userDto == null) {
-            return null;
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario no encontrado");
+        }
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(userDto.getTransactions());
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario no encontrado");
         }
 
-        return userDto.getTransactions();
+
+
     }
 
     @GetMapping("/getcbu/{cbu}")
@@ -145,7 +156,7 @@ public class TransferController {
                     case "name":
                         userDto.setName(fieldUpdate.getValue());
                         break;
-                    case "lastname":
+                    case "lastName":
                         userDto.setLastName(fieldUpdate.getValue());
                         break;
                     case "email":
@@ -165,8 +176,6 @@ public class TransferController {
                         break;
                 }
                 transferService.updateUser(userDto);
-
-
 
 
             }

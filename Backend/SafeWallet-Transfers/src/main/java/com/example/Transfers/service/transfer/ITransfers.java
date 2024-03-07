@@ -1,8 +1,7 @@
-package com.example.Transfers.service;
+package com.example.Transfers.service.transfer;
 
 
 import com.example.Transfers.exception.MessageException;
-import com.example.Transfers.model.UpdatesModel;
 import com.example.Transfers.model.UserDto;
 
 import java.util.List;
@@ -33,4 +32,8 @@ public interface ITransfers {
     UserDto findUserById(Long id);
 
     void updateUser(UserDto userDto);
+
+
+
 }
+

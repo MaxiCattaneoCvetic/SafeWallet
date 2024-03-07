@@ -2,7 +2,7 @@ package com.example.Transfers.model;
 
 import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,8 @@ public class UserDto {
     private Boolean welcomeGift;
     private List<UserTransactionsDto> transactions;
 
+    private List<Card> cards;
+
 
 
     //full constructor
@@ -33,6 +35,14 @@ public class UserDto {
         this.balance = balance;
     }
 
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
 
     public String getAlias() {
         return alias;

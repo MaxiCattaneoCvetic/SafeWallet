@@ -1,5 +1,6 @@
 package com.example.Transfers;
 
+import com.example.Transfers.repository.ICardRepostitory;
 import com.example.Transfers.repository.ITransferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,9 @@ public class TransfersApplication {
 
 	@Autowired
 	ITransferRepository iTransferRepository;
+
+	@Autowired
+	ICardRepostitory iCardRepostitory;
 
 
 	public static void main(String[] args) {
