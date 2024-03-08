@@ -47,7 +47,7 @@ const Account = () => {
               <Transactions userId={vUser.id}/>
             </section>
             <section>
-              <CardAccount />
+              <CardAccount  />
             </section>
           </div>
         </>

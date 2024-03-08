@@ -1,8 +1,7 @@
 import style from "./cardAccount.module.css";
-import createCard from "../../api/createCard.js";
 import { useEffect, useState } from "react";
 import Modal from "../modal/Modal.jsx";
-import NewCard from "./NewCard.jsx";
+import NewCard from "./createCard/NewCard.jsx";
 
 export default function CardAccount() {
   const [user, setUser] = useState({});
@@ -11,9 +10,7 @@ export default function CardAccount() {
   useEffect(() => {
     setUser(JSON.parse(sessionStorage.getItem("user")));
   }, []);
-  function createNewCard() {
-    createCard(user.id);
-  }
+
 
   return (
     <>
@@ -47,7 +44,7 @@ export default function CardAccount() {
                 }}
                 title="Agregar Nueva tarjeta"
                 // eslint-disable-next-line react/no-children-prop
-                children={<NewCard/>}
+                children={<NewCard userId={user.id} setIsModal={setIsModal}/>}
               />
             ) : (
               ""

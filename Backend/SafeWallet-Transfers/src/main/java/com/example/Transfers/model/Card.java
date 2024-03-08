@@ -17,14 +17,25 @@ public class Card {
     private Date expirationDate;
     private String cvv;
 
+    private String name;
+
     public Card() {
     }
 
-    public Card(String cardNumber, String cardType, Date expirationDate, String cvv) {
+    public Card(String cardNumber, String cardType, Date expirationDate, String cvv,String name) {
         this.cardNumber = cardNumber;
         this.cardType = cardType;
         this.expirationDate = expirationDate;
         this.cvv = cvv;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCardNumber() {

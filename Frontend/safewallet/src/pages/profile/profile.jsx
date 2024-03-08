@@ -17,6 +17,7 @@ function Profile(props) {
       {props.user ? (
         <section>
           <NavBar value={true}></NavBar>
+          
           <h2 className={style.titleAvatar}>Mi perfil</h2>
           <h3 className={style.titleAvatarh3}>
             Aqui puedes ver y editar tus datos
@@ -24,8 +25,10 @@ function Profile(props) {
           <div className={style.mainContainerProfile}>
             <AvatarComponent />
             <InputsInformation user={props.user}/>
+            
           </div>
         </section>
+        
       ) : (
         <div className="spinner">
           <SpinnerCircular />
