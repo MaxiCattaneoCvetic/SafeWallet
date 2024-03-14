@@ -69,25 +69,7 @@ public class TransferController {
 
     //https://www.youtube.com/watch?v=3TjS1uYxGV8&ab_channel=ProgramandoenJAVA pagination
 
-    @GetMapping("/{id}/transactions")
-    public ResponseEntity<?> getTransactions(@PathVariable Long id, HttpServletRequest request) {
 
-        if(request.getHeader("Authorization") == null){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("No autorizado");
-        }
-        UserDto userDto = transferService.findUserById(id);
-        if (userDto == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario no encontrado");
-        }
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(userDto.getTransactions());
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario no encontrado");
-        }
-
-
-
-    }
 
     @GetMapping("/getcbu/{cbu}")
     public ResponseEntity<?> getUserCbu(@PathVariable String cbu) throws MessageException {

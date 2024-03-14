@@ -133,7 +133,9 @@
 .swal2-input{
   color: white;
 }
-
+.swal2-html-container{
+  color: white !important;
+}
 * {
   box-sizing: border-box;
   padding: 0;

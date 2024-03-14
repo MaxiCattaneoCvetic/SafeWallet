@@ -1,9 +1,9 @@
 import { useState } from "react";
 import style from "./newCard.module.css";
 import createCard from "../../../api/createCard.js";
-import cardNumbers from "../../../functions/cardNumbers.js";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Card from "../../Card/Card.jsx";
 
 export default function NewCard(props) {
   const [contador, setContador] = useState(0);
@@ -80,52 +80,62 @@ export default function NewCard(props) {
       ...card,
       expirationDate: formattedExpirationDate,
     };
-
+    
+    if(formattedCard.cardNumber.length !== 16 || formattedCard.cvv.length !== 3 || formattedCard.name.length > 2 || formattedCard.name.length < 3) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Todos los datos son obligatorios, por favor verifica e intenta de nuevo",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      props.setIsModal(false)
+      return;
+    }
     createCard(props.userId, formattedCard)
-    .then(response => {
-      // Logica de éxito
-      console.log("Respuesta exitosa con status: " + response.status);
-      switch (response.status) {
-        case 201:
-          props.setIsModal(false);
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Tarjeta agregada",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          break;
-        default:
-          break;
-      }
-    })
-    .catch(error => {
-        if(error.response.status === 401){
+      .then((response) => {
+        // Logica de éxito
+        console.log("Respuesta exitosa con status: " + response.status);
+        switch (response.status) {
+          case 201:
+            props.setIsModal(false);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Tarjeta agregada",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            break;
+          default:
+            break;
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 401) {
           props.setIsModal(false);
           Swal.fire({
             position: "top-end",
             icon: "error",
-            title: "Hubo un problema con la sesión, por favor inicia nuevamente",
+            title:
+              "Hubo un problema con la sesión, por favor inicia nuevamente",
             showConfirmButton: false,
             timer: 1500,
-          })
+          });
           navigate("/");
         }
-      let message = "Error al intentar añadir la tarjeta";
-      if (error.response && error.response.data) {
-        message += ": " + error.response.data;
-      }
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: message,
-        showConfirmButton: false,
-        timer: 1500,
+        let message = "Error al intentar añadir la tarjeta";
+        if (error.response && error.response.data) {
+          message += ": " + error.response.data;
+        }
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
-    });
-  
-  
   }
   return (
     <>
@@ -254,28 +264,36 @@ export default function NewCard(props) {
                 </div>
               </div>
             ) : (
-              <div className={style.card}>
-                <div className={style.cardTextUp}>
-                  <p>~ Safe Wallet ~</p>
-                  <img
-                    src="/safewalletCard.svg"
-                    alt=""
-                    className={style.safewalletCard}
-                  />
-                </div>
-                <div>
-                  <p className={style.cardTextDown}>
-                    {cardNumbers(card.cardNumber)}
-                  </p>
-                </div>
-                <div className={style.cardDate}>
-                  <p>{card.expirationDate}</p>
-                  <p>{card.cardType}</p>
-                </div>
-                <div>
-                  <p className={style.cardName}>{card.name}</p>
-                </div>
-              </div>
+              <Card
+                cardNumber={card.cardNumber}
+                cardType={card.cardType}
+                expirationDate={card.expirationDate}
+                name={card.name}
+                cvv={card.cvv}
+              ></Card>
+
+              // <div className={style.card}>
+              //   <div className={style.cardTextUp}>
+              //     <p>~ Safe Wallet ~</p>
+              //     <img
+              //       src="/safewalletCard.svg"
+              //       alt=""
+              //       className={style.safewalletCard}
+              //     />
+              //   </div>
+              //   <div>
+              //     <p className={style.cardTextDown}>
+              //       {cardNumbers(card.cardNumber)}
+              //     </p>
+              //   </div>
+              //   <div className={style.cardDate}>
+              //     <p>{card.expirationDate}</p>
+              //     <p>{card.cardType}</p>
+              //   </div>
+              //   <div>
+              //     <p className={style.cardName}>{card.name}</p>
+              //   </div>
+              // </div>
             )}
           </div>
         </div>

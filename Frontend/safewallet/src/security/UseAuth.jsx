@@ -1,12 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import Keycloak from "keycloak-js";
 import swal from "sweetalert";
-import {URL_APP} from "../URLS/URL.js";
+import { URL_APP } from "../URLS/URL.js";
 import getUserData from "../api/getUserData.js";
 import decoderToken from "../functions/decodedToken.js";
 import { useNavigate } from "react-router-dom";
-
-
 
 const useAuth = () => {
   const isRun = useRef(false);
@@ -14,33 +12,72 @@ const useAuth = () => {
   const [isLogin, setLogin] = useState(false);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     if (isRun.current) return;
     isRun.current = true;
+
     const client = new Keycloak({
       url: "http://localhost:8080",
       realm: "safewallet",
       clientId: "frontend_client",
     });
+
+    const handleTokenExpired = () => {
+      // Limpiar sessionStorage
+      sessionStorage.clear();
+      // Redirigir al usuario a la página de inicio de sesión o a donde consideres apropiado
+      navigate("/");
+      // Opcionalmente, mostrar un mensaje indicando que la sesión ha expirado
+      swal(
+        "Sesión expirada",
+        "Tu sesión ha expirado. Por favor, inicia sesión nuevamente.",
+        "warning"
+      );
+    };
+
     client
       .init({
-        onLoad: 'login-required',
-        checkLoginIframe: false
+        onLoad: "login-required",
+        checkLoginIframe: false,
+        refreshToken: false,
       })
       .then((res) => {
-        setLogin(res);
-        setToken(client.token);
-        sessionStorage.setItem("token", client.token);
-        sessionStorage.setItem("isLogin", res);
-        const data = decoderToken(client.token);
-        console.log(data.email);
-        getUserData(data.email)
+        if (res) {
+          setLogin(res);
+          setToken(client.token);
+          sessionStorage.setItem("token", client.token);
+          sessionStorage.setItem("isLogin", res.toString());
+          const data = decoderToken(client.token);
+          getUserData(data.email);
+
+          setInterval(() => {
+            client
+              .updateToken(30) // Reintentar si el token expira en los próximos 30 segundos
+              .then((refreshed) => {
+                if (refreshed) {
+                  // El token fue exitosamente renovado
+                  setToken(client.token);
+                  sessionStorage.setItem("token", client.token);
+                } else {
+                  console.log("");
+                }
+              })
+              .catch(() => {
+                
+                handleTokenExpired();
+              });
+          }, 60000); 
+        }
       })
       .catch((error) => {
-        swal("¡Ops, algo anda mal!", "El servidor agoto el tiempo de espera, por favor contacta con un administrador. \n" + error, "error").then(()=>location.replace(URL_APP))
+        swal(
+          "¡Ops, algo anda mal!",
+          "El servidor agotó el tiempo de espera, por favor contacta con un administrador. \n" +
+            error,
+          "error"
+        ).then(() => location.replace(URL_APP));
       });
-  }, []);
+  }, [navigate]);
 
   return [isLogin, token];
 };

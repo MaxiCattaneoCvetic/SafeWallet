@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import style from "./transactions.module.css";
 import { getTransactions } from "../../api/getTransactions";
 
-
 function Transactions(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     getTransactions(props.userId).then((response) => {
-			let orden = response.data.sort((a, b) =>  new Date(b.date) -  new Date(a.date)  );
+      let orden = response.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
       setData(orden);
     });
   }, []);
@@ -41,14 +42,24 @@ function Transactions(props) {
                 <div className={style.columnW}>
                   <h5>Monto</h5>
                   {transaction.amount > 0 ? (
-                    <p style={{ color: "green", fontWeight: "bold" }}>$ {transaction.amount}</p>
+                    <p style={{ color: "green", fontWeight: "bold" }}>
+                      $ {transaction.amount}
+                    </p>
                   ) : (
-                    <p style={{ color: "red", fontWeight: "bold" }}>$ {transaction.amount}</p>
+                    <p style={{ color: "red", fontWeight: "bold" }}>
+                      $ {transaction.amount}
+                    </p>
                   )}
                 </div>
                 <div className={style.columnW}>
                   <h5>Fecha</h5>
-                  <p>{transaction.date = new Date(transaction.date).toLocaleDateString('en-US') }</p>
+                  <p>
+                    {
+                      (transaction.date = new Date(
+                        transaction.date
+                      ).toLocaleDateString("en-US"))
+                    }
+                  </p>
                 </div>
               </div>
             </div>

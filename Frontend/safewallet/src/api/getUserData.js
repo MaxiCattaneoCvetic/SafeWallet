@@ -16,7 +16,6 @@ function getUserData(email) {
       .then((res) => {
         sessionStorage.setItem("user", JSON.stringify(res.data));
         resolve(res.data);
-        console.log(res);
         return res
       })
       .catch((err) => {
