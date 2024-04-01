@@ -1,5 +1,4 @@
-
-.transactionsBackground{
+.transactionsBackground {
 	background-color: #9a91911a;
 	width: 39rem;
 	height: auto;
@@ -8,33 +7,50 @@
 	transform: translateX(103%);
 	border-radius: 1rem;
 	margin: 0.3rem;
+	cursor: pointer;
+
 
 }
 
-.safewalletTransaction{
+.transactionsBackground:hover {
+	background-color: #9a919132;
+}
+
+.safewalletTransaction {
 	width: 3rem;
 	border-radius: 0.5rem;
 	margin-left: 1rem;
 }
 
-.transactionContainer{
+.transactionContainer {
 	display: flex;
 	align-items: center;
-	gap: 3rem; 
+	gap: 3rem;
 	padding: 1rem;
-	width: 100%; 
-  box-sizing: border-box;
+	width: 100%;
+	box-sizing: border-box;
 
 
 }
 
 
 .columnW {
-  width: 33.33%;
-  box-sizing: border-box;
+	width: 33.33%;
+	box-sizing: border-box;
 }
 
-.noTransactions{
+.noTransactions {
 	text-align: center;
 	padding: 2rem;
+}
+
+.transactionDetail {
+	padding: 1rem;
+}
+
+
+.transactionDetailTitle,
+.transactionDetailText {
+	color: black;
+	font-family: "Poppins", sans-serif;
 }

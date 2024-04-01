@@ -4,6 +4,7 @@ import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.repository.ITransferRepository;
+import com.example.Transfers.service.mongoDB.SequenceGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ public class TransferService implements ITransfers {
 
     @Autowired
     private ITransferRepository iTransferRepository;
+
+    @Autowired
+    SequenceGeneratorService sequenceGeneratorService;
 
     @Autowired
     public TransferService(ITransferRepository iTransferRepository) {
@@ -88,6 +92,7 @@ public class TransferService implements ITransfers {
             throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
         } else {
             UserTransactionsDto transactionFrom = settingNewTransaction(cbuTo, monto * -1, cbuFrom);
+
             userFrom.getTransactions().add(transactionFrom);
             transactionFrom = settingNewTransaction(cbuFrom, monto, cbuTo);
             userTo.getTransactions().add(transactionFrom);
@@ -158,17 +163,22 @@ public class TransferService implements ITransfers {
     }
 
 
+
+
     public UserTransactionsDto settingNewTransaction(String from, Double amount, String to) {
+
         LocalDateTime date = LocalDateTime.now();
         UserTransactionsDto userTransactionsDto = null;
         if (from.equalsIgnoreCase("SafeWallet")) {
-            userTransactionsDto = new UserTransactionsDto("SafeWallet", to, amount, date);
+            Long idTRansaction = sequenceGeneratorService.generateSequence(UserTransactionsDto.SEQUENCE_NAME);
+            userTransactionsDto = new UserTransactionsDto(idTRansaction,"SafeWallet", to, amount, date);
             return userTransactionsDto;
         }
+        Long idTRansaction = sequenceGeneratorService.generateSequence(UserTransactionsDto.SEQUENCE_NAME);
         String userFrom = iTransferRepository.findUserByCbu(from).getName();
         String userTo = iTransferRepository.findUserByCbu(to).getName();
 
-        userTransactionsDto = new UserTransactionsDto(userFrom, userTo, amount, date);
+        userTransactionsDto = new UserTransactionsDto(idTRansaction,userFrom, userTo, amount, date);
 
         return userTransactionsDto;
     }

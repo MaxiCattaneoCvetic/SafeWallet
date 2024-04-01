@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import style from "./transactions.module.css";
 import { getTransactions } from "../../api/getTransactions";
+import getTransactionDetail from "../../api/getTransactionDetail";
+import { Modal } from "react-responsive-modal";
+import TransactionDetail from "./TransactionDetail.jsx";
+import "react-responsive-modal/styles.css";
 
 function Transactions(props) {
   const [data, setData] = useState([]);
+  const [detail, setDetail] = useState({});
+  const [open, setOpen] = useState(false);
+
+  const onCloseModal = () => setOpen(false);
 
   useEffect(() => {
     getTransactions(props.userId).then((response) => {
@@ -13,6 +21,16 @@ function Transactions(props) {
       setData(orden);
     });
   }, []);
+
+  async function handleClick(idTransaction, userId) {
+    setOpen(true);
+    try {
+      const response = await getTransactionDetail(userId, idTransaction);
+      setDetail(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className={style.transactionMainContainer}>
@@ -28,7 +46,14 @@ function Transactions(props) {
       ) : (
         <>
           {data.map((transaction) => (
-            <div key={transaction.id} className={style.transactionsBackground}>
+            <div
+              key={transaction.id}
+              className={style.transactionsBackground}
+              title="Ver mas información sobre la transacción"
+              onClick={() => {
+                handleClick(transaction.id, props.userId);
+              }}
+            >
               <div className={style.transactionContainer}>
                 <img
                   src="/safewallet-transaction.svg"
@@ -66,6 +91,15 @@ function Transactions(props) {
           ))}
         </>
       )}
+      <Modal
+        center
+        styles={{ modal: { borderRadius: "10px" } }}
+        open={open}
+        onClose={onCloseModal}
+        
+      >
+        <TransactionDetail detail={detail} />
+      </Modal>
     </div>
   );
 }

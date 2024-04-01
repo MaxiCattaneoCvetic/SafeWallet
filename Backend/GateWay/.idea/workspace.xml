@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/mongoDB/DatabaseSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/mongoDB/SequenceGeneratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/deleteCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/deleteCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getUserData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getUserData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/CardAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/CardAccount.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/createCard/NewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/createCard/NewCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/createCard/newCard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/createCard/newCard.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/deleteCard/DeleteCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/cardAccount/deleteCard/DeleteCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/UseAuth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/security/UseAuth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/repository/ITransferRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/ITransfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/ITransfers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -68,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/main/java/com/example/Transfers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/ayyda/CertifiedTeachDeveloper_DigitalHouse/ProfessionalDeveloper/JavaSpringboot/Obsidian_ImplementaciónJaime/pom.xml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -77,11 +75,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers\service" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-UserDataFull\src\main\java\com\safewallet\userDataService\tokenSecurity" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway\security" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway\jwt" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.safewallet.userDataService" />

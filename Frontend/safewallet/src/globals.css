@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800&display=swap');
 
+
+
 * {
   box-sizing: border-box;
-  margin: 0rem;
-  padding: 0rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'M PLUS 1p';
+  color: white;
 }
 
 :root {
@@ -136,13 +140,7 @@
 .swal2-html-container{
   color: white !important;
 }
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'M PLUS 1p';
-  color: white;
-}
+
 
 html,
 body {
