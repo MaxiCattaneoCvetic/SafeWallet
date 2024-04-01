@@ -67,10 +67,6 @@ public class TransferController {
         }
     }
 
-    //https://www.youtube.com/watch?v=3TjS1uYxGV8&ab_channel=ProgramandoenJAVA pagination
-
-
-
     @GetMapping("/getcbu/{cbu}")
     public ResponseEntity<?> getUserCbu(@PathVariable String cbu) throws MessageException {
         UserDto userDto = transferService.findUserByCbu(cbu);

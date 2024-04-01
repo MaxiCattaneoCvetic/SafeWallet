@@ -1,8 +1,8 @@
 import axios from "axios";
 import { URL_GET_USER_BALANCE } from "../URLS/URL";
 
-async function getTransactions(id) {
-  const URL = URL_GET_USER_BALANCE + id + "/activity";
+async function getTransactions(id,page,size) {
+  const URL = URL_GET_USER_BALANCE + id + "/activity?page=" + page + "&size=" +size;
 
   const config = {
     headers: {

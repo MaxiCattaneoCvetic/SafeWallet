@@ -2,14 +2,9 @@
 	background-color: #9a91911a;
 	width: 39rem;
 	height: auto;
-	margin-left: 3rem;
-	display: flex;
-	transform: translateX(103%);
 	border-radius: 1rem;
 	margin: 0.3rem;
 	cursor: pointer;
-
-
 }
 
 .transactionsBackground:hover {
@@ -53,4 +48,25 @@
 .transactionDetailText {
 	color: black;
 	font-family: "Poppins", sans-serif;
+}
+
+.transactionSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btnPage{
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	border: 2px solid var(--borderPrimaryBTN);
+	background: none;
+	margin: 0.2rem;
+
+}
+
+.btnPage:hover{
+	background: var(--borderPrimaryBTN);
 }

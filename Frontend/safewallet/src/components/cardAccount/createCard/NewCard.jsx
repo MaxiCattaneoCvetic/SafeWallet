@@ -80,16 +80,25 @@ export default function NewCard(props) {
       ...card,
       expirationDate: formattedExpirationDate,
     };
-    
-    if(formattedCard.cardNumber.length !== 16 || formattedCard.cvv.length !== 3 || formattedCard.name.length > 2 || formattedCard.name.length < 3) {
+
+    console.log( card.expirationDate);
+
+    if (
+      formattedCard.cardNumber.length < 16 ||
+      formattedCard.cvv.length < 3 ||
+      formattedCard.name.length < 3 ||
+      card.expirationDate == "" ||
+      formattedCard.cardType.length < 2
+    ) {
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Todos los datos son obligatorios, por favor verifica e intenta de nuevo",
+        title:
+          "Todos los datos son obligatorios, por favor verifica e intenta de nuevo",
         showConfirmButton: false,
         timer: 1500,
       });
-      props.setIsModal(false)
+      props.setIsModal(false);
       return;
     }
     createCard(props.userId, formattedCard)
