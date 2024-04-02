@@ -42,6 +42,7 @@ const DropdownMenu = (props) => {
           <div className={style.linkDropMenu}>
             <Link to={"/profile"} className="styleOff"><p className="greenHoover">Mi perfil</p></Link>
             <Link to={"/account"} className="styleOff"><p className="greenHoover">Consultar balance</p></Link>
+            <Link to={"/myCards"} className="styleOff"><p className="greenHoover">Mis tarjetas</p></Link>
             <p className="greenHoover" onClick={handleLogOut}>Cerrar Sesión</p>
             
           </div>

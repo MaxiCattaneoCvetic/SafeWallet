@@ -19,7 +19,6 @@ export default function NavBar(props) {
 
 
   useEffect(()=>{
-
     if(sessionStorage.getItem("isLogin") == "true" && sessionStorage.getItem("token") != null && sessionStorage.getItem("user") != null){
       setIsLogin(true)
     }else{

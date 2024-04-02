@@ -22,7 +22,6 @@ function Transactions(props) {
       // );
       setData(response.data.content);
       setResFull(response.data);
-      console.log(resFull);
     });
   }, [page]);
 

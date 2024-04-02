@@ -1,4 +1,5 @@
 import LoginAccount from "./pages/account/LoginAccount.jsx";
+import CardAccountPage from "./pages/cardAccount/CardAccountPage.jsx";
 import Home from "./pages/home/Home.jsx";
 import ProfilePage from "./pages/profile/profilePage.jsx";
 import Register from "./pages/register/Register.jsx";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "account",
     element: <LoginAccount></LoginAccount>,
+  },
+  {
+    path: "myCards",
+    element: <CardAccountPage></CardAccountPage>,
   },
 ]);
 

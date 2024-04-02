@@ -6,13 +6,15 @@
 }
 
 .targetConteiner {
-	background-color: #ffffff49;
+	background-color: rgba(0, 0, 0, 0.322);
 	width: 70rem;
-	height: 18rem;
-	border-radius: 1rem;
+	height: auto;
+	border-radius: 22rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	padding: 1rem
 
 }
 

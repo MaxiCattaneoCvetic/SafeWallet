@@ -2,8 +2,13 @@ import style from "./card.module.css";
 import cardNumbers from "../../functions/cardNumbers";
 import deleteCard from "../../api/deleteCard";
 import Swal from "sweetalert2";
+import depositCard from "../../api/depositCard";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
+  const navigate = useNavigate();
   function handleDelete(id) {
     const card = {
       cardNumber: id,
@@ -35,19 +40,37 @@ function Card(props) {
       }
     });
   }
-  
-  async function handleDeposit(id) {
+
+  async function handleDeposit(cardNumber) {
     const { value: amount } = await Swal.fire({
       title: "Ingresa el monto a depositar",
       input: "number",
       inputPlaceholder: "Ingresa el monto a depositar",
       inputAttributes: {
         min: 0,
-        step: 0.01
-      }
+        step: 0.01,
+      },
     });
     if (amount) {
-      Swal.fire(`Acabas de ingresar a tu cuenta: $${amount} \n Desde tu tarjeta terminada en **${id.substring(13, 16)}`);
+      try {
+        const response = await depositCard(props.userId, cardNumber, amount);
+        if (response.status === 201) {
+          const result = await Swal.fire({
+            title: "¡Depositado!",
+            text: "Ya tienes disponible el nuevo saldo en tu cuenta.",
+            icon: "success",
+            showCancelButton: true,
+            confirmButtonText: "Realizar otro depósito.",
+            cancelButtonText: "Ver mi nuevo saldo.",
+            cancelButtonColor: "#2BB32A"
+          });
+          if (!result.isConfirmed) {
+            navigate("/account");
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -72,20 +95,20 @@ function Card(props) {
       <div>
         {props.isButton ? (
           <>
-          <div className={style.btnContainer}>
-          <button
-            className={style.btnDelete}
-            onClick={() => handleDelete(props.cardNumber)}
-          >
-            Eliminar tarjeta
-          </button>
-          <button
-            className={style.btnDelete}
-            onClick={() => handleDeposit(props.cardNumber)}
-          >
-            Ingresar dinero
-          </button>
-          </div>
+            <div className={style.btnContainer}>
+              <button
+                className={style.btnDelete}
+                onClick={() => handleDelete(props.cardNumber)}
+              >
+                Eliminar tarjeta
+              </button>
+              <button
+                className={style.btnDelete}
+                onClick={() => handleDeposit(props.cardNumber)}
+              >
+                Ingresar dinero
+              </button>
+            </div>
           </>
         ) : (
           ""

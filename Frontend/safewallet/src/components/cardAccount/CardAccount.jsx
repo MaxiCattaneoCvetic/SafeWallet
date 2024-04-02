@@ -1,21 +1,18 @@
 import style from "./cardAccount.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "../modal/Modal.jsx";
 import NewCard from "./createCard/NewCard.jsx";
-import ActiveCards from "../activeCards/ActiveCards.jsx";
+import NavBar from "../../components/navBar/NavBar.jsx";
 import CardsManagements from "../cardsManagement/CardsManagements.jsx";
 
-export default function CardAccount() {
-  const [user, setUser] = useState({});
+export default function CardAccount(props) {
   const [isModal, setIsModal] = useState(false);
   const [isModal2, setIsModal2] = useState(false);
-  
-  useEffect(() => {
-    setUser(JSON.parse(sessionStorage.getItem("user")));
-  }, []);
 
   return (
     <>
+      <NavBar />
+
       <h2 className="titles">Mis tarjetas:</h2>
       <div className={style.mainTargetContainer}>
         <div className={style.targetConteiner}>
@@ -31,7 +28,16 @@ export default function CardAccount() {
                 }}
                 className="scondbtn"
               >
-                Ver tarjetas activas
+                Administrador de tarjetas
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsModal(true);
+                }}
+                className="scondbtn"
+              >
+                Añadir nueva tarjeta
               </button>
             </div>
             {isModal2 ? (
@@ -40,32 +46,24 @@ export default function CardAccount() {
                   e.preventDefault();
                   setIsModal2(false);
                 }}
-                title="Administar mis tarjetas"
+                title="Administrador de tarjetas"
                 // eslint-disable-next-line react/no-children-prop
                 children={<CardsManagements setIsModal2={setIsModal2} />}
               />
             ) : (
               ""
             )}
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                setIsModal(true);
-              }}
-              className="scondbtn"
-            >
-              Agregar nueva tarjeta
-            </button>
-
             {isModal ? (
               <Modal
                 onClick={(e) => {
                   e.preventDefault();
                   setIsModal(false);
                 }}
-                title="Agregar nueva tarjeta"
+                title="Añadir nueva tarjeta"
                 // eslint-disable-next-line react/no-children-prop
-                children={<NewCard userId={user.id} setIsModal={setIsModal} />}
+                children={
+                  <NewCard userId={props.user.id} setIsModal={setIsModal} />
+                }
               />
             ) : (
               ""

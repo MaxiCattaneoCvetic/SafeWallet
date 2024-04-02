@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/TransferInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserTransactionsDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/ITransfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/ITransfers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/Card/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

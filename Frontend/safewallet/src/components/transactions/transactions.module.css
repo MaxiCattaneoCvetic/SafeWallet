@@ -1,5 +1,5 @@
 .transactionsBackground {
-	background-color: #9a91911a;
+	background-color: var(--backgroundColorBlance);
 	width: 39rem;
 	height: auto;
 	border-radius: 1rem;

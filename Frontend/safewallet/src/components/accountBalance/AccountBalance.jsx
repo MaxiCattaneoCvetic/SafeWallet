@@ -105,6 +105,9 @@ export default function AccountBalance() {
             <button className="scondbtn" onClick={handleGift}>
               Reclamar premio Safe Wallet
             </button>
+            <button className="scondbtn" onClick={() => navigate("/myCards")}>
+              Mis tarjetas
+            </button>
           </div>
         </div>
       ) : (
