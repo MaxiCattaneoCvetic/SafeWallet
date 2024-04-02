@@ -16,18 +16,33 @@
   --borderPrimaryBTN: #2BB32A;
   --footerBackground: #1a1e1ce8;
 }
-.sinflechas{
-	-moz-appearance: textfield;
-	-webkit-appearance: textfield;
-	appearance: textfield;
-}
-.sinflechas::-webkit-outer-spin-button,
-.sinflechas::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+
+.sinflechas {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
-.spinner{
+.sinflechas::-webkit-outer-spin-button,
+.sinflechas::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.swal2-input {
+  -moz-appearance: textfield !important;
+  -webkit-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+.swal2-input::-webkit-outer-spin-button,
+.swal2-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+
+}
+
+.spinner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,32 +50,39 @@
   width: 100%;
   background: rgba(18, 19, 18, 0.589);
 }
+
 .spinner * {
   color: var(--borderPrimaryBTN);
 }
 
-.titles{
-	margin-left: 3rem;
-	font-size: 1.5rem;
+.titles {
+  margin-left: 3rem;
+  font-size: 1.5rem;
 }
 
 .progress-bar * {
   width: 100%;
-  height: 20px; /* Altura de la barra de progreso */
-  background-color: #007bff; /* Color de la barra de progreso */
-  border-radius: 8px;
-}
-.progress-bar{
-  width: 100%;
-  height: 20px; /* Altura de la barra de progreso */
-  background-color: #007bff; /* Color de la barra de progreso */
+  height: 20px;
+  /* Altura de la barra de progreso */
+  background-color: #007bff;
+  /* Color de la barra de progreso */
   border-radius: 8px;
 }
 
-.backgroundBlack{
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  /* Altura de la barra de progreso */
+  background-color: #007bff;
+  /* Color de la barra de progreso */
+  border-radius: 8px;
+}
+
+.backgroundBlack {
   background: black;
 }
-.flex-column{
+
+.flex-column {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -72,72 +94,81 @@
   border: 1px solid var(--borderPrimaryBTN);
   color: var(--borderPrimaryBTN);
   background: none !important;
-  
-}
-.swal-modal{
-  background-color: var(--backgroundColor);
-  
-}
-.swal-title{
-  color: white;
-  
+
 }
 
-.swal-icon::before{
+.swal-modal {
+  background-color: var(--backgroundColor);
+
+}
+
+.swal-title {
+  color: white;
+
+}
+
+.swal-icon::before {
   display: none;
 }
-.swal-icon::after{
+
+.swal-icon::after {
   display: none;
 }
-.swal-icon--success__hide-corners{
+
+.swal-icon--success__hide-corners {
   display: none;
 }
-.swal-text{
+
+.swal-text {
   color: white;
 }
-.swal-footer{
+
+.swal-footer {
   text-align: center;
 }
 
 
-.backgroundRegister{
+.backgroundRegister {
   background-color: #1A1E1C;
 }
 
 
 /* Swal 2 css  */
 
-.swal2-confirm{
+.swal2-confirm {
   background: none !important;
   border: 2px solid var(--borderPrimaryBTN) !important;
   border-radius: 1rem !important;
 }
 
-.swal2-confirm:hover{
+.swal2-confirm:hover {
   background-color: var(--borderPrimaryBTN) !important;
   color: white !important;
 }
 
-.swal2-cancel{
+.swal2-cancel {
   border-radius: 1rem !important;
 }
-.swal2-cancel:hover{
+
+.swal2-cancel:hover {
   background-color: red;
 }
 
-.swal2-modal{
+.swal2-modal {
   background-color: var(--backgroundColor);
   border: 2px solid var(--borderPrimaryBTN);
   border-radius: 2rem;
 }
-.swal2-title{
+
+.swal2-title {
   color: white;
 }
 
-.swal2-input{
+.swal2-input {
   color: white;
 }
-.swal2-html-container{
+
+.swal2-html-container {
   color: white !important;
 }
 
@@ -148,15 +179,16 @@ body {
   overflow-x: hidden;
 }
 
-.scondbtn{
+.scondbtn {
   padding: 10px;
   background-color: var(--borderPrimaryBTN);
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 2rem;
-  
+
 }
+
 .primarybtn {
   padding: 10px;
   background: none;
@@ -175,23 +207,24 @@ body {
   border-radius: 0.5rem;
 }
 
-.editButtonDisabled{
+.editButtonDisabled {
   padding: 0.3rem;
   background: none;
   border: none;
   color: var(--borderPrimaryBTN);
   cursor: pointer;
 }
-.editButtonDisabled:hover{
+
+.editButtonDisabled:hover {
   cursor: not-allowed;
 }
 
-.editButton:hover{
+.editButton:hover {
   background-color: #2BB32A;
   color: white;
 }
 
-.primarybtnMOBILE{
+.primarybtnMOBILE {
   padding: 2px;
   background: none;
   border: 1px solid var(--borderPrimaryBTN);
@@ -199,15 +232,17 @@ body {
   cursor: pointer;
   border-radius: 2rem;
   width: 30%;
-  
+
 }
 
-.normalText{
+.normalText {
   font-size: 1rem;
 }
-.normalTextFooter{
+
+.normalTextFooter {
   font-size: 1rem;
 }
+
 .btnefect:hover {
   background-color: #1c851c3f;
   color: white;
@@ -238,7 +273,7 @@ body {
 
 }
 
-.textError{
+.textError {
   font-size: 1rem;
   margin: 1rem;
   color: red;
@@ -248,7 +283,7 @@ body {
   padding: 0rem 10rem 0rem 10rem;
 }
 
-.greenHoover:hover{
+.greenHoover:hover {
   cursor: pointer;
   text-decoration: underline var(--borderPrimaryBTN);
 }
@@ -259,18 +294,20 @@ body {
   }
 
 }
+
 @media (min-width: 593px) and (max-width: 811px) {
   .main {
     padding: 0rem;
-  
+
   }
 }
-@media (min-width: 812px) and (max-width: 1300px){
+
+@media (min-width: 812px) and (max-width: 1300px) {
   .main {
 
     padding-right: 3rem;
     padding-left: 3rem;
-  
+
   }
 }
 
@@ -280,10 +317,11 @@ body {
     font-size: 1.5rem;
   }
 
-  .normalText{
+  .normalText {
     font-size: 0.8rem;
   }
-  .normalTextFooter{
+
+  .normalTextFooter {
     font-size: 0.8rem;
   }
 
@@ -294,7 +332,7 @@ body {
     font-size: 1.5rem;
   }
 
-  .normalText{
+  .normalText {
     font-size: 0.8rem;
   }
 
@@ -303,6 +341,6 @@ body {
     border-radius: 2rem;
     font-size: 0.8rem;
   }
-  
+
 
 }

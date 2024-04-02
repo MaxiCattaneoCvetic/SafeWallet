@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import getAllCards from "../../api/getAllCards";
 import Card from "../../components/Card/Card.jsx";
 import style from "./activeCards.module.css";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function ActiveCards(props) {
   const [activeCards, setActiveCards] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const userIdFromStorage = sessionStorage.getItem("user");
   const navigate = useNavigate();
@@ -28,20 +29,30 @@ function ActiveCards(props) {
         .catch((error) => {
           console.error("Error al obtener las tarjetas:", error);
           if (error.response.status === 401) {
-            
             Swal.fire({
               icon: "error",
               title: "Error",
               text: "No tiene permisos para realizar esta acción, por favor vuelva a iniciar sesión.",
             }).then(() => {
-              
-              navigate("/")
+              navigate("/");
             });
           }
           setLoading(false);
         });
     }
-  }, [userIdJSON]);
+  }, [userIdJSON, navigate]);
+
+  const goToNextCard = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === activeCards.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToPreviousCard = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? activeCards.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <>
@@ -49,23 +60,31 @@ function ActiveCards(props) {
       {loading ? (
         <p>Cargando tarjetas...⌛</p>
       ) : (
-        <div>
+        <div className={style.carousel}>
           {activeCards.length > 0 ? (
-            activeCards.map((card) => (
-              <div key={card.id} className={style.containerCards}>
-                <Card
-                  cardNumber={card.cardNumber}
-                  cardType={card.cardType}
-                  expirationDate={card.expirationDate}
-                  name={card.name}
-                  cvv={card.cvv}
-                  id={card.id}
-                  userId={userIdJSON}
-                  isButton={true}
-                  setIsModal2={props.setIsModal2}
-                />
+            <div
+              key={activeCards[currentIndex].id}
+              className={style.containerCards}
+            >
+              <Card
+                cardNumber={activeCards[currentIndex].cardNumber}
+                cardType={activeCards[currentIndex].cardType}
+                expirationDate={activeCards[currentIndex].expirationDate}
+                name={activeCards[currentIndex].name}
+                cvv={activeCards[currentIndex].cvv}
+                id={activeCards[currentIndex].id}
+                userId={userIdJSON}
+                isButton={true}
+                setIsModal2={props.setIsModal2}
+              />
+              <div className={style.btncontainer}>
+              <button onClick={goToPreviousCard}>Anterior</button>
+              <button onClick={goToNextCard}>Siguiente</button>
               </div>
-            ))
+              <h3>
+                Tarjeta {currentIndex + 1} de {activeCards.length}
+              </h3>
+            </div>
           ) : (
             <p>No hay tarjetas activas.</p>
           )}

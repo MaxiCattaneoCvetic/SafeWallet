@@ -2,7 +2,9 @@
 /* CARD */
 .card {
 	width: 23rem;
-	height: 12rem;
+	height: 13rem;
+	max-height: 13rem;
+	max-width: 23rem;
 	border: 2px solid black;
 	border-radius: 1rem;
 	display: flex;
@@ -72,5 +74,13 @@
 }
 .btnDelete:hover{
 	cursor: pointer;
-	border: solid var(--borderPrimaryBTN);
+	background-color: #00f81540;
+}
+
+.btnContainer{
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	gap: 0.1rem;
+
 }

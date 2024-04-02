@@ -17,6 +17,14 @@ public class UserTransactionsDto {
     private Double amount;
     private LocalDateTime date;
 
+    private String cardNumber;
+    private TransferDetail transferDetail;
+
+    public enum TransferDetail {
+        TRANSFER, DEPOSITCARD, SERVICEPAYMENT
+    }
+
+
     private UserTransactionsDto() {
     }
 
@@ -26,6 +34,31 @@ public class UserTransactionsDto {
         this.to = to;
         this.amount = amount;
         this.date = date;
+    }
+
+    public UserTransactionsDto(Long id, String from, Double amount, LocalDateTime date, String cardNumber, TransferDetail transferDetail) {
+        this.id = id;
+        this.from = from;
+        this.amount = amount;
+        this.date = date;
+        this.cardNumber = cardNumber;
+        this.transferDetail = transferDetail;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public TransferDetail getTransferDetail() {
+        return transferDetail;
+    }
+
+    public void setTransferDetail(TransferDetail transferDetail) {
+        this.transferDetail = transferDetail;
     }
 
     public Long getId() {

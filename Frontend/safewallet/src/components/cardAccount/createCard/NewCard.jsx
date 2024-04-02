@@ -81,7 +81,9 @@ export default function NewCard(props) {
       expirationDate: formattedExpirationDate,
     };
 
-    console.log( card.expirationDate);
+    
+
+    
 
     if (
       formattedCard.cardNumber.length < 16 ||

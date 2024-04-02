@@ -1,10 +1,12 @@
 package com.example.Transfers.service.transfer;
 
 import com.example.Transfers.exception.MessageException;
+import com.example.Transfers.model.TransferInformation;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.repository.ITransferRepository;
 import com.example.Transfers.service.mongoDB.SequenceGeneratorService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -183,5 +185,34 @@ public class TransferService implements ITransfers {
         return userTransactionsDto;
     }
 
+    public UserTransactionsDto SettingNewCardTransaction(UserTransactionsDto userTransactionsDto) {
+        // cardNumber, from, amount,  -> FRONT
+        userTransactionsDto.setCardNumber(userTransactionsDto.getCardNumber());
+        userTransactionsDto.setFrom("Cuenta propia");
+        userTransactionsDto.setAmount(userTransactionsDto.getAmount());
+        userTransactionsDto.setTransferDetail(UserTransactionsDto.TransferDetail.DEPOSITCARD);
+        // id, date -> BACK
+        Long IdTransaction = sequenceGeneratorService.generateSequence(UserTransactionsDto.SEQUENCE_NAME);
+        userTransactionsDto.setId(IdTransaction);
+        LocalDateTime date = LocalDateTime.now();
+        userTransactionsDto.setDate(date);
+        return userTransactionsDto;
+    }
+
+
+    public int depositMoneyFromCard(UserDto userDto, UserTransactionsDto userTransactionsDto) {
+        try {
+            Double balance = userDto.getBalance();
+            balance += userTransactionsDto.getAmount();
+            userDto.setBalance(balance);
+            UserTransactionsDto transaction = SettingNewCardTransaction(userTransactionsDto);
+            userDto.getTransactions().add(transaction);
+            iTransferRepository.save(userDto);
+            return 1;
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
 
 }

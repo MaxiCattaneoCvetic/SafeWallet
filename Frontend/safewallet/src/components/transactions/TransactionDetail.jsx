@@ -1,22 +1,30 @@
 import styles from "./transactions.module.css";
 
 function TransactionDetail(props) {
-  const concepto = "transferencia";
+  const concepto = props.detail.transferDetail;
   let mesagge = "";
+  let detalle = "";
 
   switch (concepto) {
-    case "transferencia":
+    case "TRANSFER":
       if (props.detail.amount > 0) {
         mesagge =
           "Has recibido $" + props.detail.amount + " de " + props.detail.from;
+          detalle = "Transferencia de terceros"
         break;
       } else {
         mesagge =
           "Has transferido " + props.detail.amount + " a" + props.detail.to;
+          detalle = "Transferencia a otra cuenta SafeWallet"
         break;
       }
-    case "servicios":
-      mesagge = "Has gastado" + props.amount + " en servicios";
+    case "SERVICEPAYMENT":
+      mesagge = "Has gastado" + props.detail.amount + " en servicios";
+      detalle = "Servicios"
+      break;
+      case "DEPOSITCARD":
+        mesagge = "Has depositado $" + props.detail.amount + " desde tu tarjeta terminada en **" + props.detail.cardNumber.substring(13, 16);
+        detalle = "Deposito en cuenta propia con tarjeta"
       break;
     default:
       mesagge = "No hay detalles";
@@ -29,12 +37,12 @@ function TransactionDetail(props) {
           <h2 className={styles.transactionDetailTitle}>
             Detalle de la transacción
           </h2>
-          <p className={styles.transactionDetailText}>{mesagge}</p>
+          <strong><p className={styles.transactionDetailText}>{mesagge}.</p></strong> 
           <p className={styles.transactionDetailText}>
-            {props.detail.date &&
-              "Fecha: " + props.detail.date.substring(0, 10)}
+            {props.detail.date && 
+              "Fecha: " + props.detail.date.substring(0, 10)+"."}
           </p>
-          <p className={styles.transactionDetailText}>Concepto: {concepto}</p>
+          <p className={styles.transactionDetailText}>Detalle: {detalle}.</p>
         </div>
       )}
     </div>

@@ -20,7 +20,6 @@ function Transactions(props) {
       // let orden = response.data.content.sort(
       //   (a, b) => new Date(b.date) - new Date(a.date)
       // );
-
       setData(response.data.content);
       setResFull(response.data);
       console.log(resFull);
@@ -31,6 +30,7 @@ function Transactions(props) {
     setOpen(true);
     try {
       const response = await getTransactionDetail(userId, idTransaction);
+      console.log(response);
       setDetail(response.data);
     } catch (error) {
       console.log(error);

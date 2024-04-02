@@ -64,7 +64,7 @@ public class Activity {
         try {
             UserDto userDto = transferService.findUserById(id);
             if (userDto == null) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No hay transacciones para este user");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No hay transacciones para este usuario");
             }
 
             //Obtenemos la lista de transacciones del usuario.
@@ -91,7 +91,7 @@ public class Activity {
 
 
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No hay transacciones para este user");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No hay transacciones para este usuario");
         }
 
 

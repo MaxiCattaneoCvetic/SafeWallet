@@ -6,6 +6,9 @@ public class TransferInformation {
     private String cbuTo;
     private Double amount;
 
+    private String cardNumber;
+
+
     public TransferInformation() {
     }
 
@@ -13,7 +16,17 @@ public class TransferInformation {
         this.cbuFrom = cbuFrom;
         this.cbuTo = cbuTo;
         this.amount = amount;
+
     }
+
+    public TransferInformation(String cbuTo, Double amount, String cardNumber, String transferDetail) {
+        this.cbuTo = cbuTo;
+        this.amount = amount;
+        this.cardNumber = cardNumber;
+
+
+    }
+
 
     public Double getAmount() {
         return amount;
@@ -47,12 +60,15 @@ public class TransferInformation {
         this.amount = monto;
     }
 
-    @Override
-    public String toString() {
-        return "TransferInformation{" +
-                "cbuFrom='" + cbuFrom + '\'' +
-                ", cbuTo='" + cbuTo + '\'' +
-                ", monto=" + amount +
-                '}';
+    public String getCardNumber() {
+        return cardNumber;
     }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+
+
+
 }

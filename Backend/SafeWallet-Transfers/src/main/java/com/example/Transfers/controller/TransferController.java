@@ -4,15 +4,14 @@ import com.example.Transfers.exception.MessageException;
 import com.example.Transfers.model.TransferInformation;
 import com.example.Transfers.model.UpdatesModel;
 import com.example.Transfers.model.UserDto;
+import com.example.Transfers.model.UserTransactionsDto;
 import com.example.Transfers.service.transfer.TransferService;
 
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -165,6 +164,38 @@ public class TransferController {
         return ResponseEntity.status(HttpStatus.OK).body("Usuario actualizado");
 
     }
+
+
+    @PostMapping("/{id}/transferences")
+    public ResponseEntity<?>depositMoneyFromCard(@PathVariable Long id, @RequestBody UserTransactionsDto userTransactionsDto) {
+
+        if (userTransactionsDto.getAmount() <= 0) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto debe ser mayor a 0");
+        }
+
+        try {
+            UserDto userDto = transferService.findUserById(id);
+            if (userDto == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+            }
+            int response;
+            response = transferService.depositMoneyFromCard(userDto, userTransactionsDto);
+
+            if(response == 1){
+                return ResponseEntity.status(HttpStatus.CREATED).body("Deposito realizado con exito");
+            }else{
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo realizar el deposito");
+            }
+
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo realizar el deposito");
+        }
+
+
+
+    }
+
+
 }
 
 

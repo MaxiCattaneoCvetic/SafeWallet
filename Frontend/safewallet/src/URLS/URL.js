@@ -24,6 +24,7 @@ const URL_GET_USER_CARD_BASE = `${URL_GATEWAY}/accounts/`;
 
 
 
+
 // URLS PATCH USERS INFO
 const URL_EDIT_USER_ATRIBUTE = `${URL_GATEWAY}/users/`;
 

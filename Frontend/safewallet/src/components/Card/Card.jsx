@@ -35,6 +35,21 @@ function Card(props) {
       }
     });
   }
+  
+  async function handleDeposit(id) {
+    const { value: amount } = await Swal.fire({
+      title: "Ingresa el monto a depositar",
+      input: "number",
+      inputPlaceholder: "Ingresa el monto a depositar",
+      inputAttributes: {
+        min: 0,
+        step: 0.01
+      }
+    });
+    if (amount) {
+      Swal.fire(`Acabas de ingresar a tu cuenta: $${amount} \n Desde tu tarjeta terminada en **${id.substring(13, 16)}`);
+    }
+  }
 
   return (
     <div key={props.id} className={style.card}>
@@ -56,12 +71,22 @@ function Card(props) {
 
       <div>
         {props.isButton ? (
+          <>
+          <div className={style.btnContainer}>
           <button
             className={style.btnDelete}
             onClick={() => handleDelete(props.cardNumber)}
           >
             Eliminar tarjeta
           </button>
+          <button
+            className={style.btnDelete}
+            onClick={() => handleDeposit(props.cardNumber)}
+          >
+            Ingresar dinero
+          </button>
+          </div>
+          </>
         ) : (
           ""
         )}
