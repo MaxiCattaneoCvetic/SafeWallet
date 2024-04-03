@@ -3,6 +3,7 @@ package com.safewallet.userDataService.aliasCbu_generator;
 
 import org.springframework.stereotype.Component;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 @Component
@@ -27,5 +28,23 @@ public class Cbu {
 
         return  CBU;
     }
+
+    public static String generateCvu() {
+        int longitud = 22;
+        StringBuilder sb = new StringBuilder();
+
+        // Caracteres válidos (letras minúsculas, letras mayúsculas y dígitos)
+        String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        SecureRandom random = new SecureRandom();
+
+        for (int i = 0; i < longitud; i++) {
+            int indice = random.nextInt(caracteres.length());
+            char caracter = caracteres.charAt(indice);
+            sb.append(caracter);
+        }
+
+        return sb.toString();
+    }
+
 
 }

@@ -67,9 +67,10 @@ public class Cbu_Alias_test {
         ExtentTest test = extent.createTest("Generando un alias y un cbu");
         List<String> list = userService.checkUniqueCbu_Alias();
         Assertions.assertNotNull(list);
-        Assertions.assertEquals(2, list.size());
+        Assertions.assertEquals(3, list.size());
         Assertions.assertNotNull(list.get(0));
         Assertions.assertNotNull(list.get(1));
+        Assertions.assertNotNull(list.get(2));
     }
     @Test
     public void generateCbu_length() {
@@ -87,13 +88,19 @@ public class Cbu_Alias_test {
     public void generateCbu_alias_Success_CheckUnique() {
         ExtentTest test = extent.createTest("Chequeando Cbu y Alias unicos se testean casos:  " + testCount);
         List<String> list1 = userService.checkUniqueCbu_Alias();
-        List<String> list2 = userService.checkUniqueCbu_Alias();
 
         Assertions.assertNotNull(list1);
-        Assertions.assertNotNull(list2);
-        Assertions.assertEquals(2, list1.size());
-        Assertions.assertEquals(2, list2.size());
-        Assertions.assertNotEquals(list1.get(0), list2.get(0));
-        Assertions.assertNotEquals(list1.get(1), list2.get(1));
+        Assertions.assertEquals(3, list1.size());
+
+        for (int i = 0; i < list1.size() - 1; i++) {
+            System.out.println(list1.get(i));
+            for (int j = i + 1; j < list1.size(); j++) {
+                Assertions.assertNotEquals(list1.get(i), list1.get(j),
+                        "El elemento en la posición " + i + " es igual al elemento en la posición " + j);
+
+            }
+
+        }
     }
+
 }

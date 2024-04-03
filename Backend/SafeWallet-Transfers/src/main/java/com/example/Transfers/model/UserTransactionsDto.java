@@ -21,7 +21,7 @@ public class UserTransactionsDto {
     private TransferDetail transferDetail;
 
     public enum TransferDetail {
-        TRANSFER, DEPOSITCARD, SERVICEPAYMENT
+        TRANSFER, DEPOSITCARD, GIFT, SERVICEPAYMENT
     }
 
 

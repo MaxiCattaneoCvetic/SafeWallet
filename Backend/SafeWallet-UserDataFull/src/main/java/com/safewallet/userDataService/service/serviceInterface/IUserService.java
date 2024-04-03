@@ -21,6 +21,7 @@ public interface IUserService {
 
     UserDto findByCbu(String cbu);
     UserDto findByAlias(String alias);
+    UserDto findByCvu(String cvu);
 
     List<?> findUser(String username);
 

@@ -23,13 +23,14 @@ import org.apache.log4j.Logger;
 
 import static com.safewallet.userDataService.aliasCbu_generator.Alias.generateAlias;
 import static com.safewallet.userDataService.aliasCbu_generator.Cbu.generateCbu;
+import static com.safewallet.userDataService.aliasCbu_generator.Cbu.generateCvu;
 
 //Contiene la lógica de negocio de la aplicación.
 //Actúa como intermediario entre el controlador y el repositorio.
 @Service
 public class UserService implements IUserService {
 
-    Logger logger = Logger.getLogger(UserService.class);
+
     @Autowired
     private IUserRepository userRepository;
     @Autowired
@@ -79,7 +80,7 @@ public class UserService implements IUserService {
 
     @Override
     public void createUser(UserDto userDto) throws MessageException {
-        logger.info("creando usuario");
+
         try {
             //seteamos un id incremental
             userDto.setId(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME));
@@ -88,11 +89,13 @@ public class UserService implements IUserService {
             List<String> lista = checkUniqueCbu_Alias();
             userDto.setCbu(lista.get(0));
             userDto.setAlias(lista.get(1));
+            userDto.setCvu(lista.get(2));
             try {
-                userRepository.save(userDto);
                 feignService.createUser(userDto);
+                userDto.setPassword(null);
+                userRepository.save(userDto);
             } catch (Exception e) {
-                feignService.deleteUser(userDto.getEmail());
+                //feignService.deleteUser(userDto.getEmail());
                 throw new MessageException("Hubo un problema, no se creo el usuario");
             }
 
@@ -108,7 +111,7 @@ public class UserService implements IUserService {
     public UserDto findByUsername(String username) throws MessageException {
         UserDto userFound = userRepository.findByUsername(username);
         List<UserRepresentation> list = feignService.findUser(username);
-        if(userFound!=null){
+        if (userFound != null) {
             return userFound;
         }
         return userFound;
@@ -192,28 +195,37 @@ public class UserService implements IUserService {
 
         String cbuGenerated = generateCbu();
         String aliasGenerated = generateAlias();
-
-        System.out.println("---");
+        String cvuGenerated = generateCvu();
 
         if (allUsers.size() == 0) {
             lista.add(cbuGenerated);
             lista.add(aliasGenerated);
-            System.out.println("retorne lista: " + lista.get(0) + " " + lista.get(1));
+            lista.add(cvuGenerated);
             return lista;
         }
 
 
-        for (UserDto user : allUsers) {
-            if (user.getCbu() != null && user.getCbu().equals(cbuGenerated)) {
-                cbuGenerated = generateCbu();
-            }
-            if (user.getAlias() != null && user.getAlias().equals(aliasGenerated)) {
-                aliasGenerated = generateAlias();
-            }
+        UserDto user = findByCbu(cbuGenerated);
+        while (user != null) {
+            cbuGenerated = generateCbu();
+            user = findByCbu(cbuGenerated);
         }
-
         lista.add(cbuGenerated);
+
+        user = findByAlias(aliasGenerated);
+        while (user != null) {
+            aliasGenerated = generateAlias();
+            user = findByAlias(aliasGenerated);
+        }
         lista.add(aliasGenerated);
+
+        user = findByCvu(cvuGenerated);
+        while (user != null) {
+            cvuGenerated = generateCvu();
+            user = findByCvu(cvuGenerated);
+        }
+        lista.add(cvuGenerated);
+
 
         return lista;
     }
@@ -227,6 +239,16 @@ public class UserService implements IUserService {
         }
         return null;
 
+    }
+
+    @Override
+    public UserDto findByCvu(String cvu) {
+        try {
+            return userRepository.findByCvu(cvu);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override

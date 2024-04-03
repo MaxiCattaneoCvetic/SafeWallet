@@ -42,7 +42,7 @@ public class FeignService implements IUserService {
             userKeycloakFeign.createUserKeycloak(userDto);
             accountFeignClient.createAccountBalance(userDto);
         } catch (Exception e) {
-            accountFeignClient.deleteAccountBalance(userDto.getEmail());
+            //accountFeignClient.deleteAccountBalance(userDto.getEmail());
             throw new Exception("Error al crear el usuario");
         }
     }
@@ -84,6 +84,11 @@ public class FeignService implements IUserService {
 
     @Override
     public UserDto findByAlias(String alias) {
+        return null;
+    }
+
+    @Override
+    public UserDto findByCvu(String cvu) {
         return null;
     }
 

@@ -24,6 +24,7 @@ public class UserDto {
     private String dni;
     private String cbu;
     private String alias;
+    private String cvu;
 
 
     @Override
@@ -31,6 +32,7 @@ public class UserDto {
         return "UserDto{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
@@ -39,9 +41,9 @@ public class UserDto {
                 ", dni='" + dni + '\'' +
                 ", cbu='" + cbu + '\'' +
                 ", alias='" + alias + '\'' +
+                ", cvu='" + cvu + '\'' +
                 '}';
     }
-
 
     public String getUsername() {
         return username;
@@ -76,7 +78,7 @@ public class UserDto {
         this.roles = roles;
     }
 
-    public UserDto(long id, String name, String lastName, String email, String phone, String cbu, String alias, String dni) {
+    public UserDto(long id, String name, String lastName, String email, String phone, String cbu, String alias, String dni,String cvu) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -85,6 +87,7 @@ public class UserDto {
         this.cbu = cbu;
         this.alias = alias.toLowerCase();
         this.dni = dni;
+        this.cvu = cvu;
     }
 
     public String getDni() {
@@ -164,4 +167,11 @@ public class UserDto {
         this.alias = alias.toLowerCase();
     }
 
+    public String getCvu() {
+        return cvu;
+    }
+
+    public void setCvu(String cvu) {
+        this.cvu = cvu;
+    }
 }

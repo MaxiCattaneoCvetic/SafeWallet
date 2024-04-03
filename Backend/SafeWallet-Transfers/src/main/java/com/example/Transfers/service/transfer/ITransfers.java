@@ -34,7 +34,8 @@ public interface ITransfers {
 
     void updateUser(UserDto userDto);
 
-
+    UserDto findUserByCvu(String cvu);
+    UserDto findUserByAlias(String alias);
 
 
 

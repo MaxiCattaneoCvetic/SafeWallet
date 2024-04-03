@@ -12,6 +12,7 @@ public interface IUserRepository extends MongoRepository<UserDto,Long> {
 
     UserDto findByCbu(String cbu);
     UserDto findByAlias(String alias);
+    UserDto findByCvu(String cvu);
 
 
 }

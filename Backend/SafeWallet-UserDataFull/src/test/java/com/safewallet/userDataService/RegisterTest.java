@@ -69,7 +69,7 @@ class RegisterTest {
 	void testCreateUser_Success() throws Exception {
 		ExtentTest test = extent.createTest("Registro usuario con datos validos");
 		// Arrange
-		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312");
+		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312","H1sHQ54glaP8NEuVbmrgHG");
 
 		// Configuramos el comportamiento simulado del SequenceGeneratorService
 		when(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME)).thenReturn(1L);
@@ -88,7 +88,7 @@ class RegisterTest {
 	void testCreateUser_alreadyRegister_DNI() throws Exception {
 		ExtentTest test = extent.createTest("Registro usuario con dni ya registrado");
 		// Arrange
-		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312");
+		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312","H1sHQ54glaP8NEuVbmrgHG");
 
 		// Configuramos el comportamiento simulado del SequenceGeneratorService
 		when(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME)).thenReturn(1L);
@@ -108,7 +108,7 @@ class RegisterTest {
 	void testCreateUser_alreadyRegister_EMAIL() throws Exception {
 		ExtentTest test = extent.createTest("Registro usuario con email ya registrado");
 		// Arrange
-		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312");
+		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "asdasdasd@gmail.com", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312","H1sHQ54glaP8NEuVbmrgHG");
 
 		// Configuramos el comportamiento simulado del SequenceGeneratorService
 		when(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME)).thenReturn(1L);
@@ -128,7 +128,7 @@ class RegisterTest {
 	void testCreateUser_alreadyRegister_emailNull() throws Exception {
 		ExtentTest test = extent.createTest("Registro usuario con email nulo");
 		// Arrange
-		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", null, "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312");
+		UserDto userDto = new UserDto(3L, "Maxi", "cvetic", "", "12312", "1545151215545", "BARCO.PERRO.MAR", "222312312","H1sHQ54glaP8NEuVbmrgHG");
 
 		// Configuramos el comportamiento simulado del SequenceGeneratorService
 		when(sequenceGeneratorService.generateSequence(UserDto.SEQUENCE_NAME)).thenReturn(1L);

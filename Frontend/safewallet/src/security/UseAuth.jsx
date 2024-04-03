@@ -25,9 +25,8 @@ const useAuth = () => {
     const handleTokenExpired = () => {
       // Limpiar sessionStorage
       sessionStorage.clear();
-      // Redirigir al usuario a la página de inicio de sesión o a donde consideres apropiado
+      localStorage.clear();
       navigate("/");
-      // Opcionalmente, mostrar un mensaje indicando que la sesión ha expirado
       swal(
         "Sesión expirada",
         "Tu sesión ha expirado. Por favor, inicia sesión nuevamente.",
@@ -63,10 +62,9 @@ const useAuth = () => {
                 }
               })
               .catch(() => {
-                
                 handleTokenExpired();
               });
-          }, 60000); 
+          }, 60000);
         }
       })
       .catch((error) => {

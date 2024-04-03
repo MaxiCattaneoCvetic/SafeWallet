@@ -28,9 +28,10 @@ public class TransferController {
         this.transferService = transferService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<?> createNewBalanceAccount(@RequestBody UserDto userDto) {
         try {
+            System.out.println("userDto: " + userDto.toString());
             transferService.createBalanceAccount(userDto);
             return ResponseEntity.status(HttpStatus.OK).body("Cuenta de usuario creada");
         } catch (Exception e) {
@@ -77,32 +78,42 @@ public class TransferController {
     public ResponseEntity<?> sendMoney(@RequestBody TransferInformation transferInformation) {
         UserDto userDto = transferService.findUserByCbu(transferInformation.getCbuFrom());
         Double balance = userDto.getBalance();
+
+
         if (balance < transferInformation.getMonto()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Saldo insuficiente");
         }
+
         if (transferInformation.getMonto() <= 0) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El monto debe ser mayor a 0");
         }
+
         try {
             String from = transferInformation.getCbuFrom();
             String to = transferInformation.getCbuTo();
+            System.out.println(to);
             Double amount = transferInformation.getMonto();
             transferService.sendMoney(amount, from, to);
+
             transferencia_realizada_con_extito = new StringBuilder()
                     .append("Transferencia realizada con extito")
                     .append("Transferiste: $")
                     .append(transferInformation.getMonto()).toString();
             String messageTransaction = transferencia_realizada_con_extito;
             return ResponseEntity.status(HttpStatus.OK).body(messageTransaction);
+
         } catch (Exception e) {
             System.out.println("Entre al catch");
             // Si hay un error, responde con un código de error apropiado y un mensaje opcional
-            String message = stringBuilder
+            String message = new StringBuilder()
                     .append("Error en la transferencia: ")
                     .append(e.getMessage()).toString();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
         }
     }
+
+
+
 
     @DeleteMapping("/{email}")
     public ResponseEntity<?> deleteUser(@PathVariable String email) {

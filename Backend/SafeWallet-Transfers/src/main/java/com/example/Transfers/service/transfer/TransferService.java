@@ -21,10 +21,9 @@ public class TransferService implements ITransfers {
 
 
     @Autowired
-    private ITransferRepository iTransferRepository;
-
-    @Autowired
     SequenceGeneratorService sequenceGeneratorService;
+    @Autowired
+    private ITransferRepository iTransferRepository;
 
     @Autowired
     public TransferService(ITransferRepository iTransferRepository) {
@@ -83,21 +82,25 @@ public class TransferService implements ITransfers {
 
 
     @Override
-    public void sendMoney(Double monto, String cbuFrom, String cbuTo) throws MessageException {
+    public void sendMoney(Double monto, String cbuFrom, String data) throws MessageException {
         UserDto userFrom = iTransferRepository.findUserByCbu(cbuFrom);
-        UserDto userTo = iTransferRepository.findUserByCbu(cbuTo);
         Double userFromBalance = userFrom.getBalance();
+
+        UserDto userTo = findUserForTransfer(data);
         if (userTo == null) {
             throw new MessageException("¡Ups! Parece que el usuario al que quieres transferir no existe, por favor revisa los datos. ");
         }
         if (monto > userFromBalance) {
             throw new MessageException("No dispones de saldo para hacer esta transferencia :( .");
         } else {
-            UserTransactionsDto transactionFrom = settingNewTransaction(cbuTo, monto * -1, cbuFrom);
+            UserTransactionsDto transaction = settingNewTransaction(cbuFrom, monto * -1, data);
+            transaction.setTransferDetail(UserTransactionsDto.TransferDetail.TRANSFER);
+            userFrom.getTransactions().add(transaction);
 
-            userFrom.getTransactions().add(transactionFrom);
-            transactionFrom = settingNewTransaction(cbuFrom, monto, cbuTo);
-            userTo.getTransactions().add(transactionFrom);
+
+            transaction = settingNewTransaction(data, monto, cbuFrom);
+            transaction.setTransferDetail(UserTransactionsDto.TransferDetail.TRANSFER);
+            userTo.getTransactions().add(transaction);
             iTransferRepository.save(userFrom);
             iTransferRepository.save(userTo);
 
@@ -126,8 +129,32 @@ public class TransferService implements ITransfers {
     }
 
     public UserDto findUserByCbu(String cbu) {
-        return iTransferRepository.findUserByCbu(cbu);
+        UserDto userDto = iTransferRepository.findUserByCbu(cbu);
+        if (userDto != null) {
+            return userDto;
+        }
+        return null;
     }
+
+    @Override
+    public UserDto findUserByCvu(String cvu) {
+        UserDto userDto = iTransferRepository.findUserByCvu(cvu);
+        if (userDto != null) {
+            return userDto;
+        }
+        return null;
+    }
+
+    @Override
+    public UserDto findUserByAlias(String alias) {
+        UserDto userDto = iTransferRepository.findUserByAlias(alias);
+        if (userDto != null) {
+            return userDto;
+        }
+        return null;
+
+    }
+
 
     @Override
     public int getGifts(String cbu) {
@@ -139,6 +166,7 @@ public class TransferService implements ITransfers {
             balance += 10000;
             userDto.setBalance(balance);
             UserTransactionsDto transaction = settingNewTransaction("SafeWallet", 10000.0, userDto.getName());
+            transaction.setTransferDetail(UserTransactionsDto.TransferDetail.GIFT);
             List<UserTransactionsDto> transactions = userDto.getTransactions();
             transactions.add(transaction);
             iTransferRepository.save(userDto);
@@ -165,22 +193,23 @@ public class TransferService implements ITransfers {
     }
 
 
-
-
     public UserTransactionsDto settingNewTransaction(String from, Double amount, String to) {
 
         LocalDateTime date = LocalDateTime.now();
         UserTransactionsDto userTransactionsDto = null;
         if (from.equalsIgnoreCase("SafeWallet")) {
             Long idTRansaction = sequenceGeneratorService.generateSequence(UserTransactionsDto.SEQUENCE_NAME);
-            userTransactionsDto = new UserTransactionsDto(idTRansaction,"SafeWallet", to, amount, date);
+            userTransactionsDto = new UserTransactionsDto(idTRansaction, "SafeWallet", to, amount, date);
             return userTransactionsDto;
         }
         Long idTRansaction = sequenceGeneratorService.generateSequence(UserTransactionsDto.SEQUENCE_NAME);
-        String userFrom = iTransferRepository.findUserByCbu(from).getName();
-        String userTo = iTransferRepository.findUserByCbu(to).getName();
+        String userFrom = findUserForTransfer(from).getName();
+        userFrom = userFrom.substring(0, 1).toUpperCase() + userFrom.substring(1);
+        String userTo = findUserForTransfer(to).getName();
 
-        userTransactionsDto = new UserTransactionsDto(idTRansaction,userFrom, userTo, amount, date);
+        userTo = userTo.substring(0, 1).toUpperCase() + userTo.substring(1);
+
+        userTransactionsDto = new UserTransactionsDto(idTRansaction, userTo, userFrom, amount, date);
 
         return userTransactionsDto;
     }
@@ -188,7 +217,7 @@ public class TransferService implements ITransfers {
     public UserTransactionsDto SettingNewCardTransaction(UserTransactionsDto userTransactionsDto) {
         // cardNumber, from, amount,  -> FRONT
         userTransactionsDto.setCardNumber(userTransactionsDto.getCardNumber());
-        userTransactionsDto.setFrom("Cuenta propia");
+        userTransactionsDto.setFrom("Cuenta propia.");
         userTransactionsDto.setAmount(userTransactionsDto.getAmount());
         userTransactionsDto.setTransferDetail(UserTransactionsDto.TransferDetail.DEPOSITCARD);
         // id, date -> BACK
@@ -196,6 +225,7 @@ public class TransferService implements ITransfers {
         userTransactionsDto.setId(IdTransaction);
         LocalDateTime date = LocalDateTime.now();
         userTransactionsDto.setDate(date);
+        userTransactionsDto.setTo("Cuenta propia.");
         return userTransactionsDto;
     }
 
@@ -209,10 +239,25 @@ public class TransferService implements ITransfers {
             userDto.getTransactions().add(transaction);
             iTransferRepository.save(userDto);
             return 1;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    public UserDto findUserForTransfer(String data) {
+        UserDto userDto;
+        userDto = iTransferRepository.findUserByCbu(data);
+        if (userDto == null) {
+            userDto = iTransferRepository.findUserByCvu(data);
+            if (userDto == null) {
+                userDto = iTransferRepository.findUserByAlias(data);
+                return userDto;
+            }
+            return userDto;
+        }
+        return userDto;
+
     }
 
 }

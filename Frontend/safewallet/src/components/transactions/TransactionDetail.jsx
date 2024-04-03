@@ -1,6 +1,7 @@
 import styles from "./transactions.module.css";
 
 function TransactionDetail(props) {
+  console.log(props.detail);
   const concepto = props.detail.transferDetail;
   let mesagge = "";
   let detalle = "";
@@ -14,7 +15,7 @@ function TransactionDetail(props) {
         break;
       } else {
         mesagge =
-          "Has transferido " + props.detail.amount + " a" + props.detail.to;
+          "Has transferido $" + props.detail.amount * -1 + " a " + props.detail.from;
           detalle = "Transferencia a otra cuenta SafeWallet"
         break;
       }
@@ -25,6 +26,10 @@ function TransactionDetail(props) {
       case "DEPOSITCARD":
         mesagge = "Has depositado $" + props.detail.amount + " desde tu tarjeta terminada en **" + props.detail.cardNumber.substring(13, 16);
         detalle = "Deposito en cuenta propia con tarjeta"
+      break;
+      case "GIFT":
+        mesagge = "Bienvenido a SafeWallet. Has recibido $" + props.detail.amount + " como premio de bienvenida"
+        detalle = "Premio de bienvenida SafeWallet"
       break;
     default:
       mesagge = "No hay detalles";

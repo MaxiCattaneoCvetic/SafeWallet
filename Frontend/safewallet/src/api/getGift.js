@@ -10,7 +10,6 @@ const config = {
 };
 
 const getGift = async (cbu) => {
-  console.log(config);
   try {
     await axios.post(URL_WELCOME_GIFT + cbu, {}, config).then((response) => {
       if (response.status === 200) {

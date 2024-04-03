@@ -21,11 +21,12 @@ async function fetchKeyc(datos, url) {
 
 
 async function fetchuserFull(datos, url) {
+  // eslint-disable-next-line no-useless-catch
   try{
     const response =  await axios.post(url,datos);
     return response;
   }catch(error){
-    return error
+    throw error
   }
 
 }

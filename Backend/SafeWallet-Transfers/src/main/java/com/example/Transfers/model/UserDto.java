@@ -23,18 +23,37 @@ public class UserDto {
 
     private List<Card> cards;
 
+    private String cvu;
 
 
     //full constructor
-    public UserDto(String name,String email,String lastName , String cbu, String alias, Double balance, Boolean welcomeGift) {
+    public UserDto(String name,String email,String lastName , String cbu, String alias, Double balance, Boolean welcomeGift,String cvu) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.cbu = cbu;
         this.alias = alias;
         this.balance = balance;
+        this.cvu = cvu;
     }
 
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", cbu='" + cbu + '\'' +
+                ", alias='" + alias + '\'' +
+                ", balance=" + balance +
+                ", welcomeGift=" + welcomeGift +
+                ", transactions=" + transactions +
+                ", cards=" + cards +
+                ", cvu='" + cvu + '\'' +
+                '}';
+    }
 
     public List<Card> getCards() {
         return cards;
@@ -119,7 +138,11 @@ public class UserDto {
         this.welcomeGift = welcomeGift;
     }
 
+    public String getCvu() {
+        return cvu;
+    }
 
-
-
+    public void setCvu(String cvu) {
+        this.cvu = cvu;
+    }
 }
