@@ -5,6 +5,7 @@ import com.safewallet.userDataService.model.UpdatesModel;
 import com.safewallet.userDataService.model.UserDto;
 import com.safewallet.userDataService.service.UserService;
 import jakarta.ws.rs.NotFoundException;
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,10 @@ public class AccountController {
     @GetMapping("/all")
     public ResponseEntity<?> findAllUsers() {
         List<UserDto> listUser = userService.findAll();
+        if(listUser.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No hay usuarios");
+        }
+
         return ResponseEntity.status(HttpStatus.OK).body(listUser);
 
     }

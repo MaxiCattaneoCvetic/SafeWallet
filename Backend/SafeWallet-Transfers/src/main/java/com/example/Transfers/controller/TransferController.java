@@ -81,7 +81,7 @@ public class TransferController {
 
 
         if (balance < transferInformation.getMonto()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Saldo insuficiente");
+            return ResponseEntity.status(HttpStatus.GONE).body("Saldo insuficiente");
         }
 
         if (transferInformation.getMonto() <= 0) {
@@ -103,12 +103,10 @@ public class TransferController {
             return ResponseEntity.status(HttpStatus.OK).body(messageTransaction);
 
         } catch (Exception e) {
-            System.out.println("Entre al catch");
-            // Si hay un error, responde con un código de error apropiado y un mensaje opcional
             String message = new StringBuilder()
                     .append("Error en la transferencia: ")
                     .append(e.getMessage()).toString();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
         }
     }
 

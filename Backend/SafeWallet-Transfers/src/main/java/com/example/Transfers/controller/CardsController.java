@@ -55,8 +55,6 @@ public class CardsController {
     }
 
 
-
-
     @GetMapping("/{id}/cards/{cardNumber}")
     public ResponseEntity<?> getCard(@PathVariable Long id, @PathVariable String cardNumber) {
         if (transferService.findUserById(id) == null) {
@@ -80,10 +78,24 @@ public class CardsController {
         }
         try {
             return ResponseEntity.status(HttpStatus.OK).body(cardService.getAllCards(id));
-        }catch (Exception e) {
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
+
+    @GetMapping("/{data}/user")
+    public ResponseEntity<?> getUserCards(@PathVariable String data) {
+        UserDto userDto = transferService.findUserForTransfer(data);
+
+        if (userDto != null) {
+            String fullName = userDto.getName().substring(0, 1).toUpperCase() + userDto.getName().substring(1) +
+                    " " + userDto.getLastName().substring(0,1).toUpperCase() + userDto.getLastName().substring(1);
+            return ResponseEntity.status(HttpStatus.OK).body(fullName);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cuenta inexistente.");
+        }
+
+    }
 
 }

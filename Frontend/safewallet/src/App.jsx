@@ -1,3 +1,4 @@
+import AccountBalance from "./components/accountBalance/AccountBalance.jsx";
 import LoginAccount from "./pages/account/LoginAccount.jsx";
 import CardAccountPage from "./pages/cardAccount/CardAccountPage.jsx";
 import Home from "./pages/home/Home.jsx";

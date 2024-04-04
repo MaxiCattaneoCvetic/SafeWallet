@@ -28,6 +28,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers(new AntPathRequestMatcher("/userKeycloak/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/userKeycloak/create")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/doc/**")).permitAll()
                         .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer

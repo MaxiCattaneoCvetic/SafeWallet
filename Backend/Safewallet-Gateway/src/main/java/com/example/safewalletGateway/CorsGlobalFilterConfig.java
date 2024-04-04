@@ -12,6 +12,7 @@ import org.springframework.http.server.reactive.ServerHttpResponse;;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.reactive.CorsUtils;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -84,6 +85,7 @@ public class CorsGlobalFilterConfig {
                         .pathMatchers("/userKeycloak/**", "/userKeycloak/create").permitAll()
                         .pathMatchers("/user/**").permitAll()
                         .pathMatchers("/accounts/**").permitAll()
+                        .pathMatchers("/doc/**").permitAll()
                         .anyExchange().permitAll()
                 );
 

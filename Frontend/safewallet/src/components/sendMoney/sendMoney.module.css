@@ -1,3 +1,30 @@
-.formInput input{
-	color: black;
+.formContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5rem;
+}
+
+.formContainer img {
+	width: 25rem;
+}
+
+.formInput {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.formInput input {
+	color: white;
+	background: none;
+	border: 2px solid black;
+	padding: 1rem;
+	border-radius: 0.5rem;
+
+}
+
+.formInput input::placeholder {
+	color: white;
 }
