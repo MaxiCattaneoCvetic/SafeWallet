@@ -1,23 +1,43 @@
-.containerHello{
+.containerHello {
 	margin-left: 3rem;
 }
-.containerHello h4{
+
+.containerHello h4 {
 	font-size: 1.5rem;
 	padding-left: 2rem;
 }
-.helloUser{
+
+.helloUser {
 	font-size: 4rem;
 }
 
-.backgroundAccount{
+.backgroundAccount {
 	display: flex;
 	flex-direction: column;
 }
-.balanceContainer{
+
+.balanceContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	margin: 2rem;
-	
+
+}
+
+@media screen and (max-width: 500px) {
+	.helloUser {
+		font-size: 1.2rem;
+	}
+
+	.containerHello h4 {
+		font-size: 0.8rem;
+		padding-left: 1rem;
+	}
+
+	.balanceContainer {
+		margin: 1rem;
+
+	}
+
 }

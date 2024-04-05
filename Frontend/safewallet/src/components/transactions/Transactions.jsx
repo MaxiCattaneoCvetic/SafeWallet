@@ -38,7 +38,7 @@ function Transactions(props) {
 
   return (
     <div className={style.transactionMainContainer}>
-      <div>
+      <div className={style.mainActivity}>
         <h2 className="titles">Tu última actividad</h2>
       </div>
       {data.length === 0 ? (

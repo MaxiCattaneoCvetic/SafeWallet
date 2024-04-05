@@ -31,9 +31,10 @@
 
 .header {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  padding-top: 2rem;
 }
 
 .btn{
@@ -54,12 +55,14 @@
 
 
 .btn {
-  padding: 5px;
+  padding: 1px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: var(--backgroundColor);
-
+  background:none;
+  text-decoration: underline green;
+  color: white;
+  font-weight: 800;
 }
 
 
@@ -67,6 +70,15 @@
 @media screen and (max-width: 767px){
   .backdrop {
     width: 98vw;
+  }
+
+  .actions {
+    right: 1px;
+    top: 1px;
+  }
+
+  .btn svg{
+    width: 1rem;
   }
 }
 

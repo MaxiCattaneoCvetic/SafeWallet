@@ -15,14 +15,13 @@ export default function NewCard(props) {
     name: "",
   });
   const [error, setError] = useState(false);
+  const [error2, setError2] = useState(false);
   const navigate = useNavigate();
 
   function handleChange(e) {
     if (e.target.name === "expirationDate") {
       let date = new Date();
-
       let expirationDate = new Date(e.target.value);
-
       if (expirationDate < date) {
         setError(true);
       } else {
@@ -46,8 +45,11 @@ export default function NewCard(props) {
     if (e.target.name === "name") {
       if (e.target.value.length > 25 || e.target.value.length < 3) {
         setError(true);
-      } else {
+      } else if(!isNaN(e.target.value)){
+        setError2(true);
+      }else{
         setError(false);
+        setError2(false);
       }
     }
 
@@ -228,11 +230,15 @@ export default function NewCard(props) {
                     name="name"
                     required
                     className={style.inputCard}
+                    pattern="[A-Za-záéíóúÁÉÍÓÚ\s]"
+                    title="Por favor, introduce solo texto"
                     value={card.name}
                     onChange={(e) => handleChange(e)}
                   />
                   <p className={style.errors}>
                     {error ? "Longitud incorrecta" : ""}
+                    <br></br>
+                    {error2 ? "Nombre invalido" : ""}
                   </p>
                 </div>
               </>

@@ -20,7 +20,7 @@ const Modal = ({
           </div>
           <div className={classes.actions}>
             <button className={classes.btn} onClick={onClick}>
-              <BsXLg />
+              Cerrar
             </button>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import sendMoneyApi from "../../api/sendMoneyApi.js";
 import style from "./sendMoney.module.css";
 import swal from "sweetalert";
-import getCbu from "../../api/getCbu.js";
 import getUserFromData from "../../api/getUserFromData.js";
 export default function SendMoney(props) {
   const [cbuTo, setCbu] = useState();
@@ -58,17 +57,18 @@ export default function SendMoney(props) {
         <img src="/sendMoney.png" alt="sendMoneyIcon" />
         <form action="" className={style.formInput}>
           <label className={style.labelForm} htmlFor="">
-            Ingrese el Cbu o el alias
+            ¿A quién le vas a transferir?
           </label>
           <input
             type="text"
             onChange={(e) => {
               setCbu(e.target.value);
             }}
-            placeholder="Cbu o alias"
+            placeholder="CBU, CVU o Alias"
+            required
           />
           <label className={style.labelForm} htmlFor="">
-            Ingrese el monto
+            ¿Cuanto vas a transferir?
           </label>
           <input
             type="number"
@@ -77,8 +77,9 @@ export default function SendMoney(props) {
               setAmount(e.target.value);
             }}
             placeholder="Ingrese el monto $"
+            required
           />
-          <button className="primarybtn" type="submit" onClick={handleSubmit}>
+          <button className="primarybtn" type="submit" onSubmit={handleSubmit}>
             Enviar dinero
           </button>
         </form>

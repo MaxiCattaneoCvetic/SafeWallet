@@ -1,12 +1,11 @@
-
-.btnsContainer{
+.btnsContainer {
 	display: flex;
 	justify-content: center;
 	gap: 0.3rem;
 	padding: 1rem;
 }
 
-.inputCard{
+.inputCard {
 	padding: 0.3rem;
 	border: 2px solid var(--borderPrimaryBTN);
 	border-radius: 1rem;
@@ -14,11 +13,13 @@
 	width: auto;
 	color: white;
 }
-.errors  {
+
+.errors {
 	color: red;
 	padding: 0.8rem;
 }
-.containerCardInput{
+
+.containerCardInput {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,7 +32,7 @@
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-	filter: invert(1); 
+	filter: invert(1);
 }
 
 
@@ -55,11 +56,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 @keyframes floatAnimation {
-	0%, 100% {
-			transform: translateY(0);
+
+	0%,
+	100% {
+		transform: translateY(0);
 	}
+
 	50% {
-			transform: translateY(-5px);
+		transform: translateY(-5px);
 	}
 }
 
@@ -112,7 +116,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	
+
 }
 
 .magneticStripe {
@@ -141,6 +145,48 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	border-radius: 5px;
 	padding: 5px;
 	width: auto;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+	.containerCardInput {
+		display: flex;
+		flex-direction: column;
 	}
 
+	.card{
+		width: 18rem;
+		max-width: 18rem;
+		height: 13rem;
+	}
 
+	.magneticStripe {
+		width: 90%;
+		height: 20px;
+		background-color: #333;
+		margin-bottom: 10px;
+	}
+
+	.signature {
+		width: 70%;
+		height: 40px;
+		background-color: #ccc;
+		margin-bottom: 20px;
+	}
+
+	.cardNumbers {
+		width: 90%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.cardNumbers p {
+		display: flex;
+		background-color: #3f3c3c;
+		border-radius: 5px;
+		padding: 5px;
+		width: auto;
+	}
+}

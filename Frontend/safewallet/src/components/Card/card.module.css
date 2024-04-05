@@ -84,3 +84,25 @@
 	gap: 0.1rem;
 
 }
+
+@media screen and (max-width: 500px) {
+	.card {
+		width: 18rem;
+		max-width: 18rem;
+		height: 13rem;
+
+	}
+	
+	
+
+
+
+	
+
+
+
+}
+
+@media (min-width: 510px) and (max-width: 900px) {
+
+}

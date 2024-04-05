@@ -1,7 +1,7 @@
 import style from "./accountBalance.module.css";
 import Modal from "../../components/modal/Modal.jsx";
-import { useState, useRef, useEffect } from "react";
 import SendMoney from "../sendMoney/SendMoney.jsx";
+import { useState, useRef, useEffect } from "react";
 import { useClickOutside } from "primereact/hooks";
 import { getBalance } from "../../api/getBalance.js";
 import swal from "sweetalert";
@@ -13,6 +13,7 @@ export default function AccountBalance() {
   const [visible, setVisible] = useState(false);
   const cbuRef = useRef(null);
   const aliasRef = useRef(null);
+  const cvuRef = useRef(null);
   const [userBalance, setUserBalance] = useState(null);
   const navigate = useNavigate();
 
@@ -42,6 +43,10 @@ export default function AccountBalance() {
     setVisible(false);
   });
 
+  useClickOutside(cvuRef, () => {
+    setVisible(false);
+  });
+
   function handleGift() {
     getGift(userBalance.cbu);
   }
@@ -54,7 +59,7 @@ export default function AccountBalance() {
           <h2 className={style.cashNumber}>${userBalance.balance}</h2>
           <div className={style.btnContainer}>
             <button
-              className="scondbtn "
+              className={`scondbtn ${style.gridItem}`}
               onClick={(e) => {
                 e.preventDefault();
                 setIsModal(true);
@@ -62,7 +67,6 @@ export default function AccountBalance() {
             >
               Enviar dinero
             </button>
-
             {isModal ? (
               <Modal
                 onClick={(e) => {
@@ -76,21 +80,23 @@ export default function AccountBalance() {
             ) : (
               ""
             )}
+            
             <button
-              className="scondbtn"
+              className={`scondbtn ${style.gridItem}`}
               onClick={() => setVisible(true)}
               label="Show"
             >
-              Ver CBU
+              Ver cbu
             </button>
             {visible === true ? (
               <div ref={cbuRef} className={style.showText}>
-                <p>CBU: {userBalance.cbu}</p>
+                <p>{userBalance.cbu}</p>
                 <button className="scondbtn">Copiar</button>
               </div>
             ) : null}
+
             <button
-              className="scondbtn"
+              className={`scondbtn ${style.gridItem}`}
               onClick={() => setVisible(1)}
               label="Show"
             >
@@ -98,14 +104,29 @@ export default function AccountBalance() {
             </button>
             {visible === 1 ? (
               <div ref={aliasRef} className={style.showText}>
-                <p>ALIAS: {userBalance.alias}</p>
+                <p>{userBalance.alias}</p>
                 <button className="scondbtn">Copiar</button>
               </div>
             ) : null}
-            <button className="scondbtn" onClick={handleGift}>
+
+            <button
+              className={`scondbtn ${style.gridItem}`}
+              onClick={() => setVisible(2)}
+              label="Show"
+            >
+              Ver cvu
+            </button>
+            {visible === 2 ? (
+              <div ref={cvuRef} className={style.showText}>
+                <p>{userBalance.cvu}</p>
+                <button className="scondbtn">Copiar</button>
+              </div>
+            ) : null}
+
+            <button className={`scondbtn ${style.gridItem}`} onClick={handleGift}>
               Reclamar premio Safe Wallet
             </button>
-            <button className="scondbtn" onClick={() => navigate("/myCards")}>
+            <button className={`scondbtn ${style.gridItem}`} onClick={() => navigate("/myCards")}>
               Mis tarjetas
             </button>
           </div>

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function NoAuth() {
+	const navigate = useNavigate();
 
 	return(
 		<>
@@ -6,7 +9,7 @@ function NoAuth() {
 		className="primarybtnMOBILE"
 		onClick={(e) => {
 			e.preventDefault();
-			navigate(APPLICATION_LOGIN, { replace: true });
+			navigate("/account");
 		}}
 	>
 		Ingresar

@@ -1,5 +1,5 @@
 import style from "./cardAccount.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../modal/Modal.jsx";
 import NewCard from "./createCard/NewCard.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
@@ -9,15 +9,15 @@ export default function CardAccount(props) {
   const [isModal, setIsModal] = useState(false);
   const [isModal2, setIsModal2] = useState(false);
 
+
   return (
     <>
       <NavBar />
-
       <h2 className="titles">Mis tarjetas:</h2>
-      <div className={style.mainTargetContainer}>
-        <div className={style.targetConteiner}>
+      <div className={style.mainCardContainer}>
+        <div className={style.cardConteiner}>
           <div>
-            <img src="/targets.png" alt="mis tarjetas" />
+            <img src="/cards.png" alt="mis tarjetas" />
           </div>
           <div className={style.containercard}>
             <div className={style.buttonsContainer}>

@@ -28,6 +28,13 @@
 
 }
 
+.mainActivity {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 
 .columnW {
 	width: 33.33%;
@@ -50,14 +57,16 @@
 	font-family: "Poppins", sans-serif;
 }
 
-.transactionSection{
+.transactionSection {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.btnPage{
+
+
+.btnPage {
 	padding: 0.2rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
@@ -67,6 +76,39 @@
 
 }
 
-.btnPage:hover{
+.btnPage:hover {
 	background: var(--borderPrimaryBTN);
+}
+
+@media screen and (max-width: 500px) {
+	.transactionsBackground {
+		width: 17rem;
+		max-width: 17rem;
+	}
+	
+	.transactionContainer {
+		gap: 0.2rem;
+		padding: 0.5rem;
+	}
+
+	.safewalletTransaction {
+		width: 1.8rem;
+		border-radius: 0.4rem;
+		margin-left: 0rem;
+	}
+	.columnW h5,p{
+		font-size: 0.7rem;
+	}
+	
+}
+
+@media (min-width: 500px) and (max-width: 800px){
+	.transactionsBackground {
+		width: 33rem;
+		max-width: 33rem;
+	}
+	
+	.columnW h5,p{
+		font-size: 0.8rem;
+	}
 }

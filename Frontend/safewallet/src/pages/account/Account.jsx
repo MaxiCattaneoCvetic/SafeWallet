@@ -38,7 +38,7 @@ const Account = () => {
               <h1 className={style.helloUser}>
                 Hola {vUser === null ? "" : upperCase(vUser.name)}!!
               </h1>
-              <h4>Que gusto tenerte de vuelta 😃</h4>
+              <h4>Bienvenido a Safe Wallet, es un gusto tenerte de vuelta 😃</h4>
             </div>
             <section className={style.balanceContainer}>
               <AccountBalance />
