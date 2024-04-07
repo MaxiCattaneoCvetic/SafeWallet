@@ -1,13 +1,12 @@
 .transactionsBackground {
-	background-color: var(--backgroundColorBlance);
-	width: 39rem;
 	height: auto;
-	border-radius: 1rem;
 	margin: 0.3rem;
-	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.transactionsBackground:hover {
+.transactionContainer:hover {
 	background-color: #9a919132;
 }
 
@@ -24,7 +23,10 @@
 	padding: 1rem;
 	width: 100%;
 	box-sizing: border-box;
-
+	background-color: var(--backgroundColorBlance);
+	border-radius: 1rem;
+	cursor: pointer;
+	width: 50rem;
 
 }
 
@@ -42,8 +44,12 @@
 }
 
 .noTransactions {
+	background-color: var(--backgroundColorBlance);
 	text-align: center;
 	padding: 2rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	margin-top: 1rem;
 }
 
 .transactionDetail {
@@ -80,12 +86,34 @@
 	background: var(--borderPrimaryBTN);
 }
 
+.mainFilterContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.optionItem {
+	color: black;
+	font-weight: 500;
+}
+
+.selectItem {
+	background: none;
+	border: 0.5px solid var(--borderPrimaryBTN);
+	border-radius: 0.5rem;
+
+
+}
+
+
 @media screen and (max-width: 500px) {
 	.transactionsBackground {
 		width: 17rem;
 		max-width: 17rem;
 	}
-	
+
 	.transactionContainer {
 		gap: 0.2rem;
 		padding: 0.5rem;
@@ -96,19 +124,22 @@
 		border-radius: 0.4rem;
 		margin-left: 0rem;
 	}
-	.columnW h5,p{
+
+	.columnW h5,
+	p {
 		font-size: 0.7rem;
 	}
-	
+
 }
 
-@media (min-width: 500px) and (max-width: 800px){
+@media (min-width: 500px) and (max-width: 800px) {
 	.transactionsBackground {
 		width: 33rem;
 		max-width: 33rem;
 	}
-	
-	.columnW h5,p{
+
+	.columnW h5,
+	p {
 		font-size: 0.8rem;
 	}
 }
