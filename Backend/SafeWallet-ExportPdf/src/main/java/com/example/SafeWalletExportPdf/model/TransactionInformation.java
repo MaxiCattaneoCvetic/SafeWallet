@@ -9,10 +9,10 @@ public class TransactionInformation {
     private String nameTo;
     private String accountTo;
     private Double amount;
-    private LocalDateTime date;
+    private String date;
     private String detail;
 
-    public TransactionInformation(String nameFrom, String accountFrom, String nameTo, String accountTo, Double amount, LocalDateTime date, String detail) {
+    public TransactionInformation(String nameFrom, String accountFrom, String nameTo, String accountTo, Double amount, String date, String detail) {
         this.nameFrom = nameFrom;
         this.accountFrom = accountFrom;
         this.nameTo = nameTo;
@@ -63,11 +63,11 @@ public class TransactionInformation {
         this.amount = amount;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

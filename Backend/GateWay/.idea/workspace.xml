@@ -5,30 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/ConfigSecurity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/SafeWalletExportPdfApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/model/TransactionInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/tokenSecurity/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/tokenSecurity/JwtAuthConverterProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/safewallet-transaction.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/safewallet-transaction.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/templatePdf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/test/java/com/example/SafeWalletExportPdf/SafeWalletExportPdfApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/model/TransactionInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/model/TransactionInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/GetDownloadDocument.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/GetDownloadDocument.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/downloadButton/DownloadReceipt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/downloadButton/DownloadReceipt.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

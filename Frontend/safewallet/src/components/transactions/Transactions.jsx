@@ -7,6 +7,7 @@ import TransactionDetail from "./TransactionDetail.jsx";
 import "react-responsive-modal/styles.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer,Bounce } from 'react-toastify';
+import DownloadReceipt from "../downloadButton/DownloadReceipt.jsx";
 
 
 
@@ -59,7 +60,6 @@ function Transactions(props) {
     setOpen(true);
     try {
       const response = await getTransactionDetail(userId, idTransaction);
-      console.log(response);
       setDetail(response.data);
     } catch (error) {
       console.log(error);
@@ -70,6 +70,7 @@ function Transactions(props) {
     
     <div className={style.transactionMainContainer}>
       <ToastContainer />
+      
       <div className={style.mainActivity}>
         <h2 className={style.titless}>Tu última actividad</h2>
         <div className={style.mainFilterContainer}>
@@ -135,6 +136,7 @@ function Transactions(props) {
                   }}
                 >
                   <div className={style.transactionContainer}>
+                    
                     <img
                       src="/safewallet-transaction.svg"
                       alt="safewallet transaction"
@@ -166,8 +168,11 @@ function Transactions(props) {
                         }
                       </p>
                     </div>
+                    <DownloadReceipt data={transaction}></DownloadReceipt>
                   </div>
+                  
                 </div>
+                
               ))}
             </div>
             <div>

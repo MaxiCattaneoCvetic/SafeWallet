@@ -1,7 +1,6 @@
 import styles from "./transactions.module.css";
 
 function TransactionDetail(props) {
-  console.log(props.detail);
   const concepto = props.detail.transferDetail;
   let mesagge = "";
   let detalle = "";

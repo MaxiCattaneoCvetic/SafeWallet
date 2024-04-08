@@ -75,7 +75,7 @@ public class PdfCreatorService {
         document.add(transaccionTitle);
         Paragraph transaccionData = new Paragraph();
         transaccionData.setFont(fontText);
-        transaccionData.add("Transferencia de: $" + transactionInformation.getAmount() + " a Cuenta\n");
+        transaccionData.add("Transferencia de: $" + transactionInformation.getAmount()+ "\n");
         transaccionData.add("Fecha: " + transactionInformation.getDate() +  "\n");
         transaccionData.add("Concepto: " + transactionInformation.getDetail() + "\n\n");
         document.add(transaccionData);

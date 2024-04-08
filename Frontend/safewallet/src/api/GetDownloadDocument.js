@@ -1,18 +1,21 @@
 import axios from "axios";
-import URL_DOWNLOAD_DOCUMENT from "../URLS/URL";
+import { URL_DOWNLOAD_DOCUMENT } from "../URLS/URL";
 
-function getDownloadDocument() {
+async function getDownloadDocument(data) {
   const config = {
     headers: {
       authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
+    responseType: 'blob' 
   };
 
-  return axios.get(URL_DOWNLOAD_DOCUMENT, config)
-    .then(response => response.data)
-    .catch(error => {
-      throw error;
-    });
+  // eslint-disable-next-line no-useless-catch
+  try {
+    const response = await axios.post(URL_DOWNLOAD_DOCUMENT, data, config);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 }
 
 export default getDownloadDocument;
