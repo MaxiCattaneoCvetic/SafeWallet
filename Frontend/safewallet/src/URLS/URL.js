@@ -38,6 +38,10 @@ const URL_LOGOUT = `${URL_GATEWAY}/userKeycloak/logout`;
 // URLS SEND MONEY
 const URL_SEND_MONEY = `${URL_GATEWAY}/accounts/send`;
 
+
+// URL DOWNLOAD DOCUMENTS
+const URL_DOWNLOAD_DOCUMENT = `${URL_GATEWAY}/download/pdf/generate`;
+
 // const APPLICATION_LOGIN = `${URL_GATEWAY}/myAccount/login`;
 
 export {

@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/ConfigSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/SafeWalletExportPdfApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/model/TransactionInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/tokenSecurity/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/tokenSecurity/JwtAuthConverterProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/safewallet-transaction.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/safewallet-transaction.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/templates/templatePdf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/test/java/com/example/SafeWalletExportPdf/SafeWalletExportPdfApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/transactions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/transactions.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/URLS/URL.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,28 +72,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/ayyda/CertifiedTeachDeveloper_DigitalHouse/ProfessionalDeveloper/JavaSpringboot/Obsidian_ImplementaciónJaime/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-18",
+    "last_opened_file_path": "C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\java\com\example\SafeWalletExportPdf" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers\service" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-UserDataFull\src\main\java\com\safewallet\userDataService\tokenSecurity" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway\src\main\java\com\example\SafeWalletGateway\security" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\resources\templates" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\java\com\example\SafeWalletExportPdf\service" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.safewallet.userDataService" />
@@ -87,13 +110,26 @@
       <recent name="com.example.Transfers" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.allProject">
+  <component name="RunManager" selected="Application.SafeWalletExportPdfApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SafeWalletExportPdfApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.SafeWalletExportPdf.SafeWalletExportPdfApplication" />
+      <module name="SafeWallet-ExportPdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.SafeWalletExportPdf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -198,6 +234,7 @@
     </configuration>
     <configuration name="allProject" type="CompoundRunConfigurationType">
       <toRun name="ConfigServerApplication" type="Application" />
+      <toRun name="SafeWalletExportPdfApplication" type="Application" />
       <toRun name="SafeWalletGatewayApplication" type="Application" />
       <toRun name="SafeWalletServerApplication" type="Application" />
       <toRun name="SafewalletApplicationKeycloak" type="Application" />
@@ -251,22 +288,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.login_succesfull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-keycloak" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.safewallet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.safewallet" />
-      <option name="MAIN_CLASS_NAME" value="com.example.safewallet.LoginTest" />
-      <option name="METHOD_NAME" value="login_succesfull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafeWallet-UserDataFull" />
       <extension name="coverage">
@@ -291,12 +312,12 @@
       <item itemvalue="Application.UserDataServiceApplication" />
       <item itemvalue="Application.TransfersApplication" />
       <item itemvalue="Application.SafeWalletLoginRedirectApplication" />
+      <item itemvalue="Application.SafeWalletExportPdfApplication" />
       <item itemvalue="Compound.Safewallet-run" />
       <item itemvalue="Compound.allProject" />
       <item itemvalue="JUnit.Cbu_Alias_test" />
       <item itemvalue="JUnit.Cbu_Alias_test.generateCbuSuccess" />
       <item itemvalue="JUnit.LoginTest" />
-      <item itemvalue="JUnit.LoginTest.login_succesfull" />
       <item itemvalue="JUnit.RegisterTest" />
     </list>
     <recent_temporary>
@@ -305,7 +326,6 @@
         <item itemvalue="JUnit.RegisterTest" />
         <item itemvalue="JUnit.Cbu_Alias_test.generateCbuSuccess" />
         <item itemvalue="JUnit.LoginTest" />
-        <item itemvalue="JUnit.LoginTest.login_succesfull" />
       </list>
     </recent_temporary>
   </component>
