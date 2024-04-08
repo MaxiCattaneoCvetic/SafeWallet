@@ -14,4 +14,4 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 - **Server**: Eureka Server, encargado de la gestión y registro de los microservicios, facilitando su integración y funcionamiento coordinado.
 - **Transfers**: Gestiona todas las transferencias de fondos, manteniendo un historial detallado de las transacciones y las tarjetas asociadas a cada usuario. Esencial para garantizar la integridad y la trazabilidad de las operaciones financieras.
 - **UserDataFull**: En colaboración con Keycloak, este microservicio almacena información completa del usuario, excluyendo la contraseña. Actúa como un nexo crucial entre los diferentes microservicios, facilitando la comunicación y la integración de datos a través de Feign.
-
+- **ExportPdf**: Este microservicio es el encargado de generar el pdf de las transacciónes.
