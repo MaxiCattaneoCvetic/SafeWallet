@@ -79,7 +79,7 @@ export default function SendMoney(props) {
             placeholder="Ingrese el monto $"
             required
           />
-          <button className="primarybtn" type="submit" onSubmit={handleSubmit}>
+          <button className="primarybtn" type="submit" onClick={handleSubmit}>
             Enviar dinero
           </button>
         </form>

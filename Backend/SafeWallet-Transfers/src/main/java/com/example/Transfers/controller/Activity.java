@@ -14,9 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -101,16 +99,13 @@ public class Activity {
     }*/
 
 
-    @GetMapping("/{id}/activity")
+    @GetMapping("/{id}/transactions")
     public ResponseEntity<?> getTransactionsOrderByAmount(@PathVariable Long id, HttpServletRequest request,
                                                           @RequestParam(defaultValue = "0") int page,
                                                           @RequestParam(defaultValue = "5") int size,
                                                           @RequestParam(defaultValue = "0") int filterNumber
                                                           //@RequestParam(defaultValue = "0") int amount)
-    )
-
-
-    {
+    ) {
 
 /*
         if(filterNumber > 5 || filterNumber <= 0){
@@ -144,9 +139,6 @@ public class Activity {
             //Obtenemos la lista de transacciones del usuario.
             List<UserTransactionsDto> transactions = userDto.getTransactions();
             transactions.sort(Comparator.comparing(UserTransactionsDto::getDate).reversed());
-
-
-
 
 
             switch (filterNumber) {
@@ -256,7 +248,6 @@ public class Activity {
 
 
             if (optionalTransaction.isPresent()) {
-
                 return ResponseEntity.status(HttpStatus.OK).body(optionalTransaction.get());
             } else {
 
@@ -265,9 +256,12 @@ public class Activity {
 
 
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Transacción no encontrada");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Transacción no encontrada");
         }
     }
+
+
+
 
 
 }

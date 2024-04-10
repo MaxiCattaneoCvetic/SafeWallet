@@ -58,7 +58,7 @@ public class PdfCreatorService {
         Paragraph origenData = new Paragraph();
         origenData.setFont(fontText);
         origenData.add("Nombre: " + transactionInformation.getNameFrom() + "\n");
-        origenData.add("Cbu-Alias-Cvu:: " + transactionInformation.getAccountFrom() +  "\n");
+        origenData.add("Cbu-Alias-Cvu: " + transactionInformation.getAccountFrom() +  "\n");
         document.add(origenData);
 
         // Destino
@@ -67,7 +67,7 @@ public class PdfCreatorService {
         Paragraph destinoData = new Paragraph();
         destinoData.setFont(fontText);
         destinoData.add("Nombre: " + transactionInformation.getNameTo() + "\n");
-        destinoData.add("Cbu-Alias-Cvu:: " + transactionInformation.getAccountTo() +  "\n");
+        destinoData.add("Cbu-Alias-Cvu: " + transactionInformation.getAccountTo() +  "\n");
         document.add(destinoData);
 
         // Transacción

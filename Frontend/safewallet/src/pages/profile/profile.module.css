@@ -1,28 +1,40 @@
-.mainContainerProfile{
+.mainContainerProfile {
 	display: flex;
 	justify-content: center;
 	gap: 10%;
 	align-items: center;
 	margin-top: 5rem;
 }
+
 .titleAvatar {
 	font-size: 3rem;
 	text-decoration: underline;
 	text-align: center;
 }
 
-.titleAvatarh3{
+.titleAvatarh3 {
 	text-align: center;
 }
 
 .avatarConteiner {
+	width: 23rem;
+	max-width: 23rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 }
-.inputBox{
+
+.avatarConteiner img {
+	width: 23rem;
+	max-width: 23rem;
+	border: 2px solid black;
+	border-radius: 3rem;
+	background-color: black;
+}
+
+.inputBox {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -30,12 +42,6 @@
 	justify-self: center;
 }
 
-.avatarConteiner img {
-	width: 15rem;
-	border: 2px solid black;
-	border-radius: 3rem;
-	background-color: black;
-}
 
 
 label {
@@ -63,7 +69,7 @@ label {
 }
 
 .inputInformation {
-	width:15rem;
+	width: 15rem;
 	height: 5rem;
 	background: none;
 	border: 1px solid var(--borderPrimaryBTN);
@@ -73,10 +79,82 @@ label {
 }
 
 .avatarImg {
+	width: 15rem;
+	max-width: 15rem;
 	padding: 5px;
 	background: none;
 	border: 2px solid var(--borderPrimaryBTN);
 	color: var(--borderPrimaryBTN);
 	cursor: pointer;
 	border-radius: 0.5rem;
+}
+
+
+@media screen and (max-width: 400px) {
+	.mainContainerProfile {
+		flex-direction: column;
+	}
+
+	.containerInfo {
+		margin: 1rem;
+		gap: 1rem;
+	}
+
+	.containerInfoV {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+
+	.avatarConteiner {
+		width: 15rem;
+		max-width: 15rem;
+
+	}
+
+	.avatarConteiner img {
+		width: 15rem;
+		max-width: 15rem;
+
+	}
+
+
+}
+
+@media (min-width: 400px) and (max-width: 900px) {
+	.mainContainerProfile {
+		flex-direction: column;
+	}
+
+	.containerInfo {
+		margin: 1rem;
+		gap: 1rem;
+	}
+
+	.containerInfoV {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+
+}
+
+@media (min-width: 910px) and (max-width: 1000px) {
+
+
+	.containerInfo {
+		margin: 1rem;
+		gap: 1rem;
+	}
+
+	.containerInfoV {
+		gap: 1rem;
+	}
+
+	.mainContainerProfile {
+		flex-direction: column;
+	}
+
 }

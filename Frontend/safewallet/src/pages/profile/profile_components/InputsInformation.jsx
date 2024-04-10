@@ -29,11 +29,11 @@ function InputsInformation(props) {
           const response = await patchUserEdit(props.user.id, dataToUpdate);
           switch (response.status) {
             case 200:
-              if(field === "email"){
-                getUserData(dataToUpdate.email).then(()=>{
-                  updateEmail()
-                })
-                return
+              if (field === "email") {
+                getUserData(dataToUpdate.email).then(() => {
+                  updateEmail();
+                });
+                return;
               }
               getUserData(props.user.email);
               break;
@@ -128,6 +128,7 @@ function InputsInformation(props) {
             </button>
           </label>
         </div>
+
         <div className={style.containerInfoV}>
           <label htmlFor="">
             DNI
@@ -135,11 +136,8 @@ function InputsInformation(props) {
               className={style.inputInformation}
               value={props.user.dni}
             ></input>
-            <button
-              onClick={(e) => editAtribute(e, "dni")}
-              className="editButton"
-            >
-              Editar
+            <button className="editButtonDisabled">
+              No puedes editar tu cvu.
             </button>
           </label>
           <label htmlFor="">
@@ -161,7 +159,7 @@ function InputsInformation(props) {
               className={style.inputInformation}
               value={props.user.cbu}
             ></input>
-            <button  className="editButtonDisabled">
+            <button className="editButtonDisabled">
               No puedes editar tu cbu.
             </button>
           </label>
@@ -178,6 +176,16 @@ function InputsInformation(props) {
               className="editButton"
             >
               Editar
+            </button>
+          </label>
+          <label htmlFor="">
+            CVU
+            <input
+              className={style.inputInformation}
+              value={props.user.cvu}
+            ></input>
+            <button className="editButtonDisabled">
+              No puedes editar tu cvu.
             </button>
           </label>
         </div>

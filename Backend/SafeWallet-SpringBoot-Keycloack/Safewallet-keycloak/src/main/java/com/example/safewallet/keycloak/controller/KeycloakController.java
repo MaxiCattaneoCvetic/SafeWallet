@@ -47,9 +47,8 @@ public class KeycloakController {
     @PostMapping("/logout/{email}")
     @PermitAll()
     public ResponseEntity<?> logout(@PathVariable String email) throws URISyntaxException {
-        System.out.println("me llamaron");
         try {
-            return keycloakService.logOut(email);
+            return keycloakService.logOut(email); //Si esta ok devuelve Response OK (200).
         }catch (Error e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");
         }

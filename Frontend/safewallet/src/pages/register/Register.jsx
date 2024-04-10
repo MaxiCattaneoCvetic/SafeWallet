@@ -66,7 +66,6 @@ export default function Register() {
 
     try {
       const response = await fetchuserFull(userv, REGISTER_USER_FULL);
-      console.log(response);
       setLoading(true);
       if (response.status === 201) {
         successRegister();

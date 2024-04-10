@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import style from "./profile.module.css";
 import NavBar from ".././../components/navBar/NavBar.jsx";
 import { SpinnerCircular } from "spinners-react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,7 +11,13 @@ import AvatarComponent from "./profile_components/AvatarComponent.jsx";
 import InputsInformation from "./profile_components/InputsInformation.jsx";
 
 function Profile(props) {
+  const navigate = useNavigate()
 
+  useEffect(()=>{
+    if(props.user === null){
+      navigate("/account")
+    }
+  })
 
   return (
     <>

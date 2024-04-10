@@ -4,7 +4,7 @@ import getDownloadDocument from "../../api/getDownloadDocument";
 function DownloadReceipt(props) {
   async function handleClick() {
 
-		if(props.data.amount <0 ){
+		if(props.data.amount < 0 ){
 			props.data.amount = props.data.amount * -1
 		}
 

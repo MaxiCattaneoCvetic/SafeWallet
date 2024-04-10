@@ -31,23 +31,6 @@ function Transactions(props) {
       // setData(response.data.content);
       
       setData(response.data.content);
-      if(response.data.content.length === 0){
-        toast.warn('No existen datos para el filtro seleccionado!', {
-          position: "top-center",
-          autoClose: 1200,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          // eslint-disable-next-line no-undef
-          transition: Bounce,
-          })
-          setFilterMessage(true);
-      }else{
-        setFilterMessage(false);
-      }
       setResFull(response.data);
     });
   }, [page, filterNumber]);

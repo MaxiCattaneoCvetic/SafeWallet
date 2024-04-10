@@ -1,7 +1,11 @@
 import style from "../profile.module.css";
 import { useEffect, useState } from "react";
 export default function AvatarComponent() {
-	const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(1);
+  const [saveContador, setSaveContador] = useState(
+    sessionStorage.getItem("avatar")
+  );
+
   return (
     <>
       <div className={style.avatarConteiner}>
@@ -9,9 +13,8 @@ export default function AvatarComponent() {
         <button
           className={style.avatarImg}
           onClick={(e) => {
-            console.log(contador);
             e.preventDefault();
-            if (contador >= 6) {
+            if (contador >= 10) {
               setContador(1);
             } else {
               setContador(contador + 1);
