@@ -3,8 +3,6 @@ import cardNumbers from "../../functions/cardNumbers";
 import deleteCard from "../../api/deleteCard";
 import Swal from "sweetalert2";
 import depositCard from "../../api/depositCard";
-import { useEffect } from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Card(props) {

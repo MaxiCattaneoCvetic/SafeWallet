@@ -1,5 +1,5 @@
 import { MdFileDownload } from "react-icons/md";
-import getDownloadDocument from "../../api/getDownloadDocument";
+import getDownloadDocument from "../../api/getDownloadDocument.js";
 
 function DownloadReceipt(props) {
   async function handleClick() {
@@ -19,7 +19,6 @@ function DownloadReceipt(props) {
     };
 
     try {
-			console.log(data);
       const response = await getDownloadDocument(data); // Espera la respuesta del servidor
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');

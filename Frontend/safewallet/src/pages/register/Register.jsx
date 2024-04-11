@@ -3,8 +3,8 @@ import Modal from "../../components/modal/Modal.jsx";
 import style from "./register.module.css";
 import { useEffect, useRef, useState } from "react";
 import swal from "sweetalert";
-import { fetchuserFull, fetchKeyc } from "../../api/registerFetch.js";
-import { REGISTER_USER_KEYCLOAK, REGISTER_USER_FULL } from "../../URLS/URL.js";
+import { fetchuserFull} from "../../api/registerFetch.js";
+import { REGISTER_USER_FULL } from "../../URLS/URL.js";
 import { useNavigate } from "react-router-dom";
 import { SpinnerCircular } from "spinners-react";
 
