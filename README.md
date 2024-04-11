@@ -16,5 +16,6 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 - **UserDataFull**: En colaboración con Keycloak, este microservicio almacena información completa del usuario, excluyendo la contraseña. Actúa como un nexo crucial entre los diferentes microservicios, facilitando la comunicación y la integración de datos a través de Feign.
 - **ExportPdf**: Este microservicio es el encargado de generar el pdf de las transacciónes.
 
-Estructura del proyecto
-![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/54d897cc-f9c4-43f8-a7f1-7023923d3544)
+## Estructura del proyecto.
+![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/ed2bcc21-3e7f-45f3-a722-93b8aa116f37)
+
