@@ -1,5 +1,5 @@
 import { MdFileDownload } from "react-icons/md";
-import getDownloadDocument from "../../api/getDownloadDocument.js";
+import getDownloadDocument from "../../api/getDownloadDocument";
 
 function DownloadReceipt(props) {
   async function handleClick() {
