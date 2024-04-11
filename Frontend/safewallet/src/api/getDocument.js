@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL_DOWNLOAD_DOCUMENT } from "../URLS/URL";
 
-async function getDownloadDocument(data) {
+async function getDocument(data) {
   const config = {
     headers: {
       authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -18,4 +18,4 @@ async function getDownloadDocument(data) {
   }
 }
 
-export default getDownloadDocument;
+export default getDocument;
