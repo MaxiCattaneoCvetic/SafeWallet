@@ -45,7 +45,7 @@ public class CreateUserController {
         }
         try {
             userService.createUser(userDto);
-            return ResponseEntity.status(HttpStatus.OK).body(userDto.toString());
+            return ResponseEntity.status(HttpStatus.CREATED).body(userDto.toString());
         } catch (Exception e) {
             //userService.deleteUser(email);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un problema con el servidor, por favor contacte con el administrador.");

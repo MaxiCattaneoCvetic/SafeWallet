@@ -39,6 +39,8 @@ public class CorsGlobalFilterConfig {
                 HttpHeaders headers = response.getHeaders();
                 HttpHeaders requestHeaders = request.getHeaders();
                 String origin = request.getHeaders().getOrigin();
+                System.out.println(origin);
+                System.out.println(request.getHeaders().getOrigin());
 
                 // Verifica si hay un encabezado de autorización en la solicitud
                 List<String> authorizationHeaders = request.getHeaders().get(HttpHeaders.AUTHORIZATION);
