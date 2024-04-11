@@ -1,6 +1,7 @@
 package com.example.Transfers.service.transfer;
 
 import com.example.Transfers.exception.MessageException;
+import com.example.Transfers.model.Card;
 import com.example.Transfers.model.TransferInformation;
 import com.example.Transfers.model.UserDto;
 import com.example.Transfers.model.UserTransactionsDto;
@@ -231,18 +232,28 @@ public class TransferService implements ITransfers {
 
 
     public int depositMoneyFromCard(UserDto userDto, UserTransactionsDto userTransactionsDto) {
+
+        String cardNumber = userTransactionsDto.getCardNumber();
+        List<Card> cardList = userDto.getCards();
+
+
         try {
-            Double balance = userDto.getBalance();
-            balance += userTransactionsDto.getAmount();
-            userDto.setBalance(balance);
-            UserTransactionsDto transaction = SettingNewCardTransaction(userTransactionsDto);
-            userDto.getTransactions().add(transaction);
-            iTransferRepository.save(userDto);
-            return 1;
+            for (Card c : cardList) {
+                if (c.getCardNumber().equals(cardNumber)) {
+                    Double balance = userDto.getBalance();
+                    balance += userTransactionsDto.getAmount();
+                    userDto.setBalance(balance);
+                    UserTransactionsDto transaction = SettingNewCardTransaction(userTransactionsDto);
+                    userDto.getTransactions().add(transaction);
+                    iTransferRepository.save(userDto);
+                    return 1;
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
         }
+        return 0;
     }
 
     public UserDto findUserForTransfer(String data) {

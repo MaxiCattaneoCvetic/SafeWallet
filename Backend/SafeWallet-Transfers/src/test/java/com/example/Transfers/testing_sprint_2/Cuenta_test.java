@@ -1,4 +1,4 @@
-package com.example.Transfers;
+package com.example.Transfers.testing_sprint_2;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -104,7 +104,7 @@ public class Cuenta_test {
 
     @Test
     public void get_all_users() {
-
+        ExtentTest test = extent.createTest("Obtener todos los usuarios.");
         ITransferRepository transferRepositoryMock = Mockito.mock(ITransferRepository.class);
 
 

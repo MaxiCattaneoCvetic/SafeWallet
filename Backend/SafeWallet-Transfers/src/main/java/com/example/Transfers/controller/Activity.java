@@ -261,7 +261,31 @@ public class Activity {
     }
 
 
+    @GetMapping("/transaction/{id}/all")
+    public ResponseEntity<?> getAllUserTransaction(@PathVariable Long id, HttpServletRequest request) {
+        if (request.getHeader("Authorization") == null) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("No autorizado");
 
+        }
+
+        UserDto user = transferService.findUserById(id);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encuentra el usuario");
+        }
+
+
+        try {
+
+            List<UserTransactionsDto> allUserTransactions = user.getTransactions();
+            return ResponseEntity.status(HttpStatus.OK).body(allUserTransactions);
+
+
+        } catch (Error e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body("Error en el servidor");
+
+        }
+    }
 
 
 }

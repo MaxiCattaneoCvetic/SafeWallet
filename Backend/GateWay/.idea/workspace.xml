@@ -5,33 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Card_create_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Card_delete_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Cuenta_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/reports/ExtentFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/service/PdfCreatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/controller/KeycloakController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/ITransfersApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar6.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/public/avatar6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/api/getTransactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/downloadButton/DownloadReceipt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/downloadButton/DownloadReceipt.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/sendMoney/SendMoney.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/sendMoney/SendMoney.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/components/transactions/Transactions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profilePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile_components/AvatarComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile_components/AvatarComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile_components/InputsInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/profile/profile_components/InputsInformation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/safewallet/src/pages/register/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/model/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/service/transfer/TransferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Card_create_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_2/Card_create_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Card_delete_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_3/User_Activity_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/Cuenta_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_2/Cuenta_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Test Exploratorio sprint 2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Test Exploratorio sprint 2.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/Activity.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/aliasCbu_generator/Alias.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -75,28 +57,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-18",
-    "last_opened_file_path": "C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/test/java/com/example/Transfers",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_3&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\test\java\com\example\Transfers\testing_sprint_3" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\test\java\com\example\Transfers" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\java\com\example\SafeWalletExportPdf" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers\service" />
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-UserDataFull\src\main\java\com\safewallet\userDataService\tokenSecurity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\resources\templates" />
@@ -113,7 +95,7 @@
       <recent name="com.safewallet.userDataService.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Card_delete_test">
+  <component name="RunManager" selected="JUnit.User_Activity_test">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
       <module name="SafeWallet-ConfigServer" />
@@ -197,7 +179,7 @@
       <module name="SafeWallet-Transfers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -249,76 +231,76 @@
       <module name="SafeWallet-Transfers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.Transfers" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.Card_create_test" />
+      <option name="PACKAGE_NAME" value="com.example.Transfers.testing_sprint_2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.testing_sprint_2.Card_create_test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Card_create_test.already_exists_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="User_Activity_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafeWallet-Transfers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.Transfers" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.Card_create_test" />
-      <option name="METHOD_NAME" value="already_exists_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Card_create_test.create_card_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-Transfers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.Transfers" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.Card_create_test" />
-      <option name="METHOD_NAME" value="create_card_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Card_create_test.delete_card" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-Transfers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.Transfers" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.Card_create_test" />
-      <option name="METHOD_NAME" value="delete_card" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Card_delete_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafeWallet-Transfers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.Transfers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.Transfers" />
-      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.Card_delete_test" />
+      <option name="PACKAGE_NAME" value="com.example.Transfers.testing_sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.testing_sprint_3.User_Activity_test" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User_Activity_test.deposit_money_from_card" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafeWallet-Transfers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Transfers.testing_sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.testing_sprint_3.User_Activity_test" />
+      <option name="METHOD_NAME" value="deposit_money_from_card" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User_Activity_test.deposit_money_from_card_wrong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafeWallet-Transfers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Transfers.testing_sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.testing_sprint_3.User_Activity_test" />
+      <option name="METHOD_NAME" value="deposit_money_from_card_wrong" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User_Activity_test.get_specific_transaction_noAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafeWallet-Transfers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Transfers.testing_sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Transfers.testing_sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Transfers.testing_sprint_3.User_Activity_test" />
+      <option name="METHOD_NAME" value="get_specific_transaction_noAuth" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -335,19 +317,19 @@
       <item itemvalue="Application.SafeWalletExportPdfApplication" />
       <item itemvalue="Compound.Safewallet-run" />
       <item itemvalue="Compound.allProject" />
+      <item itemvalue="JUnit.User_Activity_test" />
+      <item itemvalue="JUnit.User_Activity_test.deposit_money_from_card" />
+      <item itemvalue="JUnit.User_Activity_test.deposit_money_from_card_wrong" />
+      <item itemvalue="JUnit.User_Activity_test.get_specific_transaction_noAuth" />
       <item itemvalue="JUnit.Card_create_test" />
-      <item itemvalue="JUnit.Card_create_test.already_exists_test" />
-      <item itemvalue="JUnit.Card_create_test.create_card_test" />
-      <item itemvalue="JUnit.Card_create_test.delete_card" />
-      <item itemvalue="JUnit.Card_delete_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Card_delete_test" />
+        <item itemvalue="JUnit.User_Activity_test" />
+        <item itemvalue="JUnit.User_Activity_test.deposit_money_from_card" />
+        <item itemvalue="JUnit.User_Activity_test.deposit_money_from_card_wrong" />
+        <item itemvalue="JUnit.User_Activity_test.get_specific_transaction_noAuth" />
         <item itemvalue="JUnit.Card_create_test" />
-        <item itemvalue="JUnit.Card_create_test.create_card_test" />
-        <item itemvalue="JUnit.Card_create_test.delete_card" />
-        <item itemvalue="JUnit.Card_create_test.already_exists_test" />
       </list>
     </recent_temporary>
   </component>

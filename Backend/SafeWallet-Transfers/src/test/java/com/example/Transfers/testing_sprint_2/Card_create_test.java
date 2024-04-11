@@ -1,4 +1,4 @@
-package com.example.Transfers;
+package com.example.Transfers.testing_sprint_2;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -12,11 +12,15 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Card_delete_test {
 
+@SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class Card_create_test {
     static ExtentSparkReporter info = new ExtentSparkReporter("target/card_test.html");
     static ExtentReports extent;
 
@@ -27,7 +31,7 @@ public class Card_delete_test {
     @Mock
     private SequenceGeneratorService sequenceGeneratorService;
 
-    private String cardNumber = "516518948";
+    private String cardNumber = "156515";
     private Long userId = 20L;
 
     @BeforeAll
@@ -79,16 +83,57 @@ public class Card_delete_test {
     }
 
 
-
-    public void a_create_card_test() {
+    @Test
+    @Order(1)
+    public void create_card_test() {
         ExtentTest test = extent.createTest("Crear una nueva tarjeta");
         String token = login_successful();
 
+        given()
+                .header("Authorization", "Bearer " + token)
+                .contentType("application/json")
+                .body("{ \"cardNumber\": \"" + cardNumber + "\", \"cardType\": \"debito\", \"expirationDate\": \"10/01/2024\", \"cvv\": \"124\" }")
+                .when()
+                .post("http://localhost:8086/accounts/" + userId + "/cards")
+                .then().assertThat().statusCode(201);
+    }
 
+
+    @Test
+    @Order(2)
+    public void select_card() {
+        ExtentTest test = extent.createTest("Seleccionar una tarjeta especifica");
+        String token = login_successful();
+
+        given()
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .get("http://localhost:8086/accounts/" + userId + "/cards/"+cardNumber)
+                .then().assertThat().statusCode(200);
     }
 
     @Test
-    public void d_delete_card() {
+    @Order(3)
+    public void already_exists_test() {
+
+        ExtentTest test = extent.createTest("Crear una tarjeta que ya existe");
+        String token = login_successful();
+
+
+        given()
+                .header("Authorization", "Bearer " + token)
+                .contentType("application/json")
+                .body("{ \"cardNumber\": "+cardNumber+" , \"cardType\": \"debito\", \"expirationDate\": \"10/01/2024\", \"cvv\": \"124\" }")
+                .when()
+                .post("http://localhost:8086/accounts/"+userId+"/cards")
+                .then().assertThat().statusCode(409);
+
+    }
+
+
+    @Test
+    @Order(4)
+    public void delete_card() {
 
         ExtentTest test = extent.createTest("Eliminar Tarjeta");
         String token = login_successful();
@@ -114,7 +159,8 @@ public class Card_delete_test {
 
 
     @Test
-    public void e_delete_card_wrongId() {
+    @Order(5)
+    public void delete_card_wrongId() {
 
         ExtentTest test = extent.createTest("Eliminar Tarjeta");
         String token = login_successful();
@@ -128,6 +174,26 @@ public class Card_delete_test {
                 .delete("http://localhost:8086/accounts/" + userId + "/cards")
                 .then().assertThat().statusCode(404);
     }
+
+
+
+    @Test
+    @Order(6)
+    public void card_bad_request() {
+
+        ExtentTest test = extent.createTest("Crear una tarjeta con datos erroneos");
+        String token = login_successful();
+
+        given()
+                .header("Authorization", "Bearer " + token)
+                .contentType("application/json")
+                .body("{ \"cardNumber\": \"21212\", \"expirationDate\": \"10/01/2024\", \"cvv\": \"124\" }")
+                .when()
+                .post("http://localhost:8086/accounts/"+userId+"/cards")
+                .then().assertThat().statusCode(400);
+
+    }
+
 
 
 
