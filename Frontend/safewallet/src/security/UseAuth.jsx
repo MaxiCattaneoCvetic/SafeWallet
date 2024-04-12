@@ -26,7 +26,7 @@ const useAuth = () => {
       // Limpiar sessionStorage
       sessionStorage.clear();
       localStorage.clear();
-      location.replace(URL_APP);
+      location.replace("https://safewallet-teal.vercel.app");
       swal(
         "Sesión expirada",
         "Tu sesión ha expirado. Por favor, inicia sesión nuevamente.",
@@ -73,7 +73,7 @@ const useAuth = () => {
           "El servidor agotó el tiempo de espera, por favor contacta con un administrador. \n" +
             error,
           "error"
-        ).then(() => location.replace(URL_APP));
+        ).then(() => location.replace("https://safewallet-teal.vercel.app"));
       });
   }, [navigate]);
 

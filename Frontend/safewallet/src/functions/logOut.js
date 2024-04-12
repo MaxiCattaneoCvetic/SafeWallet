@@ -2,7 +2,7 @@ import axios from "axios";
 import { URL_APP, URL_LOGOUT } from "../URLS/URL";
 import decodedToken from "./decodedToken";
 
-export const logOut = async () => {
+async function logOut() {
   let data = JSON.parse(sessionStorage.getItem("user"));
   const token = sessionStorage.getItem("token");
   let email = null;
@@ -26,9 +26,11 @@ export const logOut = async () => {
     if(response.status === 200) {
       sessionStorage.clear();
       localStorage.clear();
-      //window.location.replace("https://safewallet-teal.vercel.app/");
+      window.location.replace("https://safewallet-teal.vercel.app/");
     }
   } catch (e) {
     console.log(e);
   }
-};
+}
+
+export default logOut
