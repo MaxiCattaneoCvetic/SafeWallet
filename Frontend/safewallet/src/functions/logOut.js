@@ -26,7 +26,7 @@ async function logOut() {
     if(response.status === 200) {
       sessionStorage.clear();
       localStorage.clear();
-      window.location.replace("https://safewallet-teal.vercel.app/");
+      window.location.replace("https://safewallet-sooty.vercel.app/");
     }
   } catch (e) {
     console.log(e);

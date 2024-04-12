@@ -16,10 +16,13 @@ const DropdownMenu = (props) => {
   }
 
 
-  function handleLogOut() {
-    logOut().then(() => {
-      location.replace("https://safewallet-teal.vercel.app/");
-    });
+  async function handleLogOut() {
+    const response = logOut()
+    if(response.status === 200) {
+      sessionStorage.clear();
+      localStorage.clear();
+      window.location.replace("https://safewallet-sooty.vercel.app/");
+    }
   }
 
   useEffect(()=>{
