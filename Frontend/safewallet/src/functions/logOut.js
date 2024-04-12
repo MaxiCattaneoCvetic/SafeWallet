@@ -22,11 +22,11 @@ export const logOut = async () => {
   };
 
   try {
-    const response = await axios.post(`${URL_LOGOUT}/${email}`, config);
-    if (response.status === 200) {
+    const response = await axios.post(`${URL_LOGOUT}/${email}`, config)
+    console.log(response.status);
+    if(response.status === 200) {
       sessionStorage.clear();
       localStorage.clear();
-      location.replace(URL_APP);
     }
   } catch (e) {
     console.log(e);
