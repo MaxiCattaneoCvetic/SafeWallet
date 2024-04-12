@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./mainNavigationUser.module.css";
-import { logOut } from "../../../functions/logOut";
+import  logOut  from "../../../functions/logOut";
 const DropdownMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [initials,setInitials] = useState("")
@@ -18,7 +18,7 @@ const DropdownMenu = (props) => {
 
   function handleLogOut() {
     logOut().then(() => {
-      window.location.replace("https://safewallet-teal.vercel.app/");
+      location.replace("https://safewallet-teal.vercel.app/");
     });
   }
 

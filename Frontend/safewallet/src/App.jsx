@@ -6,38 +6,28 @@ import Register from "./pages/register/Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <RootLayout />,
-  //   //errorElement: <Error />,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <Home />,
-  //     },
-  //   ],
-  // },
   {
     path: "/",
     element: <Home />,
   },
   {
-    path: "register",
+    path: "/register",
     element: <Register />,
   },
   {
-    path: "profile",
+    path: "/profile",
     element: <ProfilePage />,
   },
   {
-    path: "account",
-    element: <LoginAccount></LoginAccount>,
+    path: "/account",
+    element: <LoginAccount />,
   },
   {
-    path: "myCards",
-    element: <CardAccountPage></CardAccountPage>,
+    path: "/myCards",
+    element: <CardAccountPage />,
   },
 ]);
+
 
 function App() {
   return (

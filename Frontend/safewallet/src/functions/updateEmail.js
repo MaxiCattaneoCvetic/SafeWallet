@@ -1,4 +1,4 @@
-import {logOut} from "../functions/logOut"
+import logOut from "../functions/logOut"
 import { URL_APP } from "../URLS/URL";
 import Swal from "sweetalert2";
 export const updateEmail =  () => {
