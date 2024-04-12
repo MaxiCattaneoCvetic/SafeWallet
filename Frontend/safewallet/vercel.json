@@ -1,5 +1,5 @@
 {
 	"rewrites": [
-			{"source": "/(.*)", "destination": "https://safewallet-teal.vercel.app/"}
+			{"source": "/(.*)", "destination": "https://safewallet-sooty.vercel.app/"}
 	]
 }
