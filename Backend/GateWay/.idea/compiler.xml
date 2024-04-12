@@ -8,9 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SafeWallet-Server" />
+        <module name="config-server" />
         <module name="SafeWallet-Gateway" />
+        <module name="safewallet" />
         <module name="SafeWallet-keycloak" />
         <module name="SafeWallet-ConfigServer" />
+        <module name="Transfers" />
+        <module name="userDataService" />
         <module name="SafeWallet-Transfers" />
         <module name="SafeWallet-UserDataFull" />
         <module name="SafeWallet-Login-Redirect" />
@@ -38,7 +42,11 @@
       <module name="SafeWallet-keycloak" options="-parameters" />
       <module name="Safewallet-Gateway" options="-parameters" />
       <module name="Safewallet-keycloak" options="-parameters" />
+      <module name="Transfers" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="safewallet" options="-parameters" />
+      <module name="userDataService" options="-parameters" />
     </option>
   </component>
 </project>

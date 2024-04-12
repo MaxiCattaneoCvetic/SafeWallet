@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/controller/CardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +40,13 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2adKTq7VSO3NxXDdpalu79lvGiH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,21 +55,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_3&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.ConfigServerApplication.executor": "Run",
+    "Application.SafeWalletExportPdfApplication.executor": "Run",
+    "Application.SafeWalletGatewayApplication.executor": "Run",
+    "Application.SafeWalletServerApplication.executor": "Run",
+    "Application.SafewalletApplicationKeycloak.executor": "Run",
+    "Application.TransfersApplication.executor": "Run",
+    "Application.UserDataServiceApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-18",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_3",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.updates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\test\java\com\example\Transfers\testing_sprint_3" />
@@ -93,7 +106,7 @@
   <component name="RunManager" selected="Compound.allProject">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.configserver.ConfigServerApplication" />
-      <module name="SafeWallet-ConfigServer" />
+      <module name="config-server" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.configserver.*" />
@@ -158,7 +171,7 @@
     </configuration>
     <configuration name="SafewalletApplicationKeycloak" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.safewallet.SafewalletApplicationKeycloak" />
-      <module name="SafeWallet-keycloak" />
+      <module name="safewallet" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.safewallet.*" />
@@ -171,7 +184,7 @@
     </configuration>
     <configuration name="TransfersApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Transfers.TransfersApplication" />
-      <module name="SafeWallet-Transfers" />
+      <module name="Transfers" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.Transfers.testing_sprint_2.*" />
@@ -191,7 +204,7 @@
     </configuration>
     <configuration name="UserDataServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.safewallet.userDataService.UserDataServiceApplication" />
-      <module name="SafeWallet-UserDataFull" />
+      <module name="userDataService" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.safewallet.userDataService.*" />
@@ -336,6 +349,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704643029051</updated>
+      <workItem from="1712925933314" duration="15000" />
     </task>
     <servers />
   </component>

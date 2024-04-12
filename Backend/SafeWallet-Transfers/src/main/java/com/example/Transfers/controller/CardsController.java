@@ -61,6 +61,7 @@ public class CardsController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
         if (cardService.findCardByNumber(cardNumber) == null) {
+
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Card not found");
         }
 
