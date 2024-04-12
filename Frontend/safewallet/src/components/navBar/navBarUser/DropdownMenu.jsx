@@ -18,7 +18,7 @@ const DropdownMenu = (props) => {
 
   function handleLogOut() {
     logOut().then(() => {
-      window.location.replace("https://safewallet-teal.vercel.app/");
+      //window.location.replace("https://safewallet-teal.vercel.app/");
     });
   }
 
