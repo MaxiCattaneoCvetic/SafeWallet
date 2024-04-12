@@ -26,7 +26,7 @@ const useAuth = () => {
       // Limpiar sessionStorage
       sessionStorage.clear();
       localStorage.clear();
-      navigate("/");
+      location.replace(URL_APP);
       swal(
         "Sesión expirada",
         "Tu sesión ha expirado. Por favor, inicia sesión nuevamente.",
