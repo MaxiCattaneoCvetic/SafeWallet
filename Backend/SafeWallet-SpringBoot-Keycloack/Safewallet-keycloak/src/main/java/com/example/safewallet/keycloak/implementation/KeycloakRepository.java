@@ -7,8 +7,7 @@ import com.example.safewallet.keycloak.implementation.service.IkeyCloakService;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
-import org.keycloak.OAuth2Constants;
+
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.UserResource;
@@ -16,8 +15,7 @@ import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -117,10 +115,8 @@ public class KeycloakRepository implements IkeyCloakService {
             return "usuario creado";
 
         } else if (status == 409) {
-            log.error("El DNI o el correo ya fue registrado");
             return "El DNI o el correo ya fue registrado";
         } else {
-            log.error("Error creating user, please contact with the administrator.");
             return "Error creating user, please contact with the administrator.";
         }
 
