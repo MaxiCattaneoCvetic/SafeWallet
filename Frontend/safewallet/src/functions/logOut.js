@@ -26,7 +26,7 @@ export const logOut = () => {
     axios.post(`${URL_LOGOUT}/${email}`, config).then((res) => {
       if (res.status == 200) {
         sessionStorage.clear();
-        location.replace(URL_APP);
+        location.replace("https://safewallet-teal.vercel.app/");
       }
     });
   } catch (e) {
