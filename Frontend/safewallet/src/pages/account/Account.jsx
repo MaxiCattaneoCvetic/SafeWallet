@@ -16,15 +16,15 @@ const Account = () => {
     setVToken(sessionStorage.getItem("token"));
     setVUser(JSON.parse(sessionStorage.getItem("user")));
   }, []);
-  setTimeout(() => {
-    if(countReload > 3)return
-    if (!vUser && vToken) {
-      location.reload();
-      setCountReload(countReload + 1);
-    }else if(vUser && vToken){
-      setCountReload(0)
-    }
-  }, 1000);
+  // setTimeout(() => {
+  //   if(countReload > 3)return
+  //   if (!vUser && vToken) {
+  //     location.reload();
+  //     setCountReload(countReload + 1);
+  //   }else if(vUser && vToken){
+  //     setCountReload(0)
+  //   }
+  // }, 1000);
 
 
 
