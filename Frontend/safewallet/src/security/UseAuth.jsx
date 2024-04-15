@@ -17,7 +17,7 @@ const useAuth = () => {
     isRun.current = true;
 
     const client = new Keycloak({
-      url: "http://localhost:8080",
+      url: "http://54.147.181.182:8080/",
       realm: "safewallet",
       clientId: "frontend_client",
     });
