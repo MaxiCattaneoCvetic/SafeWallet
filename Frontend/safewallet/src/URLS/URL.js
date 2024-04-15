@@ -1,5 +1,5 @@
 // URLS SISTEMA
-const URL_IAM = "http://localhost:8080";
+const URL_IAM = "http://54.147.181.182:8080/";
 const URL_APP = "https://safewallet-sooty.vercel.app/";
 const URL_GATEWAY = "http://localhost:9090";
 const CLIENT_ID_KEYCLOAK = "safe-wallet-api";
