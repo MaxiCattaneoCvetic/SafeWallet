@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Safewallet-Gateway/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/test/java/com/example/safewallet/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/TransfersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java/com/example/Transfers/TransfersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/UserDataServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java/com/safewallet/userDataService/UserDataServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/java/com/example/safewalletGateway/CorsGlobalFilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/test/java/com/example/safewalletGateway/SafewalletGatewayApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,38 +74,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.ConfigServerApplication.executor": "Run",
-    "Application.SafeWalletExportPdfApplication.executor": "Run",
-    "Application.SafeWalletGatewayApplication.executor": "Run",
-    "Application.SafeWalletServerApplication.executor": "Run",
-    "Application.SafewalletApplicationKeycloak.executor": "Run",
-    "Application.TransfersApplication.executor": "Run",
-    "Application.UserDataServiceApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-18",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-Transfers/src/test/java/com/example/Transfers/testing_sprint_3",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.updates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SafeWalletExportPdfApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SafeWalletGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SafeWalletServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SafewalletApplicationKeycloak.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransfersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserDataServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-18&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-UserDataFull&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\test\java\com\example\Transfers\testing_sprint_3" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\test\java\com\example\Transfers" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\java\com\example\SafeWalletExportPdf" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers\service" />
-      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers\src\main\java\com\example\Transfers" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-UserDataFull" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Transfers" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Server" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-SpringBoot-Keycloack\Safewallet-keycloak" />
+      <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-Gateway" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cveti\Desktop\backend project\SAFEWALLET-PRODUCTION\Backend\SafeWallet-ExportPdf\src\main\resources\templates" />

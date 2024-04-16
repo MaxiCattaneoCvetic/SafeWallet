@@ -1,6 +1,4 @@
 package com.safewallet.userDataService;
-
-import com.safewallet.userDataService.aliasCbu_generator.Cbu;
 import com.safewallet.userDataService.repository.IUserRepository;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -20,6 +18,7 @@ public class UserDataServiceApplication {
 
 	@Autowired
 	IUserRepository userRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(UserDataServiceApplication.class, args);
