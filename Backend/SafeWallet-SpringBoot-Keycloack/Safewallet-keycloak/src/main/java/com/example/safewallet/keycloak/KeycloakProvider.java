@@ -14,7 +14,7 @@ import java.security.Key;
 
 public class KeycloakProvider {
 
-    private static final String SERVER_URL = "http://54.147.181.182:8080"; // aca se define la URL del keycloak
+    private static final String SERVER_URL = "http://swmax.cloud/"; // aca se define la URL del keycloak
     private static final String REALM_NAME = "safewallet";
     private static final String REALM_MASTER = "master";
     private static final String REALM_CLI = "admin-cli"; // DEL MASTER!!

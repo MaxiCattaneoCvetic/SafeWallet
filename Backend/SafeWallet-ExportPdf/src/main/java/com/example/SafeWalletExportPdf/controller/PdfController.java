@@ -30,6 +30,8 @@ public class PdfController {
 
     @PostMapping("/pdf/generate")
     public ResponseEntity<?> generatePDF(HttpServletResponse response, @RequestBody TransactionInformation transactionInformation) throws IOException {
+        System.out.println("me llamaron");
+        System.out.println(response.getHeaders("Authorization"));
         try{
             response.setContentType("application/pdf");
             DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");

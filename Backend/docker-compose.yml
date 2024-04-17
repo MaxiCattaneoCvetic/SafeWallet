@@ -1,4 +1,4 @@
-version: '4'
+version: '3.8'
 networks:
   backend-network:
     driver: bridge
@@ -12,14 +12,12 @@ services:
     networks:
       - backend-network
 
-  # safewalletiam:
-  #   image: sw_image-safewallet:1
-  #   ports:
-  #     - "8080:8080"
-  #   networks:
-  #     - backend-network
-  #   depends_on:
-  #     - configserver
+  safewalletiam:
+    image: mcvetic97/safewalletiam:1
+    ports:
+    - "8080:8080"
+    networks:
+    - backend-network
 
   eurekaserver:
     image: sw_image-server:1
