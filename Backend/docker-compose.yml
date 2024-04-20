@@ -6,7 +6,7 @@ networks:
 
 services:
   configserver:
-    image: sw_image-configserver:1
+    image: mcvetic97/sw-configserver:v1
     ports:
       - "8888:8888"
     networks:
@@ -20,20 +20,20 @@ services:
     - backend-network
 
   eurekaserver:
-    image: sw_image-server:1
+    image: mcvetic97/sw-server:v1
     ports:
       - "8761:8761"
     networks:
       - backend-network
   gateway:
-    image: sw_image-gateway:1
+    image: mcvetic97/sw-gateway:v1
     ports:
       - "9090:9090"
     networks:
       - backend-network
 
   exportpdf:
-    image: sw_image-exportpdf:1
+    image: mcvetic97/sw-exportpdf:v1
     ports:
       - "8085:8082"
     networks:
@@ -47,14 +47,14 @@ services:
       - backend-network
 
   userdatafull:
-    image: sw_image-userfull:1
+    image: mcvetic97/sw-userfull:v1
     ports:
       - "8087:8080"
     networks:
       - backend-network
 
   transfers:
-    image: sw_image-transfers:1
+    image: mcvetic97/sw-transfers:v1
     ports:
       - "8086:8086"
     networks:

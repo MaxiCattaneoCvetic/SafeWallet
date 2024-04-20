@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java/com/example/SafeWalletExportPdf/controller/PdfController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/DTO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/DTO/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java/com/example/safewallet/keycloak/KeycloakProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../build.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,10 +77,10 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/cveti/Desktop/backend project/SAFEWALLET-PRODUCTION/Backend/SafeWallet-UserDataFull&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
