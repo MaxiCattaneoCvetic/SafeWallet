@@ -1,7 +1,7 @@
 // URLS SISTEMA
 const URL_IAM = "https://swmax.cloud/";
 const URL_APP = "https://safewallet-sooty.vercel.app/";
-const URL_GATEWAY = "http://localhost:9090";
+const URL_GATEWAY = "https://gateway-production-b36f.up.railway.app";
 const CLIENT_ID_KEYCLOAK = "safe-wallet-api";
 
 // URLS CREAR USUARIOS
