@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ea854-938e-49ba-bb2e-151f45b45041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../script.bash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-ExportPdf/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-ExportPdf/dkfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Server/dkfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/dkfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/dockfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Safewallet-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

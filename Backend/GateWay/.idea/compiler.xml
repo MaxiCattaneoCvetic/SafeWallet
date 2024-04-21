@@ -17,7 +17,6 @@
         <module name="userDataService" />
         <module name="SafeWallet-Transfers" />
         <module name="SafeWallet-UserDataFull" />
-        <module name="SafeWallet-Login-Redirect" />
         <module name="SafeWallet-ExportPdf" />
       </profile>
     </annotationProcessing>
@@ -26,6 +25,7 @@
       <module name="GateWay" target="17" />
       <module name="Safewallet-Gateway" target="17" />
       <module name="Safewallet-keycloak" target="17" />
+      <module name="SafeWallet-Login-Redirect" target="17" />
       <module name="service-configuration" target="1.5" />
     </bytecodeTargetLevel>
   </component>
