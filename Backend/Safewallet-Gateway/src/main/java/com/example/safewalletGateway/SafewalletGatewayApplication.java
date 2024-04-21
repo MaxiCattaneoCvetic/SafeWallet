@@ -1,13 +1,13 @@
-package com.example.SafeWalletGateway;
+package com.example.SafewalletGateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SafeWalletGatewayApplication {
+public class SafewalletGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SafeWalletGatewayApplication.class, args);
+		SpringApplication.run(SafewalletGatewayApplication.class, args);
 	}
 
 }
