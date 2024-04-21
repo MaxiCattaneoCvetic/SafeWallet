@@ -1,4 +1,4 @@
-package com.example.SafeWalletGateway;
+package com.example.SafewalletGateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
