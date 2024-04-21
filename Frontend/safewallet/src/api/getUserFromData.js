@@ -1,7 +1,7 @@
 import axios from "axios";
-
+import { URL_GATEWAY } from "../URLS/URL.js";
 async function getUserFromData(data){
-	const URL = `http://localhost:9090/accounts/${data}/user`;
+	const URL = `${URL_GATEWAY}/accounts/${data}/user`;
 	const config = {
 		headers: {
 			authorization: `Bearer ${sessionStorage.getItem("token")}`,
