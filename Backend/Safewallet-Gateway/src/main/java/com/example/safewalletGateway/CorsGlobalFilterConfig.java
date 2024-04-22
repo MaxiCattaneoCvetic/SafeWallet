@@ -37,8 +37,7 @@ public class CorsGlobalFilterConfig {
             if (CorsUtils.isCorsRequest(request)) {
                 HttpHeaders headers = response.getHeaders();
                 HttpHeaders requestHeaders = request.getHeaders();
-                String origin = "https://safewallet-sooty.vercel.app/";
-
+                String origin = "https://safewallet-sooty.vercel.app";
 
                 
                 List<String> authorizationHeaders = request.getHeaders().get(HttpHeaders.AUTHORIZATION);
