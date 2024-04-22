@@ -5,7 +5,7 @@ import com.safewallet.userDataService.model.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "account-balance") // url = "localhost:8086")
+@FeignClient(name = "account-balance", url="https://transfers-production.up.railway.app/")
 public interface AccountFeignClient {
 
     @PostMapping("/accounts/create")
