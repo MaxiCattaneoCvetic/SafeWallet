@@ -122,26 +122,36 @@ function Transactions(props) {
                       <h5>Monto</h5>
                       {transaction.amount > 0 ? (
                         <p style={{ color: "green", fontWeight: "bold" }}>
-                          $
+                          <span style={{ marginRight: "5px" }}>$</span>
                           <NumericFormat
                             value={transaction.amount}
                             decimalScale={2}
                             fixedDecimalScale
                             thousandSeparator=","
                             readOnly
-                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
+                            style={{
+                              color: "red",
+                              background: "none",
+                              fontWeight: "bold",
+                              border: "none",
+                            }}
                           />
                         </p>
                       ) : (
                         <p style={{ color: "red", fontWeight: "bold" }}>
-                          ${" "}
+                          <span style={{ marginRight: "5px" }}>$</span>
                           <NumericFormat
                             value={transaction.amount}
                             decimalScale={2}
                             fixedDecimalScale
                             thousandSeparator=","
                             readOnly
-                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
+                            style={{
+                              color: "red",
+                              background: "none",
+                              fontWeight: "bold",
+                              border: "none",
+                            }}
                           />
                         </p>
                       )}
