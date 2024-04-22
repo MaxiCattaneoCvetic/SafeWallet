@@ -10,7 +10,7 @@ import getGift from "../../api/getGift.js";
 import { NumericFormat } from "react-number-format";
 import "react-responsive-modal/styles.css";
 import "react-toastify/dist/ReactToastify.css";
-import { toast, ToastContainer, Bounce } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import copy from "copy-text-to-clipboard";
 
 export default function AccountBalance() {
@@ -81,7 +81,6 @@ export default function AccountBalance() {
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
     });
   };
 
