@@ -125,16 +125,23 @@ function Transactions(props) {
                           $
                           <NumericFormat
                             value={transaction.amount}
-                            allowLeadingZeros
+                            decimalScale={2}
+                            fixedDecimalScale
                             thousandSeparator=","
+                            readOnly
+                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
                           />
                         </p>
                       ) : (
                         <p style={{ color: "red", fontWeight: "bold" }}>
-                          $ <NumericFormat
+                          ${" "}
+                          <NumericFormat
                             value={transaction.amount}
-                            allowLeadingZeros
+                            decimalScale={2}
+                            fixedDecimalScale
                             thousandSeparator=","
+                            readOnly
+                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
                           />
                         </p>
                       )}

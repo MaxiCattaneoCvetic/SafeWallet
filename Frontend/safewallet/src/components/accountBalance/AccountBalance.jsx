@@ -57,7 +57,7 @@ export default function AccountBalance() {
   }
 
   const copiarAlPortapapeles = (type) => {
-    setVisible(false)
+    setVisible(false);
     switch (type) {
       case "cbu":
         copy(userBalance.cbu);
@@ -95,8 +95,10 @@ export default function AccountBalance() {
             $
             <NumericFormat
               value={userBalance.balance}
-              allowLeadingZeros
-              thousandSeparator=","
+              decimalScale={2}
+              fixedDecimalScale
+              readOnly
+              className={style.cashNumber}
             />
           </h2>
           <div className={style.btnContainer}>
@@ -133,7 +135,10 @@ export default function AccountBalance() {
             {visible === true ? (
               <div ref={cbuRef} className={style.showText}>
                 <p>{userBalance.cbu}</p>
-                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("cbu")}>
+                <button
+                  className="scondbtn"
+                  onClick={() => copiarAlPortapapeles("cbu")}
+                >
                   Copiar
                 </button>
               </div>
@@ -149,7 +154,12 @@ export default function AccountBalance() {
             {visible === 1 ? (
               <div ref={aliasRef} className={style.showText}>
                 <p>{userBalance.alias}</p>
-                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("alias")}>Copiar</button>
+                <button
+                  className="scondbtn"
+                  onClick={() => copiarAlPortapapeles("alias")}
+                >
+                  Copiar
+                </button>
               </div>
             ) : null}
 
@@ -163,7 +173,12 @@ export default function AccountBalance() {
             {visible === 2 ? (
               <div ref={cvuRef} className={style.showText}>
                 <p>{userBalance.cvu}</p>
-                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("cvu")}>Copiar</button>
+                <button
+                  className="scondbtn"
+                  onClick={() => copiarAlPortapapeles("cvu")}
+                >
+                  Copiar
+                </button>
               </div>
             ) : null}
 
