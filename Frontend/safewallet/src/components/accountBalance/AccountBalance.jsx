@@ -7,6 +7,11 @@ import { getBalance } from "../../api/getBalance.js";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import getGift from "../../api/getGift.js";
+import { NumericFormat } from "react-number-format";
+import "react-responsive-modal/styles.css";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer, Bounce } from "react-toastify";
+import copy from "copy-text-to-clipboard";
 
 export default function AccountBalance() {
   const [isModal, setIsModal] = useState(false);
@@ -51,12 +56,49 @@ export default function AccountBalance() {
     getGift(userBalance.cbu);
   }
 
+  const copiarAlPortapapeles = (type) => {
+    setVisible(false)
+    switch (type) {
+      case "cbu":
+        copy(userBalance.cbu);
+        break;
+      case "alias":
+        copy(userBalance.alias);
+        break;
+      case "cvu":
+        copy(userBalance.cvu);
+        break;
+      default:
+        break;
+    }
+
+    toast.success(type + " copiado al portapapeles", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
+
   return (
     <div>
+      <ToastContainer />
       {userBalance !== null ? (
         <div className={style.mainContainerBalance}>
           <p className={style.textBalance}>Saldo disponible:</p>
-          <h2 className={style.cashNumber}>${userBalance.balance}</h2>
+          <h2 className={style.cashNumber}>
+            $
+            <NumericFormat
+              value={userBalance.balance}
+              allowLeadingZeros
+              thousandSeparator=","
+            />
+          </h2>
           <div className={style.btnContainer}>
             <button
               className={`scondbtn ${style.gridItem}`}
@@ -80,7 +122,7 @@ export default function AccountBalance() {
             ) : (
               ""
             )}
-            
+
             <button
               className={`scondbtn ${style.gridItem}`}
               onClick={() => setVisible(true)}
@@ -91,7 +133,9 @@ export default function AccountBalance() {
             {visible === true ? (
               <div ref={cbuRef} className={style.showText}>
                 <p>{userBalance.cbu}</p>
-                <button className="scondbtn">Copiar</button>
+                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("cbu")}>
+                  Copiar
+                </button>
               </div>
             ) : null}
 
@@ -105,7 +149,7 @@ export default function AccountBalance() {
             {visible === 1 ? (
               <div ref={aliasRef} className={style.showText}>
                 <p>{userBalance.alias}</p>
-                <button className="scondbtn">Copiar</button>
+                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("alias")}>Copiar</button>
               </div>
             ) : null}
 
@@ -119,14 +163,20 @@ export default function AccountBalance() {
             {visible === 2 ? (
               <div ref={cvuRef} className={style.showText}>
                 <p>{userBalance.cvu}</p>
-                <button className="scondbtn">Copiar</button>
+                <button className="scondbtn" onClick={()=>copiarAlPortapapeles("cvu")}>Copiar</button>
               </div>
             ) : null}
 
-            <button className={`scondbtn ${style.gridItem}`} onClick={handleGift}>
+            <button
+              className={`scondbtn ${style.gridItem}`}
+              onClick={handleGift}
+            >
               Reclamar premio Safe Wallet
             </button>
-            <button className={`scondbtn ${style.gridItem}`} onClick={() => navigate("/myCards")}>
+            <button
+              className={`scondbtn ${style.gridItem}`}
+              onClick={() => navigate("/myCards")}
+            >
               Mis tarjetas
             </button>
           </div>

@@ -4,13 +4,8 @@ import { getTransactions } from "../../api/getTransactions";
 import getTransactionDetail from "../../api/getTransactionDetail";
 import { Modal } from "react-responsive-modal";
 import TransactionDetail from "./TransactionDetail.jsx";
-import "react-responsive-modal/styles.css";
-import 'react-toastify/dist/ReactToastify.css';
-import { toast, ToastContainer,Bounce } from 'react-toastify';
 import DownloadReceipt from "../downloadButton/DownloadReceipt.jsx";
-
-
-
+import { NumericFormat } from "react-number-format";
 
 function Transactions(props) {
   const [data, setData] = useState([]);
@@ -21,15 +16,10 @@ function Transactions(props) {
   const [filterNumber, setFilterNumber] = useState(0);
   const [resFull, setResFull] = useState({});
   const onCloseModal = () => setOpen(false);
-  const [filterMessage,setFilterMessage] = useState(false);
+  const [filterMessage, setFilterMessage] = useState(false);
 
   useEffect(() => {
     getTransactions(props.userId, page, size, filterNumber).then((response) => {
-      // let orden = response.data.content.sort(
-      //   (a, b) => new Date(b.date) - new Date(a.date)
-      // );
-      // setData(response.data.content);
-      
       setData(response.data.content);
       setResFull(response.data);
     });
@@ -50,15 +40,15 @@ function Transactions(props) {
   }
 
   return (
-    
     <div className={style.transactionMainContainer}>
-      <ToastContainer />
-      
       <div className={style.mainActivity}>
         <h2 className={style.titless}>Tu última actividad</h2>
         <div className={style.mainFilterContainer}>
           <p style={{ textAlign: "center" }}>
-            Pagina {resFull.number} /{ resFull.totalPages == 0 ? resFull.totalPages: resFull.totalPages - 1}
+            Pagina {resFull.number} /
+            {resFull.totalPages == 0
+              ? resFull.totalPages
+              : resFull.totalPages - 1}
           </p>
           <div>
             <select
@@ -98,12 +88,12 @@ function Transactions(props) {
       </div>
       {!data || data.length === 0 ? (
         <div className={style.transactionsBackground}>
-          <h3 className={style.noTransactions} >
-            {filterMessage ? "Nada por aqui.. 😑" : "Parece que aún no has realizado ninguna transacción...🔎"}
+          <h3 className={style.noTransactions}>
+            {filterMessage
+              ? "Nada por aqui.. 😑"
+              : "Parece que aún no has realizado ninguna transacción...🔎"}
           </h3>
-          <p>
-            
-          </p>
+          <p></p>
         </div>
       ) : (
         <>
@@ -119,7 +109,6 @@ function Transactions(props) {
                   }}
                 >
                   <div className={style.transactionContainer}>
-                    
                     <img
                       src="/safewallet-transaction.svg"
                       alt="safewallet transaction"
@@ -133,11 +122,20 @@ function Transactions(props) {
                       <h5>Monto</h5>
                       {transaction.amount > 0 ? (
                         <p style={{ color: "green", fontWeight: "bold" }}>
-                          $ {transaction.amount}
+                          $
+                          <NumericFormat
+                            value={transaction.amount}
+                            allowLeadingZeros
+                            thousandSeparator=","
+                          />
                         </p>
                       ) : (
                         <p style={{ color: "red", fontWeight: "bold" }}>
-                          $ {transaction.amount}
+                          $ <NumericFormat
+                            value={transaction.amount}
+                            allowLeadingZeros
+                            thousandSeparator=","
+                          />
                         </p>
                       )}
                     </div>
@@ -153,9 +151,7 @@ function Transactions(props) {
                     </div>
                     <DownloadReceipt data={transaction}></DownloadReceipt>
                   </div>
-                  
                 </div>
-                
               ))}
             </div>
             <div>
