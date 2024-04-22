@@ -79,8 +79,8 @@ export default function AccountBalance() {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      progress: undefined,
-      theme: "light",
+      progress: 0,
+      theme: "dark",
     });
   };
 
@@ -91,15 +91,22 @@ export default function AccountBalance() {
         <div className={style.mainContainerBalance}>
           <p className={style.textBalance}>Saldo disponible:</p>
           <h2 className={style.cashNumber}>
-            $
+            <span style={{ marginRight: "5px" }}>$</span>
             <NumericFormat
               value={userBalance.balance}
               decimalScale={2}
               fixedDecimalScale
               readOnly
-              className={style.cashNumber}
+              style={{
+                fontWeight: "bold",
+                border: "none",
+                textAlign: "center",
+                fontSize: "3rem",
+                background: "none",
+              }}
             />
           </h2>
+
           <div className={style.btnContainer}>
             <button
               className={`scondbtn ${style.gridItem}`}
