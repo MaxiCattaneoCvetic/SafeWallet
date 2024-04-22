@@ -7,11 +7,13 @@ import { getBalance } from "../../api/getBalance.js";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import getGift from "../../api/getGift.js";
-import { NumericFormat } from "react-number-format";
 import "react-responsive-modal/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import copy from "copy-text-to-clipboard";
+// eslint-disable-next-line no-undef
+import formatNum from "format-num";
+
 
 export default function AccountBalance() {
   const [isModal, setIsModal] = useState(false);
@@ -79,8 +81,8 @@ export default function AccountBalance() {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      progress: undefined,
-      theme: "light",
+      progress: 0,
+      theme: "dark",
     });
   };
 
@@ -91,15 +93,9 @@ export default function AccountBalance() {
         <div className={style.mainContainerBalance}>
           <p className={style.textBalance}>Saldo disponible:</p>
           <h2 className={style.cashNumber}>
-            $
-            <NumericFormat
-              value={userBalance.balance}
-              decimalScale={2}
-              fixedDecimalScale
-              readOnly
-              className={style.cashNumber}
-            />
+            $ {formatNum(userBalance.balance)}
           </h2>
+
           <div className={style.btnContainer}>
             <button
               className={`scondbtn ${style.gridItem}`}

@@ -4,6 +4,7 @@ import Home from "./pages/home/Home.jsx";
 import ProfilePage from "./pages/profile/profilePage.jsx";
 import Register from "./pages/register/Register.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Test from "./Test.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/myCards",
     element: <CardAccountPage />,
   },
+  {
+    path: "/test",
+    element: <Test></Test>
+  }
 ]);
 
 

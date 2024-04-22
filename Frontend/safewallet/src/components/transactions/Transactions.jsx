@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import style from "./transactions.module.css";
 import { getTransactions } from "../../api/getTransactions";
@@ -5,7 +6,9 @@ import getTransactionDetail from "../../api/getTransactionDetail";
 import { Modal } from "react-responsive-modal";
 import TransactionDetail from "./TransactionDetail.jsx";
 import DownloadReceipt from "../downloadButton/DownloadReceipt.jsx";
-import { NumericFormat } from "react-number-format";
+// eslint-disable-next-line no-undef
+import formatNum from "format-num";
+
 
 function Transactions(props) {
   const [data, setData] = useState([]);
@@ -17,7 +20,7 @@ function Transactions(props) {
   const [resFull, setResFull] = useState({});
   const onCloseModal = () => setOpen(false);
   const [filterMessage, setFilterMessage] = useState(false);
-
+  
   useEffect(() => {
     getTransactions(props.userId, page, size, filterNumber).then((response) => {
       setData(response.data.content);
@@ -39,6 +42,7 @@ function Transactions(props) {
     }
   }
 
+  
   return (
     <div className={style.transactionMainContainer}>
       <div className={style.mainActivity}>
@@ -122,27 +126,11 @@ function Transactions(props) {
                       <h5>Monto</h5>
                       {transaction.amount > 0 ? (
                         <p style={{ color: "green", fontWeight: "bold" }}>
-                          $
-                          <NumericFormat
-                            value={transaction.amount}
-                            decimalScale={2}
-                            fixedDecimalScale
-                            thousandSeparator=","
-                            readOnly
-                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
-                          />
+                          ${formatNum(transaction.amount)}
                         </p>
                       ) : (
                         <p style={{ color: "red", fontWeight: "bold" }}>
-                          ${" "}
-                          <NumericFormat
-                            value={transaction.amount}
-                            decimalScale={2}
-                            fixedDecimalScale
-                            thousandSeparator=","
-                            readOnly
-                            style={{ color: "red", background:"none", fontWeight: "bold", border: "none"} }
-                          />
+                          ${formatNum(transaction.amount)}
                         </p>
                       )}
                     </div>

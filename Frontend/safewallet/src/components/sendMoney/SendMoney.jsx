@@ -3,6 +3,9 @@ import sendMoneyApi from "../../api/sendMoneyApi.js";
 import style from "./sendMoney.module.css";
 import swal from "sweetalert";
 import getUserFromData from "../../api/getUserFromData.js";
+// eslint-disable-next-line no-undef
+import formatNum from "format-num";
+
 export default function SendMoney(props) {
   const [cbuTo, setCbu] = useState();
   const [cbuFrom, setCbuFrom] = useState(props.cbuFrom);
@@ -11,8 +14,8 @@ export default function SendMoney(props) {
 
   async function swalFunction(response) {
     swal({
-      title: `¿Enviar $${amount} a ${response.data}?`,
-      text: `Al aceptar enviará $${amount} a la cuenta de SafeWallet de  ${response.data}.`,
+      title: `¿Enviar $${formatNum(amount)} a ${response.data}?`,
+      text: `Al aceptar enviará $${formatNum(amount)} a la cuenta de SafeWallet de  ${response.data}.`,
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -77,6 +80,7 @@ export default function SendMoney(props) {
               setAmount(e.target.value);
             }}
             placeholder="Ingrese el monto $"
+            value={formatNum(amount)}
             required
           />
           <button className="primarybtn" type="submit" onClick={handleSubmit}>
