@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="register-keycloak") // url = "localhost:8086")
+@FeignClient(name = "register-keycloak", url = "https://keycloack-production.up.railway.app/")
 public interface UserKeycloakFeign {
 
 
