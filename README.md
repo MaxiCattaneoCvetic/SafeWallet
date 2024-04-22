@@ -19,3 +19,33 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 ## Estructura del proyecto.
 ![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/ed2bcc21-3e7f-45f3-a722-93b8aa116f37)
 
+
+
+
+## Deployment
+
+Puedes acceder a el  deploy oficial del proyecto, si es que este se encuentra online
+
+```bash
+  https://safewallet-sooty.vercel.app/
+```
+-----
+De lo contrario puedes clonar el proyecto en la rama localhost.
+Para realizar este proceso deberas tener instalado.
+
+Nuestro gran amigo 🐳Docker y Docker-compose para ejecutar los contenedores.
+
+Una vez clonado el proyecto ejectuamos el script
+- Linux
+```bash
+  $ sudo chmod 777 ./downloadImages.sh
+```
+```bash
+  $ sudo ./downloadImages.sh
+```
+
+-  Windows
+```bash
+  start downloadImages.bash
+```
+Cuando finalice el proceso corremos el docker-compose situado en la misma carpeta que el script
