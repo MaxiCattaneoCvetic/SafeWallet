@@ -1,4 +1,4 @@
-package com.example.SafewalletGateway;
+package com.example.safewalletGateway;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
