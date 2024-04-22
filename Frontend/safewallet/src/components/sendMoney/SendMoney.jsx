@@ -80,7 +80,6 @@ export default function SendMoney(props) {
               setAmount(e.target.value);
             }}
             placeholder="Ingrese el monto $"
-            value={formatNum(amount)}
             required
           />
           <button className="primarybtn" type="submit" onClick={handleSubmit}>
