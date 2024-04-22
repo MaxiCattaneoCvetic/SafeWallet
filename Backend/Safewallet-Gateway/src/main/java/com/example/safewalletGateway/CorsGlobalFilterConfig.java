@@ -40,7 +40,7 @@ public class CorsGlobalFilterConfig {
                 String origin = "https://safewallet-sooty.vercel.app/";
 
 
-                // Verifica si hay un encabezado de autorización en la solicitud
+                
                 List<String> authorizationHeaders = request.getHeaders().get(HttpHeaders.AUTHORIZATION);
                 if (authorizationHeaders != null && !authorizationHeaders.isEmpty()) {
                     // Obtén el token de autorización
@@ -48,15 +48,15 @@ public class CorsGlobalFilterConfig {
                     // Imprime el token
                     System.out.println("TOKEN RECIBIDO: " + token);
                     headers.set(HttpHeaders.AUTHORIZATION, token);
-                    // Puedes hacer lo que necesites con el token aquí
+                   
                 } else {
-                    // Si no hay un encabezado de autorización en la solicitud
+                   
                     System.out.println("No hay token en la solicitud");
                 }
 
-                // Elimina cualquier valor existente
+          
                 headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
-                // Establece el nuevo valor
+
                 do {
                     System.out.println("seteando el header");
                     headers.set(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization");
