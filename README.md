@@ -29,6 +29,8 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 ## Estructura del proyecto.
 ![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/ed2bcc21-3e7f-45f3-a722-93b8aa116f37)
 
+## Estructura del proyecto (deploy online).
+![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/98a01024-3162-4615-9647-60c674413c1a)
 
 
 
@@ -77,3 +79,19 @@ En el caso de que no funcionen los scripts o tengas algun problema podes ejecuta
 3) Ejecutamos el script runsafewallet.sh para linux o runsafewallet.ps1 para powershell
 3) Seguimos las indicaciones del script.
 ```
+
+# Documentación de la API
+
+Se utilizo Swagger para documentar la api, pueden encontrar la documentacion de cada microservicio siguiendo el enlace
+
+**Microservicio: keycloack** 
+http://localhost:8081/doc/swagger-ui/index.html#/
+
+**Microservicio: UserDataFull**
+http://localhost:8087/doc/swagger-ui/index.html#/
+
+**Microservicio: Transfers**
+http://localhost:8086/doc/swagger-ui/index.html#/
+
+
+
