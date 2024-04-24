@@ -61,14 +61,14 @@ Para realizar este proceso deberas tener instalado nuestro gran  amigo DOCKER Y 
 Ejecutamos el siguiente script
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/MaxiCattaneoCvetic/runsafewallet/main/runsafewallet.sh)"
-Seguimos las indicaciones del script.
 ```
+Seguimos las indicaciones del script.
 - PowerShell
 Ejecutamos el siguiente script
 ```bash
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/MaxiCattaneoCvetic/runsafewallet/main/runsafewallet.ps1"))
-Seguimos las indicaciones del script.
 ```
+Seguimos las indicaciones del script.
 ## Deployment - Manual
 En el caso de que no funcionen los scripts o tengas algun problema podes ejecutarlos de esta manera.
 ```bash
