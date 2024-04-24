@@ -36,10 +36,15 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 
 ## Deployment - En linea
 
-Puedes acceder a el  deploy oficial del proyecto, si es que este se encuentra online
+Puedes acceder a el  deploy oficial del proyecto, si es que este se encuentra online, de lo contrario utilizar el deployment automatico.
 
 ```bash
   https://safewallet-sooty.vercel.app/
+```
+**USUARIOS**
+```bash
+  cuenta_1: admin@admin.com || admin - > CBU: 0515133297503950675439
+  cuenta_2: user@user.com || user - > CBU: 1606825549683998112636
 ```
 
 
