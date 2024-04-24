@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.PutMapping" />
+    </list>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../userDataService/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/safewallet/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/../service-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/../config-server/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../Transfers/pom.xml" />
+        <option value="$PROJECT_DIR$/../safewalletGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../config-server/SafeWallet-ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/../Safewallet-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Transfers/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-UserDataFull/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" />
+        <option value="$PROJECT_DIR$/../SafeWallet-ExportPdf/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../SafeWallet-Login-Redirect/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK" />
+</project>

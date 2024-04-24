@@ -1,0 +1,85 @@
+/* Footer.module.css */
+
+.footer {
+	position: relative;
+	overflow: hidden;
+	background-color: var(--footerBackground); /* Reemplaza con el color de fondo deseado */
+}
+
+.footer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	filter: blur(3px); /* Ajusta el valor de blur según tu preferencia */
+	z-index: -1;
+}
+
+.footerContainer {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+
+
+
+.footerContainer > div:first-child {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+}
+
+.footerContainer > div:last-child {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+}
+
+.footerContainer > div:last-child p {
+	font-weight: bold;
+}
+
+.redIcon{
+	font-size: 2rem;
+	cursor: pointer;
+	border-radius: 6px
+}
+
+
+
+/* START MOBILE CSS */
+@media (min-width: 0px) and (max-width: 462px) {
+	.redIcon{
+		font-size: 1.3rem;
+		cursor: pointer;
+		border-radius: 6px
+	}
+	.footerContainer > div:first-child {
+		gap: 0.6rem;
+	}
+	
+	.footerContainer > div:last-child {
+
+		gap: 0rem;
+	}
+
+	}
+	
+	@media (min-width: 463px) and (max-width: 811px) {
+		.footerContainer{
+			display: flex;
+		}
+	
+	}
+	
+	@media (min-width: 812px) and (max-width: 1300px) {
+	
+	
+	
+	}

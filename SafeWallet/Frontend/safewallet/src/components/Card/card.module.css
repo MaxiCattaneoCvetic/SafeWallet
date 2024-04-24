@@ -1,0 +1,108 @@
+
+/* CARD */
+.card {
+	width: 23rem;
+	height: 13rem;
+	max-height: 13rem;
+	max-width: 23rem;
+	border: 2px solid black;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #00f81540;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	transform: translateY(0);
+	transition: transform 0.3s;
+	animation: floatAnimation 3s ease infinite;
+}
+
+
+
+@keyframes floatAnimation {
+	0%, 100% {
+			transform: translateY(0);
+	}
+	50% {
+			transform: translateY(-5px);
+	}
+}
+
+
+
+.cardTextUp{
+	font-size: 0.8rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.7rem;
+	align-items: center;
+	font-weight: bold;
+}
+
+.cardTextDown{
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.cardName{
+	font-size: 0.8rem;
+	padding: 1rem;
+	text-align: justify;
+
+}
+.cardDate{
+	display: flex;
+	font-size: 0.6rem;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.7rem;
+	
+}
+
+.cardTextUp img{
+	width: 15%;
+	border-radius: 1rem;
+	
+}
+.btnDelete{
+	background-color: grey;
+	border: none;
+	padding: 0.3rem;
+	border-radius: 10px;
+}
+.btnDelete:hover{
+	cursor: pointer;
+	background-color: #00f81540;
+}
+
+.btnContainer{
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	gap: 0.1rem;
+
+}
+
+@media screen and (max-width: 500px) {
+	.card {
+		width: 18rem;
+		max-width: 18rem;
+		height: 13rem;
+
+	}
+	
+	
+
+
+
+	
+
+
+
+}
+
+@media (min-width: 510px) and (max-width: 900px) {
+
+}

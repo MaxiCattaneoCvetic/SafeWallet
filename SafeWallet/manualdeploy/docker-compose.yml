@@ -1,0 +1,86 @@
+version: '3.8'
+services:
+
+
+  # safewalletiam:
+  #   image: mcvetic97/sw-safewallet-keycloack-iam:v1
+  #   ports:
+  #     - "8080:8080"
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '0.5' # Límite de CPU
+  #         memory: 380M # Límite de memoria
+
+  eurekaserver:
+    image: mcvetic97/sw-server:v1
+    ports:
+      - "8761:8761"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # Límite de CPU
+          memory: 280M # Límite de memoria
+
+  gateway:
+    image: mcvetic97/sw-gateway:v1
+    ports:
+      - "9090:9090"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # Límite de CPU
+          memory: 300M # Límite de memoria
+
+  exportpdf:
+    image: mcvetic97/sw-exportpdf:v1
+    ports:
+      - "8085:8085"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # Límite de CPU
+          memory: 230M # Límite de memoria
+
+  keycloack:
+    image: mcvetic97/sw-keycloack:v1
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # Límite de CPU
+          memory: 320M # Límite de memoria
+
+  userdatafull:
+    image: mcvetic97/sw-userfull:v1
+    ports:
+      - "8087:8087"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # Límite de CPU
+          memory: 400M # Límite de memoria
+
+  transfers:
+    image: mcvetic97/sw-transfers:v1
+    ports:
+      - "8086:8086"
+    deploy:
+      resources:
+        limits:
+          cpus: '1' # Límite de CPU
+          memory: 400M # Límite de memoria
+
+  # mongodb:
+  #   image: mcvetic97/sw-mongosf:v1
+  #   ports:
+  #     - "27017:27017"
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '1' # Límite de CPU
+  #         memory: 400M # Límite de memoria
+
+
+

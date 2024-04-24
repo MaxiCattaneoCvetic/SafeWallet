@@ -1,0 +1,5 @@
+/serviceConfiguration
+/vault
+*.exe
+vault.exe
+Backend/vault/vault.exe

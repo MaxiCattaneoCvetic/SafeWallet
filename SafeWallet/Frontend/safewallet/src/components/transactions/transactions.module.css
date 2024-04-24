@@ -1,0 +1,145 @@
+.transactionsBackground {
+	height: auto;
+	margin: 0.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.transactionContainer:hover {
+	background-color: #9a919132;
+}
+
+.safewalletTransaction {
+	width: 3rem;
+	border-radius: 0.5rem;
+	margin-left: 1rem;
+}
+
+.transactionContainer {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	padding: 1rem;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: var(--backgroundColorBlance);
+	border-radius: 1rem;
+	cursor: pointer;
+	width: 50rem;
+
+}
+
+.mainActivity {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.columnW {
+	width: 33.33%;
+	box-sizing: border-box;
+}
+
+.noTransactions {
+	background-color: var(--backgroundColorBlance);
+	text-align: center;
+	padding: 2rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+.transactionDetail {
+	padding: 1rem;
+}
+
+
+.transactionDetailTitle,
+.transactionDetailText {
+	color: black;
+	font-family: "Poppins", sans-serif;
+}
+
+.transactionSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.btnPage {
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	border: 2px solid var(--borderPrimaryBTN);
+	background: none;
+	margin: 0.2rem;
+
+}
+
+.btnPage:hover {
+	background: var(--borderPrimaryBTN);
+}
+
+.mainFilterContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.optionItem {
+	color: black;
+	font-weight: 500;
+}
+
+.selectItem {
+	background: none;
+	border: 0.5px solid var(--borderPrimaryBTN);
+	border-radius: 0.5rem;
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+	.transactionsBackground {
+		width: 17rem;
+		max-width: 17rem;
+	}
+
+	.transactionContainer {
+		gap: 0.2rem;
+		padding: 0.5rem;
+	}
+
+	.safewalletTransaction {
+		width: 1.8rem;
+		border-radius: 0.4rem;
+		margin-left: 0rem;
+	}
+
+	.columnW h5,
+	p {
+		font-size: 0.7rem;
+	}
+
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+	.transactionsBackground {
+		width: 33rem;
+		max-width: 33rem;
+	}
+
+	.columnW h5,
+	p {
+		font-size: 0.8rem;
+	}
+}

@@ -1,0 +1,127 @@
+html{
+	background-image: url(/backgroundImage.png);
+	background-color: var(--backgroundColor);
+	background-repeat: no-repeat;
+	background-size: cover;
+} 
+
+
+.containerForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding-left: 15rem;
+}
+
+
+.input {
+	color: white;
+	font-size: 1rem;
+	font-weight: bolder;
+	background: none;
+	border-radius: 2rem;
+	padding: 1rem;
+	border: 1px solid white;
+}
+
+.input:focus {
+	border: 2px solid green;
+	outline: none;
+	/* Puedes añadir esto para quitar el contorno predeterminado del foco */
+}
+
+.label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4rem;
+}
+
+.btnRegister {
+	display: flex;
+	gap: 1rem;
+}
+
+.iconPassword {
+	cursor: pointer;
+}
+
+.errorRegister {
+	color: red;
+	font-size: 0.8rem;
+
+}
+
+.inputMain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+}
+
+/* START MOBILE CSS */
+@media (min-width: 0px) and (max-width: 593px) {
+
+	.form {
+		padding: 0rem;
+		
+	}
+
+	.containerForm {
+		flex-direction: column-reverse;
+		gap: 1rem;
+		
+	}
+
+	.registerImg {
+		width: 13rem;
+	}
+	.input{
+		width: auto;
+	}
+
+}
+
+@media (min-width: 593px) and (max-width: 811px) {
+	.form {
+		padding: 1rem;
+	}
+
+	.containerForm {
+		flex-direction: column-reverse;
+		gap: 1rem;
+	}
+
+	.registerImg {
+		width: 13rem;
+	}
+	.input{
+		width: auto;
+	}
+
+}
+
+@media (min-width: 812px) and (max-width: 1450px) {
+	.form {
+		padding: 1rem;
+	}
+
+	.containerForm {
+		gap: 0rem;
+	}
+
+	.registerImg {
+		width: 20rem;
+	}
+	.input{
+		width: 20rem;
+	}
+}

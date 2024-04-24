@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-ConfigServer/SafeWallet-ConfigServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-ExportPdf/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Login-Redirect/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-SpringBoot-Keycloack/Safewallet-keycloak/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Transfers/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-Transfers/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../SafeWallet-UserDataFull/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../config-server/SafeWallet-ConfigServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../config-server/SafeWallet-ConfigServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../service-configuration/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../service-configuration/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

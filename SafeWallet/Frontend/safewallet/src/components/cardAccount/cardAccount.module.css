@@ -1,0 +1,92 @@
+.mainCardContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardConteiner {
+	background-color: rgba(0, 0, 0, 0.322);
+	width: 70rem;
+	height: auto;
+	border-radius: 22rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 1rem
+}
+
+.cardConteiner img {
+	width: 30rem;
+}
+
+.containercard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buttonsContainer {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 1rem;
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+	.cardConteiner img {
+		width: 13rem;
+	}
+
+	.cardConteiner {
+		background-color: rgba(0, 0, 0, 0.322);
+		width: 20rem;
+		height: auto;
+		border-radius: 22rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem
+	}
+
+	.buttonsContainer {
+		gap: 0.5rem;
+		margin: 0.5rem;
+		flex-direction: column;
+	}
+
+	.buttonsContainer button{
+		font-size: 0.6rem;
+		
+	}
+
+
+}
+
+@media (min-width: 510px) and (max-width: 900px) {
+	.cardConteiner img {
+		width: 26rem;
+	}
+
+	.cardConteiner {
+		background-color: rgba(0, 0, 0, 0.322);
+		width: 40rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4rem
+	}
+
+	.buttonsContainer {
+		gap: 0.5rem;
+		margin: 0.5rem;
+	}
+
+	.buttonsContainer button{
+		font-size: 0.8rem;
+	}
+}

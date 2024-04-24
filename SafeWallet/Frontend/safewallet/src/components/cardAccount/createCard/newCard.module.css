@@ -1,0 +1,192 @@
+.btnsContainer {
+	display: flex;
+	justify-content: center;
+	gap: 0.3rem;
+	padding: 1rem;
+}
+
+.inputCard {
+	padding: 0.3rem;
+	border: 2px solid var(--borderPrimaryBTN);
+	border-radius: 1rem;
+	background: none;
+	width: auto;
+	color: white;
+}
+
+.errors {
+	color: red;
+	padding: 0.8rem;
+}
+
+.containerCardInput {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+}
+
+.inputCard option {
+	background-color: black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	filter: invert(1);
+}
+
+
+
+/* CARD */
+.card {
+	width: 23rem;
+	height: 12rem;
+	border: 2px solid black;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #00f81540;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	transform: translateY(0);
+	transition: transform 0.3s;
+	animation: floatAnimation 3s ease infinite;
+}
+
+
+
+@keyframes floatAnimation {
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+
+
+/* .cardTextUp{
+	font-size: 0.8rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.7rem;
+	align-items: center;
+	font-weight: bold;
+}
+
+.cardTextDown{
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.cardName{
+	font-size: 0.8rem;
+	padding: 1rem;
+	text-align: justify;
+
+}
+.cardDate{
+	display: flex;
+	font-size: 0.6rem;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.7rem;
+	
+}
+
+.cardTextUp img{
+	width: 15%;
+	border-radius: 1rem;
+	
+} */
+
+
+/* CARD BACK */
+.cardBack {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+}
+
+.magneticStripe {
+	width: 90%;
+	height: 20px;
+	background-color: #333;
+	margin-bottom: 10px;
+}
+
+.signature {
+	width: 70%;
+	height: 40px;
+	background-color: #ccc;
+	margin-bottom: 20px;
+}
+
+.cardNumbers {
+	width: 90%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cardNumbers p {
+	display: flex;
+	background-color: #3f3c3c;
+	border-radius: 5px;
+	padding: 5px;
+	width: auto;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+	.containerCardInput {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card{
+		width: 18rem;
+		max-width: 18rem;
+		height: 13rem;
+	}
+
+	.magneticStripe {
+		width: 90%;
+		height: 20px;
+		background-color: #333;
+		margin-bottom: 10px;
+	}
+
+	.signature {
+		width: 70%;
+		height: 40px;
+		background-color: #ccc;
+		margin-bottom: 20px;
+	}
+
+	.cardNumbers {
+		width: 90%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.cardNumbers p {
+		display: flex;
+		background-color: #3f3c3c;
+		border-radius: 5px;
+		padding: 5px;
+		width: auto;
+	}
+}

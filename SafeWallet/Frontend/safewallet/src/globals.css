@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'M PLUS 1p';
+  color: white;
+}
+
+:root {
+  --max-width: 1100px;
+  --backgroundColor: #1A1E1C;
+  --borderPrimaryBTN: #2BB32A;
+  --footerBackground: #1a1e1ce8;
+  --backgroundColorBlance:rgba(0, 0, 0, 0.322);
+}
+
+.sinflechas {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+.sinflechas::-webkit-outer-spin-button,
+.sinflechas::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.swal2-input {
+  -moz-appearance: textfield !important;
+  -webkit-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+.swal2-input::-webkit-outer-spin-button,
+.swal2-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(18, 19, 18, 0.589);
+}
+
+.spinner * {
+  color: var(--borderPrimaryBTN);
+}
+
+.titles {
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.progress-bar * {
+  width: 100%;
+  height: 20px;
+  /* Altura de la barra de progreso */
+  background-color: #007bff;
+  /* Color de la barra de progreso */
+  border-radius: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  /* Altura de la barra de progreso */
+  background-color: #007bff;
+  /* Color de la barra de progreso */
+  border-radius: 8px;
+}
+
+.backgroundBlack {
+  background: black;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.swal-button {
+  border: 1px solid var(--borderPrimaryBTN);
+  color: var(--borderPrimaryBTN);
+  background: none !important;
+
+}
+
+.swal-modal {
+  background-color: var(--backgroundColor);
+
+}
+
+.swal-title {
+  color: white;
+
+}
+
+.swal-icon::before {
+  display: none;
+}
+
+.swal-icon::after {
+  display: none;
+}
+
+.swal-icon--success__hide-corners {
+  display: none;
+}
+
+.swal-text {
+  color: white;
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+
+.backgroundRegister {
+  background-color: #1A1E1C;
+}
+
+
+/* Swal 2 css  */
+
+.swal2-confirm {
+  background: none !important;
+  border: 2px solid var(--borderPrimaryBTN) !important;
+  border-radius: 1rem !important;
+}
+
+
+
+
+.swal2-cancel {
+  border-radius: 1rem !important;
+  background: none !important;
+    border: 2px solid var(--borderPrimaryBTN) !important;
+}
+
+.swal2-cancel:hover {
+  background-color: red;
+}
+
+.swal2-modal {
+  background-color: var(--backgroundColor);
+  border: 2px solid var(--borderPrimaryBTN);
+  border-radius: 2rem;
+}
+
+.swal2-title {
+  color: white;
+}
+
+.swal2-input {
+  color: white;
+}
+
+.swal2-html-container {
+  color: white !important;
+}
+
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.scondbtn {
+  padding: 10px;
+  background-color: var(--borderPrimaryBTN);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 2rem;
+
+}
+
+.primarybtn {
+  padding: 10px;
+  background: none;
+  border: 2px solid var(--borderPrimaryBTN);
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.editButton {
+  padding: 0.3rem;
+  background: none;
+  border: 2px solid var(--borderPrimaryBTN);
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.editButtonDisabled {
+  padding: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+}
+
+.editButtonDisabled:hover {
+  cursor: not-allowed;
+}
+
+.editButton:hover {
+  background-color: #2BB32A;
+  color: white;
+}
+
+.primarybtnMOBILE {
+  padding: 2px;
+  background: none;
+  border: 1px solid var(--borderPrimaryBTN);
+  color: var(--borderPrimaryBTN);
+  cursor: pointer;
+  border-radius: 2rem;
+  width: 30%;
+
+}
+
+.normalText {
+  font-size: 1rem;
+}
+
+.normalTextFooter {
+  font-size: 1rem;
+}
+
+.btnefect:hover {
+  background-color: #1c851c3f;
+  color: white;
+}
+
+.styleOff {
+  text-decoration: none;
+}
+
+.titles {
+  font-size: 2.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: var(--borderPrimaryBTN);
+  border-radius: 2px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: var(--backgroundColor);
+
+}
+
+.textError {
+  font-size: 1rem;
+  margin: 1rem;
+  color: red;
+}
+
+.main {
+  padding: 0rem 10rem 0rem 10rem;
+}
+
+.greenHoover:hover {
+  cursor: pointer;
+  text-decoration: underline var(--borderPrimaryBTN);
+}
+
+@media (max-width: 593px) {
+  .main {
+    padding: 2rem;
+  }
+
+}
+
+@media (min-width: 593px) and (max-width: 811px) {
+  .main {
+    padding: 0rem;
+
+  }
+}
+
+@media (min-width: 812px) and (max-width: 1300px) {
+  .main {
+
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+  }
+}
+
+
+@media (max-width: 593px) {
+  .titles {
+    font-size: 1.5rem;
+  }
+
+  .normalText {
+    font-size: 0.8rem;
+  }
+
+  .normalTextFooter {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (min-width: 594px) and (max-width: 1500px) {
+  .titles {
+    font-size: 1.5rem;
+  }
+
+  .normalText {
+    font-size: 0.8rem;
+  }
+
+  .primarybtn {
+    padding: 3px;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+  }
+
+
+}

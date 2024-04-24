@@ -1,0 +1,27 @@
+.containerCards{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+.btncontainer{
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	gap: 0.2rem;
+}
+
+.btncontainer button{
+	background: none;
+	border: 1px solid var(--borderPrimaryBTN);
+	border-radius: 1rem;
+	padding: 0.3rem;
+	cursor: pointer;
+
+}
+
+.btncontainer button:hover{
+	background: var(--borderPrimaryBTN);
+
+}
