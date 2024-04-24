@@ -29,6 +29,8 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 ## Estructura del proyecto.
 ![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/ed2bcc21-3e7f-45f3-a722-93b8aa116f37)
 
+## Estructura del proyecto (deploy online).
+![image](https://github.com/MaxiCattaneoCvetic/SafeWallet/assets/101187172/98a01024-3162-4615-9647-60c674413c1a)
 
 
 
