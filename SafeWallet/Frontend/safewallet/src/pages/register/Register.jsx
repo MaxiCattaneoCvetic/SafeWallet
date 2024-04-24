@@ -17,6 +17,7 @@ export default function Register() {
   });
   const [error, setError] = useState("");
   const [errorUserExist, setErrorUserExist] = useState(false);
+
   const [data, setData] = useState({
     name: "",
     lastname: "",
@@ -25,6 +26,7 @@ export default function Register() {
     phone: "",
     password: "",
   });
+
   const [password2, setPassword2] = useState("");
   const inputRef = useRef(null);
   const [loading, setLoading] = useState(null);
@@ -46,7 +48,7 @@ export default function Register() {
   const handleChange = (e) => {
     setData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value.toLowerCase(),
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -54,12 +56,12 @@ export default function Register() {
     e.preventDefault();
     // Contruimos objeto para userDataFull
     const userv = {
-      username: data.email,
+      username: data.email.toLowerCase(),
       password: data.password,
       roles: ["user"],
-      name: data.name,
-      lastName: data.lastname,
-      email: data.email,
+      name: data.name.toLowerCase(),
+      lastName: data.lastname.toLowerCase(),
+      email: data.email.toLowerCase(),
       phone: data.phone,
       dni: data.dni,
     };
@@ -242,6 +244,7 @@ export default function Register() {
                 onChange={handleChange}
                 value={data.password}
                 ref={inputRef}
+                autoComplete="new-password"
               />
             </div>
             <div>
@@ -254,6 +257,7 @@ export default function Register() {
                 id="password2"
                 name="password2"
                 placeholder="Ingrese su contraseña"
+                autoComplete="new-password"
                 onChange={(e) => {
                   setPassword2(e.target.value);
                 }}
