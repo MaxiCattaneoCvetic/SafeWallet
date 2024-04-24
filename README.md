@@ -4,6 +4,16 @@ SafeWallet es una billetera virtual que ofrece una experiencia segura y convenie
 
 Este proyecto se enfoca en la implementación de un robusto esquema de microservicios y medidas de seguridad utilizando Keycloak, demostrando así mis habilidades en el desarrollo de aplicaciones escalables y seguras.
 
+
+## 🛠 Tecnologias del proyecto
+- Java-Springboot 
+- React
+- MongoDB
+- Keycloak
+- Javascript
+- Aws 
+- Docker
+
 ## Microservicios
 
 Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para garantizar el óptimo funcionamiento de la aplicación:
@@ -22,30 +32,50 @@ Safe Wallet consta de 6 microservicios que trabajan de manera sincronizada para 
 
 
 
-## Deployment
+## Deployment - En linea
 
 Puedes acceder a el  deploy oficial del proyecto, si es que este se encuentra online
 
 ```bash
   https://safewallet-sooty.vercel.app/
 ```
------
+
+
+## Deployment - Automatico
 De lo contrario puedes clonar el proyecto en la rama localhost.
-Para realizar este proceso deberas tener instalado.
+Para realizar este proceso deberas tener instalado nuestro gran  amigo DOCKER Y DOCKER-COMPOSE
 
-Nuestro gran amigo 🐳Docker y Docker-compose para ejecutar los contenedores.
+**Frontend** 
 
-Una vez clonado el proyecto ejectuamos el script
+- Ejecutamos el front dentro de la carpeta correspondiente,  \Frontend\safewallet
+
+**importante que se ejecute en el puerto 5173**
+
+```bash
+ npm run dev
+```
+
+**Backend**
+
 - Linux
+Ejecutamos el siguiente script
 ```bash
-  $ sudo chmod 777 ./downloadImages.sh
-```
-```bash
-  $ sudo ./downloadImages.sh
-```
+1) bash -c "$(curl -fsSL https://raw.githubusercontent.com/MaxiCattaneoCvetic/runsafewallet/main/runsafewallet.sh)"
 
--  Windows
-```bash
-  start downloadImages.bash
+2) Seguimos las indicaciones del script.
 ```
-Cuando finalice el proceso corremos el docker-compose situado en la misma carpeta que el script
+- PowerShell
+Ejecutamos el siguiente script
+```bash
+1) Invoke-Expression ((New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/MaxiCattaneoCvetic/runsafewallet/main/runsafewallet.ps1"))
+
+2) Seguimos las indicaciones del script.
+```
+## Deployment - Manual
+En el caso de que no funcionen los scripts o tengas algun problema podes ejecutarlos de esta manera.
+```bash
+1) Ingresamos a la carpeta manualdeploy.
+2) Damos permisos de ejecución al script runsafewallet.sh.
+3) Ejecutamos el script runsafewallet.sh para linux o runsafewallet.ps1 para powershell
+3) Seguimos las indicaciones del script.
+```
